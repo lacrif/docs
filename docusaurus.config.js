@@ -23,7 +23,7 @@ const config = {
   url: 'https://lacrif.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docs',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -141,12 +141,12 @@ const config = {
               // },
               {
                 label: 'GitHub',
-                href: 'https://github.com/lacrif/docusaurus',
+                href: 'https://github.com/lacrif/docs',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Lacrif, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
