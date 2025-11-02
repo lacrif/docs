@@ -1,0 +1,9 @@
+{
+  "label": "Gitlab",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Gitlab est une plateforme DevSecOps complète qui permet aux équipes de développement, d'exploitation et de sécurité de collaborer efficacement tout au long du cycle de vie des applications. Découvrez les fonctionnalités, les plans tarifaires et les options de déploiement de Gitlab."
+  },
+  "className": "gitlab_sidebar_header"
+}

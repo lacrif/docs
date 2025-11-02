@@ -1,0 +1,173 @@
+---
+id: gitlab-plans
+title: "GitLab — Offres et modèles de déploiement"
+sidebar_label: "Offres et modèles de déploiement"
+sidebar_position: 2
+authors: [lacrif]
+description: "GitLab — Offres et modèles de déploiement"
+last_updated: "2025-11-02"
+image: "@site/static/img/gitlab.svg"
+---
+
+import Gitlab from '@site/static/img/gitlab.svg';
+
+# <Gitlab width={42} height={42}/> {frontMatter.title}
+
+<p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+GitLab propose plusieurs niveaux de licence et deux modèles de déploiement principaux : SaaS (hébergé par GitLab, accessible via gitlab.com) et On‑Premise (self‑managed). Ci‑dessous une présentation claire des options gratuites et payantes, et des différences entre SaaS et On‑Premise.
+
+## Modèles de déploiement : SaaS vs On‑Premise
+
+### SaaS (gitlab.com)
+
+GitLab SaaS, accessible sur gitlab.com, est une offre hébergée et gérée par GitLab Inc. C’est une solution clé en main : GitLab prend en charge l’infrastructure, la maintenance et les mises à jour.
+
+Points clés :
+
+- Maintenance et mises à jour gérées par GitLab.
+- Accès rapide aux dernières fonctionnalités.
+- Facturation simple (abonnement) pour les comptes payants.
+- Idéal pour les équipes qui veulent se concentrer sur le développement plutôt que sur l’administration système.
+
+Limites :
+
+- Moins de contrôle sur la localisation et la gestion des données.
+- Moins adapté si vous avez des contraintes réglementaires fortes (certains secteurs exigent un hébergement local).
+
+### On‑Premise (Self‑Managed)
+
+L’option On‑Premise (self‑managed) permet d’installer GitLab sur vos propres serveurs ou dans votre cloud privé. Vous gardez le contrôle total de l’infrastructure, des données et des personnalisations.
+
+Points clés :
+
+- Contrôle complet des données et de la sécurité.
+- Possibilité de personnaliser les intégrations et la configuration.
+- Choix pertinent pour les organisations soumises à des exigences de conformité strictes.
+
+Limites :
+
+- Responsabilité de la maintenance, des sauvegardes et des mises à jour.
+- Coûts d’infrastructure et compétences techniques nécessaires.
+
+## Niveaux de licence : Gratuit et Payants
+
+GitLab propose une offre gratuite et plusieurs offres payantes (selon qu’elles sont utilisées en SaaS ou On‑Premise, les noms et fonctionnalités sont cohérents) :
+
+- Free (gratuit)
+- Premium / Team (offres intermédiaires selon les époques et les catalogues)
+- Ultimate / Enterprise (offre complète pour les grandes organisations)
+
+### Tableau comparatif rapide
+
+| Offre | Usage recommandé | SaaS (gitlab.com) | On‑Premise (self‑managed) | Fonctions clés | Support |
+|---|---|:---:|:---:|---|---|
+| Free | Projets personnels, petites équipes, enseignement | ✅ | ✅ | Dépôts Git, issues, MR, CI/CD basique, Pages, Container Registry | Communauté |
+| Premium / Team | Équipes professionnelles, collaboration à l'échelle | ✅ | ✅ | CI/CD avancé, gestion d'équipes, métriques, runners dédiés | Support prioritaire |
+| Ultimate / Enterprise | Grandes organisations, besoins de sécurité et conformité | ✅ | ✅ | SAST/DAST, gestion de la conformité, reporting avancé, portfolio management | Support SLA / premium |
+
+> Remarque : les fonctionnalités exactes varient selon les versions SaaS ou self‑managed et selon les évolutions de l'offre GitLab. Consultez la page de tarification pour les détails les plus récents.
+
+### Free (Gratuit)
+
+La version Free convient aux projets personnels, aux petites équipes et pour l’enseignement. Elle inclut les fonctionnalités de base nécessaires au développement collaboratif.
+
+Fonctionnalités typiques :
+
+- Dépôts Git, issues, merge requests.
+- CI/CD de base (runners partagés sur gitlab.com pour la version SaaS).
+- Gestion des membres et permissions simples.
+- Pages, Container Registry basique.
+
+Limites :
+
+- Certaines fonctionnalités avancées (sécurité, conformité, reporting et observabilité) sont réservées aux offres payantes.
+
+### Offres Payantes (Premium / Ultimate)
+
+Les offres payantes ajoutent des fonctionnalités pour l’échelle, la sécurité, la conformité et le support :
+
+- Fonctionnalités CI/CD avancées (optimisation, pipelines multiples, runners dédiés).
+- Sécurité et SAST/DAST/Dependency Scanning (analyse de vulnérabilités).
+- Gestion avancée des utilisateurs, des groupes et du cycle de vie des projets.
+- Supervision, métriques et tableau de bord pour l’ingénierie.
+- Support technique prioritaire et options de SLA pour les entreprises.
+
+Choisir entre Premium/Team et Ultimate/Enterprise dépend de vos besoins en sécurité et conformité, du volume de vos équipes et des exigences de support.
+
+## SaaS vs On‑Premise : cas d’usage pour choisir
+
+Choisissez SaaS si :
+
+- Vous voulez limiter la maintenance opérationnelle.
+- Vous souhaitez un déploiement rapide et accéder aux nouveautés sans gestion d’infrastructure.
+
+Choisissez On‑Premise si :
+
+- Vous devez contrôler la localisation des données (réglementation, politique interne).
+- Vous avez besoin d’intégrations profondes avec des services internes.
+- Vous voulez personnaliser fortement la plateforme ou gérer des configurations réseau spécifiques.
+
+## Choisir le bon plan
+
+Mise à jour : 09/05/2025
+
+Ce guide aide à choisir rapidement entre les offres GitLab (Free, Premium/Team, Ultimate/Enterprise) et entre les modèles de déploiement (SaaS vs On‑Premise). Suivez les étapes ci‑dessous et reportez-vous au tableau comparatif dans [Les offres GitLab (comparatif)](/docs/gitlab/gitlab-plans) pour un résumé visuel.
+
+### Étapes pour choisir
+
+1. Taille et organisation de l'équipe
+   - Petite équipe (1–10 personnes) : Free ou Premium selon le besoin en CI/CD.
+   - Équipe moyenne (10–100) : généralement Premium/Team.
+   - Grande organisation (>100) : envisager Ultimate/Enterprise pour la sécurité et la gouvernance.
+
+2. Contraintes de sécurité et conformité
+   - Si vous avez des exigences réglementaires (ex. données hébergées localement, certifications), préférez On‑Premise self‑managed.
+   - Si les exigences se limitent aux scans et à la gestion des vulnérabilités, Ultimate peut être nécessaire (SaaS ou On‑Premise selon la politique de données).
+
+3. Besoin en features DevSecOps
+   - Si vous avez seulement besoin de CI/CD de base et gestion de code : Free suffit.
+   - Pour pipelines complexes, runners dédiés, ou intégration avancée : Premium.
+   - Pour sécurité automatisée (SAST/DAST), politiques de conformité et gestion de portefeuilles : Ultimate.
+
+4. Maintenance et ressources opérationnelles
+   - Pas d’équipe d’exploitation : privilégier SaaS (gitlab.com) pour éviter la maintenance.
+   - Vous avez une équipe SRE/DevOps : On‑Premise est envisageable si vous voulez le contrôle.
+
+5. Budget et support
+   - Besoin d’un SLA et support prioritaire : offres payantes (Premium/Ultimate) avec options SLA.
+   - Aucune contrainte budgétaire stricte : évaluer le ROI des fonctionnalités premium.
+
+### Cas d'usage concrets
+
+- Start‑up (5 devs) qui veut déployer rapidement : GitLab SaaS Free -> passer à Premium au besoin.
+- Entreprise régulée (données sensibles, conformité) : GitLab On‑Premise + Ultimate.
+- Équipe interne (30 devs) avec besoin d’automatisation avancée : GitLab Premium self‑managed ou SaaS selon la politique de données.
+
+### Checklist rapide
+
+- [ ] Nombre de développeurs
+- [ ] Contraintes réglementaires (oui/non)
+- [ ] Niveau d’automatisation CI/CD requis
+- [ ] Besoin d’analyses de sécurité automatisées
+- [ ] Ressources pour gérer l’infrastructure (SRE/ops)
+- [ ] Nécessité d’un support SLA
+
+Si tu veux, fournis quelques informations sur ton organisation (taille, secteur, contraintes de données) : je peux te recommander un plan précis et expliquer les coûts/impacts opérationnels.
+
+## Résumé pratique
+
+- GitLab Free : bon pour les projets personnels et petites équipes.
+- GitLab Payant (Premium/Ultimate) : pour les équipes professionnelles ayant besoin de sécurité avancée, automatisation et support.
+- SaaS (gitlab.com) : le plus simple à adopter — GitLab gère l’infrastructure.
+- On‑Premise (self‑managed) : pour les organisations qui exigent contrôle, personnalisation et conformité.
+
+## Ressources
+
+- Site officiel : [about.gitlab.com](https://about.gitlab.com/)
+- Documentation : [docs.gitlab.com](https://docs.gitlab.com/)
+- Tarifs et comparaison : [about.gitlab.com/pricing](https://about.gitlab.com/pricing/)
+
+---
+
+Pour toute question sur le choix d’une offre adaptée à votre contexte, indiquez la taille de votre équipe, vos contraintes de sécurité et vos attentes en matière de support — je peux vous aider à affiner le choix.

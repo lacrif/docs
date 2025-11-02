@@ -1,0 +1,70 @@
+---
+id: gitlab-index
+title: "GitLab — La plateforme DevSecOps la plus complète basée sur l'IA"
+sidebar_label: "Introduction"
+sidebar_position: 1
+tags: [gitlab]
+description: "Introduction à GitLab : histoire, fonctionnalités et premiers pas pour utiliser la plateforme DevSecOps."
+last_updated: 
+  date: "2025-10-02"
+  author: "lacrif"
+image: "@site/static/img/gitlab.svg"
+---
+
+import Gitlab from '@site/static/img/gitlab.svg';
+
+# <Gitlab width={42} height={42}/> {frontMatter.title}
+
+<p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+GitLab est une plateforme DevSecOps qui couvre l’ensemble du cycle de vie logiciel : planification, développement, intégration continue, sécurité et déploiement. Elle réunit les développeurs, les équipes d’exploitation et les équipes sécurité dans un même flux de travail, facilitant la collaboration, l’automatisation et la conformité.
+
+## Brève histoire
+
+Créé en 2011 par Dmitriy Zaporozhets (avec le soutien de Valery Sizov) puis développé en entreprise publique par Sid Sijbrandij, GitLab est passé d’un gestionnaire de dépôts Git à une plateforme DevSecOps complète. Son modèle open source a favorisé une adoption et une contribution larges, ce qui a accéléré l’intégration de fonctionnalités comme la CI/CD et la gestion des artefacts.
+
+## Fonctionnalités clés
+
+Voici les domaines principaux où GitLab apporte de la valeur :
+
+- **Gestion de version**
+  - Basé sur Git : branches, merge requests, historique et outils de review.
+- **CI/CD**
+  - Pipelines déclaratifs, runners, parallélisation des jobs et intégrations pour tests et déploiement.
+- **Gestion de projet**
+  - Issues, boards, milestones et tableaux de bord pour suivre le travail et la priorisation.
+- **Sécurité intégrée**
+  - Scans automatiques (SAST, DAST, dépendances), gestion des secrets et contrôles de conformité.
+- **Revue et collaboration**
+  - Merge requests avec commentaires, templates de MR et approbations configurables.
+- **Documentation**
+  - Wiki, pages de projet et stockage des fichiers pour centraliser la connaissance.
+- **Analyse et reporting**
+  - Dashboards de performance, métriques CI et rapports d’activité.
+
+## Gestion des artefacts
+
+Dans les pipelines CI/CD, GitLab stocke les artefacts (fichiers de build, rapports, binaires) associés à un commit et à un job. Les points importants :
+
+- Conservation liée au commit : chaque artefact est traçable.
+- Partage entre jobs ou pipelines : réutilisation pour déploiement ou tests.
+- Politiques de rétention : possibilité d’expirer automatiquement des artefacts pour maîtriser l’espace.
+
+## Premiers pas (SaaS)
+
+1. Créez un projet sur gitlab.com ou importez un dépôt existant.
+2. Ajoutez un fichier `.gitlab-ci.yml` pour définir vos pipelines.
+3. Configurez un runner (GitLab partagé ou self-hosted) et exécutez un pipeline de test.
+4. Activez les scans de sécurité et définissez vos règles d’approbation.
+
+Pour des usages avancés, explorez les templates CI fournis par GitLab et la documentation officielle.
+
+## Conclusion
+
+GitLab est une solution tout-en-un pour piloter le développement moderne en intégrant code, pipelines, sécurité et gestion de projet. Elle convient aux équipes qui veulent automatiser leurs livraisons tout en gardant une traçabilité et une gouvernance solides.
+
+## Ressources
+
+- Documentation officielle : https://docs.gitlab.com
+- Site officiel : https://gitlab.com
+- Forum communautaire : https://forum.gitlab.com

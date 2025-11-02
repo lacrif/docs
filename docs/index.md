@@ -1,0 +1,41 @@
+---
+title: "Raison d'être du site"
+description: "Mission, types de contenus et valeurs éditoriales : actualités IT, guides open source et cours fondamentaux."
+slug: /
+sidebar_position: 1
+---
+
+# Raison d'être du site
+
+Ce site existe pour rassembler, organiser et partager des savoirs pratiques et accessibles autour de l’informatique. Dans un univers technologique qui évolue en permanence, il devient difficile de suivre les nouveautés, de trouver des guides fiables et d’apprendre les bases sans être noyé sous l’information. Notre objectif est simple : offrir un point d’entrée clair et convivial pour s’informer, apprendre et appliquer des solutions open source, qu’on soit débutant ou professionnel.
+
+## Partage d'information et actualités IT
+
+Nous couvrons l’actualité et les tendances générales du monde IT pour aider nos lecteurs à rester informés sans perdre de temps. Plutôt que de multiplier les alertes techniques ultra-spécialisées, nous synthétisons les annonces importantes, les changements de stratégie des acteurs majeurs, et les innovations pertinentes pour une large audience : développeurs, administrateurs système, architectes, étudiants et passionnés. Les articles d’actualité visent à expliquer le pourquoi et le comment des nouveautés, leurs impacts et les actions pratiques à envisager.
+
+## Guides, tutoriels et astuces sur les produits open source
+
+Le cœur pratique du site, ce sont les guides pas-à-pas et les tutoriels centrés sur des outils et projets open source. Nous privilégions les contenus actionnables : installation, configuration, migration, bonnes pratiques de sécurité, optimisation et dépannage. Chaque guide est conçu pour être reproductible, accompagné d’exemples concrets et de références utiles. Les astuces (tips) permettent de gagner du temps au quotidien : raccourcis, options peu connues, patterns d’automatisation, et workflows recommandés. L’approche est pragmatique — apprendre en faisant — et toujours orientée vers l’usage réel en production ou en apprentissage.
+
+## Cours généraux sur les concepts de l'informatique
+
+Pour compléter les tutoriels pratiques, nous proposons des articles pédagogiques sur les concepts fondamentaux : réseaux, systèmes d’exploitation, virtualisation, conteneurs, sécurité, bases de données, architectures distribuées, et méthodologies de développement. Ces cours sont pensés pour être progressifs : définitions et analogies, schémas conceptuels, exemples d’application et exercices simples. L’objectif est d’aider ceux qui veulent consolider leurs bases théoriques pour mieux comprendre pourquoi une technologie fonctionne, pas seulement comment l’utiliser.
+
+## Valeurs éditoriales
+
+- Clarté : expliquer simplement sans dénaturer la technique.
+- Fiabilité : sourcer les informations et tester les procédures.
+- Neutralité : présenter plusieurs options et laisser le choix au lecteur.
+- Partage : encourager les retours et contributions de la communauté.
+
+## Pour qui est ce site ?
+
+Que vous soyez étudiant cherchant à comprendre les principes, administrateur cherchant un guide pour déployer une solution, développeur voulant automatiser une tâche, ou simplement curieux, vous trouverez sur ce site des contenus pensés pour être utiles et réutilisables.
+
+## Appel à contribution
+
+Si un sujet vous intéresse, si vous avez un retour d’expérience à partager, ou si vous souhaitez proposer un tutoriel, contactez-nous. Le partage fait vivre la qualité du contenu.
+
+## Conclusion
+
+Ce site est conçu comme une ressource pratique et pédagogique : un lieu pour s’informer, apprendre et appliquer l’IT aujourd’hui. Nous combinons actualités synthétiques, tutoriels opérationnels et cours sur les fondamentaux pour aider chacun à progresser, quel que soit son niveau.
