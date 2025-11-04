@@ -1,0 +1,598 @@
+---
+id: gitlab-pages
+title: "GitLab Pages — Hébergement de sites web statiques"
+sidebar_label: "GitLab Pages"
+sidebar_position: 4
+tags: [gitlab, pages, static-site, deployment]
+description: "Guide complet sur GitLab Pages : création, configuration et déploiement de sites web statiques directement depuis vos dépôts GitLab."
+last_updated: 
+  date: "2025-11-04"
+  author: "lacrif"
+image: "@site/static/img/gitlab.svg"
+---
+
+import Gitlab from '@site/static/img/gitlab.svg';
+
+# <Gitlab width={42} height={42}/> {frontMatter.title}
+
+<p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+GitLab Pages est un service d'hébergement de sites web statiques intégré à GitLab. Il permet de publier des sites web directement depuis un dépôt GitLab via les pipelines CI/CD. Pages est gratuit sur GitLab.com et disponible pour toutes les offres, y compris self-hosted.
+
+## Qu'est-ce que GitLab Pages ?
+
+GitLab Pages héberge des sites statiques (HTML, CSS, JavaScript) générés à partir de votre code source. Les cas d'usage typiques incluent :
+
+- **Documentation de projet** : héberger la documentation technique (Sphinx, MkDocs, Docusaurus, etc.)
+- **Sites vitrines** : présenter votre entreprise, produit ou portfolio
+- **Blogs** : publier un blog avec des générateurs comme Hugo, Jekyll ou Gatsby
+- **Applications statiques** : déployer des SPA (Single Page Applications) en React, Vue, Angular
+- **Démos et prototypes** : partager des démos interactives de vos projets
+
+### Avantages
+
+- **Gratuit** : inclus dans tous les plans GitLab (y compris Free)
+- **HTTPS automatique** : certificats SSL/TLS fournis par défaut
+- **Intégration CI/CD** : déploiement automatique via les pipelines
+- **Domaines personnalisés** : utilisez votre propre nom de domaine
+- **Contrôle d'accès** : sites publics ou privés (selon le plan)
+- **Versioning** : chaque déploiement est lié à un commit Git
+
+## Démarrage rapide
+
+### Structure de base
+
+Pour publier un site avec GitLab Pages, vous devez :
+
+1. Créer un fichier `.gitlab-ci.yml` à la racine de votre projet
+2. Définir un job nommé `pages` qui génère les fichiers dans le dossier `public/`
+3. Définir les artefacts pour persister le dossier `public/`
+
+### Exemple minimal (HTML statique)
+
+Créez un fichier `.gitlab-ci.yml` :
+
+```yaml
+pages:
+  stage: deploy
+  script:
+    - mkdir -p public
+    - cp index.html public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+Créez un fichier `index.html` :
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mon site GitLab Pages</title>
+</head>
+<body>
+  <h1>Bienvenue sur mon site !</h1>
+  <p>Hébergé gratuitement avec GitLab Pages.</p>
+</body>
+</html>
+```
+
+Poussez ces fichiers sur la branche `main`. Le site sera accessible à :
+- `https://<username>.gitlab.io/<project-name>` (GitLab.com)
+- `https://<pages-domain>/<namespace>/<project-name>` (self-hosted)
+
+## Configuration avancée
+
+### Générateurs de sites statiques
+
+GitLab Pages fonctionne avec tous les générateurs de sites statiques. Voici des exemples pour les plus populaires.
+
+#### Hugo (Go)
+
+```yaml
+image: registry.gitlab.com/pages/hugo:latest
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+pages:
+  stage: deploy
+  script:
+    - hugo
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+#### Jekyll (Ruby)
+
+```yaml
+image: ruby:2.7
+
+pages:
+  stage: deploy
+  before_script:
+    - gem install bundler
+    - bundle install
+  script:
+    - bundle exec jekyll build -d public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+#### Gatsby (React)
+
+```yaml
+image: node:18
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+    - mv public public-gatsby  # Gatsby génère dans public/ par défaut
+    - mv public-gatsby public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+#### Docusaurus (React)
+
+```yaml
+image: node:18
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+    - mv build public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+#### VuePress (Vue)
+
+```yaml
+image: node:18
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+    - mv docs/.vuepress/dist public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+#### MkDocs (Python)
+
+```yaml
+image: python:3.9
+
+pages:
+  stage: deploy
+  before_script:
+    - pip install mkdocs mkdocs-material
+  script:
+    - mkdocs build
+    - mv site public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+### Sous-dossiers et chemins personnalisés
+
+Si votre projet utilise un sous-chemin (ex: `https://user.gitlab.io/project/`), configurez le base path :
+
+#### Hugo
+```yaml
+# config.toml
+baseURL = "https://user.gitlab.io/project/"
+```
+
+#### Gatsby
+```javascript
+// gatsby-config.js
+module.exports = {
+  pathPrefix: "/project",
+}
+```
+
+#### Docusaurus
+```javascript
+// docusaurus.config.js
+module.exports = {
+  baseUrl: '/project/',
+  url: 'https://user.gitlab.io',
+}
+```
+
+## Domaines personnalisés
+
+### Ajouter un domaine personnalisé
+
+1. Allez dans **Settings → Pages** de votre projet
+2. Cliquez sur **New Domain**
+3. Entrez votre domaine (ex: `www.example.com` ou `example.com`)
+4. Configurez les enregistrements DNS
+
+### Configuration DNS
+
+#### Pour un sous-domaine (ex: www.example.com)
+
+Créez un enregistrement CNAME :
+
+```
+www.example.com  →  CNAME  →  <username>.gitlab.io
+```
+
+#### Pour un domaine racine (ex: example.com)
+
+Créez un enregistrement A pointant vers l'IP de GitLab Pages :
+
+```
+example.com  →  A  →  35.185.44.232  (GitLab.com)
+```
+
+Pour self-hosted, utilisez l'IP de votre serveur GitLab Pages.
+
+Ajoutez aussi un enregistrement CNAME pour www :
+
+```
+www.example.com  →  CNAME  →  example.com
+```
+
+### Certificat SSL personnalisé
+
+GitLab Pages génère automatiquement des certificats Let's Encrypt pour les domaines personnalisés. Vous pouvez aussi fournir votre propre certificat :
+
+1. Settings → Pages → Votre domaine → Edit
+2. Collez votre certificat et clé privée
+3. Sauvegardez
+
+## Contrôle d'accès
+
+### Sites publics vs privés
+
+Par défaut, les sites GitLab Pages sont publics (accessibles sans authentification).
+
+Pour un site **privé** (nécessite connexion GitLab) :
+
+1. Settings → General → Visibility → Pages → **Only Project Members**
+2. Les visiteurs devront se connecter à GitLab et avoir accès au projet
+
+Cette fonctionnalité est disponible selon votre plan GitLab (consultez la documentation pour les détails).
+
+### Access tokens
+
+Pour les API ou l'automatisation, utilisez des tokens :
+
+```bash
+curl -H "PRIVATE-TOKEN: <your_token>" https://example.gitlab.io/project/
+```
+
+## Déploiement multi-environnements
+
+Vous pouvez déployer différentes branches sur des URLs distinctes.
+
+### Environnements de review
+
+```yaml
+pages:
+  stage: deploy
+  script:
+    - npm run build
+    - mv build public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+
+pages:preview:
+  stage: deploy
+  script:
+    - npm run build
+    - mv build public
+  artifacts:
+    paths:
+      - public
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://$CI_PROJECT_NAMESPACE.gitlab.io/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html
+  except:
+    - main
+```
+
+## Redirection et routage
+
+### Redirections HTTP
+
+Créez un fichier `public/_redirects` (Netlify-style) :
+
+```
+/old-page  /new-page  301
+/blog/*    /news/:splat  301
+```
+
+GitLab Pages supporte les redirections via ce fichier (vérifiez la version de votre instance).
+
+### SPA (Single Page Application)
+
+Pour les applications React/Vue/Angular avec client-side routing, créez un fichier `public/_redirects` :
+
+```
+/*  /index.html  200
+```
+
+Ou configurez directement dans votre générateur :
+
+#### Create React App
+```yaml
+pages:
+  script:
+    - npm run build
+    - cp build/index.html build/404.html  # Fallback pour 404
+    - mv build public
+```
+
+## Configuration GitLab Pages (Self-Hosted)
+
+Si vous gérez une instance GitLab self-hosted, configurez GitLab Pages dans `/etc/gitlab/gitlab.rb` :
+
+```ruby
+pages_external_url "http://pages.example.com"
+
+gitlab_pages['enable'] = true
+gitlab_pages['inplace_chroot'] = true
+
+# HTTPS
+pages_external_url "https://pages.example.com"
+pages_nginx['redirect_http_to_https'] = true
+
+# Domaines personnalisés
+gitlab_pages['access_control'] = true
+```
+
+Puis reconfigurer :
+
+```bash
+sudo gitlab-ctl reconfigure
+sudo gitlab-ctl restart
+```
+
+## Performance et optimisation
+
+### Cache des dépendances
+
+Accélérez les builds en cachant les dépendances :
+
+```yaml
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .npm/
+    - .cache/
+
+pages:
+  script:
+    - npm ci --cache .npm --prefer-offline
+    - npm run build
+    - mv build public
+```
+
+### Compression et optimisation
+
+```yaml
+pages:
+  script:
+    - npm run build
+    - npm run optimize  # Minification, compression
+    - mv build public
+```
+
+### CDN et caching headers
+
+Pour améliorer les performances, configurez un CDN (Cloudflare, CloudFront) devant GitLab Pages.
+
+## Débogage et monitoring
+
+### Vérifier le déploiement
+
+1. Allez dans **CI/CD → Pipelines**
+2. Cliquez sur le pipeline de la branche `main`
+3. Vérifiez que le job `pages` a réussi (badge vert)
+4. Allez dans **Settings → Pages** pour voir l'URL de votre site
+
+### Logs de build
+
+Si le déploiement échoue :
+
+1. Cliquez sur le job `pages` dans le pipeline
+2. Consultez les logs pour identifier l'erreur
+3. Vérifiez que le dossier `public/` existe et contient des fichiers
+
+### Problèmes courants
+
+#### Le site affiche une erreur 404
+
+- Vérifiez que le fichier `index.html` existe dans `public/`
+- Assurez-vous que le job `pages` s'est exécuté sur la branche `main`
+- Attendez quelques minutes pour la propagation
+
+#### Ressources (CSS/JS) non chargées
+
+- Vérifiez les chemins : utilisez des chemins relatifs ou configurez le `baseURL`
+- Pour les SPA : vérifiez la configuration du base path
+
+#### Le pipeline réussit mais le site n'est pas accessible
+
+- Vérifiez Settings → Pages pour voir l'URL exacte
+- Si vous utilisez un domaine personnalisé, vérifiez la configuration DNS
+- Attendez la propagation DNS (peut prendre jusqu'à 24h)
+
+## Limites et quotas
+
+Sur GitLab.com (version SaaS) :
+
+- **Taille maximale** : 1 GB par site (artefact)
+- **Bande passante** : illimitée sur le plan Free (soumis à fair use)
+- **Nombre de sites** : illimité (un par projet)
+
+Pour les instances self-hosted, ces limites sont configurables par l'administrateur.
+
+## Exemples de projets
+
+### Portfolio personnel
+
+```yaml
+# .gitlab-ci.yml
+image: node:18
+
+pages:
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+    - mv dist public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+### Documentation technique avec Sphinx
+
+```yaml
+image: python:3.9
+
+pages:
+  stage: deploy
+  before_script:
+    - pip install sphinx sphinx_rtd_theme
+  script:
+    - sphinx-build -b html docs/ public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+### Blog avec Hugo
+
+```yaml
+image: registry.gitlab.com/pages/hugo:latest
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+pages:
+  stage: deploy
+  script:
+    - hugo --minify
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+## Bonnes pratiques
+
+### Sécurité
+
+- **Désactivez Pages** pour les projets privés si le contenu est sensible
+- Utilisez les **Access Controls** pour les sites privés
+- Ne committez jamais de secrets ou tokens dans le code source
+- Activez HTTPS (automatique avec Let's Encrypt)
+
+### Performance
+
+- Minimisez et compressez les assets (CSS, JS, images)
+- Utilisez un CDN pour la distribution globale
+- Activez le cache navigateur avec des headers appropriés
+- Optimisez les images (WebP, lazy loading)
+
+### Maintenance
+
+- Automatisez les déploiements via les pipelines
+- Testez les builds localement avant de pousser
+- Documentez la configuration dans le README
+- Utilisez des branches de review pour tester les changements
+
+### Workflow recommandé
+
+```yaml
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+    - npm install
+    - npm run test
+    - npm run lint
+  except:
+    - main
+
+pages:
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+    - mv build public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+```
+
+## Ressources
+
+- Documentation officielle : https://docs.gitlab.com/ee/user/project/pages/
+- Exemples de projets : https://gitlab.com/pages
+- Templates GitLab Pages : https://gitlab.com/pages/hugo, /jekyll, /gatsby, etc.
+- Forum communautaire : https://forum.gitlab.com/c/pages
+
+## Conclusion
+
+GitLab Pages est un outil puissant pour héberger des sites statiques avec un workflow DevOps moderne. Que vous publiiez de la documentation, un blog ou une application web, l'intégration native avec GitLab CI/CD rend le déploiement simple, automatique et gratuit. Combinez Pages avec un générateur de site statique moderne et un domaine personnalisé pour créer une présence web professionnelle directement depuis votre code source.
