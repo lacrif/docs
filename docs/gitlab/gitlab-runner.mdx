@@ -1,0 +1,372 @@
+---
+id: gitlab-runner
+title: "GitLab Runner — Exécution des pipelines CI/CD"
+sidebar_label: "GitLab Runner"
+sidebar_position: 3
+tags: [gitlab, ci/cd, runner]
+description: "Guide complet sur GitLab Runner : installation, configuration et gestion des runners pour exécuter vos pipelines CI/CD."
+last_updated: 
+  date: "2025-11-04"
+  author: "lacrif"
+image: "@site/static/img/gitlab.svg"
+---
+
+import Gitlab from '@site/static/img/gitlab.svg';
+
+# <Gitlab width={42} height={42}/> {frontMatter.title}
+
+<p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+GitLab Runner est l'agent d'exécution qui traite les jobs définis dans vos pipelines CI/CD. Il peut être déployé sur différentes plateformes (Linux, macOS, Windows, Docker, Kubernetes) et permet d'exécuter des tâches de build, test et déploiement de manière automatisée et parallèle.
+
+## Qu'est-ce qu'un GitLab Runner ?
+
+Un runner est un processus qui exécute les jobs de vos pipelines CI/CD. Lorsqu'un pipeline est déclenché (commit, merge request, etc.), GitLab assigne les jobs aux runners disponibles qui vont les exécuter selon la configuration définie dans le fichier `.gitlab-ci.yml`.
+
+### Types de runners
+
+GitLab propose trois types de runners selon leur portée :
+
+- **Shared runners** : partagés entre tous les projets d'une instance GitLab (GitLab.com en propose gratuitement).
+- **Group runners** : disponibles pour tous les projets d'un groupe spécifique.
+- **Project runners** : dédiés à un projet particulier, offrant un contrôle total sur la configuration.
+
+### Executors disponibles
+
+Un executor définit comment les jobs sont exécutés. GitLab Runner supporte plusieurs executors :
+
+- **Shell** : exécute les commandes directement dans le shell du système hôte.
+- **Docker** : crée un conteneur Docker pour chaque job (isolation et reproductibilité).
+- **Docker Machine** : auto-scaling avec création/suppression automatique de machines virtuelles.
+- **Kubernetes** : exécute les jobs dans des pods Kubernetes (scalabilité et orchestration).
+- **SSH** : se connecte à une machine distante via SSH pour exécuter les jobs.
+- **VirtualBox / Parallels** : utilise des machines virtuelles pour l'exécution.
+
+L'executor Docker est le plus populaire car il offre isolation, reproductibilité et facilité de configuration.
+
+## Installation de GitLab Runner
+
+### Installation sur Linux
+
+Pour installer GitLab Runner sur une distribution Linux Debian/Ubuntu :
+
+```bash
+# Télécharger le dépôt officiel GitLab
+curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh" | sudo bash
+
+# Installer GitLab Runner
+sudo apt-get install gitlab-runner
+
+# Vérifier l'installation
+gitlab-runner --version
+```
+
+Pour Red Hat/CentOS :
+
+```bash
+# Ajouter le dépôt
+curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh" | sudo bash
+
+# Installer
+sudo yum install gitlab-runner
+
+# Vérifier
+gitlab-runner --version
+```
+
+### Installation sur macOS
+
+```bash
+# Télécharger le binaire
+sudo curl --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-darwin-amd64"
+
+# Rendre exécutable
+sudo chmod +x /usr/local/bin/gitlab-runner
+
+# Installer en tant que service
+cd ~
+gitlab-runner install
+gitlab-runner start
+```
+
+### Installation sur Windows
+
+1. Téléchargez le binaire depuis le site officiel GitLab
+2. Placez-le dans un répertoire (ex: `C:\GitLab-Runner`)
+3. Ouvrez PowerShell en administrateur :
+
+```powershell
+# Installer le service
+cd C:\GitLab-Runner
+.\gitlab-runner.exe install
+.\gitlab-runner.exe start
+```
+
+### Installation avec Docker
+
+```bash
+docker run -d --name gitlab-runner --restart always \
+  -v /srv/gitlab-runner/config:/etc/gitlab-runner \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  gitlab/gitlab-runner:latest
+```
+
+## Configuration et enregistrement d'un runner
+
+Après l'installation, vous devez enregistrer le runner auprès de votre instance GitLab.
+
+### Obtenir le token d'enregistrement
+
+1. **Pour un project runner** : 
+   - Allez dans votre projet → Settings → CI/CD → Runners
+   - Cliquez sur "New project runner"
+   - Copiez le registration token
+
+2. **Pour un group runner** :
+   - Allez dans votre groupe → Settings → CI/CD → Runners
+   - Cliquez sur "New group runner"
+   - Copiez le registration token
+
+### Enregistrer le runner
+
+```bash
+sudo gitlab-runner register
+```
+
+Le processus interactif vous demandera :
+
+1. **GitLab instance URL** : `https://gitlab.com` (ou votre instance self-hosted)
+2. **Registration token** : le token obtenu précédemment
+3. **Description** : un nom descriptif pour le runner
+4. **Tags** : tags optionnels pour cibler des jobs spécifiques (ex: `docker`, `linux`, `production`)
+5. **Executor** : choisir l'executor (recommandé: `docker`)
+6. **Image Docker par défaut** : si Docker executor (ex: `alpine:latest`)
+
+Exemple de configuration non-interactive :
+
+```bash
+sudo gitlab-runner register \
+  --non-interactive \
+  --url "https://gitlab.com/" \
+  --registration-token "YOUR_TOKEN" \
+  --executor "docker" \
+  --docker-image alpine:latest \
+  --description "docker-runner" \
+  --tag-list "docker,linux" \
+  --run-untagged="true" \
+  --locked="false"
+```
+
+## Gestion des runners
+
+### Commandes de base
+
+```bash
+# Lister les runners enregistrés
+sudo gitlab-runner list
+
+# Vérifier le statut
+sudo gitlab-runner status
+
+# Démarrer/arrêter le runner
+sudo gitlab-runner start
+sudo gitlab-runner stop
+sudo gitlab-runner restart
+
+# Désinscrire un runner
+sudo gitlab-runner unregister --name "runner-name"
+
+# Désinscrire tous les runners
+sudo gitlab-runner unregister --all-runners
+```
+
+### Fichier de configuration
+
+Le fichier de configuration se trouve généralement à `/etc/gitlab-runner/config.toml`. Il contient tous les paramètres des runners enregistrés :
+
+```toml
+concurrent = 4  # Nombre de jobs exécutés simultanément
+
+[[runners]]
+  name = "docker-runner"
+  url = "https://gitlab.com/"
+  token = "YOUR_RUNNER_TOKEN"
+  executor = "docker"
+  [runners.docker]
+    image = "alpine:latest"
+    privileged = false
+    volumes = ["/cache"]
+  [runners.cache]
+    Type = "s3"
+```
+
+Paramètres importants :
+
+- **concurrent** : nombre maximum de jobs parallèles
+- **check_interval** : fréquence de vérification de nouveaux jobs (secondes)
+- **privileged** : active le mode privilégié Docker (nécessaire pour Docker-in-Docker)
+
+## Configuration avancée
+
+### Cache et artefacts
+
+Pour accélérer les builds, configurez un cache partagé avec S3, GCS ou Azure :
+
+```toml
+[[runners]]
+  [runners.cache]
+    Type = "s3"
+    Path = "cache"
+    Shared = true
+    [runners.cache.s3]
+      ServerAddress = "s3.amazonaws.com"
+      BucketName = "gitlab-runner-cache"
+      BucketLocation = "eu-west-1"
+```
+
+### Auto-scaling avec Docker Machine
+
+Pour un auto-scaling automatique :
+
+```toml
+[[runners]]
+  executor = "docker+machine"
+  [runners.machine]
+    IdleCount = 1
+    IdleTime = 600
+    MaxBuilds = 10
+    MachineDriver = "amazonec2"
+    MachineName = "gitlab-runner-%s"
+    MachineOptions = [
+      "amazonec2-access-key=...",
+      "amazonec2-secret-key=...",
+      "amazonec2-region=eu-west-1",
+      "amazonec2-instance-type=t2.micro"
+    ]
+```
+
+### Exécution sur Kubernetes
+
+Pour déployer GitLab Runner sur Kubernetes avec Helm :
+
+```bash
+# Ajouter le dépôt Helm
+helm repo add gitlab https://charts.gitlab.io
+
+# Installer le runner
+helm install --namespace gitlab gitlab-runner \
+  --set gitlabUrl=https://gitlab.com/ \
+  --set runnerRegistrationToken=YOUR_TOKEN \
+  gitlab/gitlab-runner
+```
+
+## Utilisation dans .gitlab-ci.yml
+
+### Tags et sélection de runners
+
+Utilisez les tags pour cibler des runners spécifiques :
+
+```yaml
+build-job:
+  tags:
+    - docker
+    - linux
+  script:
+    - echo "Build sur runner Docker Linux"
+
+deploy-job:
+  tags:
+    - production
+    - kubernetes
+  script:
+    - echo "Déploiement sur Kubernetes"
+```
+
+### Variables d'environnement prédéfinies
+
+GitLab Runner fournit de nombreuses variables :
+
+- `CI_RUNNER_ID` : ID unique du runner
+- `CI_RUNNER_DESCRIPTION` : description du runner
+- `CI_RUNNER_TAGS` : liste des tags
+- `CI_COMMIT_SHA` : SHA du commit
+- `CI_PROJECT_NAME` : nom du projet
+
+## Sécurité et bonnes pratiques
+
+### Isolation des runners
+
+- Utilisez des **project runners** pour les projets sensibles
+- Activez le mode privilégié Docker uniquement si nécessaire
+- Isolez les runners de production des runners de développement
+
+### Gestion des secrets
+
+- Ne stockez jamais de secrets dans `.gitlab-ci.yml`
+- Utilisez les **CI/CD variables** dans Settings → CI/CD → Variables
+- Activez le masquage pour les variables sensibles
+- Utilisez **protected variables** pour les branches protégées
+
+### Maintenance
+
+- Mettez à jour régulièrement GitLab Runner
+- Surveillez les logs : `/var/log/gitlab-runner/` ou `journalctl -u gitlab-runner`
+- Nettoyez régulièrement les images et conteneurs Docker inutilisés
+- Configurez la rotation des logs
+
+### Monitoring
+
+```bash
+# Vérifier les logs en temps réel
+sudo gitlab-runner --debug run
+
+# Logs système
+sudo journalctl -u gitlab-runner -f
+
+# Logs Docker (si runner en conteneur)
+docker logs -f gitlab-runner
+```
+
+## Dépannage
+
+### Le runner n'apparaît pas en ligne
+
+1. Vérifiez que le service est démarré : `sudo gitlab-runner status`
+2. Vérifiez les logs : `sudo journalctl -u gitlab-runner`
+3. Testez la connectivité vers GitLab : `curl https://gitlab.com`
+4. Vérifiez le token dans `/etc/gitlab-runner/config.toml`
+
+### Jobs en attente (pending)
+
+- Vérifiez que les tags du job correspondent aux tags du runner
+- Augmentez la valeur `concurrent` dans config.toml
+- Vérifiez que le runner accepte les jobs non taggés (`run_untagged = true`)
+
+### Problèmes de cache
+
+- Vérifiez la configuration du cache dans config.toml
+- Testez la connectivité au stockage S3/GCS
+- Nettoyez manuellement le cache si nécessaire
+
+### Erreurs Docker
+
+```bash
+# Permission denied sur /var/run/docker.sock
+sudo usermod -aG docker gitlab-runner
+sudo service gitlab-runner restart
+
+# Espace disque insuffisant
+docker system prune -a
+```
+
+## Ressources
+
+- Documentation officielle : https://docs.gitlab.com/runner/
+- Installation : https://docs.gitlab.com/runner/install/
+- Configuration : https://docs.gitlab.com/runner/configuration/
+- Executors : https://docs.gitlab.com/runner/executors/
+- Forum GitLab : https://forum.gitlab.com/
+
+## Conclusion
+
+GitLab Runner est un composant essentiel de l'écosystème CI/CD GitLab. Que vous utilisiez les shared runners de GitLab.com ou déployiez vos propres runners self-hosted, une configuration appropriée garantit des pipelines rapides, fiables et sécurisés. Choisissez l'executor adapté à vos besoins (Docker pour la reproductibilité, Kubernetes pour le scaling) et suivez les bonnes pratiques de sécurité pour protéger votre infrastructure.
