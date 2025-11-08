@@ -13,7 +13,24 @@ const config = {
   title: 'Lacrif',
   tagline: 'IT is cool',
   favicon: 'img/favicon.ico',
-
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        href: "img/favicon.ico",
+        media: "(prefers-color-scheme: light)",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        href: "img/favicon_dark.ico",
+        media: "(prefers-color-scheme: dark)",
+      },
+    },
+  ],
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
@@ -36,9 +53,14 @@ const config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'fr',
+    locales: ['fr'],
   },
+
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [
@@ -74,11 +96,23 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'refs',
+        path: 'refs',
+        routeBasePath: 'refs',
+        sidebarPath: require.resolve('./sidebars.refs.js'),
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/logo.png',
       colorMode: {
         respectPrefersColorScheme: true,
       },
@@ -86,7 +120,8 @@ const config = {
         title: 'Lacrif',
         logo: {
           alt: 'Lacrif Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
+          srcDark: 'img/logo_dark.png',
         },
         items: [
           {
@@ -94,6 +129,12 @@ const config = {
             sidebarId: 'docsSidebar',
             position: 'left',
             label: 'Docs',
+          },
+          {
+            to: '/refs',
+            label: 'Référentiels',
+            position: 'left',
+            activeBasePath: 'refs',
           },
           //{to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -112,6 +153,15 @@ const config = {
               {
                 label: 'Docs',
                 to: '/docs/',
+              },
+            ],
+          }, 
+          {
+            title: 'Reférentiels',
+            items: [
+              {
+                label: 'Reférentiels',
+                to: '/refs/',
               },
             ],
           },
@@ -135,10 +185,6 @@ const config = {
           {
             title: 'More',
             items: [
-              // {
-              //   label: 'Blog',
-              //   to: '/blog',
-              // },
               {
                 label: 'GitHub',
                 href: 'https://github.com/lacrif/docs',
