@@ -8,146 +8,127 @@ description: "Introduction à Cobit"
 last_updated: 
   date: "2025-11-08"
   author: "lacrif"
+image: "@site/static/img/gitlab.svg"
 ---
 
-# cobit 5
+<p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+CobIT vise à rassembler des bonnes pratiques puisées dans les référentiels qui ont fait leurs preuves. On retrouvera donc, entre autres, des éléments de CMMI et ITIL
+
+CobIT 5 est un produit de l’ISACA
+
+CobIT établie clairement le partage des responsabilités entre la gouvernance et le management.
+
+La gouvernance est l’organe qui défini les objectifs économiques, donne les directives et détermine les politiques. Le management est à son service pour piloter l’activité de mise en oeuvre. Elle aura ses propres objectifs qui devront être cohérents avec la stratégie de l’entreprise.
+
+## Les principes
+
+Le COBIT 5 repose sur deux ensembles de principes :
+
+- des principes décrivant les exigences fondamentales d'un système de gouvernance pour l'information et les technologies d'entreprise (entreprise I&T) 
+- des principes pour créer un cadre de gouvernance pouvant servir à construire un système de gouvernance pour l'entreprise.
+
+### Principes pour un système de gouvernance
+
+Voyons maintenant les 6 principes :
+
+```mermaid
+mindmap
+    root((Les Principes de Cobit))
+        id1[Répondre au besoins]
+        id2[Prendre en compte l'entreprise de A à Z]
+        id3[Appliquer une méthode globale]
+        id4[Permettre une approche holistique]
+        id5[Distinguer la gouvernance du management]
+```
+
+### Principes pour un cadre de gouvernance
+Nous avons également 3 principes pour le cadre de gouvernance :
+
+1. Modèle conceptuel : Identifier les composants clés et les relations entre eux.
+2. Ouvert et flexible : Ouvert et flexible, pour permettre l'ajout de nouveau contenu et la capacité de traiter de nouveaux problèmes de manière flexible.
+3. Aligné sur les principales normes : Aligner sur les normes, cadres et réglementations majeurs pertinents.
+
+## Les domaines
+
+Les domaines sont des regroupements de processus
+Cobit regroupe les processus en fonction du type d’activité concernée
 
 ## 🧭 Processus
 
-### 1. EDM - Évaluer, Diriger, Surveiller (Gouvernance)
+CobIT 5 est doté d’un modèle de processus basé sur l’ISO 15504 et sa norme d’évaluation de processus. Les objectifs de ce modèle sont l’évaluation de processus et l’accompagnement de l’amélioration de processus, c’est-à-dire qu’il fournit un moyen de mesurer la performance de n’importe quel processus de gouvernance (basé sur EDM) et de management (basé sur PBRM) et permet d’identifier les domaines d’amélioration.
 
-#### EDM01 – Assurer la gouvernance de l’IT
+### Evaluer, diriger et monitorer
 
-#### EDM02 – Assurer la création de valeur
+Le domaine EDM regroupe les processus de gouvernance qui permettent de prendre en compte les besoins métiers et les retours du management.
 
-#### EDM03 – Assurer la gestion des risques
+Les processus proposés sont :
 
-#### EDM04 – Assurer la gestion des ressources
+- EDM01 - Garantir la définition et le maintien du cadre de la gouvernance
+- EDM02 - Garantir la production de bénéfices
+- EDM03 - Garantir l’optimisation des risques
+- EDM04 - Garantir l’optimisation des ressources
+- EDM05 - Garantir la transparence pour les parties prenantes
 
-#### EDM05 – Assurer la transparence et la conformité
+### Aligner, planifier et organiser
 
-### 2. APO - Aligner, Planifier, Organiser
+Le domaine APO regroupe les processus concernant la planification. Il est lié à la prise en compte des directives de la gouvernance.
 
-#### APO01 – Gérer le cadre de gouvernance
+Les processus proposés sont :
 
-#### APO02 – Gérer la stratégie
+- APO01 - Gérer le cadre informatique
+- APO02 - Gérer la stratégie
+- APO03 - Gérer l’architecture de l’entreprise
+- APO04 - Gérer l’innovation
+- APO05 - Gérer le portefeuille de services
+- APO06 - Gérer les budgets et les coûts
+- APO07 - Gérer les ressources humaines
+- APO08 - Gérer les partenariats
+- APO09 - Gérer les accords de service
+- APO10 - Gérer les fournisseurs
+- APO11 - Gérer la qualité
+- APO12 - Gérer les risques
+- APO13 - Gérer la sécurité
 
-Objectifs et périmètre
+### Bâtir, acquérir et implémenter
 
-Obj. 01 : Réagir aux exigences métier en accord avec la stratégie métier.
+Le domaine BAI regroupe les processus concernant la mise en oeuvre. Il est lié à la réalisation de ce qui a été planifié.
 
-Obj. 02 : Réagir aux exigences de la gouvernance en accord avec les orientations du CA.
+Les processus proposés sont :
 
-```mermaid
-flowchart LR
+- BAI01 - Gérer les programmes et les projets
+- BAI02 - Gérer la définition des exigences
+- BAI03 - Gérer l’identification des solutions et leur production
+- BAI04 - Gérer la disponibilité et la capacité
+- BAI05 - Gérer l’aptitude organisationnelle au changement
+- BAI06 - Gérer les changements
+- BAI07 - Gérer la conduite du changement
+- BAI08 - Gérer les connaissances
+- BAI09 - Gérer les actifs
+- BAI10 - Gérer la configuration
 
-    subgraph DEFINIR
-        direction LR
-        b1(ANALYSER : L ENVIRONNEMENT DE LA DSI)
-        b2(LIER : LES OBJECTIFS METIER ET LES OBJECTIFS INFORMATIQUES)
-        b3(IDENTIFIER LES DEPENDANCES ENTRE L INFORMATIQUE
-    ET LA STRATEGIE DE L ENTREPRISE)
-        b4(DEFINIR LE PLAN INFORMATIQUE STRATEGIQUE)
-        b5(DEFINIR LES PLANS INFORMATIQUES TACTIQUES)
-    end
+### Délivrer services et support
 
-    subgraph COMMUNIQUER
-        direction LR
-        a1(FAIRE VALIDER LES PLANS ET LES PORTEFEUILLES)
-    end
+Le domaine DSS regroupe les processus concernant la maintenance. Il est lié au maintien en conditions opérationnelles de ce qui a été mis en oeuvre.
 
-    subgraph METTRE_EN_OEUVRE
-        direction LR
-        c1(GERER LES PLANS TACTIQUES)
-        c2(GERER LES PORTEFEUILLES DE PROJETS ET DE SERVICES)
-        c3(GERER LE PORTEFEUILLE D’INVESTISSEMENTS INFORMATIQUES)
-    end
+Les processus proposés sont :
 
-    subgraph CONTROLER
-        direction LR
-        d1(SUR VEILLER LES RESULTATS ATTENDUS DES PROGRAMMES)
-        d2(ALERTER EN CAS D ECART)
-    end
-    
-    subgraph AMELIORER
-        e1(AGIR SUR LES ECARTS DE FAÇON APPROPRIEE)
-    end
+- DSS01 - Gérer la production
+- DSS01 - Gérer les incidents et les demandes
+- DSS03 - Gérer les problèmes
+- DSS04 - Gérer la continuité
+- DSS05 - Gérer les services de sécurité
+- DSS06 - Gérer le contrôle des processus métiers
 
-    DEFINIR --> METTRE_EN_OEUVRE
-    METTRE_EN_OEUVRE --> CONTROLER
-    CONTROLER --> AMELIORER
-    AMELIORER --> DEFINIR
-    b4 -- "Plan Stratétique" --> COMMUNIQUER
-    b5 -- "Plan Tactique" --> COMMUNIQUER
-    c2 & c3 -- Portefeuilles de projets, de services et d’investissements --> COMMUNIQUER
+### Monitorer, évaluer et analyser
 
-```
+Le domaine MEA regroupe les processus concernant le pilotage de l’activité. Il est lié au suivi et à l’évaluation.
 
-#### APO03 – Gérer l’architecture d’entreprise
+Les processus proposés sont :
 
-#### APO04 – Gérer l’innovation
-
-#### APO05 – Gérer le portefeuille
-
-#### APO06 – Gérer le budget et les coûts
-
-#### APO07 – Gérer les ressources humaines
-
-#### APO08 – Gérer les relations
-
-#### APO09 – Gérer les accords de service
-
-#### APO10 – Gérer les fournisseurs
-
-#### APO11 – Gérer la qualité
-
-#### APO12 – Gérer les risques
-
-#### APO13 – Gérer la sécurité
-
-### 3. BAI – Construire, Acquérir, Implémenter
-
-#### BAI01 – Gérer les programmes et projets
-
-#### BAI02 – Gérer la définition des exigences
-
-#### BAI03 – Gérer les solutions et leur identification
-
-#### BAI04 – Gérer la disponibilité et la capacité
-
-#### BAI05 – Gérer les changements organisationnels
-
-#### BAI06 – Gérer les changements
-
-#### BAI07 – Gérer l’acceptation et la transition
-
-#### BAI08 – Gérer les connaissances
-
-#### BAI09 – Gérer les actifs
-
-#### BAI10 – Gérer la configuration
-
-### 4. DSS – Livrer, Servir, Supporter
-
-#### DSS01 – Gérer les opérations
-
-#### DSS02 – Gérer les demandes de service et les incidents
-
-#### DSS03 – Gérer les problèmes
-
-#### DSS04 – Gérer la continuité
-
-#### DSS05 – Gérer la sécurité des services
-
-#### DSS06 – Gérer les contrôles
-
-### 5. MEA – Surveiller, Évaluer, Auditer
-
-#### MEA01 – Surveiller, évaluer et apprécier la performance
-
-#### MEA02 – Surveiller, évaluer et apprécier le contrôle interne
-
-#### MEA03 – Surveiller, évaluer et apprécier la conformité
+- MEA01 - Piloter et évaluer la performance et la conformité
+- MEA02 - Piloter et évaluer le système de contrôle interne
+- MEA03 - Piloter et évaluer la conformité aux exigences externes
 
 ## 📋 Grille d’évaluation COBIT 5
 
