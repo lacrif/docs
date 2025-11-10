@@ -201,13 +201,9 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
       algolia: {
-        // The application ID provided by Algolia
         appId: 'BS1W7OTVXQ',
-
-        // Public API key: it is safe to commit it
         apiKey: '937796c3a1c55d038fe4f8d4308cd0f6',
-
-        indexName: 'docs'
+        indexName: 'docsthot'
       },
     }),
 };
