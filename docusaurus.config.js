@@ -60,7 +60,9 @@ const config = {
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: [
+    '@docusaurus/theme-mermaid'
+  ],
 
   presets: [
     [
@@ -197,6 +199,11 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+      },
+      algolia: {
+        appId: 'BS1W7OTVXQ',
+        apiKey: '9fd51a39-06f5-4e0f-9120-a708c614f158',
+        indexName: 'docs'
       },
     }),
 };
