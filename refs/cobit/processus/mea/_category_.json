@@ -1,0 +1,8 @@
+{
+  "label": "MEA",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "MEA - Monitorer, évaluer et analyser"
+  }
+}
