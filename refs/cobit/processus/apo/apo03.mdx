@@ -1,13 +1,200 @@
 ---
 id: cobit-apo03
-title: "APO03 - "
+title: "APO03 - Gérer l'architecture de l'entreprise"
 sidebar_label: "APO03"
 sidebar_position: 3
 tags: [cobit]
-description: "APO03"
+description: "APO03 - Gérer l'architecture de l'entreprise"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Mettre en place une architecture commune constituée de processus métiers, d'information, de données, de couches applicatives, de mise à disposition de technologies pour réaliser concrètement et efficacement les stratégies de l'entreprise et de l'informatique au travers de modèles et de pratiques essentiels décrivant les architectures existentes et cibles. 
+Définir les exigences en terme de taxinomie, normes, directives, procédures, modèles documentaires et outils. 
+Fournir un scéma de relation entre ces composants. Améliorer l'ajustement, accroitre l'agilité, améliorer la qualité de l'information et lancer des initiatives permettant des économies potentielles telles que la réutilisation d'ensembles de composants.
+
+## But
+
+Représenter les différentes entités constitutives de l'architecture de l’entreprise ainsi que leurs interrelations, les principes directeurs de leur conception, de leur évolution au fil du temps, et de ce qui permet une réponse standard, adaptée et efficace des objectifs opérationnels et stratégiques.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Aligner la stratégie informatique sur la stratégie économique |<ul><li>Pourcentage d'exigences et d'objectifs stratégiques de l'entreprise supportés par les objectifs informatiques stratégiques</li><li>Niveau de satisfaction des parties prenantes concernant le périmètre du portefeuille de programmes et de services planifé</li><li>Pourcentage de motivations de gain informatique en phase avec les motivations de gain métier</li></ul>|
+| Garantir l'agilité informatique |<ul><li>Niveau de satisfaction des directeurs métier concernant la réactivité du SI face aux nouvelles exigences</li><li>Nombre de processus métier critiques supportés par une infrastructure et des applications à jour</li><li>Temps moyen pour traduire les objectifs informatiques stratégiques en initiatives acceptées et approuvées</li></ul>|
+| Optimiser les actifs informatiques, les ressources et les capacités |<ul><li>Fréquence des évaluations des optimisations de la capacité en terme de maturité et de coût</li><li>Tendance des résultats d'évaluation</li><li>Niveaux de satisfaction des directions métiers et informatiques en ce qui concerne les coûts et capacités informatiques</li></ul>|
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| L’architecture et les normes soutiennent efficacement l’entreprise. |<ul><li>Nombre dérogations aux normes et références d’architecture demandées et accordées</li><li>Niveau de rétour des clients en matière d’architecture</li><li>Gains réalisés par les projets pouvant être attribués à l'implication de l’architecture (ex. réduction des coûts par la réutilisation)</li></ul>|
+| Un portefeuille de services d’architecture d’entreprise soutient le changement agile de l’entreprise. |<ul><li>Pourcentage de projets utilisant les services d’architecture de l’entreprise</li><li>Niveau de rétour des clients en matière d’architecture</li></ul>|
+| Un domaine approprié et à jour ou des architectures fédérées existent afin de fournir de l’information fiable sur l’architecture. |<ul><li>Date de dernière mise à jour du domaine ou des architectures fédérées</li><li>Nombre d’écarts identifiés dans l'architecture de l’entreprise, de l’information, des données, des applications et des technologiques</li><li>Niveau de rétour des clients en matière d’architecture concernant la qualité de l’information fournie</li></ul>|
+| Un cadre d’architecture d’entreprise et une méthodologie communes ainsi qu’un registre d’architecture intégré sont utilisés pour permettre la réutilisation efficace dans l’entreprise. |<ul><li>Pourcentage de projets qui tirent profit de la structure et de la méthodologie pour réutiliser des composants</li><li>Nombre de personnes formées à l'ensemble des méthodologies outils</li><li>Nombre dérogations aux normes et références d’architecture demandées et accordées</li></ul>|
+
+## Pratiques
+
+### APO03.01 - Développer la vision de l’architecture d’entreprise
+
+La vision de l’architecture fournit une première description globale des architectures de référence et cibles, couvrant le métier, l’information, les données, les applications et les domaines technologiques. 
+La vision de l’architecture fournit au sponsor un outil essentiel pour promouvoir les bénéfices de la capacité proposée aux parties prenantes au sein de l’entreprise. La vision de l’architecture décrit comment la nouvelle capacité permettra d’atteindre les buts de l’entreprise et les objectifs stratégiques, tout en répondant aux préoccupations des parties prenantes lors de leur mise en oeuvre.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Principes directeurs de l’architecture d’entreprise | EDM04.01 | Feuille de route stratégique | APO02.05 |
+| Définition du périmètre de l’architecture | APO02.05 | Principes d'architecture | BAI02.01 / BAI03.01 / BAI03.02 |
+| Stratégie d’entreprise | Hors CobIT | Business Case de conception de l’architecture et évaluation de valeur | APO02.05 / APO05.03 |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Identifier les parties prenantes clés et leurs préoccupations/objectifs, et définir les exigences d’entreprise clés à prendre en compte ainsi que les architectures à envisager pour satisfaire les différentes exigences des parties prenantes. |
+| 2 | Identifier les objectifs et les moteurs stratégiques de l’entreprise, et définir les contraintes qui doivent être considérées, incluant celles qui sont à l’échelle de l’entreprise et celles qui sont particulières au projet (durée, planning ressources, etc.). |
+| 3 | Aligner les objectifs de l’architecture avec les priorités du programme stratégique. |
+| 4 | Comprendre les capacités souhaitées par les métiers, puis identifier les options qui permettront d'atteindre ces capacités. |
+| 5 | Evaluer la préparation de l’entreprise face au changement. |
+| 6 | Définir ce qui fait partie et ce qui ne fait pas partie du périmètre de l’architecture de référence et de l’architecture cible, sachant que les besoins de la référence et les besoins de la cible n’ont pas à être décrits au même niveau de détail. |
+| 7 | Confirmer et élaborer des principes d’architecture, incluant les principes d’entreprise. Assurer que les définitions existantes sont à jour et clarifier les zones d’ambiguïté. |
+| 8 | Comprendre les buts et les objectifs stratégiques actuels de l’entreprise et utiliser le processus de planification stratégique afin d’assurer que les opportunités d’architecture d’entreprise liées à l'informatique soient exploitées dans l’élaboration du plan stratégique. |
+| 9 | En fonction des préoccupations des parties prenantes, des exigences en matière de capacités métiers, du périmètre, des contraintes et des principes, créer une vision de l’architecture : une vue de haut niveau de l’architecture de référence et de l’architecture cible. |
+| 10 | Définir les propositions concernant la valeur de l’architecture cible, les objectifs et les indicateurs. |
+| 11 | Identifier le risque associé au changement dans l’entreprise associé à la vision d’architecture, évaluer le niveau de risque initial (par exemple : critique, majeur ou mineur) et développer une stratégie d’atténuation pour chaque risque significatif. |
+| 12 | Développer un Business Case pour la conception d’architecture d’entreprise, élaborer des plans et des descriptions des travaux d’architecture, et obtenir l’approbation pour démarrer un projet aligné et intégré à la stratégie d’entreprise. |
+
+### APO03.02 - Définir l’architecture de référence
+
+L’architecture de référence décrit les architectures actuelles et cibles pour les métiers l’information, les données, les applications et les domaines technologiques.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Définition de la structure et des fonctions organisationnelles | APO01.01 | Descriptions de domaines de référence et définition de l'architecture | APO13.02 / BAI02.01 / BAI03.01 / BAI03.02 |
+| Évaluation des options en matière d’organisation informatique | APO01.05 | Modèle d’architecture de processus | APO01.01 |
+| Positionnement opérationnel défini de la fonction informatique | APO01.05 | Modèle d'architecture de l'information | APO02.05 / BAI02.01 / BAI03.02 / DSS05.03 / DSS05.04 / DSS05.06 |
+| Procédures de gestion de l’intégrité des données | APO01.06 |  |  |
+| Stratégie d’entreprise | Hors CobIT |  |  |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 2 | Sélectionner des conceptions de référence à partir du référentiel d’architecture qui permettront à l’architecte de démontrer comment les préoccupations des parties prenantes sont prises en compte dans l’architecture. |
+| 3 | Pour chaque conception, sélectionner les modèles nécessaires pour soutenir la conception particulière, en utilisant une sélection d’outils ou de méthodes ainsi que le niveau approprié de décomposition. |
+| 4 | Élaborer des descriptions du domaine d’architecture de référence en utilisant le périmètre et le niveau de détail nécessaires pour soutenir l’architecture cible et, dans la mesure du possible, en identifiant les éléments constitutifs d’architecture pertinents du référentiel d’architecture. |
+| 5 | Maintenir un modèle d’architecture de processus dans le cadre des descriptions des domaines de référence et cibles. Standardiser les descriptions et la documentation des processus. Définir les rôles et les responsabilités des décideurs en matière de processus, des propriétaire de processus, des utilisateurs de processus, de l’équipe de processus et des autres parties prenantes de processus qui doivent être impliquées. |
+| 6 | Maintenir un modèle d’architecture de l’information dans le cadre des descriptions de domaine de référence et cibles, en conformité avec la stratégie d’entreprise afin de permettre une utilisation optimale de l’information pour la prise de décision. Maintenir un dictionnaire de données d’entreprise qui favorise une compréhension commune et un système de classification qui comprend des détails sur la propriété des données, la définition des niveaux de sécurité appropriés, ainsi que la conservation des données et les exigences en matière de destruction. |
+| 7 | Vérifier que les modèles d’architecture sont cohérents et précis à l’interne, et effectuer une analyse de l’écart entre la référence et la cible. Prioriser les écarts et définir quels composants nouveaux ou modifiés doivent être développés pour l’architecture cible. Résoudre les problèmes potentiels comme les incompatibilités, les incohérences ou les conflits au sein de l’architecture envisagée. |
+| 8 | Procéder à un examen formel par les parties prenantes en vérifiant l’architecture proposée par rapport à la motivation initiale pour le projet d’architecture et à l’énoncé des travaux d’architecture. |
+| 9 | Finaliser les architectures de domaine d’entreprise, d’information, de données, d’applications et de technologie, et créer un document de définition de l’architecture. |
+
+### APO03.03 - Sélectionner les opportunités et les solutions
+
+Rationaliser les écarts entre les architectures de référence et cibles, tant du point de vue métier que technique, et les regrouper logiquement en ensembles de tâches projet. 
+Intégrer le projet aux programmes connexes d’investissement en iformatique afin de s’assurer que les initiatives architecturales sont alignées et afin d’activer ces initiatives dans le cadre de l’évolution globale de l’entreprise. 
+Faire en sorte qu’il s’agisse d’un effort de collaboration avec les parties prenantes métiers et informatiques clés afin d’évaluer la préparation de l’entreprise au changement, et identifier les opportunités, les solutions et les contraintes de mise en oeuvre.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Changements proposés à l’architecture d’entreprise | AP02.03 | Architectures de transition | APO02.05 |
+| Stratégie d’entreprise | Hors CobIT | Mise en oeuvre globale et stratégie de migration | APO02.05 |
+| Motivations de l’enterprise | Hors CobIT |  |  |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Déterminer et confirmer les attributs de changement clés de l’entreprise, incluant la culture de l’entreprise et l’impact qu’elle aura sur la mise en oeuvre de l’architecture d’entreprise, ainsi que les capacités de transition de l’entreprise. |
+| 2 | Identifier les motivations de l’entreprise qui limiteraient la séquence de mise en oeuvre, incluant une revue des business plans et des plans stratégiques de l’entreprise et des entités métiers, en considérant la maturité de l’architecture d’entreprise actuelle. |
+| 3 | Examiner et consolider les résultats de l’analyse des écarts entre les architectures de référence et cibles, et évaluer leurs implications en matière de solutions potentielles et d’opportunités, les interdépendances et l’alignement avec les programmes informatiques actuels. |
+| 4 | Evaluer les besoins, les écarts, les solutions et les facteurs permettant d’identifier un ensemble minimal d’exigences fonctionnelles dont l’intégration dans les ensembles de tâches conduirait à une mise en oeuvre plus efficace et efficiente de l’architecture cible. |
+| 5 | Concilier les exigences consolidées avec les solutions potentielles. |
+| 6 | Préciser les dépendances initiales en s’assurant que toutes les contraintes qui pèsent sur la mise en oeuvre et les plans de migration soient identifiées, et les consolider dans un rapport d’analyse des dépendances. |
+| 7 | Confirmer la préparation de l’entreprise face au changement ainsi que le risque qui y est associé. |
+| 8 | Formuler une stratégie globale pour la mise en oeuvre et la migration, qui guidera la mise en oeuvre de l’architecture cible et structurera les architectures de transition en conformité avec les objectifs stratégiques d’entreprise et les échéances. |
+| 9 | Identifier et regrouper les ensembles de tâches importantes dans un ensemble cohérent de programmes et de projets, en respectant l’orientation et l’approche de l’entreprise en matière de mise en oeuvre stratégique. |
+| 10 | Développer, le cas échéant, une série d’architectures de transition lorsque l’ampleur du changement requis pour réaliser l’architecture cible nécessite une approche progressive. |
+
+### APO03.04 - Définir la mise en oeuvre de l’architecture
+
+Créer un plan viable de mise en oeuvre et de migration en conformité avec le programme et les portefeuilles de projets. 
+Assurer que le plan est étroitement coordonné afin de garantir que la valeur est livrée et que les ressources requises sont disponibles pour achever les travaux nécessaires.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Exigences de ressources | BAI01.02 |
+|  |  | Description de la phase d'implémentation | BAI01.01 / BAI01.02 |
+|  |  | Exigences de gouvernance de l'architecture | BAI01.01 |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Déterminer ce que le plan de mise en oeuvre et de migration doit inclure dans le cadre de la planification du programme et du projet, et s’assurer qu’il est conforme aux exigences des décideurs concernés. |
+| 2 | Confirmer les incréments et les phases d’architecture de transition, et mettre à jour le document de définition de l’architecture. |
+| 3 | Définir les exigences de gouvernance en matière de mise en oeuvre de l’architecture. |
+
+### APO03.05 - Fournir les services d’architecture de l’entreprise
+
+La fourniture de services d’architecture d’entreprise au sein de l’entreprise comprend l’orientation et le suivi des projets de mise en oeuvre, les moyens de formalisation du fonctionnement par des contrats d’architecture ainsi que la mesure et la communication de la valeur ajoutée de l’architecture et la surveillance de la conformité.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Orientation en matière de développement de solutions | BAI02.01 / BAI02.02 / BAI03.02 |
+
+**Activités**
+
+| N° | Description |
+| --- | --- |
+| 1 | Confirmer le périmètre et les priorités, et donner des orientations pour le développement et le déploiement de solutions. |
+| 2 | Gérer le portefeuille des services d’architecture d’entreprise pour assurer l’alignement avec les objectifs stratégiques et le développement de solutions. |
+| 3 | Gérer les exigences en matière d’architecture d’entreprise en s’appuyant sur les principes architecturaux, les modèles et les éléments constitutifs. |
+| 4 | Identifier et aligner les priorités d’architecture d’entreprise sur les éléments générateurs de valeur. Définir et collecter les indicateurs de valeur et de plus, mesurer et communiquer la valeur de l’architecture d’entreprise. |
+| 5 | Mettre en place un forum technologique pour fournir des orientations architecturales, des conseils sur les projets et sur le choix de la technologie. Mesurer la conformité avec ces normes et orientations, incluant la conformité aux exigences externes et leur pertinence pour les métiers. |
+
+## RACI
+
+|  | APO03.01 | APO03.02 | APO03.03 | APO03.04 | APO03.05 |
+| --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |
+| Président Directeur Général | A | C | A | A | A |
+| Directeur Financier | C | C | C | C | C |
+| Directeur Opérationnel | C | C | C | R | R |
+| Directeurs Métiers | R | R | R | C | C |
+| Propriétaires de Processus Métiers | C | C | C | C | C |
+| Comité Stratégie | R | R | R | R | R |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |
+| Coordinateur Projets (PMO) |  |  |  |  |  |
+| gestion de la valeur |  |  |  |  |  |
+| Risk Manager (RM) |  |  |  |  |  |
+| Directeur de la Sécurité des SI (DSSI) | C | C | C | C | C |
+| Urbanisme | R | A | R | R | R |
+| Comité risque de l'entreprise | C | C | C | C | C |
+| Direction des Ressources Humaines (DRH) | C | C | C | C | C |
+| Conformité | C | C | C | C | C |
+| Audit | C | C | C | C | C |
+| Directeur du SI (DSI) | R | R | R | R | R |
+| Responsable Architecture | R | R | R | R | R |
+| Responsable développement | C | C | C | C | C |
+| Responsable production informatique | C | C | C | C | C |
+| Responsable de l'administration informatique | C | C | C | C | C |
+| Gestionnaire de service |  |  |  |  |  |
+| Gestionnaire de la sécurité de l'information | C | C | C | C | C |
+| Gestionnaire de la continuité |  |  |  |  |  |
+| Directeur de la propriété |  |  |  |  |  |
