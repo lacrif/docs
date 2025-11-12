@@ -1,13 +1,182 @@
 ---
 id: cobit-apo09
-title: "APO09 - "
+title: "APO09 - Gérer les accords de service"
 sidebar_label: "APO09"
 sidebar_position: 9
 tags: [cobit]
-description: "APO09"
+description: "APO09 - Gérer les accords de service"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Aligner les services informatiques disponibles ainsi que les niveaux de service avec les besoins et attentes de l'entreprise. Ceci inclut l'identification, la spécification, la conception, la publication, l'accord et le pilotage des services informatiques, des niveaux de services et des indicateurs de performance
+
+## But
+
+S’assurer que les services et les niveaux de services répondent aux besoins actuels et futurs de l’entreprise
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Garantir la fourniture de services informatiques répondant aux exigences économiques | <ul><li>Pourcentage de parties prenantes métiers satisfaites de la conformité des services informatiques rendus avec les niveaux de services convenus par les accords de service</li><li>Pourcentage d'utilisateurs satisfaits par la qualité des services informatiques rendus</li></ul>|
+| Garantir la disponibilité des informations utiles aux prises de décision | <ul><li>Niveau de satisfaction des utilisateurs métiers concernant la qualité et la disponibilité des informations de gestion</li><li>Nombre d'incidents sur les processus métiers causés par la non disponibilité de l'information</li><li>Ratio et étendue des mauvaises décisions métiers pour lesquelles l'information erronée ou non disponible est un facteur clé</li></ul>|
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| L’entreprise peut utiliser efficacement les services informatiques tel que cela est défini dans un catalogue. | <ul><li>Nombre de processus métiers avec des accords de services non définies</li></ul>|
+| Les accords de services reflètent les besoins de l’entreprise et les capacités informatiques. | <ul><li>Pourcentage des services informatiques actifs couverts par des accords de services</li><li>Pourcentage des clients satisfaits du respect des niveaux de services figurants dans les accords de service</li></ul>|
+| Les services informatiques fonctionnent tel que stipulé dans les accords de services. | <ul><li>Nombre et gravité des défaillances de service</li><li>Pourcentage des services dont les niveaux de services sont surveillés</li><li>Pourcentage des objectifs de services atteints</li></ul>|
+
+## Pratiques
+
+### APO09.01 - Identifier les services informatiques
+
+Analyser les exigences métiers et la façon dont les services informatiques et les niveaux de services servent les processus métiers. Discuter et s’entendre avec les entités métiers quant aux services potentiels et aux niveaux de services, et les comparer avec le portefeuille de services actuel afin d’identifier les services à mettre en oeuvre ou à modifier ainsi que les options de niveaux de services.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Lacunes identifiées dansles services informatiques pour les entités métiers | APO02.02 / APO05.03 / APO08.02 |
+|  |  | Définitions des services standards | APO05.01 |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Évaluer les services informatiques et les niveaux de services actuels afin d’identifier les écarts entre les services existants et les activités des entités métiers qu’ils soutiennent. Identifier les points d'amélioration sur les services existants et les options de niveaux de services. |
+| 2 | Analyser, étudier et estimer les demandes pour le futur et confirmer la capacité des services soutenus par l'informatique existante. |
+| 3 | Analyser les activités des processus métiers afin d’identifier le besoin en nouveaux services informatiques ou en évolution. |
+| 4 | Comparer les exigences identifiées avec les composants des services existants dans le portefeuille. Si possible, faire une offre groupée de composants des services existants (services informatiques, options de niveaux de services et ensemble de services) dans de nouveaux ensembles de services afin d’atteindre les exigences métiers. |
+| 5 | Si possible, faire correspondre les demandes aux pakages de services, et créer des services standardisés afin de favoriser une efficacité d’ensemble. |
+| 6 | Comparer régulièrement le portefeuille de services informatiques avec la gestion de portefeuille et la gestion des relations métiers afin d’identifier les services désuets. S’entendre sur le retrait et proposer des changements. |
+
+### APO09.02 - Cataloguer les services informatiques
+
+Définir et maintenir un ou plusieurs catalogues de services en fonction des types de destinatires. Publier et maintenir des services informatiques actifs dans les catalogues de services
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Plan de gestion des ressources approuvé | EDM04.01 | Catalogues de services | APO08.05 |
+| Communication des stratégies d’approvisionnement | EDM04.02 |  |  |
+| Mises à jour des portefeuilles de programmes, services et actifs | APO05.05 |  |  |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Publier dans des catalogues les services actifs pertinents soutenus par l'informatiques, les ensembles de services et les options de niveaux de services en provenance du portefeuille. |
+| 2 | S’assurer continuellement que les composants de services du portefeuille et les catalogues de services connexes sont complétés et à jour. |
+| 3 | Informer lea gestionnaire des relations métiers de toute mise à jour des catalogues de services. |
+
+### APO09.03 - Définir et rédiger les accords de services
+
+Définir et rédiger des accords de services basées sur les options des catalogues de services. Inclure les accords opérationnelles internes.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Exigences clients pour la gestion de la qualité | APO11.03 | SLAs | APO05.03 / APO08.04 / DSS01.02 / DSS02.01 / DSS02.02 / DSS04.01 / DSS05.02 / DSS05.03 |
+|  |  | OLAs | DSS01.02 / DSS02.07 / DSS04.03 / DSS05.03 |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Analyser les exigences d'initiation ou de modification d'accords de services provenant du gestionnaire des relations métiers dans le but d’assurer que les exigences peuvent être satisfaites. Considérer des aspects comme les heures de services, la disponibilité, la performance, la capacité, la sécurité, la continuité, les questions de conformité et de réglementation, la convivialité et les contraintes des demandes. |
+| 2 | Rédiger une ébauche d'accord de services clients basées sur les services, les pahages de services et les options de niveaux de services dans les catalogues de services pertinents. |
+| 3 | Déterminer, convenir et documenter les accords opérationnelles internes nécessaires permettant les accords de services clients. |
+| 4 | Contacter le gestionnaire des fournisseurs afin de s’assurer que les contrats commerciaux appropriés avec les fournisseurs externes permettent les accords de services clients. |
+| 5 | Finaliser les accords de services à la clientèle avec la gestion des relations métiers. |
+
+### APO09.04 - Piloter et rapporter les niveaux de services
+
+Piloter les niveaux de services, rapporter les réalisations et identifier les tendances. Fournir l’information de gestion appropriée afin d’aider la gestion de la performance
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Actions correctives destinées à traiter les écarts en matière de gestion des ressources | EDM04.03 | Rapports de performance sur les niveaux de services | APO08.02 / MEA01.03 |
+| Rapports sur la performance du portefeuille d'investissement | APO05.04 | Plans d’action d’amélioration et mesures correctives | APO02.02 / APO08.02 |
+| Actions correctives pour améliorer les gains | APO05.06 |  |  |
+| Résultats de gains et communication associée | APO05.06 |  |  |
+| Analyses de la satisfaction | APO08.05 |  |  |
+| Résultat de revues et d'audits qualité | APO11.04 |  |  |
+| Résultats de pilotage de la qualité de livraison des solutions et services | APO11.05 |  |  |
+| Causes premières des défauts de qualité | APO11.05 |  |  |
+| Incidents qualifiés et priorisés et demandes de service | DSS02.02 |  |  |
+| Demandes de service et incidents clos | DSS02.06 |  |  |
+| Rapport de tendances et statuts des incidents | DSS02.07 |  |  |
+| Rapport de tendances et statuts des traitements de demandes | DSS02.07 |  |  |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Établir et maintenir des métriques pour piloter et recueillir des données sur les niveaux de services. |
+| 2 | Évaluer la performance et rapporter de façon régulière et formelle la performance des accords de services, incluant les écarts avec les valeurs convenues. Distribuer ce rapport à la gestion des relations métiers. |
+| 3 | Accomplir des revues régulières afin de prévoir et d’identifier les tendances en matière de performance des niveaux de services. |
+| 4 | Fournir des informations de gestion appropriées afin d’aider la gestion de la performance. |
+| 5 | S’entendre sur les plans d’action et les mesures correctives pour toute question de performance ou de tendance négative. |
+
+### APO09.05 - Revoir les accords de services et les contrats
+
+Effectuer des revues périodiques des accords de services, et les ajuster si besoin.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Retour d'expérience sur l’allocation et l’efficacité des ressources et des capacités | EDM04.03 | Accords de niveau de service mis à jour | interne |
+| Résultats de revue de la qualité de service et retour clients | APO11.03 |  |  |
+| Résultat de revues et d'audits qualité | APO11.04 |  |  |
+| Evaluations sur la base des accords de niveau de service | BAI04.01 |  |  |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Revoir régulièrement les accords de services en fonction des conditions convenues afin d’assurer qu’ils sont efficaces et à jour, et que les changements en ce qui a trait aux exigences, aux services informatiques, aux ensembles de services ou aux options de niveaux de services sont pris en considération, le cas échéant. |
+
+## RACI
+
+|  | APO09.01 | APO09.02 | APO09.03 | APO09.04 | APO09.05 |
+| --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |
+| Président Directeur Général | C |  |  | I |  |
+| Directeur Financier |  |  |  |  |  |
+| Directeur Opérationnel | R |  |  | I |  |
+| Directeurs Métiers | R | I | R | I | A |
+| Propriétaires de Processus Métiers | R | I | C | R | C |
+| Comité Stratégie | C |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |
+| Coordinateur Projets (PMO) | I | I | C |  | C |
+| gestion de la valeur |  |  |  |  |  |
+| Risk Manager (RM) |  |  | C | C | C |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  |  |  |
+| Urbanisme |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |  |
+| Conformité | I | I | C |  | C |
+| Audit | I | I | C |  | C |
+| Directeur du SI (DSI) | R | R | R | I | R |
+| Responsable Architecture | I | I |  |  |  |
+| Responsable développement | C | C | C | I | C |
+| Responsable production informatique | C | C | R | I | R |
+| Responsable de l'administration informatique | C | C | R | I | R |
+| Gestionnaire de service | A | A | A | A | R |
+| Gestionnaire de la sécurité de l'information | I | I | C |  | C |
+| Gestionnaire de la continuité | I | I | C |  | C |
+| Directeur de la propriété |  |  |  |  | I |

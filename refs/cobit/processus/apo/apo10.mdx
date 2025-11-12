@@ -1,13 +1,180 @@
 ---
 id: cobit-apo010
-title: "APO010 - "
+title: "APO010 - Gérer les fournisseurs"
 sidebar_label: "APO010"
 sidebar_position: 10
 tags: [cobit]
-description: "APO010"
+description: "APO010 - Gérer les fournisseurs"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Gérer les services informatiques fournis par tous types de fournisseurs pour répondre aux exigences de l'entreprise. Ceci inclut la sélection des fournisseurs, la gestion de la relation, des contrats, la revue et le pilotage des performances des fournisseurs en terme d'efficacité et de conformité.
+
+## But
+
+Minimiser les risques liés aux fournisseurs non productifs et assurer des prix concurrentiels
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Gérer les risques financiers relatifs à l'informatique | <ul><li>Pourcentage de processus métiers, services informatiques et programmes métiers permis grâce à l'informatique qui sont couverts par l'évaluation des risques</li><li>Nombre d'incidents significatifs relatifs à l'informatique qui n'étaient pas identifiés dans l'évaluation des risques</li><li>Pourcentage d'évaluation de risques entreprise qui incluent les risques informatiques</li><li>Fréquence de mise à jour du recensement des risques</li><li>Nombre d'interruptions de service métiers dues à un incident informatique</li></ul>|
+| Garantir la fourniture de services informatiques répondant aux exigences économiques | <ul><li>Pourcentage de parties prenantes métiers satisfaites de la conformité des services informatiques rendus avec les niveaux de services convenus par les accords de service</li><li>Pourcentage d'utilisateurs satisfaits par la qualité des services informatiques rendus</li></ul>|
+| Garantir l'agilité informatique | <ul><li>Niveau de satisfaction des directeurs métier concernant la réactivité du SI face aux nouvelles exigences</li><li>Nombre de processus métier critiques supportés par une infrastructure et des applications à jour</li><li>Temps moyen pour traduire les objectifs informatiques stratégiques en initiatives acceptées et approuvées</li></ul>|
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Les fournisseurs travaillent dans le respect des accords. | <ul><li>Pourcentage des fournisseurs qui répondent aux exigences convenues</li><li>Nombre de défaillances de services informatiques causés par des fournisseurs</li></ul>|
+| Les risques liés aux fournisseurs sont évalués et traités de façon adéquate. | <ul><li>Nombre d’événements liés aux risques qui mènent à des incidents de services</li><li>Fréquence des séances de gestion des risques avec les fournisseurs</li><li>Pourcentage d’incidents liés aux risques qui sont réglés de façon acceptable (au niveau du délai et des coûts)</li></ul>|
+| Les relations avec les fournisseurs se déroulent de façon efficace. | <ul><li>Nombre de réunions portant sur la revue des fournisseurs</li><li>Nombre de différends formels avec les fournisseurs</li><li>Pourcentage de différends résolus à l’amiable dans un délai raisonnable</li></ul>|
+
+## Pratiques
+
+### APO10.01 - Identifier et évaluer les contrats et les relations avec les fournisseurs
+
+Identifier les fournisseurs et les contrats associés puis les classer selon le type, l’importance et la criticité. Établir des critères d’évaluation des contrats et des fournisseurs, puis évaluer l'ensemble du portefeuille de contrats et de fournisseurs existants et de rechange
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Contrats avec des fournisseurs | Hors CobIT | Révisions potentielles des contrats de fournisseurs | interne |
+|  |  | Catalogue des fournisseurs | BAI02.02 |
+|  |  | Critères d’évaluation et importance des fournisseurs | interne |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Etablir et maintenir des critères liés au type, à l’importance et à la criticité des fournisseurs et des contrats avec les fournisseurs, et se concentrer sur les fournisseurs importants et de premier choix. |
+| 2 | Etablir et maintenir des critères d’évaluation des contrats et des fournisseurs afin de permettre une revue globale et une comparaison en matière de performance des fournisseurs, et ce, de façon uniforme. |
+| 3 | Identifier, consigner et classer par catégorie les fournisseurs et les contrats existants selon les critères définis afin de maintenir un registre détaillé des fournisseurs de premier choix, lequel doit être géré avec soin. |
+| 4 | Evaluer et comparer de façon périodique la performance des fournisseurs existants et de rechange afin d’identifier les opportunités ou un besoin urgent de reconsidérer des contrats de fournisseurs actuels. |
+
+### APO10.02 - Sélectionner les fournisseurs
+
+Sélectionner des fournisseurs selon une pratique juste et formelle afin d’assurer la meilleure solution viable, basée sur les exigences spécifiées. Les exigences doivent être optimisées sur la base des informations fournies par les fournisseurs potentiels
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Plan global d'acquisition / développement | BAI02.02 | Demandes d’informations et de propositions aux fournisseurs | BAI02.01 / BAI02.02 |
+|  |  | Évaluations des demandes d’informations et des demandes de propositions aux fournisseurs | BAI02.02 |
+|  |  | Décisions résulatnt des évaluations des fournisseurs | EDM04.01 / BAI02.02 |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Examiner toutes les demandes d’informations et les demandes de propositions aux fournisseurs afin d’assurer ce qui suit :|n|>Définir clairement les exigences|n|>Inclure une procédure pour clarifier les exigences|n|>Allouer aux fournisseurs suffisamment de temps pour rédiger leur proposition|n|>Définir clairement des critères d’attribution et un processus décisionnel |
+| 2 | Evaluer les demandes d’informations et les demandes de propositions aux fournisseurs en fonction du processus ou des critères d’évaluation approuvés, et conserver des preuves écrites des évaluations.|nVérifier les références des fournisseurs candidats. |
+| 3 | Sélectionner le fournisseur qui correspond le mieux à l'appel d'offre. Documenter et communiquer la décision, puis signer le contrat. |
+| 4 | Dans le cas précis d’une acquisition de logiciel, inclure et préciser les droits et obligations de l’ensemble des parties dans les conditions du contrat. Ces droits et obligations peuvent inclure la propriété et la concession de licence de propriété intellectuelle, la maintenance, les garanties, les procédures d’arbitrage, les conditions de mise à niveau et le paramétrage, incluant la sécurité, la mise sous séquestre et les droits d’accès. |
+| 5 | Dans le cas de l’acquisition de ressources de développement, inclure et préciser les droits et obligations de l’ensemble des parties dans les conditions du contrat. Ces droits et obligations peuvent inclure la propriété et la concession de licence de propriété intellectuelle; l’adaptation au contexte, incluant les méthodologies de développement; les essais; les processus de gestion de la qualité, incluant les critères de performance requis; les revues de performance; la base de paiement; les garanties; les procédures d’arbitrage; la gestion des ressources humaines et la conformité aux politiques de l’entreprise. |
+| 6 | Obtenir un avis juridique sur des accords d’acquisition de développement de ressources concernant la propriété et l’octroi de licence de propriété intellectuelle. |
+| 7 | Dans le cas précis de l’acquisition d’infrastructures, d’installations et de services connexes, inclure et préciser les droits et obligations de l’ensemble des parties dans les conditions du contrat. Ces droits et obligations peuvent inclure des niveaux de services, des procédures de maintenance, des contrôles d’accès, la sécurité, la revue de la performance, la base de paiement et des procédures d’arbitrage. |
+
+### APO10.03 - Gérer les contrats et les relations avec les fournisseurs
+
+Formaliser et gérer les relations avec chaque fournisseur. Gérer, maintenir et piloter les contrats et la livraison de services. Assurer que les contrats nouveaux ou modifiés se conforment aux normes de l’entreprise et aux exigences juridiques et réglementaires. Gérer les différends contractuels
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Plan d'acquisition approuvé | BAI03.04 | Rôles et responsabilités des fournisseurs | interne |
+|  |  | Processus de communication et de revue | interne |
+|  |  | Résultats et améliorations suggérées | interne |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Affecter des responsables de relations pour l’ensemble des fournisseurs et faire en sorte qu’ils soient responsables de la qualité du ou des services fournis. |
+| 2 | Préciser une communication formelle et un processus de revue, incluant des échéances et des interactions avec les fournisseurs. |
+| 3 | Etablir, gérer, maintenir et renouveler des contrats formels avec les fournisseurs. S’assurer que les contrats respectent les normes de l’entreprise ainsi que les exigences juridiques et réglementaires. |
+| 4 | Au sein des contrats avec les principaux fournisseurs de services, inclure des dispositions d'inspection du site du fournisseur et des pratiques etcontrôles internes par le management ou des tiers indépendants. |
+| 5 | Evaluer l’efficacité des relations et identifier les améliorations nécessaires. |
+| 6 | Définir, communiquer et convenir des façons de mettre en oeuvre les améliorations requises en ce qui a trait à la relation fonrnisseur. |
+| 7 | Utiliser des procédures établies afin de gérer les différends contractuels, en faisant d’abord usage, dans la mesure du possible, de relations et de communications efficaces afin de surmonter les problèmes liés aux services. |
+| 8 | Définir et formaliser les rôles et les responsabilités pour chaque fournisseur de service. Lorsque plusieurs fournisseurs collaborent à fournir un service, considérer l’affectation à l’un des fournisseurs d’un rôle de contractant principal afin qu’il soit responsable du contrat dans son ensemble. |
+
+### APO10.04 - Gérer les risques liés aux fournisseurs
+
+Identifier et gérer les risques liés à la capacité des fournisseurs à offrir continuellement des services sûrs et efficaces
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Résultat de l’examen des évaluations des risques liés aux tiers | APO12.04 | Risques fournisseurs identifiés | APO12.01 / APO12.03 / BAI01.01 |
+|  |  | Exigences contractuelles identifiées afin de minimiser les risques | interne |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Identifier, piloter et, le cas échéant, gérer les risques liés à la capacité du fournisseur à offrir continuellement des services efficaces, efficients et sûrs. |
+| 2 | Lors de la rédaction d’un contrat, prévoir les risques de services potentiels en identifiant clairement les exigences de services, incluant les contrats de mise sous séquestre d’un logiciel, les fournisseurs de rechange ou les accords de réserve afin de réduire les conséquences de la défaillance possible d’un fournisseur; la sécurité et la protection de la propriété intellectuelle; et toute exigence réglementaire ou juridique. |
+
+### APO10.05 - Piloter la performance et la conformité des fournisseurs
+
+Examiner périodiquement la performance d’ensemble des fournisseurs, la conformité aux exigences contractuelles ainsi que le rapport qualité/prix, et régler les problèmes identifiés
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Critères du pilotage de la conformité des fournisseurs | interne |
+|  |  | Résultats de revue de pilotage de la conformité des fournisseurs | MEA01.03 |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Définir et documenter les critères de pilotage de la performance du fournisseur conformément aux accords de niveaux de services, et s'assurer que le fournisseur émet des rapports réguliers et de façon transparente sur la base des critères convenus. |
+| 2 | Piloter et revoir la livraison de services afin d’assurer que les fournisseurs offrent une qualité de service acceptable, répondent aux exigences et se conforment aux conditions contractuelles. |
+| 3 | Revoir la performance des fournisseurs et l’optimisation des ressources afin d’assurer qu’ils sont fiables et concurrentiels comparativement aux fournisseurs de rechange et aux conditions du marché. |
+| 4 | Demander, selon les besoin, des revues indépendantes sur les pratiques internes et les contrôles des fournisseurs. |
+| 5 | Consigner et évaluer les résultats de revue de façon périodique, et discuter de ces résultats avec les fournisseurs afin d’identifier les besoins et opportunités d’amélioration. |
+| 6 | Piloter et évaluer l’information externe disponible sur les fournisseurs. |
+
+## RACI
+
+|  | APO10.01 | APO10.02 | APO10.03 | APO10.04 | APO10.05 |
+| --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |
+| Président Directeur Général |  |  |  |  |  |
+| Directeur Financier | C | C |  |  | I |
+| Directeur Opérationnel |  |  |  |  |  |
+| Directeurs Métiers |  |  |  |  |  |
+| Propriétaires de Processus Métiers | C | C | I | C | C |
+| Comité Stratégie |  |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |
+| Coordinateur Projets (PMO) |  |  |  |  |  |
+| gestion de la valeur |  |  |  |  |  |
+| Risk Manager (RM) |  |  |  | R | C |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  |  |  |
+| Urbanisme |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) | C | C | C | C | C |
+| Conformité | C | C | C | C | C |
+| Audit | C | C | C | C | C |
+| Directeur du SI (DSI) | A | A | A | A | A |
+| Responsable Architecture | C | C | C | C | C |
+| Responsable développement | C | C | R | R | R |
+| Responsable production informatique | C | C | R | R | R |
+| Responsable de l'administration informatique | R | R | R |  |  |
+| Gestionnaire de service | C | C | C | C | C |
+| Gestionnaire de la sécurité de l'information | C | C | C | C | C |
+| Gestionnaire de la continuité | C | C | C | C | C |
+| Directeur de la propriété |  |  |  | C | C |

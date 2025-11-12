@@ -1,13 +1,212 @@
 ---
 id: cobit-apo012
-title: "APO012 - "
+title: "APO012 - Gérer les risques"
 sidebar_label: "APO012"
 sidebar_position: 12
 tags: [cobit]
-description: "APO012"
+description: "APO012 - Gérer les risques"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Identifier, évaluer et réduire en permanence les risques associés à l'informatique dans la limite de niveaux de tolérences fixés par la direction.
+
+## But
+
+Intégrer la gestion des risques informatiques dans la gestion globale des risques de l’entreprise, puis équilibrer les coûts et gains de cette gestion de risques.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Garantir la conformité et le soutien de l'informatique au respect de la réglementation externe à l'entreprise | <ul><li>Coût des non-conformité informatiques, incluant les compensations amiables, pénalités et pertes en terme d'image</li><li>Nombre de cas de non-conformité informatique rapportées au conseil d'administration ou ayant occasionné des critiques ou débats publiques</li><li>Nombre de cas de non-conformité en rapport avec des accords contractuels avec des fournisseurs de services informatiques</li><li>Couverture des évaluations de conformité</li></ul>|
+| Gérer les risques financiers relatifs à l'informatique | <ul><li>Pourcentage de processus métiers, services informatiques et programmes métiers permis grâce à l'informatique qui sont couverts par l'évaluation des risques</li><li>Nombre d'incidents significatifs relatifs à l'informatique qui n'étaient pas identifiés dans l'évaluation des risques</li><li>Pourcentage d'évaluation de risques entreprise qui incluent les risques informatiques</li><li>Fréquence de mise à jour du recensement des risques</li><li>Nombre d'interruptions de service métiers dues à un incident informatique</li></ul>|
+| Garantir la transparence sur les coûts, bénéfices et risques informatiques | <ul><li>Pourcentage de Business Cases comportant des coûts informatiques et des gains attendus clairement définis et approuvés</li><li>Pourcentage de services informatiques pour lesquels les coûts opérationnels et les bénéfices attendus sont clairement définis et approuvés</li><li>Niveaux de satisfaction des parties prenantes clés sur la transparence, la compréhension et la précision des informations financières informatiques</li></ul>|
+| Garantir la sécurité de l'information, de l'infrastructure et des applications | <ul><li>Nombre d'incidents de sécurité causant des pertes financières, des interruptions de services métiers ou une nuisance publique</li><li>Nombre de services informatiques pour lesquels les exigences de sécurité ne sont pas satisfaites</li><li>Délai pour accorder, modifier et retirer des privilèges d’accès compte tenu des niveaux de services convenus</li><li>Fréquence de l’évaluation de sécurité par rapport aux normes et lignes directrices en vigueur</li></ul>|
+| Assurer la réalisation de programmes produisant des bénéfices, dans les délais et les budgets et répondant aux exigences et aux normes de qualité | <ul><li>Nombre de programmes ou de projets terminés dans les délais et les budgets</li><li>Pourcentage de parties prenantes satisfaites de la qualité des projets et des programmes</li><li>Nombre de programmes nécessitant une reprise due à des défauts de qualité</li><li>Coût de maintenance des application versus coût global de l'informatique</li></ul>|
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Les risques liés à l'informatique sont définis, analysés, gérés et communiqués. | <ul><li>Niveau de visibilité et d'identification dans l’environnement actuel</li><li>Nombre d'événements perdus ayant des caractéristiques clés consignées dans les registres</li><li>Pourcentage d’audits, d’événements et de tendances consignés dans les registres</li></ul>|
+| Il existe un profil de risque et il est complet. | <ul><li>Pourcentage des processus métiers clés inclus dans le profil de risque</li><li>Complétude des attributs et valeurs dans le profil de risque</li></ul>|
+| Toutes les actions majeures de gestion des risques sont gérées et sous contrôle. | <ul><li>Pourcentage des propositions de gestion des risques rejetées en raison du manque de considération des autres risques connexes</li><li>Nombre d’incidents significatifs non détectés et non inclus dans le portefeuille de gestion des risques</li></ul>|
+| Les actions de gestion des risques sont mises en oeuvre efficacement. | <ul><li>Pourcentage de plans d’action concernant les risques informatiques réalisés comme prévu</li><li>Nombre de mesures ne réduisant pas le risque résiduel</li></ul>|
+
+## Pratiques
+
+### APO12.01 - Collecter les données
+
+Trouver et recueillir les données pertinentes pour permettre l'identification, l’analyse et la communication des risques liés à l'informatique.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Evaluation des activiés de gestion de risques | EDM03.01 | Données sur l’environnement d’exploitation relatives aux risques | interne |
+| Politique de gestion des risques | EDM03.02 | Données sur les événements de risque et les facteurs contributifs | interne |
+| Objectifs clés à piloter pour la gestion des risques | EDM03.02 | Risques émergents et facteurs d'occurrence | EDM03.01 / APO01.03 / APO02.02 |
+| Processus approuvé pour l’évaluation de la gestion des risques | EDM03.02 |  |  |
+| Ecarts et risques liés aux capacités actuelles | APO02.02 |  |  |
+| Evaluation des risques | APO02.05 |  |  |
+| Risques fournisseurs identifiés | APO10.04 |  |  |
+| Rapport de tendances et statuts des incidents | DSS02.07 |  |  |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Etablir et maintenir une méthode pour la collecte, la classification et l’analyse des données sur les risques liés à l'informatique adaptée à de multiples types d’événements, à de multiples catégories de risques liés à l'informatique et de multiples facteurs de risque. |
+| 2 | Consigner des données pertinentes sur l’environnement d’exploitation interne et externe de l’entreprise qui pourraient jouer un rôle significatif dans la gestion des risques liés à l'informatique. |
+| 3 | Etudier et analyser l’historique des données sur les risques liés à l'informatique et sur les expériences de pertes/défaillances à l’aide des données et des tendances provenant de sources externes ainsi que de l'industrie par l’intermédiaire d'enregistrements d’événements sectoriels, bases de données en accord avec l’industrie pour la divulgation d’événements. |
+| 4 | Consigner des données sur les événements liés aux risques qui ont eu ou pourraient avoir des répercussions sur la réalisation des gains/valeur grâce à l'informatique, sur la réalisation des programmes ou projets informatiques ou sur l’exploitation et la livraison de services informatiques. Consigner des données pertinentes relatives aux points d'attention, incidents, problèmes et investigations connexes. |
+| 5 | Pour les catégories d’événements similaires, organiser les données recueillies et mettre en évidence les facteurs contributifs. Déterminer les facteurs contributifs communs à plusieurs événements. |
+| 6 | Déterminer les conditions spécifiques présentes ou absentes lorsque les événements à risque ont eu lieu et la façon dont les conditions ont affecté la fréquence et l’amplitude des événements. |
+| 7 | Effectuer des analyses périodiques des événements et des facteurs de risque pour cibler des problèmes nouveaux ou émergents liés aux risques et ainsi mieux comprendre les facteurs de risque internes et externes. |
+
+### APO12.02 - Analyser les risques
+
+Consolider l'information utile aux décisions en matière de risque qui tient compte de la pertinence métier des facteurs de risque
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Analyse d’impact sur les métiers | DSS04.02 | Périmètre des efforts en matière d’analyse des risques | interne |
+| Évaluations des menaces potentielles | DSS05.01 | Scénarios de risques liés à l'informatique | interne |
+| Avis sur les menaces | Hors CobIT | Résultats d'analyse des risques | EDM03.03 / APO01.03 / APO02.02 / BAI01.10 |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Définir l’ampleur et la profondeur appropriées des efforts d’analyse des risques, en considérant tous les facteurs de risque et la criticité métier des actifs. Définir le cadre de l’analyse des risques après avoir effectué une analyse coûts-bénéfice. |
+| 2 | Bâtir et mettre régulièrement à jour les scénarios de risques, incluant des scénarios composés de types de menaces en cascade ou fortuites, et définir les attentes en matière d’activités de contrôle particulières, de capacités de détection et d’autres mesures de réponse. |
+| 3 | Estimer la fréquence et l’ampleur de la perte ou du gain associés aux scénarios de risques liés à l'informatique. Tenir compte de tous les facteurs de risque pertinents, évaluer les contrôles opérationnels connus et estimer les niveaux de risque résiduel. |
+| 4 | Comparer le risque résiduel à la tolérance acceptable et déterminer les expositions au risque pouvant nécessiter une réponse. |
+| 5 | Faire une analyse des coûts-bénéfices des options potentielles de réponse au risque telles que l’évitement, la réduction/atténuation, le transfert/partage, ainsi que l’acceptation et la mise en oeuvre/adoption. Proposer la réponse optimale au risque. |
+| 6 | Préciser les exigences globales pour les projets ou les programmes qui mettront en application les réponses au risque choisies. Identifier les besoins et les attentes pour des contrôles clés appropriés aux réponses d’atténuation des risques. |
+| 7 | Valider les résultats d’analyse de risque avant leur utilisation dans la prise de décision en confirmant que l’analyse est alignée sur les besoins de l’entreprise et en vérifiant que les estimations ont été correctement calibrées et qu’elles sont impartiales. |
+
+### APO12.03 - Maintenir un profil de risques
+
+Maintenir un inventaire des risques connus et des caractéristiques des risques (fréquence supposée, impacts possibles, réponses) ainsi que des ressources connexes, des capacités et des activités de contrôle actuelles
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| guidance concernant l'appétit pour le risque | EDM03.01 | Scénarios de risque documentés par entité métier et par fonction | interne |
+| Seuils de tolérance aux risques approuvés | EDM03.01 | Profil de risque global, incluant le statut des actions de gestion des risques | EDM03.02 / APO02.02 |
+| Risques fournisseurs identifiés | APO10.04 |  |  |
+| Évaluations des menaces potentielles | DSS05.01 |  |  |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Inventorier les processus métiers, incluant le personnel de soutien, les applications, l’infrastructure, les équipements, les enregistrements manuels critiques, les vendeurs, les fournisseurs et les impartiteurs, et documenter la dépendance aux processus de gestion des services informatiques et des ressources d’infrastructure informatiques. |
+| 2 | S'accorder sur les ressources en matière de service et d’infrastructure informatiques essentielles au maintien du fonctionnement des processus métiers. Analyser les dépendances et cibler les maillons faibles. |
+| 3 | Regrouper les scénarios de risque actuels par catégorie, par entité métier et par secteur fonctionnel. |
+| 4 | Sur une base régulière, consigner toute l’information relative au profil de risque et la consolider dans un profil global de risque. |
+| 5 | En se basant sur toutes les données de profil de risque, définir un ensemble d’indicateurs de risque permettant la reconnaissance et le pilotage rapides des risques actuels et des tendances. |
+| 6 | Consigner l’information sur les événements de risques liés à l'informatique qui se sont concrétisés, pour l’inclure dans le profil de risques de l’entreprise. |
+| 7 | Consigner l’information sur l’état du plan d’action lié aux risques, pour l’inclure dans le profil de risques liés à l'informatique de l’entreprise. |
+
+### APO12.04 - Formuler les risques
+
+Fournir l’information sur l’état actuel des expositions aux risques liés à l'informatique, et ce, en temps opportun et à toutes les parties prenantes concernées pour permettre une réponse appropriée
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Rapports d’analyse des risques et du profil de risque destinés aux parties prenantes | EDM03.03 / EDM05.02 / APO10.04 / MEA02.08 |
+|  |  | Résultat de l’examen des évaluations des risques liés aux tiers | EDM03.03 / APO10.04 / MEA02.01 |
+|  |  | Opportunités d’acceptation d’un plus grand risque | EDM03.03 |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Communiquer les résultats de l’analyse des risques à toutes les parties prenantes concernées en des termes et des formats clairs pour appuyer les décisions de l’entreprise. Dans la mesure du possible, inclure les probabilités de pertes ou de gains et leur amplitude en utilisant des niveaux de confiance qui permettent à la direction d’équilibrer le risque et le rendement. |
+| 2 | Fournir aux décideurs une description des scénarios catastrophes et les plus probables, la diligence requise en ce qui concerne les expositions ainsi que les considérations juridiques, de réputation ou de normalisation importantes. |
+| 3 | Communiquer le profil de risque actuel à toutes les parties prenantes, incluant l’efficacité du processus de gestion des risques, l’efficacité du contrôle, les écarts, les incohérences, les redondances, les mesures correctives et leurs répercussions sur le profil de risque. |
+| 4 | Passer en revue les résultats des évaluations objectives de tiers, des audits internes et des contrôles d’assurance de la qualité, et les associer au profil de risque. Examiner les écarts et les expositions décelées pour déterminer si une analyse de risque supplémentaire est requise. |
+| 5 | Dans les secteurs comportant des risques relatifs et une capacité à les assumer, identifier périodiquement les opportunités liées à l'informatique qui permettraient l’acceptation d'un risque accru ainsi qu’une croissance et une performance améliorées. |
+
+### APO12.05 - Définir la liste des actions liées à la gestion des risques
+
+Gérer la liste des opportunités de réduire les risques à un niveau acceptable
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Propositions de projets pour réduire les risques | APO02.02 / APO13.02 |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Maintenir un inventaire des activités de contrôle qui sont en place pour gérer le risque et qui permettent de prendre un risque en tenant compte de l’appétit et de la tolérance au risque. Classer les activités de contrôle et les associer aux énoncés de risques liés à l'informatique et aux regroupements de risques particuliers. |
+| 2 | Déterminer si chaque entité organisationnelle pilote les risques et accepte la responsabilité quant au fonctionnement dans le cadre de son niveau de tolérance individuel et de celui de son portefeuille. |
+| 3 | Définir un ensemble équilibré de propositions de projets visant à réduire les risques ou de projets qui permettent des opportunités stratégiques d’entreprise, compte tenu des coûts/bénéfices et de l’effet sur le profil de risque actuel et la réglementation. |
+
+### APO12.06 - Réagir face aux risques
+
+Répondre en temps opportun avec des mesures efficaces afin de limiter l’ampleur des pertes découlant d’événements liés à l'informatique.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Mesures correctives destinées à prendre en charge les écarts en matière de gestion des risques | EDM03.03 | Plans de réponse aux incidents relatifs au risque | DSS02.05 |
+|  |  | Communications de l’impact des risques | APO01.04 / APO08.04 / DSS04.02 |
+|  |  | Référentiel des causes originelles et gestion des risques associés | DSS02.03 / DSS03.01 / DSS03.02 / DSS04.02 / MEA02.04 / MEA02.07 / MEA02.08 |
+
+**Activités**
+
+|  N° | Description |
+| --- | :---------- |
+| 1 | Préparer, maintenir et tester les plans qui documentent les étapes spécifiques à suivre lorsqu’un événement à risque peut causer un important incident opérationnel ou de développement duquel découlent d’importantes répercussions sur les métiers. S’assurer que les plans comprennent des procédures d'escalade auprès de la hiérarchie au sein de l’entreprise. |
+| 2 | Classer les incidents et comparer les expositions actuelles avec les seuils de tolérance au risque. Communiquer les impacts sur les métiers aux décideurs en tant qu’élément des rapports, et mettre à jour le profil de risque. |
+| 3 | Appliquer le plan d’intervention approprié pour minimiser l’impact lorsque se matérialise le risque. |
+| 4 | Examiner les événements/pertes indésirables survenus par le passé ainsi que les opportunités manquées et en déterminer les causes premières. Communiquer la cause première, les exigences supplémentaires pour répondre au risque et les améliorations de processus envisageables aux décideurs appropriés et veiller à ce que la cause, les exigences de réponse et les améliorations de processus soient incluses dans le processus de gouvernance des risques. |
+
+## RACI
+
+|  | APO12.01 | APO12.02 | APO12.03 | APO12.04 | APO12.05 | APO12.06 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |  |
+| Président Directeur Général | I | I | I | I | I | I |
+| Directeur Financier |  |  |  |  |  |  |
+| Directeur Opérationnel |  |  |  |  |  |  |
+| Directeurs Métiers |  |  |  |  |  |  |
+| Propriétaires de Processus Métiers | R | R | R | R | R | R |
+| Comité Stratégie |  |  |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |  |
+| Coordinateur Projets (PMO) | R | C | C | C | C | R |
+| gestion de la valeur |  |  |  |  |  |  |
+| Risk Manager (RM) | R | R | A | R | A | R |
+| Directeur de la Sécurité des SI (DSSI) | R | C | C | C | C | R |
+| Urbanisme |  |  |  |  |  |  |
+| Comité risque de l'entreprise | I | I | I | I | I | I |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |  |  |
+| Conformité | C | R | R | C | C | C |
+| Audit | C | R | R | C | C | C |
+| Directeur du SI (DSI) | A | A | R | A | R | R |
+| Responsable Architecture | R | C | C | C | C | R |
+| Responsable développement | R | C | C | C | C | R |
+| Responsable production informatique | R | C | C | C | C | R |
+| Responsable de l'administration informatique | R | C | C | C | C | R |
+| Gestionnaire de service | R | C | C | C | C | R |
+| Gestionnaire de la sécurité de l'information | R | C | C | C | C | R |
+| Gestionnaire de la continuité | R | C | C | C | C | R |
+| Directeur de la propriété | R | C | C | C | C | R |
