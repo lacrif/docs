@@ -1,13 +1,163 @@
 ---
 id: cobit-bai02
-title: "BAI02"
+title: "BAI02 - Gérer la définition des exigences"
 sidebar_label: "BAI02"
 sidebar_position: 2
 tags: [cobit]
-description: "BAI02"
+description: "BAI02 - Gérer la définition des exigences"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Identifier les solutions et analyser les exigences de manière à s'assurer que les acquisitions ou créations sont en phase avec les exigences stratégiques concernant les processus métiers, les applications, l'information et les données, l'infrastructure et les services. Coordonner, avec les parties prenantes désignées pour cela, la revue des options faisables (coûts et gains associés, analyse des risques) pour valider les exigences et les solutions proposées.
+
+## But
+
+Créer des solutions optimales réalistes qui répondent aux besoins de l’entreprise tout en minimisant les risques.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Aligner la stratégie informatique sur la stratégie économique | <ul><li>Pourcentage d'exigences et d'objectifs stratégiques de l'entreprise supportés par les objectifs informatiques stratégiques</li><li>Niveau de satisfaction des parties prenantes concernant le périmètre du portefeuille de programmes et de services planifé</li><li>Pourcentage de motivations de gain informatique en phase avec les motivations de gain métier</li></ul> |
+| Garantir la fourniture de services informatiques répondant aux exigences économiques | <ul><li>Pourcentage de parties prenantes métiers satisfaites de la conformité des services informatiques rendus avec les niveaux de services convenus par les accords de service</li><li>Pourcentage d'utilisateurs satisfaits par la qualité des services informatiques rendus</li></ul> |
+| Garantir l'intégration des applications et technologies au service des processus économiques | <ul><li>Nombre d'incidents d'exploitation causé par des erreurs d'intégration technologique</li><li>Nombre de changements retardés ou repris à cause de problèmes d'intégration technologique</li><li>Nombre de programmes informatiques métiers retardés ou subissant un surcoût dû à des problèmes d'intégration technologique</li><li>Nombre d'applications ou d'infrastructures critiques isolées et non intégrées</li></ul> |
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Les exigences métier fonctionnelles et techniques reflètent les attentes et les besoins de l’entreprise. | <ul><li>Pourcentage des exigences remaniées en raison d’un mauvaise alignement avec les besoins et les attentes de l’entreprise</li><li>Niveau de satisfaction des parties prenantes en matière d'exigences</li></ul> |
+| La solution proposée répond aux exigences métier fonctionnelles, techniques et aux exigences de conformité. | <ul><li>Pourcentage des exigences satisfaites par la solution proposée</li></ul> |
+| Le risque lié aux exigences a été pris en charge dans la solution proposée. | <ul><li>Nombre d’incidents non considérés comme un risque</li><li>Pourcentage des risques pour lesquels l’atténuation s’est révélée ineffiicace</li></ul> |
+| Les exigences et solutions proposées respectent les business cases (valeur attendue et coûts probables). | <ul><li>Pourcentage des objectifs du business case atteints grâce à la solution proposée</li><li>Pourcentage des parties prenantes n’approuvant pas la solution en regard du business case</li></ul> |
+
+## Pratiques, données d'entrée et de sortie, activités
+
+### BAI02.1 - Définir et maintenir les exigences métiers fonctionnelles et techniques
+
+À la lumière du business case, déterminer, prioriser, préciser et reconnaître les exigences concernant l’information métier, le fonctionnement, la technique, le contrôle en tenant compte du périmètre / de la compréhension de toutes les initiatives nécessaires pour atteindre les résultats attendus de la solution métier soutenue par les solutions informatiques proposées
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Procédures de gestion de l’intégrité des données | APO01.06 | Recueil des exigences | BAI03.01 / BAI03.02 / BAI04.01 / BAI05.01 |
+| Guides sur la sécurité et le contrôle des données | APO01.06 | Critères d’acceptation confirmés par les parties prenantes | BAI03.01 / BAI03.02 / BAI04.03 / BAI05.01 / BAI05.02 |
+| Guides de classification des données | APO01.06 | Enregistrement des requêtes de changement aux exigences | BAI03.09 |
+| Principes d'architecture | APO03.01 |  |  |
+| Modèle d'architecture de l'information | APO03.02 |  |  |
+| Descriptions de domaines de référence et définition de l'architecture | APO03.02 |  |  |
+| Orientation en matière de développement de solutions | APO03.05 |  |  |
+| Demandes d’informations et de propositions aux fournisseurs | APO10.02 |  |  |
+| Critères d'acceptation | APO11.03 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Définir et mettre en oeuvre une procédure de définition et de modification des exigences et de gestion d'un recueil des exigences adaptées à la taille, la complexité, aux objectifs et aux risques de l’initiative que l’entreprise envisage de prendre. |
+| 2 | Exprimer les exigences métiers en terme defaçon dont l’écart entre les capacités métiers actuelles et celles souhaitées doit être traité et comment un intervenant interagira avec la solution et l’utilisera. |
+| 3 | Tout au long du projet, recueillir, analyser et confirmer que toutes les exigences des parties prenantes, incluant les critères d’acceptation pertinents, sont prises en considération, comprises, hiérarchisées et consignées d’une manière compréhensible pour les parties prenantes, les entreprises commanditaires et le personnel technique de mise en oeuvre, qui reconnaîtront que toutes les exigences peuvent changer et seront plus détaillées lors de leur mise en oeuvre. |
+| 4 | Préciser et prioriser l’information, les exigences fonctionnelles et techniques en fonction des exigences des parties prenantes confirmées. Inclure des exigences de contrôle de l’information dans les processus métiers, les processus automatisés et les environnements informatiques afin de tenir compte du risque lié à l’information et de se conformer aux lois, aux règlements et aux contrats commerciaux. |
+| 5 | Valider toutes les exigences à l’aide de méthodes telles que la revue par les pairs, la validation de modèle ou le prototypage opérationnel. |
+| 6 | Confirmer l’acceptation des principaux aspects des exigences, incluant les règles de l’entreprise, le contrôle de l’information, la continuité métier, la conformité légale et réglementaire, l'auditabilité, l’ergonomie, l’opérabilité et la facilité d’utilisation, la sécurité et la documentation. |
+| 7 | Suivre et contrôler le périmètre, les exigences et les changements au cours du cycle de vie de la solution tout au long du projet au fur et à mesure que la compréhension de la solution évolue. |
+| 8 | Tenir compte des exigences relatives aux normes et aux politiques de l’entreprise, à l’architecture d’entreprise, à la planification stratégique et tactique informatique, aux processus métiers et informatiques internes ou externalisés, aux exigences de sécurité, aux exigences réglementaires, aux compétences du personnel, à la structure organisationnelle, au business case et à la technologie dispobinle. |
+
+### BAI02.2 - Réaliser une étude de faisabilité et formuler des solutions de rechange
+
+Réaliser une étude de faisabilité des solutions de rechange possibles, évaluer leur viabilité et sélectionner l’option privilégiée. S’il y a lieu, mettre en oeuvre l’option sélectionnée en tant que pilote pour déterminer les améliorations possibles
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Orientation en matière de développement de solutions | APO03.05 | Rapport d’étude de faisabilité | BAI03.02 / BAI03.03 |
+| Catalogue des fournisseurs | APO10.01 | Plan global d'acquisition / développement | APO10.02 / BAI03.01 |
+| Décisions résulatnt des évaluations des fournisseurs | APO10.02 |  |  |
+| Demandes d’informations et de propositions aux fournisseurs | APO10.02 |  |  |
+| Évaluations des demandes d’informations et des demandes de propositions aux fournisseurs | APO10.02 |  |  |
+| Critères d'acceptation | APO11.03 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Définir et réaliser une étude de faisabilité, une ébauche ou un pilote décrivant, avec clarté et concision, les solutions de rechange qui sauront satisfaire les exigences métiers et fonctionnelles. Inclure une évaluation de leur faisabilité technologique et économique. |
+| 2 | Déterminer les mesures nécessaires pour l’acquisition ou le développement de la solution en fonction de l’architecture de l’entreprise et tenir compte des limites de périmètre, de temps ou de budget. |
+| 3 | Examiner les solutions de rechange avec toutes les parties prenantes et choisir la plus appropriée en fonction des critères de faisabilité, incluant les risques et les coûts. |
+| 4 | Convertir le plan d’action privilégié en un plan gloal d’acquisition/développement qui précise les ressources à utiliser et les étapes requises pour prendre une décision de poursuite ou d’arrêt. |
+
+### BAI02.3 - Gérer les risques des exigences
+
+Déterminer, documenter, hiérarchiser et réduire les risques associés aux exigences de l’entreprise et à la solution proposée, qu'ils soient fonctionnels, techniques ou liés au traitement de l’information
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Liste des exigences en matière de risque | BAI01.10 / BAI03.02 / BAI04.01 / BAI05.01 |
+|  |  | Actions de traitement des risques | BAI01.10 / BAI03.02 / BAI05.01 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Faire participer les parties prenantes à la création d’une liste des exigences et des risques potentiels concernant la qualité, les fonctionnalités et les techniques associées au traitement de l’information (pour éviter, par exemple, le manque de participation des utilisateurs, les attentes irréalistes, des fonctionnalités inutiles ajoutées par les développeurs). |
+| 2 | Analyser et prioriser les risques liés aux exigences selon la probabilité et les impacts. S’il y a lieu, déterminer les impacts sur le budget et le planning. |
+| 3 | Trouver des moyens de contrôler, d’éviter ou d’atténuer les risques liés aux exigences en les prennant par ordre de priorité. |
+
+### BAI02.4 - Obtenir la validation des exigences et des solutions
+
+Coordonner la rétroaction des parties prenantes concernées et, aux étapes clés prédéterminées, obtenir l’approbation du sponsor ou du propriétaire du produit et approuver les exigences fonctionnelles et techniques, les études de faisabilité, les analyses de risque et les solutions recommandées
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Plan de gestion de la Qualité | BAI01.09 | Approbation par le sponsor des exigences et des solutions proposées | BAI03.02 / BAI03.03 / BAI03.04 |
+|  |  | Validation des revues qualité | APO11.02 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Veiller à ce que le sponsor métier ou le propriétaire du produit prenne la décision finale en ce qui concerne le choix de la solution, l’approche d’acquisition et la conception générale, en cohérence avec le busine case. Coordonner le retour des parties prenantes concernées et obtenir l’autorisation des autorités techniques et métiers appropriées (par exemple, du propriétaire des processus métiers, architecte d’entreprise, directeur des opérations, sécurité) quant à l’approche proposée. |
+| 2 | Obtenir la possibilité de faire des revues de la qualité au cours et à la fin de chacune des principales étapes, itérations ou versions afin d’évaluer les résultats par rapport aux critères d’acceptation originaux. Obtenir l’approbation des sponsors métiers et des autres parties prenantes pour chaque contrôle de la qualité couronné de succès. |
+
+## RACI
+
+|  | BAI02.01 | BAI02.02 | BAI02.03 | BAI02.04 |
+| --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |
+| Président Directeur Général |  |  |  |  |
+| Directeur Financier |  |  |  |  |
+| Directeur Opérationnel |  |  |  |  |
+| Directeurs Métiers | I | R | R | R |
+| Propriétaires de Processus Métiers | R | R | R | R |
+| Comité Stratégie |  |  |  |  |
+| Comité de Pilotage (programmes/projets) | A | A | A | A |
+| Coordinateur Projets (PMO) | R | R | R | R |
+| gestion de la valeur |  |  |  |  |
+| Risk Manager (RM) | C |  | R |  |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  |  |
+| Urbanisme |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |
+| Conformité | C | C | C | C |
+| Audit | C | C | C | C |
+| Directeur du SI (DSI) | C | C | R | C |
+| Responsable Architecture | R | C | C | C |
+| Responsable développement | R | R | R | C |
+| Responsable production informatique | C | C | R | C |
+| Responsable de l'administration informatique |  |  |  |  |
+| Gestionnaire de service | C | C | C | C |
+| Gestionnaire de la sécurité de l'information | C | C | C | C |
+| Gestionnaire de la continuité | C | C | C | C |
+| Directeur de la propriété | C | C | C | C |

@@ -1,13 +1,152 @@
 ---
 id: cobit-mea03
-title: "MEA03"
+title: "MEA03 - Piloter et évaluer la conformité aux exigences externes"
 sidebar_label: "MEA03"
 sidebar_position: 3
 tags: [cobit]
-description: "MEA03"
+description: "MEA03 - Piloter et évaluer la conformité aux exigences externes"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Évaluer si les processus informatiques et les processus métiers supportés par l'informatique sont conformes aux lois, réglementations et exigences contractuelles. Obtenir l'assurance que les exigences ont été identifiées et sont cohérentes à tous les niveaux de l'entreprise.
+
+## But
+
+S'assurer que l'entreprise est en conformité avec toutes les exigences externes applicables.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Garantir la conformité et le soutien de l'informatique au respect de la réglementation externe à l'entreprise | <ul><li>Coût des non-conformité informatiques, incluant les compensations amiables, pénalités et pertes en termes d'image</li><li>Nombre de cas de non-conformité informatique rapportées au conseil d'administration ou ayant occasionné des critiques ou débats publiques</li><li>Nombre de cas de non-conformité en rapport avec des accords contractuels avec des fournisseurs de services informatiques</li><li>Couverture des évaluations de conformité</li></ul>|
+| Gérer les risques financiers relatifs à l'informatique | <ul><li>Pourcentage de processus métiers, services informatiques et programmes métiers permis grâce à l'informatique qui sont couverts par l'évaluation des risques</li><li>Nombre d'incidents significatifs relatifs à l'informatique qui n'étaient pas identifiés dans l'évaluation des risques</li><li>Pourcentage d'évaluation de risques entreprise qui incluent les risques informatiques</li><li>Fréquence de mise à jour du recensement des risques</li><li>Nombre d'interruptions de service métiers dues à un incident informatique</li></ul>|
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Toutes les exigences de conformité externes sont identifiées. | <ul><li>Délai moyen entre l'identification des problèmes de conformité externes et leur résolution</li><li>Fréquence des examens de conformité</li></ul>|
+| Les exigences de conformité externes sont adéquatement prises en charge. | <ul><li>Nombre de problèmes de non-conformité critiques identifiés par année</li><li>Pourcentage de propriétaires de processus qui certifient et confirment la conformité</li></ul>|
+
+## Pratiques
+
+### MEA03.01 - Identifier les exigences de conformité externes
+
+De manière continue, identifier et surveiller les changements aux lois locales et internationales, aux règlements et autres exigences externes qui doivent être respectés du point de vue informatique
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Exigences légales et réglementaires | Hors CobIT | Inventaire des exigences de conformité | interne |
+|  |  | Journaux des actions de conformité requises | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Attribuer la responsabilité de l'identification et du pilotage des changements aux exigences juridiques, réglementaires et autres exigences contractuelles externes pertinentes à l'utilisation des ressources informatiques et au traitement de l'information au sein des opérations des unités métiers et informatiques de l'entreprise. |
+| 2 | Identifier et évaluer toutes les exigences de conformité potentielles ainsi que l'impact sur les activités informatiques dans des domaines tels que le flux de données, la confidentialité, les contrôles internes, les rapports financiers, les règlements spécifiques à l'industrie, la propriété intellectuelle, la santé et la sécurité. |
+| 3 | Évaluer l'impact des exigences légales et réglementaires liées à l'informatique sur les contrats avec des tiers relatifs aux opérations informatiques, aux fournisseurs de services et aux partenaires métiers de l'entreprise. |
+| 4 | Obtenir un avis indépendant, lorsque requis, sur les modifications aux lois, aux règlements et aux normes applicables. |
+| 5 | Maintenir un inventaire à jour de toutes les exigences légales, réglementaires et contractuelles applicables, de leur impact et des actions requises. |
+| 6 | Tenir un inventaire global harmonisé et intégré des exigences de conformité externes pour l'entreprise. |
+
+### MEA03.02 - Optimiser la réponse aux exigences externes
+
+Réviser et adapter les politiques, les principes, les normes, les procédures et les méthodologies afin de s'assurer que les exigences légales, réglementaires et contractuelles sont prises en charge et communiquées. Tenir compte des normes de l'industrie, des codes et des guides de bonnes pratiques pour l'adoption et l'adaptation
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Politiques, principes, procédures et normes mises à jour | APO01.07 / APO01.08 |
+|  |  | Communications sur les changements d'exigences de conformité | EDM01.01 / APO / BAI / DSS / MEA |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | À l'aide d'experts internes et externes, selon les besoins, revoir et adapter régulièrement les politiques, les principes, les normes, les procédures et les méthodologies afin de vérifier leur efficacité à assurer la conformité nécessaire et d'aborder le risque d'entreprise. |
+| 2 | Communiquer les exigences nouvelles et modifiées à tout le personnel concerné. |
+
+### MEA03.03 - Confirmer la conformité externe
+
+Confirmer la conformité des politiques, des principes, des normes, des procédures et des méthodologies aux exigences légales, réglementaires et contractuelles
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Résultats d’audit de conformité | BAI05.06 | Écarts identifiés en matière de conformité | MEA02.08 |
+| Résultats des audits de licences installées | BAI09.05 | Confirmations de conformité | EDM01.03 |
+| Écarts en termes de licences | BAI10.05 |  |  |
+| Rapports sur les polices d'assurance | DSS01.04 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Évaluer régulièrement les politiques, les normes, les procédures et les méthodologies organisationnelles dans toutes les fonctions de l'entreprise afin d'assurer la conformité aux exigences légales et réglementaires applicables en ce qui concerne le traitement de l'information. |
+| 2 | Traiter en temps opportun les écarts en matière de conformité aux politiques, aux normes et aux procédures. |
+| 3 | Évaluer périodiquement les processus et les activités informatiques et métiers dans le but d'assurer le respect des exigences légales, réglementaires et contractuelles applicables. |
+| 4 | Faire des revues régulières afin de déceler les tendances récurrentes de non-conformité. Le cas échéant, améliorer les politiques, les normes, les procédures et les méthodologies ainsi que les processus et les activités connexes. |
+
+### MEA03.04 - Obtenir l'assurance de la conformité externe
+
+Obtenir et rapporter l'assurance de la conformité et le respect des politiques, des principes, des normes, des procédures et des méthodologies. Confirmer que des mesures correctives sont entreprises en temps opportun pour combler les écarts en matière de conformité
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Règles de validation et d’approbation des rapports obligatoires | EDM05.02 | Rapport de certification de conformité | EDM01.03 |
+| Evaluation de l'efficacité du reporting | EDM05.03 | Rapports de non conformités et causes premières | EDM01.03 / MEA02.07 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Obtenir périodiquement une confirmation de la conformité aux politiques internes par les responsables de processus métiers et informatiques ainsi que par les dirigeants d'entités. |
+| 2 | Effectuer régulièrement des examens internes et externes (et, le cas échéant, des examens indépendants) pour évaluer le degré de conformité. |
+| 3 | Si nécessaire, obtenir des déclarations de fournisseurs de services informatiques sur leur degré de conformité aux lois et règlements applicables. |
+| 4 | Si nécessaire, obtenir des déclarations des partenaires commerciaux sur leur degré de conformité aux lois et aux règlements applicables en ce qui concerne les transactions électroniques interentreprises. |
+| 5 | Surveiller et signaler les problèmes de non-conformité et, le cas échéant, enquêter sur leurs causes premières |
+| 6 | Intégrer le reporting sur les exigences légales, réglementaires et contractuelles à l'échelle de l'entreprise, en impliquant toutes les entités métiers. |
+
+## RACI
+
+|  | MEA03.01 | MEA03.02 | MEA03.03 | MEA03.04 |
+| --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  | I | I |
+| Président Directeur Général |  | R | R | I |
+| Directeur Financier |  | R | R | I |
+| Directeur Opérationnel |  | R | R | I |
+| Directeurs Métiers | A | A | R | C |
+| Propriétaires de Processus Métiers | R | R | R | C |
+| Comité Stratégie |  | I | I | I |
+| Comité de Pilotage (programmes/projets) |  |  | I |  |
+| Coordinateur Projets (PMO) |  | R | C | C |
+| gestion de la valeur |  |  |  |  |
+| Risk Manager (RM) |  |  |  |  |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  |  |
+| Urbanisme |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |
+| Conformité | R | R | A | C |
+| Audit | R | R | I | A |
+| Directeur du SI (DSI) | R | R | R | R |
+| Responsable Architecture |  | I | C | C |
+| Responsable développement |  | R | C | C |
+| Responsable production informatique |  | R | C | C |
+| Responsable de l'administration informatique |  | R | C | C |
+| Gestionnaire de service |  | R | C | C |
+| Gestionnaire de la sécurité de l'information |  | R | C | C |
+| Gestionnaire de la continuité |  | R | C | C |
+| Directeur de la propriété | R | R | R | C |

@@ -1,13 +1,324 @@
 ---
 id: cobit-bai03
-title: "BAI03"
+title: "BAI03 - Gérer l'identification des solutions et leur production"
 sidebar_label: "BAI03"
 sidebar_position: 3
 tags: [cobit]
-description: "BAI03"
+description: "BAI03 - Gérer l'identification des solutions et leur production"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Mettre en œuvre et maintenir les solutions identifiées en phase avec les exigences de l'entreprise en matière de conception, développement, acquisition/sourcing et partenariat avec les fournisseurs/vendeurs. Gérer la configuration, préparation des tests, les exigences, gérer la maintenance des processus métiers, des applications, de l'information, des données, de l'infrastructure et des services.
+
+## But
+
+Mettre en place des solutions en temps et en heure, rentables et permettant de soutenir les objectifs stratégiques et opérationnels de l’entreprise.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Garantir la fourniture de services informatiques répondant aux exigences économiques | <ul><li>Pourcentage de parties prenantes métiers satisfaites de la conformité des services informatiques rendus avec les niveaux de services convenus par les accords de service</li><li>Pourcentage d'utilisateurs satisfaits par la qualité des services informatiques rendus</li></ul>|
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| La conception de la solution, et notamment ses éléments pertinents, répondent aux besoins de l’entreprise, sont conformes aux normes et tiennent compte de tous les risques identifiés | <ul><li>Nombre de reprises de conception dues à un non respect des exigences</li><li>Temps nécessaire pour valider que la conception a répondu aux exigences</li></ul>|
+| La solution est conforme à la conception et aux normes organisationnelles. Elle intègre les contrôles, la sécurité et les audits appropriés. |<ul><li>Nombre d’exceptions à la conception de la solution soulevées au cours des revues d’étape</li></ul>|
+| La solution est d’une qualité acceptable et a été testée avec succès. | <ul><li>Nombre d’erreurs trouvées au cours des essais</li><li>Temps et efforts pour terminer les tests</li></ul>|
+| Les changements aux exigences approuvés sont correctement incorporés dans la solution. | <ul><li>Nombre de changements approuvés et suivis qui génèrent de nouvelles erreurs</li></ul>|
+| Les activités d’entretien répondent avec succès aux besoins d’affaires et technologiques. | <ul><li>Nombre de demandes d’entretien insatisfaites</li></ul>|
+
+## Pratiques
+
+### BAI03.01 - Concevoir des solutions globales
+
+Élaborer et documenter les conceptions globales à l’aide de techniques convenues et appropriées de développement échelonné ou agile et rapide. Assurer l’alignement avec la stratégie informatique et l’architecture d’entreprise. Réévaluer et mettre à jour les conceptions quand des problèmes importants surviennent pendant des étapes de conception détaillée ou de développement ou à mesure que la solution évolue. Veiller à ce que les parties prenantes participent activement à la conception et approuvent chaque version
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Principes d'architecture | APO03.01 | Spécifications de conception générale approuvées | BAI04.03 / BAI05.01 |
+| Descriptions de domaines de référence et définition de l'architecture | APO03.02 |  |  |
+| Analyses de recherche en matière d’opportunités d'innovation | APO04.03 |  |  |
+| Evaluations des idées d'innovation | APO04.04 |  |  |
+| Recueil des exigences | BAI02.01 |  |  |
+| Critères d’acceptation confirmés par les parties prenantes | BAI02.01 |  |  |
+| Plan global d'acquisition / développement | BAI02.02 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Établir un dossier de conception générale qui traduise la solution proposée en processus métiers, en services, en applications, en infrastructure et en bases d’information capables de satisfaire les exigences métiers et d’architecture de l’entreprise. |
+| 2 | Impliquer les utilisateurs et les spécialistes informatiques qualifiés et expérimentés dans le processus de conception pour s’assurer que cette conception procure une solution qui utilise de façon optimale les capacités informatiques proposées pour améliorer les processus métiers. |
+| 3 | Faire une conception qui soit conforme aux normes de conception de l’organisation, à un niveau de détail approprié pour la solution et la méthode de développement, et qui soit cohérente avec les stratégies métiers, entreprise informatique, avec l’architecture de l’entreprise, le plan de sécurité, les lois, les règlements et les contrats applicables. |
+| 4 | Après l’approbation de l’assurance qualité, soumettre la conception globale finale aux parties prenantes du projet et au sponsor / propriétaire du processus métier, pour l’approbation fondée sur les critères convenus. Cette conception évoluera tout au long du projet. |
+
+### BAI03.02 - Faire la conception détaillés des composants de solution
+
+Concevoir, documenter et élaborer progressivement des conceptions détaillées en utilisant des techniques de développement graduel ou rapide de type agile qui sont convenues et appropriées, en tenant compte de tous les composants (processus métiers et contrôles automatisés et manuels connexes, applications informatiques, les services d’infrastructure et les produits technologiques et partenaires/fournisseurs). S’assurer que la conception détaillée comprenne les accords de niveau de service et les accords de niveau opérationnel internes et externes
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Principes d'architecture | APO03.01 | Spécifications de conception détaillée approuvées | BAI04.03 / BAI05.01 |
+| Descriptions de domaines de référence et définition de l'architecture | APO03.02 | Accords de niveau de service et accords de niveau opérationnel | BAI04.02 |
+| Modèle d'architecture de l'information | APO03.02 |  |  |
+| Orientation en matière de développement de solutions | APO03.05 |  |  |
+| Evaluations de l'utilisation d'approches novatrices | APO04.06 |  |  |
+| Recueil des exigences | BAI02.01 |  |  |
+| Critères d’acceptation confirmés par les parties prenantes | BAI02.01 |  |  |
+| Rapport d’étude de faisabilité | BAI02.02 |  |  |
+| Actions de traitement des risques | BAI02.03 |  |  |
+| Liste des exigences en matière de risque | BAI02.03 |  |  |
+| Approbation par le sponsor des exigences et des solutions proposées | BAI02.04 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Concevoir progressivement les activités des processus métiers et les flux de travail qui doivent être effectués en collaboration avec le nouveau système d’application pour atteindre les objectifs de l’entreprise, incluant la conception des activités de contrôle manuel. |
+| 2 | Concevoir les étapes de traitement de l’application, incluant la spécification des types de transaction et les règles de traitement métiers, les contrôles automatisés, les définitions de données / objets métiers, les cas d’utilisation, les interfaces externes, les contraintes de conception, et autres exigences (par exemple les licences, aspects juridiques, normes et internationalisation / localisation). |
+| 3 | Classer les entrées et les sorties de données conformément aux normes d’architecture de l’entreprise. Préciser la conception de la collecte de données sources, en documentant les entrées de données (quelle que soit la source) et la validation pour le traitement des transactions ainsi que les méthodes de validation. Concevoir les données de sortie identifiées, incluant les sources de données. |
+| 4 | Concevoir l’interface du système ou de la solution, incluant tout échange de données automatisé. |
+| 5 | Concevoir le stockage, l’emplacement, l’extraction et la récupération des données. |
+| 6 | Concevoir la redondance, la restauration et la sauvegarde appropriées. |
+| 7 | Concevoir une interface conviviale et porteuse de documentation entre l’utilisateur et l’application du système. |
+| 8 | Tenir compte des impacts des besoins de la solution sur la performance de l’infrastructure, en étant attentif au nombre d’actifs informatiques, à la largeur de la bande passante et à la persistence de l’information. |
+| 9 | Rechercher de manière proactive les faiblesses de la conception (par exemple, les incohérences, manque de clarté, défauts potentiels) tout au long du cycle de vie, en précisant au besoin les améliorations à apporter. |
+| 10 | Fournir un moyen de vérifier les transactions et de déterminer les causes fondamentales des erreurs de traitement. |
+
+### BAI03.03 - Développer les composants de la solution
+
+Développer progressivement les composants de la solution conformément aux conceptions détaillées en suivant les méthodes de développement et les normes de documentation, les exigences d’assurance de la qualité (AQ) et les normes d’approbation. Veiller à ce que toutes les exigences de contrôle soient abordées en ce qui a trait aux processus métiers, aux applications informatique et services d’infrastructure, aux services et produits technologiques et aux partenaires/fournisseurs
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Rapport d’étude de faisabilité | BAI02.02 | Composants de solution documentée | BAI04.03 / BAI05.05 / BAI08.03 / BAI08.04 |
+| Approbation par le sponsor des exigences et des solutions proposées | BAI02.04 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Elaborer les processus métiers, les services, applications, infrastructures, et bases d’information en fonction des spécifications et des exigences métier convenues, fonctionnelles et techniques. |
+| 2 | Lorsque des fournisseurs externes participent au développement de solutions, s’assurer que le respect des normes de maintenance, de support et de développementainsi que les licences sont considérées dans les obligations contractuelles. |
+| 3 | Enregistrer les demandes de changement et les revues de conception, d'exécution et de qualité en assurant la participation active de toutes les parties prenantes concernées. |
+| 4 | Documenter tous les composants de la solution selon les normes définies et maintenir le contrôle des versions sur tous les composants développés et la documentation associée. |
+| 5 | Evaluer l’impact de la personnalisation et de la configuration de la solution sur la performance et l’efficacité des solutions acquises et sur l’interopérabilité avec les applications existantes, les systèmes d’exploitation et les autres infrastructures. Adapter, au besoin, les processus métiers pour maximiser les capacités de l’application. |
+| 6 | Veiller à ce que les responsabilités concernant l’utilisation de composants de l’infrastructure de haute sécurité ou à accès restreint soient clairement définies et comprises par ceux qui développent et intègrent des composants d’infrastructure. Leur utilisation devrait être surveillée et évaluée. |
+
+### BAI03.04 - Acquérir les composants de la solution
+
+Se procurer les composants de la solution en fonction du plan d’acquisition conformément aux exigences et aux conceptions détaillées, aux principes et aux normes d’architecture, à l’ensemble des procédures d’approvisionnement et de contrat de l’entreprise, aux exigences d’assurance qualité ainsi qu’aux normes d’approbation. S’assurer que toutes les exigences légales et contractuelles sont connues et respectées par le fournisseur
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Approbation par le sponsor des exigences et des solutions proposées | BAI02.04 | Plan d'acquisition approuvé | APO10.03 |
+|  |  | Mises à jour de l’inventaire des actifs | BAI09.01 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Rédiger et maintenir un plan pour l’acquisition des composants de la solution, en tenant compte de la flexibilité future pour les ajouts de capacité, des coûts de transition, des risques et des mises à niveau pendant toute la durée du projet. |
+| 2 | Passer en revue et approuver tous les plans d’acquisition, en tenant compte des risques, des coûts, des bénéfices et de la conformité technique aux normes d’architecture de l’entreprise. |
+| 3 | Evaluer et documenter à quel point des solutions acquises nécessitent une adaptation du processus métier afin de maximiser leurs bénéfices. |
+| 4 | Faire le suivi des approbations requises aux points de décision clés au cours des processus d’approvisionnement. |
+| 5 | Consigner la réception de toutes les acquisitions d’infrastructures et de logiciels dans un inventaire des actifs. |
+
+### BAI03.05 - Assembler des solutions
+
+Installer et configurer les solutions et les intégrer aux activités des processus d’affaires. Mettre en oeuvre des mesures de contrôle, de sécurité et d’audit lors de la configuration et lors de l’intégration du matériel et des logiciels d’infrastructure afin de protéger les ressources et assurer l’intégrité et la disponibilité des données. Mettre à jour le catalogue de services pour tenir compte des nouvelles solutions
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Composants de la solution intégrés et configurés | BAI06.01 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Intégrer et configurer les composants de la solution métier et informatique et les bases d’information conformément aux spécifications détaillées et aux exigences de qualité. Examiner le rôle des utilisateurs, des parties prenantes métier et du propriétaire du processus dans la configuration des processus métier. |
+| 2 | Compléter et mettre à jour les processus d’affaires et les manuels des opérations, le cas échéant, pour tenir compte de toute personnalisation ou des conditions particulières propres à la mise en oeuvre. |
+| 3 | Considérer toutes les exigences pertinentes en matière de contrôle de l’information dans l’intégration et la configuration de composants de la solution, incluant la mise en oeuvre des contrôles métiers, lorsqu’approprié, dans les contrôles automatisés de l’application de façon à ce que le traitement soit précis, complet, opportun, autorisé et vérifiable. |
+| 4 | Mettre en place des pistes d'audit lors de la configuration et de l’intégration du matériel et des logiciels d’infrastructure, afin de protéger les ressources et assurer l’intégrité et la disponibilité. |
+| 5 | Déterminer le moment où l’effet des personnalisations et des configurations cumulatives (incluant les modifications mineures qui n’ont pas été soumises à des spécifications de conception formelles) nécessitent une réévaluation globale de la solution et des fonctionnalités associées. |
+| 6 | Assurer l’interopérabilité des composants de la solution grâce à des tests, de préférence automatisés. |
+| 7 | Configurer le logiciel d’application acquis afin de satisfaire aux exigences de traitement métier. |
+| 8 | Concevoir les catalogues de services pour les groupes internes et externes pertinents selon les exigences métiers. |
+
+### BAI03.06 - Assurer la qualité
+
+Concevoir un plan d’assurance qualité, lui attribuer les ressources et l’exécuter conformément au SMQ pour obtenir la qualité indiquée dans la définition des exigences et dans les politiques et les procédures de qualité de l’entreprise
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Résultats de revue du SMQ | APO11.01 | Résultats de revue qualité, exceptions et corrections / Plan d'Assurance Qualité (PAQ) | APO11.04 |
+| Plan de gestion de la Qualité | BAI01.09 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Définir un plan et des pratiques d’assurance qualité comportant, par exemple, les spécifications des critères de qualité, les processus de validation et de vérification, la définition de la méthode de revue, les qualifications requises pour les examinateurs de la qualité, es rôles et responsabilités liés à l’atteinte des objectifs de qualité. |
+| 2 | Examiner fréquemment la qualité de la solution selon les exigences du projet, les politiques d’entreprise, le respect des méthodologies de développement, les procédures de gestion de la qualité et les critères d’acceptation. |
+| 3 | Utiliser, suivant le cas, l’inspection du code, les pratiques de développement guidées par les tests, les essais automatisés, l’intégration continue, les tests de cheminement ou de vérification des applications, le cas échéant. Communiquer les résultats de la procédure de suivi et des tests à l’équipe de développement de logiciel d’application et à la direction informatique. |
+| 4 | Prendre en compte toutes les exceptions liées à la qualité et effectuer toutes les mesures correctives. Enregistrer toutes les revues, les résultats, les exceptions et les corrections. Répéter les contrôles de la qualité, le cas échéant, selon le nombre de reprises de réalisation et d’actions correctives. |
+
+### BAI03.07 - Se préparer pour les tests de la solution
+
+Établir un plan de test et les environnements requis pour tester les composants individuels et intégrés de la solution, prenant en compte les processus métiers ainsi que les services, les applications et les infrastructures de soutien
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Plan de test | BAI07.03 |
+|  |  | Procédures de test | BAI07.03 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Créer un plan et des pratiques de test dimensionné en rapport avec l’environnement de l’entreprise et les plans stratégiques relatifs aux technologies et qui permettront la création d'environnements de tests et de simulation appropriés , afin de contribuer à la vérification du bon fonctionnement de la solution dans l’environnement de production, de la livraison des résultats escomptés et de la pertinence des contrôles. |
+| 2 | Créer un environnement de test qui couvre l'ensemble du périmètre de la solution et reflète, le mieux possible, les conditions réelles, incluant les processus et les procédures métiers, les différents types d'utilisateurs, les types de transaction et les conditions de déploiement. |
+| 3 | Créer des procédures de test qui soient alignées avec le plan et les pratiques et qui permettent une évaluation du fonctionnement de la solution dans des conditions réelles. S’assurer que les procédures de test évaluent la pertinence des contrôles, selon des normes à l’échelle de l’entreprise qui définissent les rôles, les responsabilités et les critères de test, et qu’elles sont approuvées par les parties prenantes du projet et le sponsor / propriétaire du processus métier. |
+
+### BAI03.08 - Réaliser les tests de la solution
+
+Tester continuellement la solution pendant le développement, incluant les tests de contrôle, conformément au plan de test défini et aux pratiques de développement dans l’environnement approprié. Inclure les propriétaires de processus métiers et les utilisateurs finaux dans l’équipe de test. Repérer, consigner et prioriser les erreurs et problèmes détectés pendant les tests
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Analyse des initiatives rejetées | APO04.05 | Journaux des résultats de test et pistes d’audit | BAI07.03 |
+|  |  | Communication des résultats de test | BAI07.03 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Prendre en charge le test des solutions et de leurs composants conformément au plan de test. Faire collaborer des testeurs indépendants de l’équipe projet, des représentants des propriétaires des processus métiers et des utilisateurs finaux. Veiller à ce que les tests soient effectués uniquement dans des environnements de développement et de test. |
+| 2 | Utiliser des directives de test clairement définies, telles que spécifiées dans le plan de test, et déterminer l’équilibre approprié entre les tests automatisés préétablis et les tests interactifs effectués par des utilisateurs. |
+| 3 | Effectuer tous les tests conformément au plan de test et aux pratiques, incluant l’intégration des processus métiers et des composants de la solution informatique, de même que les exigences non fonctionnelles (par exemple, la sécurité, l'interopérabilité, la convivialité). |
+| 4 | Repérer, consigner et hiérarchiser les erreurs rencontrées pendant les tests (mineures, significatives et vitales pour la mission de l’entreprise). Répéter les tests jusqu’à ce que toutes les erreurs importantes soient corrigées. Assurer le maintien d’une piste d'audit des résultats de test. |
+| 5 | Consigner les résultats d’essais et les communiquer aux parties prenantes conformément au plan de test. |
+
+### BAI03.09 - Gérer les modifications apportées aux exigences
+
+Assurer le suivi des exigences individuelles (incluant toutes les exigences rejetées) tout au long du cycle de vie du projet et gérer l’approbation des modifications aux exigences
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Résultats et recommandations provenant des initiatives d'étude de faisabilité | APO04.05 | Enregistrement de toutes les demandes de changement approuvées et appliquées | BAI06.03 |
+| Enregistrement des requêtes de changement aux exigences | BAI02.01 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Évaluer l’impact de toutes les demandes de changement à la solution sur le développement de la solution, le dossier métier et le budget originaux, les catégoriser et les prioriser en conséquence. |
+| 2 | Effectuer le suivi des changements apportés aux exigences, en permettant à toutes les parties prenantes de prendre connaissance, d’examiner et d’approuver les changements. S’assurer que les résultats du processus de changement sont pleinement compris et approuvés par toutes les parties prenantes et le sponsor ou propriétaire du processus métier. |
+| 3 | Appliquer les demandes de changement, en maintenant l’intégrité de la configuration et de l’intégration des composants de la solution. Évaluer l’impact de toute mise à niveau majeure de la solution et les classer selon des critères objectifs approuvés (tels que les besoins de l’entreprise), selon les résultats d’analyse du risque impliqué (par exemple: l’impact sur les systèmes, les processus existants ou la sécurité), la justification des coûts/gains et les autres exigences. |
+
+### BAI03.10 - Maintenir les solutions
+
+Développer et réaliser un plan pour l’entretien des composants de solution et d’infrastructure. Inclure des revues périodiques en tenant compte des besoins métiers et des exigences opérationnelles
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Plan de maintenance | APO08.05 |
+|  |  | Composants de la solution actualisés et documentation associée | BAI05.05 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Développer et instaurer un plan pour la maintenance des composants de la solution qui comprend des revues périodiques par rapport aux besoins métiers et aux exigences opérationnelles tels que la gestion des correctifs, les stratégies de mise à niveau, le risque, l’évaluation des vulnérabilités et les exigences de sécurité. |
+| 2 | Évaluer l’importance d’une activité de maintenance proposée sur la conception de la solution actuelle, la fonctionnalité ou les processus métiers. Prendre en compte le risque, l’impact sur l’utilisateur et la disponibilité des ressources. S’assurer que les propriétaires des processus métiers comprennent l’effet de considérer des changements comme une activité de maintenance. |
+| 3 | En cas de changements majeurs aux solutions existantes qui entraîneraient un changement important dans les conceptions actuelles ou dans les fonctionnalités ou même dans les processus métiers, suivre le processus de développement utilisé pour les nouveaux systèmes. Pour les mises à jour de maintenance, utiliser le processus de gestion des changements. |
+| 4 | S’assurer que le modèle et le volume des activités de maintenance sont analysés périodiquement pour déceler les tendances anormales indiquant des problèmes sous-jacents de qualité ou de performance, les coûts ou bénéfices de mise à jour majeure, ou le remplacement au lieu de la maintenance. |
+| 5 | Pour les mises à jour de maintenance, utiliser le processus de gestion des changements pour contrôler toutes les demandes de maintenance. |
+
+### BAI03.11 - Définir les services informatiques et gérer le portefeuille de services
+
+Définir les services informatiques nouveaux ou modifiés et les options de niveau de service et s’entendre sur ceux-ci. Documenter les définitions des services nouveaux ou modifiés et les options de niveau de service qui doivent être mises à jour dans le portefeuille de services
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Principes directeurs pour l’allocation des ressources et des capacités | EDM04.01 | Définitions de service | APO05.01 / DSS01.03 |
+| Ecarts et changements nécessaires pour atteindre la capacité cible | APO02.04 | Portefeuille de services à jour | APO05.05 |
+| Gains chiffrés attendus pour l'environnement cible | APO02.04 |  |  |
+| Allocations budgétaires | APO06.02 |  |  |
+| Communications sur les budgets | APO06.03 |  |  |
+| Budget informatique et planification | APO06.03 |  |  |
+| Définition de projets d'amélioration potentiels | APO08.05 |  |  |
+| Configuration de référence | BAI10.02 |  |  |
+| Changements approuvés à la configuration de référence | BAI10.03 |  |  |
+| Rapports d'état de configuration | BAI10.04 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Proposer des définitions des services informatiques ajoutés ou modifiés pour s’assurer qu’ils sont adéquats. Documenter les définitions de service proposées dans la liste des services à développer du portefeuille. |
+| 2 | Proposer des options de niveaux de services (temps de service, satisfaction des utilisateurs, disponibilité, performance, capacité, sécurité, continuité, conformité et convivialité) pour s’assurer que les services informatiques sont adéquats. Documenter les options de service proposées dans le portefeuille. |
+| 3 | Echanger avec les gestionnaires des relations métiers et les gestionnaires de portefeuilles pour convenir des définitions de service et des options de niveaux de service proposées. |
+| 4 | Si le changement au service ne reçoit pas l'approbation de l'autorité convenue, concevoir ou modifier les services informatiques ou les options de niveau de service. Sinon, soumettre le changement de service au gestionnaire de portefeuille aux fins d’examen de l’investissement. |
+
+## RACI
+
+|  | BAI03.01 | BAI03.02 | BAI03.03 | BAI03.04 | BAI03.05 | BAI03.06 | BAI03.07 | BAI03.08 | BAI03.09 | BAI03.10 | BAI03.11 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |  |  |  |  |  |  |
+| Président Directeur Général |  |  |  |  |  |  |  |  |  |  |  |
+| Directeur Financier |  |  |  |  |  |  |  |  |  |  |  |
+| Directeur Opérationnel |  |  |  | I |  | I |  |  | I |  | I |
+| Directeurs Métiers | R | R | R | R | R | R | R | R | R | R | I |
+| Propriétaires de Processus Métiers |  |  |  |  |  |  |  |  |  |  |  |
+| Comité Stratégie | I | I | I | I | I | A | A | A | A |  |  |
+| Comité de Pilotage (programmes/projets) | R | R | R | I | R | R | I | I | R | R | I |
+| Coordinateur Projets (PMO) |  |  |  |  |  |  |  |  |  |  |  |
+| gestion de la valeur |  |  |  |  |  |  |  |  |  |  |  |
+| Risk Manager (RM) |  |  |  |  |  |  |  |  |  |  |  |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  |  |  |  |  |  |  |  |  |
+| Urbanisme |  |  |  |  |  |  |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |  |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |  |  |  |  |  |  |  |
+| Conformité | C | C | C | C | C | C | C | I | I | C | I |
+| Audit | C | C | C | C | C | C | C | I | I | C | I |
+| Directeur du SI (DSI) | I | I | I | A | I | I | I | I | C | I | R |
+| Responsable Architecture | C | C | C | I | C | C |  |  | R | C | I |
+| Responsable développement | A | A | A | R | A | R | R | R | R | A | C |
+| Responsable production informatique | C | C | C | R | C | C | R | R | C | C | C |
+| Responsable de l'administration informatique |  |  |  | R |  |  |  |  |  |  | C |
+| Gestionnaire de service | C | C | C | C | C | C | R | I | C | C | A |
+| Gestionnaire de la sécurité de l'information | C | C | C | C | C | C | R | I | C | C | I |
+| Gestionnaire de la continuité | C | C | C | C | C | C | R | I | C | C | I |
+| Directeur de la propriété | C | C | C | C | C | C | R | I | C | C |  |

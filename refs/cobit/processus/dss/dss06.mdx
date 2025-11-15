@@ -1,13 +1,198 @@
 ---
 id: cobit-dss06
-title: "DSS06"
+title: "DSS06 - Gérer le contrôle des processus métiers"
 sidebar_label: "DSS06"
 sidebar_position: 6
 tags: [cobit]
-description: "DSS06"
+description: "DSS06 - Gérer le contrôle des processus métiers"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Définir et maintenir les contrôles des processus métiers appropriés pour assurer que l'information relative aux (et traitée par les) processus métiers internes ou externalisés satisfait toutes les exigences pertinentes de contrôle de l'information. Identifier les exigences de contrôle pertinentes, gérer et réaliser les contrôles adéquats pour assurer que l'information et son traitement satisfont à ces exigences.
+
+## But
+
+Maintenir l'intégrité de l'information et la sécurité des actifs informationnels traités dans le cadre des processus métiers internes ou externes.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Gérer les risques financiers relatifs à l'informatique | <ul><li>Pourcentage de processus métiers, services informatiques et programmes métiers permis grâce à l'informatique qui sont couverts par l'évaluation des risques</li><li>Nombre d'incidents significatifs relatifs à l'informatique qui n'étaient pas identifiés dans l'évaluation des risques</li><li>Pourcentage d'évaluation de risques entreprise qui incluent les risques informatiques</li><li>Fréquence de mise à jour du recensement des risques</li><li>Nombre d'interruptions de service métiers dues à un incident informatique</li></ul> |
+| Garantir la fourniture de services informatiques répondant aux exigences économiques | <ul><li>Pourcentage de parties prenantes métiers satisfaites de la conformité des services informatiques rendus avec les niveaux de services convenus par les accords de service</li><li>Pourcentage d'utilisateurs satisfaits par la qualité des services informatiques rendus</li></ul> |
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| La couverture et l'efficacité des contrôles clés pour répondre aux besoins de l'entreprise pour le traitement de l'information sont complètes. | <ul><li>Complétude de l'inventaire des processus critiques et aux contrôles clés</li><li>Pourcentage de couverture des contrôles clés dans les plans de tests</li><li>Nombre d'incidents et de rapports d'audit indiquant l'échec des contrôles clés</li></ul> |
+| L'inventaire des rôles, des responsabilités et droits d'accès est aligné avec les besoins métiers autorisés. | <ul><li>Pourcentage des rôles de processus métiers ayant des droits d'accès et des niveaux d'autorité</li><li>Pourcentage des rôles de processus métiers ayant une séparation claire des tâches</li><li>Nombre d'incidents et de rapports d'audit liés à des violations d'accès ou de séparation des tâches</li></ul> |
+| Les transactions métiers sont entièrement conservées dans les journaux comme prévu. | <ul><li>Complétude de traces des transactions</li><li>Nombre d'incidents où l'historique de la transaction ne peut être récupéré</li></ul> |
+
+## Pratiques
+
+### DSS06.01 - Aligner les activités de contrôle intégrées dans les processus métiers avec les objectifs de l'entreprise
+
+Évaluer et suivre continuellement l'exécution des activités des processus métiers et des contrôles connexes en fonction du risque d'entreprise, afin de s'assurer que les contrôles de traitement sont alignés aux besoins métiers
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Procédures de gestion de l’intégrité des données | APO01.06 | Analyses des causes premières et recommandations | MEA02.04 |
+| Guides de classification des données | APO01.06 | Analyses des causes premières et recommandations | BAI06.01 / MEA02.04 / MEA02.07 / MEA02.08 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Identifier et documenter les activités de contrôle des processus métiers clés afin de satisfaire les exigences de contrôle des objectifs stratégiques, opérationnels, de reporting et de conformité. |
+| 2 | Prioriser les activités de contrôle en fonction du risque inhérent aux métiers et identifier les contrôles clés. |
+| 3 | Assurer l'appropriation des activités de contrôle clés. |
+| 4 | Surveiller les activités de contrôle en permanence et de façon exhaustive afin d'identifier les opportunités d'amélioration. |
+| 5 | Améliorer continuellement la conception et le fonctionnement des contrôles des processus métiers. |
+
+### DSS06.02 - Contrôler le traitement de l'information
+
+Exécuter les activités des processus métiers et les contrôles connexes en fonction du risque d'entreprise, afin d'assurer que le traitement de l'information est valide, complet, exact, en temps opportun et sécurisé (c’est à dire : qu'il reflète l'utilisation métier légitime et autorisée).
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Plan d'utilisation et d’opération | BAI05.05 | Rapports de contrôle de traitement | interne |
+| Plan de migration | BAI07.02 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Créer des transactions par les personnes autorisées en respectant les procédures établies, incluant, le cas échéant, une séparation adéquate des tâches relatives à la création et à l'approbation de ces transactions. |
+| 2 | Authentifier l'initiateur des transactions et vérifier que cette personne a l'autorité de créer la transaction. |
+| 3 | Entrer les transactions en temps opportun. Vérifier que les transactions sont exactes, complètes et valides. Valider les données d'entrée et les modifier ou, le cas échéant, les retourner pour correction à l'endroit le plus près possible du point d'origine. |
+| 4 | Corriger et soumettre de nouveau les données qui ont été entrées par erreur sans compromettre les niveaux d'autorisation de la transaction originale. Si cela est requis à la reconstruction, conserver les documents d'origine pendant la période appropriée. |
+| 5 | Maintenir l'intégrité et la validité des données tout au long du cycle de traitement. S'assurer que la détection des transactions erronées ne perturbe pas le traitement des transactions valides. |
+| 6 | Maintenir l'intégrité des données lors d'interruptions imprévues dans le traitement des activités et confirmer l'intégrité des données après l'échec du traitement. |
+| 7 | Gérer les données de sortie de la façon autorisée, en faire la livraison au destinataire approprié et protéger l'information lors de la transmission. Vérifier l'exactitude et l'exhaustivité de ces données. |
+| 8 | Avant de transmettre les données de transaction entre les applications internes et les fonctions métiers et opérationnelles (à l'interne ou à l'externe), vérifier la destination, l'authenticité de l'origine et l'intégrité du contenu. Maintenir l'authenticité et l'intégrité lors de la transmission ou du transport. |
+
+### DSS06.03 - Gérer les rôles, les responsabilités, les privilèges d’accès et les niveaux d’autorité
+
+"Gérer les rôles métiers, les responsabilités, les niveaux d'autorité et la séparation des tâches nécessaires pour soutenir les objectifs des processus métiers. Autoriser l'accès aux actifs informationnels liés aux processus d'information métiers, incluant ceux sous la garde des entités métiers, informatiques et de tiers. Cela garantit que les unités métiers savent où se trouvent les données et qui s'en occupe en son nom."
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Responsabilités attribuées pour la gestion des ressources | EDM04.02 | Niveaux d’autorité attribués | APO01.02 |
+| Rôles, responsabilités et pouvoirs de décision du SMQ | APO11.01 | Rôles et responsabilités attribués | APO01.02 |
+| Enoncé du périmètre du SMSI | APO13.01 | Droits d’accès attribués | APO07.04 |
+| Journaux des accès | DSS05.05 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Octroyer les rôles et les responsabilités en fonction des descriptions d'emploi approuvées et des activités des processus métiers attribuées. |
+| 2 | Octroyer les niveaux d'autorité pour l'approbation des transactions, les limites et les autres décisions relatives au processus métiers en fonction des rôles approuvés. |
+| 3 | Attribuer des droits d'accès et des privilèges en fonction uniquement de ce qui est nécessaire pour réaliser les activités, selon les rôles prédéfinis. Supprimer ou réviser immédiatement les droits d'accès si le rôle change ou si un membre du personnel quitte le domaine du processus métier. Faire des revues périodiquement afin de s'assurer que l'accès est approprié en fonction des menaces actuelles, du risque, de la technologie et des besoins métiers. |
+| 4 | Allouer les rôles pour les activités sensibles de sorte qu'il y ait une séparation claire des tâches. |
+| 5 | Sensibiliser et former régulièrement sur les rôles et les responsabilités afin que chacun comprenne ses responsabilités, l'importance des contrôles, l'intégrité et la confidentialité de l'information de l'entreprise sous toutes ses formes ainsi que la protection de la vie privée. |
+| 6 | Passer périodiquement en revue les définitions de contrôle d'accès, les journaux et les rapports d'exception pour s'assurer que tous les privilèges d'accès sont valides et alignés avec les membres du personnel effectivement présents et leurs rôles attribués. |
+
+### DSS06.04 - Gérer les erreurs et les exceptions
+
+Gérer les exceptions et les erreurs du processus métier et faciliter leur correction. Inclure le recours à la hiérarchie pour les erreurs et les exceptions aux processus métiers et l’exécution des actions correctives définies. Cela fournit l’assurance de l'exactitude et l'intégrité du processus d'information métier
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Preuve de correction d'erreurs et de résolution | MEA02.04 |
+|  |  | Rapports d'erreurs et analyse des causes premières | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Définir et maintenir des procédures pour attribuer la propriété, corriger les erreurs, outrepasser les erreurs et gérer les conditions de déséquilibre. |
+| 2 | Examiner les erreurs, les exceptions et les écarts. |
+| 3 | Faire le suivi, rectifier, approuver et soumettre de nouveau les documents sources et les transactions. |
+| 4 | Conserver des preuves des mesures correctives. |
+| 5 | Rapporter en temps opportun les erreurs au processus pertinent d'information de l'entreprise afin d'effectuer une analyse des causes premières et des tendances. |
+
+### DSS06.05 - Assurer la traçabilité des événements d'information et des responsabilités
+
+S'assurer que l'information métier peut être retracée jusqu’à l'événement métier d'origine et aux parties responsables. Cela permet la traçabilité de l'information tout au long de son cycle de vie et des processus connexes. Cela assure que l'information qui génère le métier est fiable et a été traitée conformément aux objectifs définis.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Exigences de conservation | interne |
+|  |  | Enregistrement des transactions | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Définir les exigences de conservation en fonction des exigences métiers, afin de répondre aux besoins opérationnels, financiers, de rapport et de conformité. |
+| 2 | Enregistrer l'information source, les preuves et les transactions. |
+| 3 | Supprimer l'information source, les preuves et les transactions conformément à la politique de conservation. |
+
+### DSS06.06 - Sécuriser les actifs informationnels
+
+Sécuriser les actifs informationnel accessibles par les métiers grâce à des méthodes appropriées, incluant l'information sous forme électronique (comme les méthodes qui créent de nouveaux actifs sous quelque forme que ce soit, les appareils multimédias portatifs, les applications des utilisateurs et les périphériques de stockage), l'information sous forme physique (comme les documents sources ou les rapports de sortie) et l'information pendant le transport. Cela profite aux métiers en fournissant une sauvegarde de l'information de bout en bout
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Rapports de faille de sécurité | DSS05.03 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Appliquer les politiques et les procédures de classification des données, d'utilisation acceptable et de sécurité pour protéger les actifs informationnels sous le contrôle des métiers. |
+| 2 | Fournir une sensibilisation et une formation sur l'utilisation acceptable. |
+| 3 | Restreindre l'utilisation, la distribution et l'accès physique à l'information en fonction de sa classification. |
+| 4 | Identifier et mettre en oeuvre des processus, des outils et des techniques pour vérifier la conformité. |
+| 5 | Signaler les violations et les déviations aux entités métiers et aux autres parties prenantes. |
+
+## RACI
+
+|  | DSS06.01 | DSS06.02 | DSS06.03 | DSS06.04 | DSS06.05 | DSS06.06 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |  |
+| Président Directeur Général | C | R |  |  |  |  |
+| Directeur Financier | C | R | R |  |  | C |
+| Directeur Opérationnel | C | R |  | I |  | C |
+| Directeurs Métiers | A | A | A | I | C | C |
+| Propriétaires de Processus Métiers | R | R | R | A | A | A |
+| Comité Stratégie |  |  |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |  |
+| Coordinateur Projets (PMO) |  |  |  |  |  |  |
+| gestion de la valeur |  |  |  |  |  |  |
+| Risk Manager (RM) | I | I |  |  |  | I |
+| Directeur de la Sécurité des SI (DSSI) | I | I | I |  | I | I |
+| Urbanisme |  |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  | I |  |  |  |
+| Conformité | C | C | C | C | C | C |
+| Audit | C | C | C | C | C | C |
+| Directeur du SI (DSI) | C | C | C | C | C | C |
+| Responsable Architecture |  |  |  |  |  |  |
+| Responsable développement |  |  |  |  |  |  |
+| Responsable production informatique | C | C | C | C | C | C |
+| Responsable de l'administration informatique |  |  |  |  |  |  |
+| Gestionnaire de service | C | C | C | R | C |  |
+| Gestionnaire de la sécurité de l'information | C | C | R |  | C | C |
+| Gestionnaire de la continuité |  |  |  |  |  | C |
+| Directeur de la propriété | C |  | C |  |  | C |

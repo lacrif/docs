@@ -1,13 +1,179 @@
 ---
 id: cobit-bai04
-title: "BAI04"
+title: "BAI04 - Gérer la disponibilité et la capacité"
 sidebar_label: "BAI04"
 sidebar_position: 4
 tags: [cobit]
-description: "BAI04"
+description: "BAI04 - Gérer la disponibilité et la capacité"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Gérer l'équilibre entre les besoins immédiats et future en termes de disponibilité, performance et capacité avec les provisions budgétaires concernant les services. Prendre en compte l'évaluation de la capacité actuelle, la prévision des besoins futurs basée sur les exigences métiers, l'analyse des impacts métier et l'évaluation des risques pour planifier et mettre en oeuvre les actions visant à répondre aux exigences identifiées.
+
+## But
+
+Maintenir la disponibilité de service, une gestion efficace des ressources et l’optimisation de la performance du système par la prévision des futurs besoins en capacité et en performance.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Garantir la fourniture de services informatiques répondant aux exigences économiques | 
+<ul><li>Pourcentage de parties prenantes métiers satisfaites de la conformité des services informatiques rendus avec les niveaux de services convenus par les accords de service</li><li>Pourcentage d'utilisateurs satisfaits par la qualité des services informatiques rendus</li></ul>|
+| Optimiser les actifs informatiques, les ressources et les capacités | <ul><li>Fréquence des évaluations des optimisations de la capacité en termes de maturité et de coût</li><li>Tendance des résultats d'évaluation</li><li>Niveaux de satisfaction des directions métiers et informatiques en ce qui concerne les coûts et capacités informatiques</li></ul>|
+| Garantir la disponibilité des informations utiles aux prises de décision | <ul><li>Niveau de satisfaction des utilisateurs métiers concernant la qualité et la disponibilité des informations de gestion</li><li>Nombre d'incidents sur les processus métiers causés par la non disponibilité de l'information</li><li>Ratio et étendue des mauvaises décisions métiers pour lesquelles l'information erronée ou non disponible est un facteur clé</li></ul>
+|
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Le plan de disponibilité anticipe les attentes métier en matière d’exigences de capacité critiques. | <ul><li>Nombre de mises à niveau non planifiées relatives à la capacité, à la performance ou à la disponibilité</li></ul>|
+| La capacité, la performance et la disponibilité répondent aux exigences. | <ul><li>Nombre de pics de transactions où la performance cible est dépassée</li><li>Nombre d’incidents relatifs à la disponibilité</li><li>Nombre d’événements où la capacité a dépassé les limites prévues</li></ul>|
+| Les problèmes de disponibilité, de performance et de capacité sont signalés et résolus de manière routinière. | <ul><li>Nombre et pourcentage de problèmes de disponibilité, de performance et de capacité non résolus</li></ul>|
+
+## Pratiques
+
+### BAI04.01 - Evaluer la disponibilité, la performance et la capacité actuelles et créer une base de référence
+
+Evaluer la disponibilité, la performance et la capacité des services et des ressources pour s’assurer que la performance et la capacité rentables sont disponibles pour soutenir les besoins métiers et fournis conformément aux accords de niveaux de service. Créer des bases de référence en matière de disponibilité, de performance et de capacité pour permettre la comparaison.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Recueil des exigences | BAI02.01 | Bases de référence en matière de disponibilité, de performance et de capacité | interne |
+| Liste des exigences en matière de risque | BAI02.03 | Evaluations sur la base des accords de niveau de service | APO09.05 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Prendre en compte ce qui suit (données actuelles et prévues) dans l’évaluation de la disponibilité, de la performance et de la capacité des services et des ressources : exigences du client, priorités métiers, objectifs métiers, impact budgétaire, utilisation des ressources, capacités informatiques et tendances de l’industrie |
+| 2 | Piloter la performance réelle et l’utilisation de la capacité en tenant compte de plafonds définis, et en s'appuyant, si besoin, sur un logiciel automatisé. |
+| 3 | Détecter tous les incidents provoqués par une performance ou une capacité insatisfaisantes et effectuer un suivi. |
+| 4 | Évaluer régulièrement les niveaux actuels de performance pour tous les niveaux de traitement (demande d’affaires, capacité de service et capacité des ressources) en les comparant aux tendances et aux accords de niveau de service, en tenant compte des changements dans l’environnement. |
+
+### BAI04.02 - Évaluer l’impact sur les métiers
+
+Identifier les services essentiels pour l'entreprise, mettre en correspondance les services et les ressources avec les processus d'affaires et identifier les dépendances liées aux affaires. S'assurer que les impacts de la non-disponibilité des ressources sont entièrement convenues et acceptées par le client. S'assurer que, pour des fonctions métiers essentielles, les exigences de disponibilité des accords de niveaux de service peuvent être satisfaites.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Accords de niveau de service et accords de niveau opérationnel | BAI03.02 | Scénarios de disponibilité, de performance et de capacité | interne |
+|  |  | Évaluations de l'impact de la disponibilité, de la performance et de la capacité sur le métier | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Identifier seulement les solutions ou services qui sont critiques pour le processus de gestion de la disponibilité et de la capacité. |
+| 2 | Mettre en correspondance les solutions ou services sélectionnés avec une ou des applications et l'infrastructure (technologies et moyens) dont ils dépendent afin de se concentrer sur les ressources critiques pour la planification de la disponibilité. |
+| 3 | Collecter les données de disponibilité et de performance dans les journaux d'événements. Utiliser les outils de modélisation qui aident à prédire les échecs selon les tendances d'utilisation antérieures et les attentes de la direction quant à un nouvel environnement ou les conditions d’utilisation. |
+| 4 | Créer des scénarios basés sur les données recueillies, en décrivant des situations de disponibilité futures afin d'illustrer un éventail de niveaux de capacité potentiels requis pour atteindre l'objectif de performance de disponibilité. |
+| 5 | Déterminer la probabilité que l'objectif de performance de la disponibilité ne soit pas atteint selon les scénarios. |
+| 6 | Déterminer les impacts des scénarios sur les mesures de performance métiers (par exemple: revenu, profit, services à la clientèle). Réunir les dirigeants des entités métiers, les responsable de domaine fonctionnels (particulièrement les finances) et responsables locaux afin de comprendre leur évaluation des répercussions. |
+| 7 | Veiller à ce que les propriétaires des processus métiers comprennent parfaitement et acceptent les résultats de cette analyse. Obtenir, auprès des propriétaires de processus métiers, une liste de scénarios de risques inacceptables qui nécessitent une réponse afin de réduire les risques à un niveau acceptable. |
+
+### BAI04.03 - Se préparer aux nouvelles exigences de service ou à leur modification
+
+Planifier et prioriser les implications en matière de disponibilité, de performance et de capacité liées à la modification des besoins métiers et des exigences de services
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Critères d’acceptation confirmés par les parties prenantes | BAI02.01 | Améliorations priorisées | APO02.02 |
+| Spécifications de conception générale approuvées | BAI03.01 | Plans de performance et de capacité | APO02.02 |
+| Spécifications de conception détaillée approuvées | BAI03.02 |  |  |
+| Composants de solution documentée | BAI03.03 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Passer en revue les impacts de l'analyse des tendances en matière de service sur la disponibilité et la capacité. |
+| 2 | Identifier les impacts sur la disponibilité et la capacité de la modification des besoins de l'entreprise et des opportunités d'amélioration. Utiliser les techniques de modélisation pour valider les plans de disponibilité, de performance et de capacité. |
+| 3 | Prioriser les améliorations requises et créer des plans de capacité et de disponibilité justifiables financièrement. |
+| 4 | Adapter les plans de performance et de capacité et les accords de niveau de service en fonction des processus métiers, infrastructures de soutien, modifications aux services et aux applications réalistes, nouveaux, proposés et/ou projetés, ainsi qu’en fonction des examens de la performance et de l'utilisation actuelles de la capacité, incluant les niveaux de charge de travail. |
+| 5 | S'assurer que la direction effectue des comparaisons entre la demande actuelle de ressources et l'offre et la demande prévues afin d'évaluer les techniques de prévision utilisées et d'apporter des améliorations où cela est possible. |
+
+### BAI04.04 - Surveiller et examiner la disponibilité et la capacité
+
+Surveiller, mesurer, analyser, signaler et examiner la disponibilité, la performance et la capacité. Identifier les écarts par rapport aux bases de référence établies. Examiner les rapports d'analyse des tendances en identifiant tous les enjeux et les écarts importants, en instaurant des mesures, le cas échéant et en assurant un suivi de tous les problèmes en suspens
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Rapports d’examen de surveillance de la disponibilité, de la performance et de la capacité | MEA01.03 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Mettre en place un processus de collecte de données pour fournir à la direction, de l'information de pilotage et de reporting en matière de disponibilité, de performance et de capacité de charge de travail pour l'ensemble des ressources liées à l'information. |
+| 2 | Rapporter régulièrement les résultats sous une forme appropriée pour que la direction informatique puisse les analyser et communiquer à la direction de l'entreprise. |
+| 3 | Intégrer des activités de reporting et de pilotage dans les activités de gestion quotidienne de la capacité (surveillance, analyse, mises au point et mises en oeuvre). |
+| 4 | Fournir des rapports sur la capacité aux processus de budgétisation. |
+
+### BAI04.05 - Etuder et résoudre les problèmes de disponibilité, de performance et de capacité
+
+Traiter les écarts en les étudiant et en réglant les problèmes de disponibilité, de performance et de capacité identifiés
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Écarts de performance et de capacité | interne |
+|  |  | Actions correctives | APO02.02 |
+|  |  | Procédure d'escalade pour les urgences | DSS02.02 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Consulter les recommandations dans les manuels des produits des fournisseurs afin d'assurer un niveau approprié de disponibilité de la performance pour le traitement des pics de charge. |
+| 2 | Identifier les écarts en matière de capacité et de performance basés sur la surveillance de la performance prévue et actuelle. Utiliser les spécifications connues sur la disponibilité, la continuité et la reprise d'activité afin de classifier les ressources et de fixer les priorités. |
+| 3 | Définir des mesures correctives (par exemple: transférer une charge, prioriser des tâches ou ajouter des ressources lorsque des problèmes de capacité et de performance sont identifiés). |
+| 4 | Intégrer les mesures correctives requises au sein des processus de gestion du changement et de planification appropriés. |
+| 5 | Définir une procédure d’escalade pour une résolution rapide de problèmes urgents en matière de performance et de capacité. |
+
+## RACI
+
+|  | BAI04.01 | BAI04.02 | BAI04.03 | BAI04.04 | BAI04.05 |
+| --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |
+| Président Directeur Général |  |  |  |  |  |
+| Directeur Financier |  |  |  |  |  |
+| Directeur Opérationnel |  |  |  |  |  |
+| Directeurs Métiers |  |  |  |  |  |
+| Propriétaires de Processus Métiers | I | A | R | R | R |
+| Comité Stratégie |  |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |
+| Coordinateur Projets (PMO) |  |  |  |  |  |
+| gestion de la valeur |  |  |  |  |  |
+| Risk Manager (RM) |  |  |  |  |  |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  |  |  |
+| Urbanisme |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |  |
+| Conformité |  |  |  |  |  |
+| Audit |  |  |  |  |  |
+| Directeur du SI (DSI) | C | C | C | C | I |
+| Responsable Architecture |  |  |  |  | R |
+| Responsable développement | C | C | C | C | C |
+| Responsable production informatique | A | R | A | A | A |
+| Responsable de l'administration informatique |  |  |  |  |  |
+| Gestionnaire de service | R | R | R | R | R |
+| Gestionnaire de la sécurité de l'information | C | C | C | C | I |
+| Gestionnaire de la continuité | C | C | C | C | I |
+| Directeur de la propriété |  |  |  |  |  |

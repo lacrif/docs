@@ -1,13 +1,154 @@
 ---
 id: cobit-bai06
-title: "BAI06"
+title: "BAI06 - Gérer les changements"
 sidebar_label: "BAI06"
 sidebar_position: 6
 tags: [cobit]
-description: "BAI06"
+description: "BAI06 - Gérer les changements"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Gérer tous les changements de manière contrôlée, que les changements soient standard ou urgents, qu'ils concernent les precessus métiers, les applications ou l'infrastructure.Ceci concerne les normes et procédures de changement suivantes : évaluation d'impact, priorisation, habilitation, chagement en urgence, suivi d'incidents, reporting, clôture et documentation.
+
+## But
+
+Permettre une conduite du changement métier rapide et fiable avec une prise en compte des risques d’impact négatif sur la stabilité ou l'intégrité de l'environnement modifié.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Gérer les risques financiers relatifs à l'informatique | <ul><li>Pourcentage de processus métiers, services informatiques et programmes métiers permis grâce à l'informatique qui sont couverts par l'évaluation des risques</li><li>Nombre d'incidents significatifs relatifs à l'informatique qui n'étaient pas identifiés dans l'évaluation des risques</li><li>Pourcentage d'évaluation de risques entreprise qui incluent les risques informatiques</li><li>Fréquence de mise à jour du recensement des risques</li><li>Nombre d'interruptions de service métiers dues à un incident informatique</li></ul>|
+| Garantir la fourniture de services informatiques répondant aux exigences économiques | <ul><li>Pourcentage de parties prenantes métiers satisfaites de la conformité des services informatiques rendus avec les niveaux de services convenus par les accords de service</li><li>Pourcentage d'utilisateurs satisfaits par la qualité des services informatiques rendus</li></ul>|
+| Garantir la sécurité de l'information, de l'infrastructure et des applications | <ul><li>Nombre d'incidents de sécurité causant des pertes financières, des interruptions de services métiers ou une nuisance publique</li><li>Nombre de services informatiques pour lesquels les exigences de sécurité ne sont pas satisfaites</li><li>Délai pour accorder, modifier et retirer des privilèges d’accès compte tenu des niveaux de services convenus</li><li>Fréquence de l’évaluation de sécurité par rapport aux normes et lignes directrices en vigueur</li></ul>|
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Les changements autorisés sont effectués au moment opportun et avec le moins d'erreurs possible. | <ul><li>Nombre de reprises causées par des échecs de changements</li><li>Durée et effort minimum nécessaires pour apporter les changements</li><li>Nombre et ancienneté des demandes de changement en attente</li></ul>|
+| Les études d'impact révèlent l'effet du changement sur l'ensemble des composants concernés. | <ul><li>Pourcentage de changements qui ont échoué en raison d'études d'impact inadéquates</li></ul>|
+| L'ensemble des changements d'urgence est examiné et autorisé a posteriori | <ul><li>Pourcentage de changements qui sont des corrections d'urgence</li><li>Nombre de changements d'urgence qui ne sont pas autorisés a posteriori</li></ul>|
+| Les principales parties prenantes sont tenues informées de tous les aspects du changement. | <ul><li>Niveau de satisfaction des parties prenantes sur la communication</li></ul>|
+
+## Pratiques
+
+### BAI06.01 - Evaluer, prioriser et autoriser les demandes de changement
+
+Evaluer toutes les demandes de changement afin de déterminer les impacts sur les processus métiers et les services informatiques et d’évaluer si le changement nuira à l'environnement opérationnel et introduira un risque inacceptable. Veiller à ce que les changements soient consignés, priorisés, classés, évalués, autorisés, planifiés et programmés
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Composants de la solution intégrés et configurés | BAI03.05 | Etudes d'impact des demandes de changement | interne |
+| Demandes de services approuvées | DSS02.03 | Demandes de changement approuvées | BAI07.01 |
+| Solutions proposées pour des erreurs connues | DSS03.03 | Plan et calendrier du changement | BAI07.01 |
+| Solutions durables identifiées | DSS03.05 |  |  |
+| Changements approuvés au plan | DSS04.08 |  |  |
+| Analyses des causes premières et recommandations | DSS06.01 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Utiliser les demandes formelles de changement pour permettre aux propriétaires de processus métiers et informatiques de demander les changements au sein des processus métiers, de l'infrastructure, des systèmes ou des applications. Veiller à ce que tous ces changements surviennent seulement par le biais du processus de gestion des demandes de changement. |
+| 2 | Classer toutes les demandes de changement (par exemple: processus métiers, infrastructure, systèmes d'exploitation, réseaux, systèmes d'applications, logiciel d'application acheté/sur étagère) et associer les éléments de configuration concernés. |
+| 3 | Prioriser tous les changements demandés en fonction des exigences techniques et métiers, des ressources requises et des raisons contractuelles, réglementaires et juridiques du changement demandé. |
+| 4 | Planifier et évaluer toutes les demandes de façon structurée. Inclure une analyse d’impact sur le processus métier, l'infrastructure, les systèmes et les applications, les plans de continuité d'activité (PCA) et les fournisseurs de services pour s’assurer que tous les composants concernés soient identifiés. Évaluer la probabilité de nuire à l'environnement opérationnel et les risques de mise en oeuvre du changement. Considérer les implications sur le plan de la sécurité, du juridique, du contractuel et de la conformité liées au changement demandé. Considérer également les interdépendances parmi les changements. Impliquer les propriétaires de processus métiers dans le processus d'évaluation, s'il y a lieu. |
+| 5 | Faire approuver formellement chaque changement par les propriétaires de processus métier, les gestionnaires de services et les parties prenantes techniques informatiques, si besoin. Les changements à faible risque et relativement fréquents doivent être approuvés au préalable en tant que changements standards. |
+| 6 | Planifier et programmer tous les changements approuvés. |
+| 7 | Considérer les impacts des fournisseurs de services contractuels (par exemple: traitement métier externalisé, infrastructure, développement d'applications et services partagés) sur le processus de gestion du changement, incluant l'intégration du processus de gestion de changement organisationnel avec des processus de gestion de changement de fournisseurs de services ainsi que les impacts sur les clauses contractuelles et les accords de niveau de service. |
+
+### BAI06.02 - Gérer les changements urgents
+
+Gérer avec prudence les changements urgents afin de minimiser d'éventuels incidents et s'assurer que le changement est contrôlé et apporté de façon sécuritaire. Vérifier que les changements urgents sont évalués de manière adéquate et autorisés a posteriori.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Revue post-implantation des changements urgents | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Veiller à ce qu'une procédure documentée soit en place afin de déclarer, d'évaluer, d'approuver à titre préliminaire et de consigner un changement d'urgence, et autoriser ce dernier après son application. |
+| 2 | Vérifier que toutes les dispositions pour les accès d’urgence liées aux changements sont autorisées, documentées et révoquées après que le changement a été appliqué de manière adéquate. |
+| 3 | Gérer tous les changements d'urgence et effectuer des revues après la mise en oeuvre qui impliquent toutes les parties concernées. La revue devra mettre en place des mesures correctives basées sur les causes premières telles que les problèmes liés aux processus métiers, au développement et à la maintenance du système d'application, aux environnements de développement et de test, à la documentation et aux manuels ainsi qu’à l'intégrité des données. |
+| 4 | Définir ce qui constitue un changement d'urgence. |
+
+### BAI06.03 - Suivre et signaler l'état des changements
+
+Maintenir un système de production de rapports et de suivi afin de documenter les changements refusés, de communiquer l'état des changements approuvés et en cours et de finaliser les changements. Veiller à ce que les changements approuvés soient mis en oeuvre comme prévu
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Enregistrement de toutes les demandes de changement approuvées et appliquées | BAI03.09 | Rapports sur le statut des demandes de changement | BAI01.06 / BAI10.03 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Classer toutes les demandes de changement au sein du processus de suivi (par exemple: refusées, approuvées mais pas encore commencées, approuvées et en cours, et fermées). |
+| 2 | Mettre en oeuvre les rapports d'état du changement avec des indicateurs de performance pour permettre l'examen et la surveillance par la direction de l'état détaillé des changements et de leur état d'ensemble (par exemple: analyse de l’ancienneté des demandes de changement). Veiller à ce que les rapports d'état forment une piste d'audit afin que les changements puissent être ultérieurement suivis, de leur mise en place jusqu'à leur retrait éventuel. |
+| 3 | Piloter les changements ouverts afin d'assurer que tous les changements approuvés sont fermés dans les meilleurs délais, selon la priorité. |
+| 4 | Maintenir un système de production de rapports et de suivi pour toutes les demandes de changement. |
+
+### BAI06.04 - Fermer et documenter les changements
+
+Chaque fois que des changements sont mis en oeuvre, mettre à jour la solution et la documentation d'utilisateur en conséquence et les procédures concernées par le changement
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Documentation du changement | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Inclure les changements dans la documentation (par exemple: procédures opérationnelles informatiques et métiers, continuité de l'activité et documentation de reprise après désastre, information sur la configuration, documentation sur les applications, aide en ligne et documents de formation) au sein de la procédure de gestion du changement en tant que partie intégrante du changement. |
+| 2 | Définir une durée de conservation appropriée pour la documentation du changement et le système de pré- et de post-changement ainsi que la documentation utilisateur. |
+| 3 | Soumettre la documentation au même niveau de revue que le changement actuel. |
+
+## RACI
+
+|  | BAI06.01 | BAI06.02 | BAI06.03 | BAI06.04 |
+| --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |
+| Président Directeur Général |  |  |  |  |
+| Directeur Financier |  |  |  |  |
+| Directeur Opérationnel | A | A | C | A |
+| Directeurs Métiers | R | I | R | R |
+| Propriétaires de Processus Métiers |  |  |  |  |
+| Comité Stratégie |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |
+| Coordinateur Projets (PMO) | C |  | C | R |
+| gestion de la valeur |  |  |  |  |
+| Risk Manager (RM) | C | C |  | C |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  |  |
+| Urbanisme |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |
+| Conformité | C | C |  | C |
+| Audit | C | C |  | C |
+| Directeur du SI (DSI) | R | R | A | R |
+| Responsable Architecture | C | I |  | C |
+| Responsable développement | R | R | R | R |
+| Responsable production informatique | R | R | R | R |
+| Responsable de l'administration informatique |  |  |  | I |
+| Gestionnaire de service | R | I | R | I |
+| Gestionnaire de la sécurité de l'information | C | C |  |  |
+| Gestionnaire de la continuité |  |  |  |  |
+| Directeur de la propriété |  |  |  |  |

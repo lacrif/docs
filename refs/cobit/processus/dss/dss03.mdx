@@ -1,13 +1,173 @@
 ---
 id: cobit-dss03
-title: "DSS03"
+title: "DSS03 - Gérer les problèmes"
 sidebar_label: "DSS03"
 sidebar_position: 3
 tags: [cobit]
-description: "DSS03"
+description: "DSS03 - Gérer les problèmes"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Identifier et classifier les problèmes et leur causes originelles. Fournir une résolution dans les temps pour prévenir la récurrence des incidents. Fournir des recommandations d'amélioration.
+
+## But
+
+Améliorer la disponibilité et les niveaux de service, réduire les coûts et améliorer la satisfaction des clients en réduisant le nombre de problèmes opérationnels.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Gérer les risques financiers relatifs à l'informatique | <ul><li>Pourcentage de processus métiers, services informatiques et programmes métiers permis grâce à l'informatique qui sont couverts par l'évaluation des risques</li><li>Nombre d'incidents significatifs relatifs à l'informatique qui n'étaient pas identifiés dans l'évaluation des risques</li><li>Pourcentage d'évaluation de risques entreprise qui incluent les risques informatiques</li><li>Fréquence de mise à jour du recensement des risques</li><li>Nombre d'interruptions de service métiers dues à un incident informatique</li></ul> |
+| Garantir la fourniture de services informatiques répondant aux exigences économiques | <ul><li>Pourcentage de parties prenantes métiers satisfaites de la conformité des services informatiques rendus avec les niveaux de services convenus par les accords de service</li><li>Pourcentage d'utilisateurs satisfaits par la qualité des services informatiques rendus</li></ul> |
+| Optimiser les actifs informatiques, les ressources et les capacités | <ul><li>Fréquence des évaluations des optimisations de la capacité en terme de maturité et de coût</li><li>Tendance des résultats d'évaluation</li><li>Niveaux de satisfaction des directions métiers et informatiques en ce qui concerne les coûts et capacités informatiques</li></ul> |
+| Garantir la disponibilité des informations utiles aux prises de décision | <ul><li>Niveau de satisfaction des utilisateurs métiers concernant la qualité et la disponibilité des informations de gestion</li><li>Nombre d'incidents sur les processus métiers causés par la non disponibilité de l'information</li><li>Ratio et étendue des mauvaises décisions métiers pour lesquelles l'information erronée ou non disponible est un facteur clé</li></ul> |
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Les problèmes liés à l'informatique sont résolus afin qu'ils ne se reproduisent pas. | <ul><li>Diminution du nombre d'incidents récurrents provoqués par des problèmes non résolus</li><li>Pourcentage d'incidents majeurs pour lesquels des problèmes ont été enregistrés</li><li>Pourcentage de solutions de contournement définies pour les problèmes ouverts</li><li>Pourcentage de problèmes enregistrés dans le cadre de l'activité de gestion proactive des problèmes</li><li>Nombre de problèmes pour lesquels on a trouvé une solution satisfaisante qui traitait les causes fondamentales</li></ul> |
+
+### Pratiques
+
+#### DSS03.01 - Identifier et classer les problèmes
+
+Définir et mettre en oeuvre des critères et des procédures pour signaler les problèmes identifiés, incluant la classification, la catégorisation et la priorisation des problèmes
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Référentiel des causes originelles et gestion des risques associés | APO12.06 | Schéma de classification des problèmes | DSS02.01 |
+| Critères d'enregistrement des problèmes | DSS02.01 | Rapports sur les statuts des problèmes | DSS02.07 |
+| Traces des problèmes | DSS02.04 | Registre des problèmes | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Identifier les problèmes par la corrélation des rapports d'incidents, des journaux d'erreurs et autres ressources d'identification des problèmes. Déterminer les niveaux de priorité et la catégorisation afin de résoudre les problèmes en temps opportun en fonction des risques métiers et de la définition de service. |
+| 2 | Traiter formellement tous les problèmes en ayant accès à toutes les données pertinentes, incluant les informations provenant du système de gestion du changement et de la configuration ou des actifs informatiques et des détails de l'incident. |
+| 3 | Mettre en place une équipe chargée de l'identification des problèmes, de l'analyse des causes premières et de la détermination de solutions. Déterminer la composition de l'équipe en fonction de catégories prédéfinies, telles que le matériel, le réseau, les logiciels, les applications et les logiciels. |
+| 4 | Définir des niveaux de priorité en consultant les entités métiers afin de s'assurer que l'identification des problèmes et l'analyse des causes premières sont traitées en temps opportun, conformément aux accords de niveaux de service convenus. Établir les niveaux de priorité selon les impacts sur les métiers et le degré d’urgence. |
+| 5 | Signaler l'état des problèmes identifiés au centre de service afin que les clients et la direction informatique puissent être tenus informés. |
+| 6 | Maintenir un catalogue unique de gestion des problèmes pour enregistrer et signaler les problèmes identifiés et pour établir des pistes d'audit des processus de gestion des problèmes, incluant l'état de chaque problème (par exemple : ouvert, réouvert, en cours ou clos). |
+
+#### DSS03.02 - Enquêter et diagnostiquer sur les problèmes
+
+Enquêter et diagnostiquer sur les problèmes à l'aide des experts appropriés sur les sujets concernés pour évaluer et analyser les causes premières
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Référentiel des causes originelles et gestion des risques associés | APO12.06 | Causes premières des problèmes | interne |
+|  |  | Rapports de résolution des problèmes | DSS02.07 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Identifier les problèmes qui pourraient constituer des erreurs connues en comparant les données de l'incident avec la base de données des erreurs connues (par exemple : celles communiquées par les fournisseurs externes) et classer les problèmes en tant qu'erreurs connues. |
+| 2 | Associer les éléments de configuration affectés à l'erreur établie ou connue. |
+| 3 | Produire des rapports afin de communiquer l'avancement en matière de résolution de problèmes et de surveiller continuellemnt l'impact des problèmes non résolus. Surveiller l'état du processus de traitement des problèmes tout au long de son cycle de vie, incluant l'apport de la gestion du changement et de la configuration. |
+
+#### DSS03.03 - Relever les erreurs connues
+
+Dès que les causes premières des problèmes sont identifiées, créer des enregistrements d'erreurs connues avec identification d'une solution de contournement appropriée et des solutions potentielles
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Enregistrements des erreurs connues | DSS02.05 |
+|  |  | Solutions proposées pour des erreurs connues | BAI06.01 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Dès que les causes premières des problèmes sont identifiées, créer des enregistrements d'erreurs connues et développer une solution de contournement appropriée. |
+| 2 | Identifier, évaluer, prioriser et traiter (par la gestion du changement) les solutions aux erreurs connues en se basant sur un Business Case portant sur les coûts et les bénéfices, sur l'impact sur les métiers et sur le degré d’urgence. |
+
+#### DSS03.04 - Résoudre et clore les problèmes
+
+Identifier et initier des solutions durables traitant les causes premières amenant des demandes de changement par le biais du processus de gestion du changement mis en place, si nécessaire pour résoudre les erreurs. Veiller à ce que le personnel concerné soit informé des mesures prises et des plans élaborés pour prévenir de futurs incidents
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Résolutions d'incident | DSS02.05 | Demandes de service et incidents clos | DSS02.06 |
+| Enregistrements des problèmes clos | DSS02.06 | Communication des connaissances acquises | APO08.04 / DSS02.05 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Clore les enregistrements de problèmes, soit après confirmation de l'élimination de l'erreur connue ou après entente avec l’entité métier sur une autre façon de traiter le problème. |
+| 2 | Informer le centre d’assistance de la planification de fermeture de problème. Par exemple, les dates de correction des erreurs connues, la solution de contournement possible ou le fait que le problème ne sera pas résolu jusqu'à ce que le changement soit mis en oeuvre et les conséquences de l'approche adoptée. Tenir informés le cas échéant les utilisateurs et les clients impactés. |
+| 3 | Tout au long du processus de résolution, obtenir des rapports réguliers de la gestion du changement sur les progrès réalisés dans la résolution des problèmes et des erreurs. |
+| 4 | Surveiller continuellement l'impact des problèmes et des erreurs connues sur les services. |
+| 5 | Vérifier et confirmer le succès de la résolution de problèmes majeurs. |
+| 6 | S'assurer que les connaissances acquises sont restituées lors d'une réunion d'évaluation du service avec les clients métiers. |
+
+#### DSS03.05 - Effectuer une gestion proactive des problèmes
+
+Recueillir et analyser les données opérationnelles (en particulier les inventaires d'incidents et de changements) afin d'identifier les tendances émergentes susceptibles d'indiquer des problèmes. Tenir un inventaire des problèmes pour en permettre l'évaluation
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Rapports de suivi des résolutions de problèmes | DSS02.07 |
+|  |  | Solutions durables identifiées | BAI06.01 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Récupérer l'information sur les problèmes liés aux changements et aux incidents informatiques et la communiquer aux parties prenantes clés. Cette communication peut prendre la forme de rapports ou de rencontres périodiques avec les responsables des processus de gestion des incidents, des problèmes, des changements et de la configuration pour examiner les problèmes récents et les actions correctives éventuelles. |
+| 2 | Veiller à ce que les responsables de processus de la gestion des incidents, des problèmes, des changements et de la configuration se réunissent régulièrement pour discuter des problèmes connus et des changements prévus. |
+| 3 | Pour permettre à l'entreprise de surveiller les coûts totaux des problèmes, mesurer les efforts de changement résultant des activités du processus de gestion des problèmes (par exemple : solutions aux problèmes et erreurs connues) et en rendre compte. |
+| 4 | Produire des rapports pour piloter la résolution des problèmes par rapport aux exigences opérationnelles et aux accords de niveau de service. Assurer le bon recours à la hiérarchie pour les problèmes, par exemple, le recours à un niveau supérieur de management selon des critères approuvés, la communication avec des fournisseurs externes, ou la saisie du comité consultatif des changements pour donner plus d’importance à une demande urgente de changement afin de mettre en oeuvre une solution de contournement temporaire. |
+| 5 | Suivre les tendances en matière de problèmes pour optimiser l'utilisation des ressources et réduire les solutions de contournement. |
+| 6 | Identifier et initier des solutions durables (correctifs permanents) qui traitent la cause première des problèmes et suscitent des demandes de changement par le biais des processus établis de gestion du changement. |
+
+## RACI
+
+|  | DSS03.01 | DSS03.02 | DSS03.03 | DSS03.04 | DSS03.05 |
+| --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |
+| Président Directeur Général |  |  |  |  |  |
+| Directeur Financier |  |  |  |  |  |
+| Directeur Opérationnel |  |  |  |  |  |
+| Directeurs Métiers | I |  |  | I |  |
+| Propriétaires de Processus Métiers | C |  |  | C | C |
+| Comité Stratégie |  |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |
+| Coordinateur Projets (PMO) |  |  |  |  |  |
+| gestion de la valeur |  |  |  |  |  |
+| Risk Manager (RM) | I | I |  | I |  |
+| Directeur de la Sécurité des SI (DSSI) | I | I |  | I |  |
+| Urbanisme |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |  |
+| Conformité | I |  |  | C |  |
+| Audit | I |  |  | C |  |
+| Directeur du SI (DSI) | R |  |  | I |  |
+| Responsable Architecture | C | C |  | C | C |
+| Responsable développement | R | C |  | C | C |
+| Responsable production informatique | R | A | A | R | R |
+| Responsable de l'administration informatique |  |  |  |  |  |
+| Gestionnaire de service | A | R | R | A | A |
+| Gestionnaire de la sécurité de l'information | C | R | R |  |  |
+| Gestionnaire de la continuité |  |  |  |  |  |
+| Directeur de la propriété |  |  |  |  |  |

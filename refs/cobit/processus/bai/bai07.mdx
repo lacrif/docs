@@ -1,13 +1,254 @@
 ---
 id: cobit-bai07
-title: "BAI07"
+title: "BAI07 - Gérer la conduite du changement"
 sidebar_label: "BAI07"
 sidebar_position: 7
 tags: [cobit]
-description: "BAI07"
+description: "BAI07 - Gérer la conduite du changement"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Valider formellement et rendre les nouvelles solutions opérationnelles. Ceci inclut la planification de l'implémentation, la transformation du système et des données, les tests de validation, la communication, la préparation de version de mise à jour, la promotion des processus métiers ou informatiques ajoutés ou modifiés, le support des débuts en production et la revue post implémentation.
+
+## But
+
+Mettre en oeuvre des solutions de façon sécuritaire et en lien avec les attentes partagées et résultats attendus
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Garantir un usage adéquate des solutions, de l'information et des technologies | <ul><li>Pourcentage de propriétaires de processus métiers satisfaits des produits et services informatiques</li><li>Niveau de compréhension des utilisateurs métier quand au fait que les solutions technologiques supportent leur activité</li><li>Niveau de satisfaction des utilisateurs métiers concernant les formations et manuels utilisateurs</li><li>Valeur actualisée nette (VAN) indiquant le niveau de satisfaction de l’entreprise à l’égard de la qualité et de l’utilité des solutions technologiques</li></ul>|
+| Garantir l'intégration des applications et technologies au service des processus économiques | <ul><li>Nombre d'incidents d'exploitation causé par des erreurs d'intégration technologique</li><li>Nombre de changements retardés ou repris à cause de problèmes d'intégration technologique</li><li>Nombre de programmes informatiques métiers retardés ou subissant un surcoût dû à des problèmes d'intégration technologique</li><li>Nombre d'applications ou d'infrastructures critiques isolées et non intégrées</li></ul>|
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Les tests d’acceptation sont validés par les parties prenantes et tiennent compte de tous les aspects des plans de modification et de mise en oeuvre. | <ul><li>Pourcentage de parties prenantes satisfaites de la complétude des tests</li></ul>|
+| Les versions sont prêtes à passer en production quand les parties prenantes et le support sont prêts. | <ul><li>Nombre et pourcentage de versions qui ne sont pas prêtes pour être mises en production à la date prévue</li></ul>|
+| Les versions sont passées en production avec succès, sont stables et répondent aux attentes. | <ul><li>Nombre ou pourcentage des versions qui échouent à se stabiliser dans un délai acceptable</li><li>Pourcentage de versions entraînant un temps d'arrêt</li></ul>|
+| Les leçons apprises sont prises en compte lors des versions suivantes. | <ul><li>Nombre et pourcentage d'analyses des causes fondamentales complétées</li></ul>|
+
+## Pratiques
+
+### BAI07.01 - Etablir un plan de mise en oeuvre
+
+Etablir un plan de mise en oeuvre qui couvre la transformation des données et des systèmes, les critères de test d’acceptation, la communication, la formation, la préparation des versions, le passage en mode production, le soutien renforcé après la mise en production, un plan de retrait ou de repli et un examen post-implantation. Obtenir l'approbation des parties concernées
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Plan de gestion de la Qualité | BAI01.09 | Plan de mise en œuvre approuvé | interne |
+| Demandes de changement approuvées | BAI06.01 | Processus de reprise et de repli lié à la mise en oeuvre | interne |
+| Plan et calendrier du changement | BAI06.01 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Créer un plan de mise en oeuvre qui reflète la stratégie de mise en oeuvre générale, la séquence des étapes de mise en oeuvre, les exigences liées aux ressources, les interdépendances, les critères pour l'acceptation par les gestionnaires de la mise en oeuvre de la production, les exigences de vérification de l'installation, la stratégie de transition pour le soutien de la production et la mise à jour des PCA. |
+| 2 | Confirmer que tous les plans de mise en oeuvre sont approuvés par les parties prenantes métiers et techniques et examinés par l’audit interne, s'il y a lieu. |
+| 3 | Obtenir l'engagement des fournisseurs de solutions externes quant à leur implication à chaque étape de la mise en oeuvre. |
+| 4 | Identifier et documenter le processus de retour arrière et de reprise. |
+| 5 | Examiner formellement les risques métiers et techniques liés à la mise en oeuvre, et s’assurer que les risques principaux sont considérés et pris en compte dans le processus de planification. |
+
+### BAI07.02 - Planifier la transformation des processus métiers, des systèmes et des données
+
+Se préparer à la migration du processus métier, des données du service informatique et de l’infrastructure en tant que partie intégrante des méthodes de développement de l'entreprise, prévoir la mise à disposition de pistes d'audit et d'un plan de reprise en cas d'échec de la migration
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Plan de migration | DSS06.02 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Définir pour le processus métier, un plan de migration des données et de l’infrastructure du service informatique. Dans la conception du plan, considérer, par exemple, le matériel informatique, les réseaux, les systèmes d’exploitation, les logiciels, les données de transaction, les fichiers maîtres, les copies de sauvegarde et les archives, les interfaces avec les autres systèmes (internes comme externes), les exigences de conformité possibles, les procédures métiers et la documentation du système. |
+| 2 | Dans le plan de conversion du processus métier, considérer tous les ajustements de procédures nécessaires, dont la révision des rôles et des responsabilités ainsi que celle des procédures de contrôle. |
+| 3 | Dans le plan de conversion de données, incorporer des méthodes pour collecter, convertir et vérifier les données devant être converties, et pour repérer et résoudre toute erreur détectée durant la conversion. Inclure une comparaison entre les données converties et les données originales pour assurer l’exhaustivité et l’intégrité. |
+| 4 | S’assurer que le plan de conversion des données ne nécessite pas de changement des valeurs des données, à moins que des raisons métiers ne l’exigent absolument. Documenter les changements apportés aux valeurs des données et obtenir l’approbation du propriétaire des données du processus métier. |
+| 5 | Répéter et tester la conversion avant de procéder à une conversion réelle. |
+| 6 | Prendre en compte les risques de problèmes de conversion, la planification de la continuité des activités et les procédures de retour arrière dans le plan de migration du processus métier, des données et de l’infrastructure, dès qu’il existe des exigences liées à la gestion du risque, aux besoins métiers ou à la réglementation ou à la conformité. |
+| 7 | Coordonner et vérifier le moment exact de la fin de la conversion pour assurer une transition harmonieuse et continue, sans perte de transactions. Lorsque nécessaire, en l’absence d’une solution de rechange, bloquer les opérations en cours. |
+| 8 | Planifier une copie de sauvegarde de tous les systèmes et des données dans leur état précédant la conversion. Maintenir des pistes de vérification pour permettre de retracer la conversion et s’assurer qu’il existe un plan de reprise prévoyant une restauration et un retour en arrière au processus précédent en cas d’échec de la migration. |
+| 9 | Planifier la conservation des données sauvegardées et archivées pour assurer le respect des besoins métiers et des exigences réglementaires ou de conformité. |
+
+### BAI07.03 - Planifier les tests d’acceptation
+
+Etablir un plan de test basé sur les normes à l’échelle de l’entreprise définissant les rôles, les responsabilités ainsi que les critères d’entrée et de sortie. S’assurer que le plan est approuvé par les parties concernées.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Exigences de vérification des livrables indépendante | BAI01.09 | Plan de test de vérification validé | BAI01.04 / BAI01.08 |
+| Plan de test | BAI03.07 |  |  |
+| Procédures de test | BAI03.07 |  |  |
+| Journaux des résultats de test et pistes d’audit | BAI03.08 |  |  |
+| Communication des résultats de test | BAI03.08 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Concevoir et documenter un plan de test qui correspond au plan de qualité du programme et du projet et aux normes organisationnelles appropriées. Communiquer avec les propriétaires du processus métier concernés et les parties prenantes informatiques et les consulter. |
+| 2 | S’assurer que le plan de test reflète une évaluation du risque relié au projet et que toutes les exigences fonctionnelles et techniques sont testées. En fonction de l’évaluation du risque de défaillance du système et des défauts de mise en oeuvre, le plan devrait spécifier les exigences de performance, de stress, d'utilisabilité, des tests pilotes et de sécurité. |
+| 3 | S’assurer que le plan de test prévoit la nécessité potentielle d’obtenir une accréditation interne ou externe des résultats du processus de test (par exemple: exigences financières ou réglementaires). |
+| 4 | S’assurer que le plan de test précise les ressources nécessaires à l’exécution des essais et à l’évaluation des résultats. La conception d’environnements de tests et le temps du personnel formant l’équipe de testeurs, incluant le remplacement temporaire potentiel du personnel de test dans les environnements de production et de développement, figurent parmi les exemples de ressources. Veiller à ce que les parties prenantes soient consultées au sujet de l’implication des ressources dans le plan de test. |
+| 5 | S’assurer que le plan de test définit des étapes de test adaptées aux exigences opérationnelles et à l’environnement. Les tests unitaires, de système, d’intégration, d’acceptation par l’utilisateur, de performance, les tests de charge, de conversion de données, de sécurité, de l’état de préparation opérationnelle et les tests de sauvegarde et de reprise sont des exemples d’étapes de test |
+| 6 | Vérifier que le plan de test prend en compte la préparation des tests (incluant la préparation du site), les besoins en formation, l’installation ou la mise à jour d’un environnement de tests particulier, la planification / exécution / documentation / conservation des scénarios de test, la gestion des erreurs et des problèmes, les corrections, le recours à la hiérarchie et l’approbation formelle. |
+| 7 | S’assurer que le plan de test établit des critères précis pour mesurer le succès de chacune des étapes de test. Consulter les propriétaires du processus métier et les parties prenantes informatiques lors de la définition des critères de succès. Veiller à ce que le plan prévoie des procédures de correction quand les critères de succès ne sont pas remplis (par exemple: dans le cas d’échecs importants au cours d’une étape de test, le plan précise s’il faut ou non passer à l’étape suivante, cesser les tests ou reporter la mise en oeuvre). |
+| 8 | Confirmer que tous les plans de test sont approuvés par les parties prenantes, incluant les propriétaires du processus métier et l'informatique, au besoin. Les gestionnaires du développement applicatif, les gestionnaires de projet et les utilisateurs finaux du processus métier constituent des exemples de parties prenantes. |
+
+### BAI07.04 - Mettre en place un environnement de tests
+
+Définir et mettre en place un environnement de tests sécurisé représentatif du processus métier et de l’environnement informatique opérationnel, de la performance et de la capacité, de la sécurité, des contrôles internes, des pratiques opérationnelles, des exigences de qualité des données et de confidentialité et des charges de travail planifiés
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Données de test | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Créer une base de données contenant les données de test représentatives de l’environnement de production. Procéder au nettoyage des données tirées de l’environnement de production et utilisées dans l’environnement de tests en fonction des besoins métiers et des normes de l’entreprise (par exemple: évaluer si les exigences réglementaires ou de conformité exigent l’utilisation de données anonymes). |
+| 2 | Protéger les données et les résultats de test sensibles contre la divulgation, incluant l’accès, la conservation, le stockage et la destruction. Considérer les conséquences des interactions des systèmes de l’entreprise avec ceux de tierces parties. |
+| 3 | Mettre en place un processus permettant la conservation et la suppression des résultats des tests, des médias et de toute autre documentation associé pour permettre une revue et une analyse adéquate, conformément au plan de test. Prendre en compte les exigences réglementaires ou de conformité. |
+| 4 | S’assurer que l’environnement de tests est représentatif du contexte opérationnel et métier futur, comprenant les procédures et les rôles du processus métier, la contrainte de la charge de travail probable, les systèmes d’exploitation, le logiciel applicatif nécessaire, les systèmes de gestion de bases de données et l’infrastructure réseau et informatique présents dans l’environnement de production. |
+| 5 | S’assurer que l’environnement de tests est sécurisé et inapte à interagir avec les systèmes en production. |
+
+### BAI07.05 - Effectuer des tests d’acceptation
+
+Tester les changements de façon indépendante en respectant le plan de test défini avant la migration vers l’environnement d’exploitation réel
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Base de stockage des résultats de test | interne |
+|  |  | Evaluation des résultats de vérification | BAI01.06 |
+|  |  | Vérification validée et mise à jour de production | BAI01.04 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Passer en revue les logs d'erreurs catégorisées repérées durant le processus de test par l’équipe de développement et vérifier que toutes les erreurs ont été corrigées ou acceptées formellement. |
+| 2 | Comparer l’acceptation finale aux critères de succès et interpréter les résultats finaux des tests d’acceptation. Les présenter dans un format facilement compréhensible pour les propriétaires du processus métier et l'informatique aux fins d’une revue et d’une évaluation éclairés. |
+| 3 | Faire approuver l’acceptation au moyen d’une signature formelle de la part des propriétaires du processus métier, des tierces parties (si besoin) et des parties prenantes informatiques avant de passer en production. |
+| 4 | S’assurer que les tests de changements sont effectués conformément au plan de tests. S’assurer que les tests sont conçus et effectués par une équipe de testeurs indépendante de l’équipe de développement. Evaluer le niveau de participation des propriétaires du processus métier et des utilisateurs finaux dans l’équipe de testeurs. S’assurer que les essais sont uniquement effectués dans l’environnement de tests. |
+| 5 | S’assurer que les tests et les résultats anticipés sont conformes aux critères de succès définis dans le plan de test. |
+| 6 | Considérer l’utilisation d’instructions de test (scripts) clairement définies pour mettre en oeuvre les tests. S’assurer que l’équipe de testeurs indépendante évalue et approuve chaque script de test pour confirmer qu’il tient adéquatement compte des critères de succès mis de l’avant dans le plan de test. Considérer l’utilisation de scripts pour mesurer le niveau de respect des exigences de sécurité du système. |
+| 7 | Déterminer l’équilibre approprié entre les tests automatisés préétablis et les tests interactifs par utilisateur. |
+| 8 | Procéder à des tests de sécurité conformément au plan de test. Mesurer l’importance des faiblesses ou des failles de sécurité. Considérer les conséquences des incidents de sécurité depuis la conception du plan de test. Considérer l’incidence sur l’accès et les limites de contrôle. |
+| 9 | Effectuer des tests de performance du système et de l’application conformément au plan de test. Considérer une gamme d’indicateurs de performance (par exemple: temps de réponse de l’utilisateur final et performance de la mise à jour du système de gestion de base de données). |
+| 10 | Pendant que sont effectués les tests, s’assurer que les éléments de restauration et de retour en arrière du plan de test ont été considérés. |
+| 11 | Identifier, consigner et classer (per exemple: mineure, importante, critique) les erreurs durant les tests. S’assurer qu’une piste d'audit des résultats des tests est disponible. Communiquer les résultats des tests aux parties prenantes conformément au plan de test pour faciliter la correction de bogues et les améliorations postérieures à la qualité. |
+
+### BAI07.06 - Passer en mode production et gérer les versions
+
+"Faire passer la solution acceptée au niveau des métiers et des opérations en production. Au besoin, mettre en service la solution en tant que pilote ou en parallèle avec l’ancienne solution durant une période définie et comparer les comportements et résultats. En cas de problèmes importants, revenir vers l’environnement original selon le plan de repli ou de retour en arrière. Gérer les versions des composants de la solution"
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Plan de versions | BAI10.01 |
+|  |  | Registre des versions | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Préparer le transfert des procédures métiers et des services de soutien, des applications et de l’infrastructure de l’environnement de tests vers l’environnement de production conformément aux normes de gestion des changements de l’entreprise. |
+| 2 | Déterminer l’étendue du projet pilote ou du traitement en parallèle de l’ancien et du nouveau système en concordance avec le plan de mise en oeuvre. |
+| 3 | Mettre rapidement à jour la documentation relative au processus métier et au système ainsi que les documents contenant les informations de configuration et le plan de contingence, si besoin. |
+| 4 | S’assurer que les bibliothèques de composants sont mises à jour rapidement pour refléter la version du composant de la solution transférée de l’environnement de test à l’environnement de production. Archiver la version existante et toute la documentation associée. S’assurer que le passage en production des systèmes, du logiciel applicatif et de l’infrastructure fait l’objet d’un contrôle de configuration. |
+| 5 | Lorsque la distribution des composants de la solution est exécutée électroniquement, contrôler la distribution automatisée pour assurer que les utilisateurs sont informés et qu’elle s’effectue seulement aux destinations autorisées et correctement identifiées. Dans le processus de mise en production, inclure des procédures de retrait permettant la révision de la distribution des changements en cas de défaillance ou d’erreur. |
+| 6 | Lorsque la distribution est exécutée physiquement, tenir un registre formel des éléments distribués, en prenant soin de noter le destinataire, l’endroit de la mise en oeuvre et le moment de la mise à jour de chacun. |
+
+### BAI07.07 - Fournir un soutien au démarrage de la production
+
+Fournir un soutien aux utilisateurs et aux opérations informatiques durant une période de temps convenue pour gérer les problèmes et aider à stabiliser la nouvelle solution
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Résultats de revue de la qualité de service et retour clients | APO11.03 | Plan de support complémentaire | APO08.04 / APO08.05 / DSS02.04 |
+| Mesures de réussite et résultats | BAI05.05 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Fournir des ressources supplémentaires, si besoin, aux utilisateurs finaux et au personnel de soutien jusqu’à ce que la version soit stabilisée. |
+| 2 | Fournir des ressources informatiques supplémentaires, si besoin, jusqu’à ce que la version se trouve dans un environnement d’exploitation stable. |
+
+### BAI07.08 - Effectuer une revue post-implantation
+
+Effectuer une revue post-implantation pour valider les produits et les résultats, avoir un retour d'expérience et concevoir un plan d’action. Évaluer et vérifier la performance et les résultats réels du service nouveau ou modifié par rapport à la performance et aux résultats prévus (c’est-à-dire, le service anticipé par l’utilisateur ou le client)
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Résultat de revues et d'audits qualité | APO11.04 | Plan d'action de correction | BAI01.13 / BAI01.14 |
+| Résultats de pilotage de la qualité de livraison des solutions et services | APO11.05 | Rapport de revue d'après mise en œuvre | BAI01.13 / BAI01.14 |
+| Causes premières des défauts de qualité | APO11.05 |  |  |
+| Mesures de réussite et résultats | BAI05.05 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Établir des procédures pour assurer que les examens post-implantation indiquent, évaluent et communiquent dans quelle mesure : Les exigences de l’entreprise ont été respectées / Les bénéfices anticipés ont été réalisés / Le système est considéré comme utilisable / Les attentes des parties prenantes internes et externes sont satisfaites / Des conséquences imprévues sur l’entreprise l’ont affecté / Les principaux risques sont atténués / Les processus de gestion du changement, d’installation et d’accréditation ont été appliqués efficacement. |
+| 2 | Consulter les propriétaires du processus métier et l’équipe de gestion technique informatique dans le choix des indicateurs de performance servant à mesurer le succès, le respect des exigences et la création de bénéfices. |
+| 3 | Effectuer examen post-implantation conformément au processus de gestion du changement de l’entreprise. Obtenir la participation des propriétaires du processus métier et de tierces parties, si besoin. |
+| 4 | Tenir compte des exigences d’un examen post-implantation émanant de l’extérieur de l’entreprise et de l'informatique (par exemple: audit interne, gestion du risque de l’entreprise, conformité). |
+| 5 | Convenir de mettre en oeuvre un plan d’action pour régler les problèmes mis au jour lors de l’examen post-implantation. Obtenir la participation des propriétaires du processus métier et de l’équipe de gestion technique informatique dans la conception du plan d’action. |
+
+## RACI
+
+|  | BAI07.01 | BAI07.02 | BAI07.03 | BAI07.04 | BAI07.05 | BAI07.06 | BAI07.07 | BAI07.08 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |  |  |  |
+| Président Directeur Général |  |  |  |  |  |  |  |  |
+| Directeur Financier |  |  |  |  |  |  |  |  |
+| Directeur Opérationnel |  |  |  |  |  |  |  |  |
+| Directeurs Métiers | C | C | A | A | A |  |  |  |
+| Propriétaires de Processus Métiers | R | R | R | R | R | R | R | R |
+| Comité Stratégie |  |  |  |  |  |  |  |  |
+| Comité de Pilotage (programmes/projets) | A | A | R | R | R | A | A | A |
+| Coordinateur Projets (PMO) | C | C | I | I | I | I | I | I |
+| gestion de la valeur |  |  |  |  |  |  |  |  |
+| Risk Manager (RM) | R | R |  |  |  |  |  |  |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  |  |  |  |  |  |
+| Urbanisme |  |  |  |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |  |  |  |  |
+| Conformité | C | C |  |  |  |  |  | C |
+| Audit | C | C | C |  |  |  |  | C |
+| Directeur du SI (DSI) | R | R | I | I | I | I | I | I |
+| Responsable Architecture | C | C |  |  |  |  |  |  |
+| Responsable développement | R | R | R | R | R | R | R | R |
+| Responsable production informatique | C | C | R | R | R | R | R | R |
+| Responsable de l'administration informatique |  |  |  |  |  |  |  |  |
+| Gestionnaire de service | R | R | I | I | I | R | R | R |
+| Gestionnaire de la sécurité de l'information | R | R | R | R | R | I | I | C |
+| Gestionnaire de la continuité | R | R | R | R | R | I | I | I |
+| Directeur de la propriété | C | C | C | C | C | I | I | I |

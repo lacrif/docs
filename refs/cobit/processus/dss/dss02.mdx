@@ -1,13 +1,217 @@
 ---
 id: cobit-dss02
-title: "DSS02"
+title: "DSS02 - Gérer les incidents et les demandes"
 sidebar_label: "DSS02"
 sidebar_position: 2
 tags: [cobit]
-description: "DSS02"
+description: "DSS02 - Gérer les incidents et les demandes"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Fournir une réponse concrète et dans un certain délai aux demandes des utilisateurs et à la déclaration d'incidents de tous types. Restaurer un service nominal. Enregistrer et qualifier les demandes des utilisateurs. Enregistrer les incidents, faire les investigations, diagnostiques, escalades et résolutions nécessaires.
+
+## But
+
+Améliorer la productivité et réduire les interruptions de service par un traitement rapide des demandes et déclarations d'incident faites par les utilisateurs.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Gérer les risques financiers relatifs à l'informatique | <ul><li>Pourcentage de processus métiers, services informatiques et programmes métiers permis grâce à l'informatique qui sont couverts par l'évaluation des risques</li><li>Nombre d'incidents significatifs relatifs à l'informatique qui n'étaient pas identifiés dans l'évaluation des risques</li><li>Pourcentage d'évaluation de risques entreprise qui incluent les risques informatiques</li><li>Fréquence de mise à jour du recensement des risques</li><li>Nombre d'interruptions de service métiers dues à un incident informatique</li></ul> |
+| Garantir la fourniture de services informatiques répondant aux exigences économiques | <ul><li>Pourcentage de parties prenantes métiers satisfaites de la conformité des services informatiques rendus avec les niveaux de services convenus par les accords de service</li><li>Pourcentage d'utilisateurs satisfaits par la qualité des services informatiques rendus</li></ul> |
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Disponibilité des services informatiques | <ul><li>Nombre et pourcentage d'incidents causant une interruption de service sur un processus métier critique</li><li>Temps moyen entre les incidents</li></ul> |
+| Résolution des incidents en accord avec les niveaux de service attendus | <ul><li>Pourcentage d'incidents résolus dans les délais</li></ul> |
+| Les demandes de service sont traitées en accord avec les niveaux de service attendus et avec la satisfaction des utilisateurs | <ul><li>Niveau de satisfaction des utilisateurs par rapport au traitement des demandes</li><li>Moyenne de temps passé pour la prise en charge de chaque type de demande</li></ul> |
+
+## Pratiques
+
+### DSS02.01 - Définir les schémas de classification des incidents et demandes de service
+
+Définir les schémas et modèles de classification des incidents et demandes de service
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| SLAs | APO09.03 | Schémas et modèles de classification des incidents et demandes de service | interne |
+| Référentiel de configuration | BAI10.02 | Rôles associés à l'escalade des incidents | interne |
+| Référentiel mis à jour des items de configuration | BAI10.03 | Critères d'enregistrement des problèmes | DSS03.01 |
+| Rapports d'état de configuration | BAI10.04 |  |  |
+| Règles de monitoring des équipements et conditions d'enregistrement des événements | DSS01.03 |  |  |
+| Schéma de classification des problèmes | DSS03.01 |  |  |
+| Actions et communications sur la réponse aux incidents | DSS04.03 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Définir la classification des incidents et des demandes de service ainsi que les modalités de priorisation et que les critères d'enregistrement des problèmes pour assurer la cohérence des approches de traitement, communiquer vers les utilisateurs au sujet des méthodes d'analyse habituelles. |
+| 2 | Définir les incidents types correspondants aux erreurs connues pour rendre les résolutions plus efficaces et pertinentes. |
+| 3 | Définir les demandes de service types correspondant aux demandes habituelles pour aider à la formalisation des demandes standard. |
+| 4 | Définir les rôles et procédures d'escalade, en particulier pour les incidents majeurs et les incidents de sécurité. |
+| 5 | Identifier les sources de connaissance sur les incidents et demandes et leurs modalités d'utilisation. |
+
+### DSS02.02 - Enregistrer, qualifier et prioriser les demandes et les incidents
+
+Identifier, enregistrer et qualifier les demandes et les incidents, affecter une priorité en fonction de la criticité métier et des accords de service.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| SLAs | APO09.03 | Traces des incidents et demandes de service | interne |
+| Procédure d'escalade pour les urgences | BAI04.05 | Incidents qualifiés et priorisés et demandes de service | APO08.03 / APO09.04 / APO13.03 |
+| Règles de monitoring des équipements et conditions d'enregistrement des événements | DSS01.03 |  |  |
+| Tickets d'incidents | DSS01.03 |  |  |
+| Règles de monitoring des équipements et conditions d'enregistrement des événements | DSS01.03 |  |  |
+| Tickets d'incidents de sécurité | DSS05.07 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Tracer tous les incidents et demandes de services, enregistrer toute information pertinente de manière à ce qu'elle puisse être exploitée et former un historique complet |
+| 2 | Qualifier les demandes de service et les incidents en identifiant les types et catégories de manière à pouvoir faire des analyses de tendances. |
+| 3 | Prioriser les demandes de service et les incidents sur la base de la définition des impacts et urgences contenue dans les SLA. |
+
+### DSS02.03 - Vérifier, approuver et répondre aux demandes de service
+
+Sélectionner les procédures de demande appropriées et vérifier que les demandes de service remplissent les critères définis. Obtenir l'approbation, si besoin et répondre aux demandes.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Référentiel des causes originelles et gestion des risques associés | APO12.06 | Demandes de services approuvées | BAI06.01 |
+|  |  | Demandes de services traitées | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Vérifier les droits associés à la demande de service en utilisant, lorsque cela est possible, un process déjà défini et des changements standards. |
+| 2 | Obtenir l'approbation financière et fonctionnelle ou l'autorisation, si nécéssaire, ou l'approbation prédéfinie dans le cas des changements standard. |
+| 3 | Répondre aux demandes en utilisant les procédures correspondantes, en utilisant, si possible, des automatisations et modèles de demande prédéfinis pour les demandes fréquentes. |
+
+### DSS02.04 - Investiguer, diagnostiquer et assigner quelqu'un à la résolution
+
+Identifier et enregistrer les symptômes des incidents, déterminer les causes possibles et assigner quelqu'un à la résolution
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Plan de support complémentaire | BAI07.07 | Symptômes des incidents | interne |
+|  |  | Traces des problèmes | DSS03.01 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Identifier et décrire les symptômes significatifs pour établir les causes les plus probables des incidents. Se référer aux bases de connaissances disponibles (incluant les erreurs et problèmes connues) pour identifier les résolutions possibles (solutions de contournements temporaires et/ou solutions permanentes). |
+| 2 | Si aucun problème associé ou erreur connue ne correspond et si l'incident répond aux critères d'enregistrement de problème, enregistrer le nouveau problème. |
+| 3 | Assigner les incidents aux experts compétents si un niveau d'expertise supérieur est requis et impliquer le niveau approprié de management quand et si nécessaire. |
+
+### DSS02.05 - Résoudre et restaurer après incident
+
+Documenter, appliquer et tester les solutions identifiées ou les solutions de contournement et réaliser les actions de restauration permettant de restaurer le service informatique
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Plans de réponse aux incidents relatifs au risque | APO12.06 | Résolutions d'incident | DSS03.04 |
+| Enregistrements des erreurs connues | DSS03.03 |  |  |
+| Communication des connaissances acquises | DSS03.04 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Sélectionner et appliquer les résolutions les plus appropriées (solutions de contournement temporaires ou solutions définitives). |
+| 2 | Enregistrer si des solutions de contournement sont utilisées pour résoudre des incidents. |
+| 3 | Réaliser les actions de restauration nécessaires. |
+| 4 | Documenter la résolution des incidents et les évaluations si la résolution peut être utilisée en tant que future source de connaissance. |
+
+### DSS02.06 - Clôturer les demandes de service et les incidents
+
+Vérifier que la résolution d'incident et/ou la réponse à la demande est satisfaisante et clôturer
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Enregistrements des problèmes clos | DSS03.04 | Demandes de service et incidents clos | APO08.03 / APO09.04 / DSS03.04 |
+|  |  | Confirmation de statisfaction des utilisateurs au sujet du traitement ou de la résolution | APO08.03 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Vérifier avec les utilisateurs désignés (si accord) que le service à été traité de manière satisfaisante ou que l'incident a été résolu avc succès. |
+| 2 | Clôturer les demandes de service et les incidents. |
+
+### DSS02.07 - Tracer les changements de statuts et produire des rapports
+
+Suivre, analyser et rapporter régulièrement le traitement des incidents et des demandes pour fournir des informations à l'amélioration continue
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| OLAs | APO09.03 | Rapport de tendances et statuts des incidents | APO08.03 / APO09.04 / APO11.04 / APO12.01 / MEA01.03 |
+| Rapports sur les statuts des problèmes | DSS03.01 | Rapport de tendances et statuts des traitements de demandes | APO08.03 / APO09.04 / APO11.04 / MEA01.03 |
+| Rapports de résolution des problèmes | DSS03.02 |  |  |
+| Rapports de suivi des résolutions de problèmes | DSS03.05 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Suivre et tracer les escalades et résolutions d'incidents ainsi que les procédures de traitement des demandes permettant de conduire à leur résolution. |
+| 2 | Identifier les parties prenantes à l'information et leurs besoins de données ou de rapports. Identifier la fréquence et le média du reporting. |
+| 3 | Analyser les incidents et demandes de service par catégories et types pour établir les tendances et identifier les modèles de problèmes récurrents, les causes de non respect des SLA ou les inefficacités. Utiliser l'information en donnée d'entrée de la planification de l'amélioration continue. |
+| 4 | Produire et distribuer les rapports en temps et en heure ou fournirun accès contrôlé aux données en ligne. |
+
+## RACI
+
+|  | DSS02.01 | DSS02.02 | DSS02.03 | DSS02.04 | DSS02.05 | DSS02.06 | DSS02.07 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |  |  |
+| Président Directeur Général |  |  |  |  |  |  |  |
+| Directeur Financier |  |  |  |  |  |  |  |
+| Directeur Opérationnel |  |  |  |  |  |  |  |
+| Directeurs Métiers |  |  |  |  |  |  |  |
+| Propriétaires de Processus Métiers | C | I | R | R | I | I | I |
+| Comité Stratégie |  |  |  |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |  |  |
+| Coordinateur Projets (PMO) |  |  |  |  |  |  |  |
+| gestion de la valeur |  |  |  |  |  |  |  |
+| Risk Manager (RM) | I | I |  | I | I | I | I |
+| Directeur de la Sécurité des SI (DSSI) | I | I |  | I | I | I | I |
+| Urbanisme |  |  |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |  |  |  |
+| Conformité |  |  |  | I | C | I | I |
+| Audit |  |  |  | I | C | I | I |
+| Directeur du SI (DSI) | A |  | I | I | I | I | I |
+| Responsable Architecture | C |  |  |  |  |  |  |
+| Responsable développement | R |  | R | C | R | I | I |
+| Responsable production informatique | R | A | R | R | R | A | A |
+| Responsable de l'administration informatique |  |  |  |  |  |  |  |
+| Gestionnaire de service | R | R | A | A | A | I | A |
+| Gestionnaire de la sécurité de l'information | C |  |  | C | R | R | I |
+| Gestionnaire de la continuité | C |  |  |  |  |  |  |
+| Directeur de la propriété | C | I |  |  | C | I |  |

@@ -1,13 +1,186 @@
 ---
 id: cobit-bai09
-title: "BAI09"
+title: "BAI09 - Gérer les actifs"
 sidebar_label: "BAI09"
 sidebar_position: 9
 tags: [cobit]
-description: "BAI09"
+description: "BAI09 - Gérer les actifs"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Gérer les actifs informatiques tout au long de leur cycle de vie pour assurer que leur utilisation produit de la valeur à un coût optimal, qu'ils restent opérationnels (adapté), qu'ils sont justifié et protégé physiquement, que ceux qui sont critique au maintien de la capacité de service sont fiables et disponibles. Gérer les licences pour assurer qu'un nombre optimal est souscrit, que leur utilisation ou stock est conforme à l'usage métier et que les licences installées le sont en conformité avec les contrats.
+
+## But
+
+Considérer tous les actifs informatiques et optimiser la valeur générée par ces actifs.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Garantir la transparence sur les coûts, bénéfices et risques informatiques | <ul><li>Pourcentage de Business Cases comportant des coûts informatiques et des gains attendus clairement définis et approuvés</li><li>Pourcentage de services informatiques pour lesquels les coûts opérationnels et les bénéfices attendus sont clairement définis et approuvés</li><li>Niveaux de satisfaction des parties prenantes clés sur la transparence, la compréhension et la précision des informations financières informatiques</li></ul> |
+| Optimiser les actifs informatiques, les ressources et les capacités | <ul><li>Fréquence des évaluations des optimisations de la capacité en terme de maturité et de coût</li><li>Tendance des résultats d'évaluation</li><li>Niveaux de satisfaction des directions métiers et informatiques en ce qui concerne les coûts et capacités informatiques</li></ul> |
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Les licences sont conformes et alignées au besoin métiers. | <ul><li>Pourcentage de licences utilisées par rapport au nombre de licences achetées</li></ul> |
+| Les actifs sont maintenus à un niveau optimal. | <ul><li>Nombre d’actifs non utilisés</li><li>Coûts des évaluations de performance</li><li>Nombre d’actifs obsolètes</li></ul>|
+
+## Pratiques
+
+### BAI09.01 - Identifier et inventorier les actifs actuels
+
+Maintenir un inventaire précis et à jour des actifs informatiques requis pour livrer les services et assurer l’alignement avec la gestion de la configuration et la gestion financière
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Mises à jour de l’inventaire des actifs | BAI03.04 | Référentiel des actifs | APO06.01 / BAI10.03 |
+| Référentiel de configuration | BAI10.02 | Résultats de la vérification de l’inventaire physique | BAI10.03 / BAI10.04 / DSS05.03 |
+|  |  | Résultats d’évaluations sur l'adaptation à l'usage prévu | APO02.02 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Repérer tous les actifs détenus dans un référentiel des actifs qui consigne l’état actuel. Maintenir la correspondance avec les processus de gestion du changement et de gestion de la configuration, avec le système de gestion de la configuration et avec les registres de comptabilité financière. |
+| 2 | Identifier les exigences légales, réglementaires et contractuelles dont il faut tenir compte dans la gestion des actifs. |
+| 3 | Vérifier l’existence de tous les actifs détenus en effectuant régulièrement une vérification physique et logique des inventaires puis une conciliation impliquant l’utilisation d’outils d’exploration des logiciels. |
+| 4 | Vérifier que les actifs sont bien adaptés à l’usage prévu (c’est-à-dire bon état de fonctionnement). |
+| 5 | Déterminer régulièrement si chacun des actifs continue de générer de la valeur et, dans l’affirmative, estimer la durée de vie utile restante pour générer de la valeur. |
+| 6 | S’assurer de prendre en compte tous les actifs. |
+
+### BAI09.02 - Gérer les actifs
+
+Gérer les actifs informatiques tout au long de leur cycle de vie, y compris l’acquisition, l’utilisation, la maintenance, la mise à niveau, la mise hors service et l’élimination
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Référentiel des actifs | BAI09.01 | Actifs gérés | APO06.01 / BAI10.03 |
+| Exigences légales, réglementaires et contractuelles | BAI09.01 | Actifs mis à niveau | BAI10.03 |
+|  |  | Actifs mis hors service | BAI10.03 |
+|  |  | Actifs éliminés | BAI10.03 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Acquérir des actifs en fonction des besoins identifiés et des exigences légales, réglementaires et contractuelles. |
+| 2 | Utiliser les actifs de manière efficace et efficiente. |
+| 3 | Maintenir les actifs en bon état de fonctionnement. |
+| 4 | Mettre à niveau les actifs pour répondre aux besoins changeants. |
+| 5 | Mettre hors service les actifs qui ne sont plus nécessaires ou qui ne génèrent plus de valeur. |
+| 6 | Éliminer les actifs de manière sécurisée et conforme aux exigences légales, réglementaires et contractuelles. |
+
+### BAI09.03 - Gérer le cycle de vie des actifs
+
+Gérer les actifs, de l’approvisionnement à l’élimination pour s’assurer que les actifs sont effectivement utilisés et de la manière la plus efficace possible et qu’ils sont pris en compte et protégés physiquement
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Demandes d'achat d'actifs approuvées | interne |
+|  |  | Inventaire des actifs mis à jour | BAI10.03 |
+|  |  | Mises hors service autorisées | BAI10.03 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Acquérir tous les actifs en fonction des demandes approuvées et conformément aux politiques et aux pratiques d'approvisionnement de l'entreprise. |
+| 2 | Obtenir, recevoir, vérifier, tester et enregistrer tous les actifs d'une manière contrôlée, incluant l'étiquetage physique, si besoin. |
+| 3 | Approuver les paiements et compléter le processus avec les fournisseurs selon les conditions contractuelles convenues. |
+| 4 | Déployer les actifs en respectant le cycle de vie standard de mise en oeuvre, incluant la gestion du changement et les tests d'acceptation. |
+| 5 | Allouer les actifs aux utilisateurs, avec l'acceptation des responsabilités et leur approbation, s’il y a lieu. |
+| 6 | Lorsque cela est possible, réaffecter les actifs quand ils ne sont plus requis en raison d'un changement de rôle de l'utilisateur, de la redondance au sein d'un service ou de l'arrêt d'un service. |
+| 7 | Éliminer les actifs lorsqu'ils ne servent plus en raison de l'arrêt de tous les services connexes, d'une technologie devenue obsolète ou du manque d'utilisateurs. |
+| 8 | Éliminer les actifs en toute sécurité en tenant compte, par exemple, de la suppression définitive de toutes les données enregistrées sur les appareils multimédias et des dommages potentiels à l'environnement. |
+| 9 | Planifier, autoriser et mettre en oeuvre des activités de retrait, tout en conservant des dossiers appropriés pour répondre aux besoins métiers en cours et aux exigences réglementaires. |
+
+### BAI09.04 - Optimiser les coûts reliés aux actifs
+
+Passer en revue régulièrement l’ensemble des actifs pour trouver des moyens d'optimiser les coûts et de maintenir l'alignement avec les besoins métiers
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Résultats des revues d'optimisation des coûts | APO02.02 |
+|  |  | Opportunités de réduire les coûts des actifs ou d'en augmenter la valeur | APO02.02 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Revoir régulièrement l’ensemble des actifs et déterminer s’ils sont alignés aux exigences métiers. |
+| 2 | Evaluer les coûts de maintenance, déterminer s'il sont raisonnables et trouver des solutions moins coûteuses, incluant, si besoin, le remplacement par de nouvelles alternatives. |
+| 3 | Passer en revue les garanties et évaluer la valeur ainsi que les stratégies de remplacement afin de déterminer les options les moins coûteuses. |
+| 4 | Passer en revue l’ensemble des actifs afin d’identifier les opportunités de normalisation, de fourniture exclusive et d'autres stratégies susceptibles de réduire les coûts approvisionnement, de soutien et de maintenance. |
+| 5 | Utiliser des statistiques sur la capacité et l'utilisation afin de relever les actifs sous-utilisés ou redondants qui pourraient être éliminés ou remplacés pour réduire les coûts. |
+| 6 | Passer en revue l'état général afin d’identifier les opportunités de profiter des nouvelles technologies ou d'autres stratégies d'approvisionnement pour réduire les coûts ou augmenter la valeur. |
+
+### BAI09.05 - Gérer les licences
+
+Gérer les licences de logiciels de telle sorte que le nombre optimal de licences soit maintenu afin de répondre aux exigences métiers et que le nombre de licences détenues soit suffisant pour couvrir les logiciels installés et utilisés
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Inventaire des licences de logiciels | BAI10.02 |
+|  |  | Résultats des audits de licences installées | MEA03.03 |
+|  |  | Plan d'action pour ajuster le nombre de licences et leurs allocations | APO02.05 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Tenir un inventaire de toutes les licences de logiciels achetées et des accords de licence associés. |
+| 2 | Procéder régulièrement à un audit pour relever toutes les occurrences de logiciels sous licence installés. |
+| 3 | Comparer le nombre d'occurences de logiciels installés avec le nombre de licences détenues. |
+| 4 | Lorsque le nombre d'occurences est inférieur au nombre de licences détenues, déterminer s'il est nécessaire de conserver ou d'annuler des licences, compte tenu des économies potentielles sur la maintenance, la formation et les autres coûts. |
+| 5 | Lorsque le nombre d'occurences est supérieur au nombre de licences détenues, examiner en premier lieu l’opportunité de désinstaller des logiciels qui ne sont plus nécessaires ou justifiés, et, si besoin, acheter des licences supplémentaires pour se conformer aux contrats de licence. |
+| 6 | Examiner régulièrement si une valeur supérieure peut être obtenue par la mise à niveau des produits et des licences associées. |
+
+## RACI
+
+|  | BAI09.01 | BAI09.02 | BAI09.03 | BAI09.04 | BAI09.05 |
+| --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |
+| Président Directeur Général |  |  |  |  |  |
+| Directeur Financier | C | C |  | R |  |
+| Directeur Opérationnel |  |  |  |  |  |
+| Directeurs Métiers |  | I |  | I | I |
+| Propriétaires de Processus Métiers | C | C | C | C | C |
+| Comité Stratégie |  |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |
+| Coordinateur Projets (PMO) |  |  |  |  |  |
+| gestion de la valeur |  |  |  |  |  |
+| Risk Manager (RM) |  |  |  |  |  |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  |  |  |
+| Urbanisme |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |  |
+| Conformité |  | C |  |  | C |
+| Audit |  | C |  |  | R |
+| Directeur du SI (DSI) | I |  |  | A | A |
+| Responsable Architecture | C | R | C | R |  |
+| Responsable développement | C | R | C | R | R |
+| Responsable production informatique | A | A | A | R | R |
+| Responsable de l'administration informatique | R | R | R | R | R |
+| Gestionnaire de service | C | C | R | R | C |
+| Gestionnaire de la sécurité de l'information |  | C |  |  |  |
+| Gestionnaire de la continuité |  | C |  |  |  |
+| Directeur de la propriété |  |  |  |  |  |

@@ -1,13 +1,186 @@
 ---
 id: cobit-dss01
-title: "DSS01"
+title: "DSS01 - Gérer la production"
 sidebar_label: "DSS01"
 sidebar_position: 1
 tags: [cobit]
-description: "DSS01"
+description: "DSS01 - Gérer la production"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Coordonner et exécuter les activités et procédures opérationnelles requises pour délivrer les services informatiques internes et externalisés. Ceci inclut l'exécution de procédures standard pré-définies et les activités de suivi nécessaires.
+
+## But
+
+Assurer le fonctionnement des services informatiques tels que planifié.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Gérer les risques financiers relatifs à l'informatique | <ul><li>Pourcentage de processus métiers, services informatiques et programmes métiers permis grâce à l'informatique qui sont couverts par l'évaluation des risques</li><li>Nombre d'incidents significatifs relatifs à l'informatique qui n'étaient pas identifiés dans l'évaluation des risques</li><li>Pourcentage d'évaluation de risques entreprise qui incluent les risques informatiques</li><li>Fréquence de mise à jour du recensement des risques</li><li>Nombre d'interruptions de service métiers dues à un incident informatique</li></ul> |
+| Garantir la fourniture de services informatiques répondant aux exigences économiques | <ul><li>Pourcentage de parties prenantes métiers satisfaites de la conformité des services informatiques rendus avec les niveaux de services convenus par les accords de service</li><li>Pourcentage d'utilisateurs satisfaits par la qualité des services informatiques rendus</li></ul> |
+| Optimiser les actifs informatiques, les ressources et les capacités | <ul><li>Fréquence des évaluations des optimisations de la capacité en terme de maturité et de coût</li><li>Tendance des résultats d'évaluation</li><li>Niveaux de satisfaction des directions métiers et informatiques en ce qui concerne les coûts et capacités informatiques</li></ul> |
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Les activités opérationnelles se déroulent comme prévu et planifié. | <ul><li>Nombre de procédures opérationnelles non standard exécutées</li><li>Nombre d'incidents causés par des problèmes opérationnels</li></ul> |
+| Les opérations sont surveillées, mesurées, rapportées et corrigées | <ul><li>Ratio d'événements par rapport au nombre d'incidents</li><li>Pourcentage de types d'événements opérationnels critiques couverts par des systèmes de détection automatique</li></ul> |
+
+## Pratiques
+
+### DSS01.01 - Exécuter les procédures opérationnelles
+
+Maintenir et réaliser les procédures et tâches opérationnelles de façon fiable et cohérente
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Plan d'utilisation et d’opération | BAI05.05 | Calendrier opérationnel | interne |
+|  |  | Journal de sauvegarde | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Développer et maintenir des procédures opérationnelles et des activités connexes pour soutenir tous les services fournis. |
+| 2 | Maintenir un calendrier des activités opérationnelles, réaliser les activités et gérer la performance et la capacité de traitement des activités prévues. |
+| 3 | Vérifier que toutes les données attendues pour le traitement sont reçues et traitées de façon complète, exacte et en temps opportun. Livrer les données produites en conformité avec les exigences de l'entreprise. Soutenir les besoins de redémarrage et de retraitement. S'assurer que les utilisateurs reçoivent les bonnes données produites de manière sécurisée et en temps opportun. |
+| 4 | Veiller à ce que les normes de sécurité applicables soient respectées pour la réception, le traitement, le stockage et la sortie des données d'une manière qui répond aux objectifs de l'entreprise, à la politique de sécurité de l'entreprise et aux exigences réglementaires. |
+| 5 | Planifier, réaliser et journaliser les sauvegardes conformément aux politiques et procédures établies. |
+
+### DSS01.02 - Gérer les services informatiques externalisés
+
+Gérer l'exploitation des services informatiques externalisés pour assurer la protection des informations de l'entreprise et la fiabilité de la livraison de service.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| OLAs | APO09.03 | Plans d'assurance indépendants | MEA02.06 |
+| SLAs | APO09.03 |  |  |
+| Plan d'utilisation et d’opération | BAI05.05 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Veiller à ce que les exigences de l'entreprise en matière de sécurité des processus d'information soient respectées conformément aux contrats et aux accords de niveau de service avec des tiers qui hébergent ou fournissent des services. |
+| 2 | Veiller à ce que les exigences en matière d'activités d'exploitation et de traitement informatiques et les priorités en matière de livraison de services soient respectées conformément aux contrats et aux accords de niveau de service avec les tiers qui hébergent ou fournissent les services. |
+| 3 | Intégrer les processus critiques internes de gestion informatique à ceux des fournisseurs de services externes couvrant, par exemple, la planification de la performance et des capacités, la gestion du changement, la gestion de la configuration, la gestion des demandes de service et des incidents, la gestion des problèmes, la gestion de la sécurité, la continuité des activités, le suivi de la performance des processus et le reporting. |
+| 4 | Planifier un audit-assurance des environnements opérationnels des fournisseurs externes indépendant afin de confirmer que les exigences convenues sont adéquatement satisfaites. |
+
+### DSS01.03 - Surveiller l'infrastructure informatique
+
+Surveiller l'infrastructure informatique et les événements connexes. Enregistrer suffisamment de renseignements chronologiques dans les journaux des opérations afin de permettre la reconstruction, la revue et l'analyse des séquences d'opérations et des autres activités entourant ou soutenant les opérations
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Définitions de service | BAI03.11 | Règles de monitoring des équipements et conditions d'enregistrement des événements | DSS02.01 / DSS02.02 |
+|  |  | Journaux d'événements | interne |
+|  |  | Tickets d'incidents | DSS02.02 |
+|  |  | Règles de monitoring des équipements et conditions d'enregistrement des événements | DSS02.02 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Consigner les événements et identifier le niveau d'information à enregistrer sur la base d'une revue des risques et de la performance. |
+| 2 | Créer et gérer une liste des actifs d'infrastructure qui doivent être pilotés en fonction du degré de criticité du service et de la relation entre les éléments de configuration et les services qui en dépendent. |
+| 3 | Définir et mettre en oeuvre des règles qui identifient et enregistrent les dépassement de seuils et les conditions contextuelles. Trouver un équilibre entre la génération de faux événements mineurs et les événements significatifs afin que les journaux d'événements ne soient pas surchargés d’information inutiles. |
+| 4 | Produire des journaux d'événements et les conserver pendant une période appropriée pour permettre des enquêtes futures. |
+| 5 | Etablir des procédures pour la surveillance des journaux d'événements et procéder à des examens réguliers. |
+| 6 | S'assurer que des tickets d'incidents sont créés en temps opportun lorsque la surveillance identifie des écarts avec les seuils définis. |
+
+### DSS01.04 - Gérer l'environnement
+
+Maintenir des mesures de protection contre les facteurs environnementaux. Installer de l'équipement et des dispositifs spécialisés pour surveiller et contrôler l'environnement
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Politiques environnementales | APO01.08 |
+|  |  | Rapports sur les polices d'assurance | MEA03.03 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Identifier les catastrophes naturelles et d'origine humaine qui pourraient survenir dans la zone où se trouvent les installations informatiques. Évaluer les effets potentiels sur les installations. |
+| 2 | Identifier de quelle façon l'équipement informaiques, incluant l'équipement mobile et hors site, est protégé contre les menaces environnementales. Veiller à ce que les politiques limitent ou excluent le fait de manger, boire et fumer dans les zones sensibles, et interdisent le stockage dans les salles d'informatique de papeterie et autres fournitures posant un risque d'incendie. |
+| 3 | Localiser et construire les installations informatiques de façon à minimiser et atténuer la vulnérabilité aux menaces environnementales. |
+| 4 | De façon régulière, surveiller et maintenir les dispositifs qui détectent de manière proactive les menaces environnementales (par exemple : le feu, l'eau, la fumée, l'humidité). |
+| 5 | Répondre aux alarmes environnementales et autres notifications. Documenter et tester les procédures, lesquelles devraient inclure la priorisation des alarmes et les contacts avec les autorités locales d'intervention d'urgence. Former le personnel à ces procédures. |
+| 6 | Comparer les mesures et les plans d'urgence aux exigences du contrat d'assurance et rapporter les résultats. Traiter les points de nonconformité en temps opportun. |
+| 7 | S'assurer que les sites informatiques soient construits et conçus pour minimiser l'impact des risques environnementaux (par exemple : le vol, l'air, le feu, la fumée, l'eau, les vibrations, le terrorisme, le vandalisme, les produits chimiques, les explosifs). Considérer des zones de sécurité particulières ou des cellules à l'épreuve du feu (par exemple : séparer les environnements ou serveurs de production et de développement). |
+| 8 | En tout temps, garder les sites informatiques et les salles des serveurs propres et en bon état (c’est à dire bien rangés, exempts de papiers ou de boîtes en carton, de poubelles remplies, de produits chimiques ou matériaux inflammables). |
+
+### DSS01.05 - Gérer les installations
+
+Gérer les installations, incluant les équipements fournissant l'énergie et les équipements de communication, en conformité avec les lois et règlementations, les exigences techniques et métiers, les spécifications du fournisseur et les lignes directrices sur la santé et la sécurité
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Rapports d'évaluation des installations | MEA01.03 |
+|  |  | Sensibilisation à la santé et la sécurité | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Examiner les exigences des installations informatiques en matière de protection contre les fluctuations de courant et les pannes, en conjonction avec les autres exigences en matière de planification de la continuité d'activité. Fournir l'équipement approprié d'alimentation sans coupure (par exemple : batteries, générateurs) pour soutenir la planification de la continuité d'activité. |
+| 2 | Tester régulièrement les mécanismes de l'alimentation sans coupure et veiller à ce que l'alimentation puisse passer en mode d'alimentation de secours sans effet significatif sur les opérations métiers. |
+| 3 | S'assurer que les installations qui hébergent les systèmes informatiques ont plus d'une source d'approvisionnement en services publics dépendants (par exemple : l'énergie, les télécommunications, l'eau, le gaz). Séparer les entrées physiques de chaque service public. |
+| 4 | Confirmer que le câblage externe au site informatique est situé sous terre ou possède une autre protection convenable. Déterminer que le câblage à l'intérieur du site se trouve dans des conduits sécurisés et que les boîtiers de câblage sont accessibles par le personnel autorisé seulement. Bien protéger le câblage contre les dommages causés par le feu, la fumée, l'eau, l'interception et les interférences. |
+| 5 | S'assurer que les réparations de câblage et les réparations physiques (données et téléphone) sont structurées et organisées. Les structures de câblage et de conduits doivent être documentées (par exemple : plan de construction et schémas de câblage). |
+| 6 | Analyser les installations hébergeant les systèmes à haute disponibilité pour vérifier la conformité aux exigences en matière de redondance et de basculement du câblage (externe et interne). |
+| 7 | S'assurer que les sites et les installations des TI sont en conformité continue avec les lois, la réglementation et les directives pertinentes sur la santé et la sécurité ainsi qu’avec les spécifications des fournisseurs. |
+| 8 | Sensibiliser régulièrement le personnel au sujet des lois, des règlements et des orientations pertinents sur la santé et la sécurité. Sensibiliser le personnel au sujet des exercices d'incendie et de secours afin d'assurer la connaissance et de garantir que les mesures soient prises en cas d'incendie ou d'incidents similaires. |
+| 9 | Enregistrer, surveiller, gérer et résoudre les incidents des installations en conformité avec le processus de gestion des incidents informatiques. Rendre disponibles les rapports sur les incidents liés aux installations lorsque la divulgation est nécessaire pour se conformer aux lois et règlements. |
+| 10 | S'assurer que les sites informatiques et le matériel sont maintenus conformément aux recommandations du fournisseur. La maintenance doit être effectué uniquement par le personnel autorisé. |
+| 11 | Analyser les modifications physiques aux sites informatiques ou aux locaux afin de réévaluer le risque environnemental (par exemple : les dommages causés par le feu ou l'eau). Présenter les résultats de cette analyse à la gestion de la continuité d'activité et des installations. |
+
+## RACI
+
+|  | DSS01.01 | DSS01.02 | DSS01.03 | DSS01.04 | DSS01.05 |
+| --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |
+| Président Directeur Général |  |  |  |  |  |
+| Directeur Financier |  |  |  |  |  |
+| Directeur Opérationnel |  |  | I |  |  |
+| Directeurs Métiers |  |  |  |  |  |
+| Propriétaires de Processus Métiers |  |  | C | I | I |
+| Comité Stratégie |  |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |
+| Coordinateur Projets (PMO) |  |  |  |  |  |
+| gestion de la valeur |  |  |  |  |  |
+| Risk Manager (RM) |  | I | I | C | C |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  | A | A |
+| Urbanisme |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |  |
+| Conformité |  |  |  | C | C |
+| Audit |  |  | C | C | C |
+| Directeur du SI (DSI) |  | A | I | C | C |
+| Responsable Architecture |  |  |  | I | I |
+| Responsable développement |  |  | C | C | C |
+| Responsable production informatique | A | R | A | R | R |
+| Responsable de l'administration informatique |  |  |  |  |  |
+| Gestionnaire de service | C |  | C | I | I |
+| Gestionnaire de la sécurité de l'information | C |  | C | R | R |
+| Gestionnaire de la continuité | C |  |  | I | I |
+| Directeur de la propriété |  |  |  |  |  |

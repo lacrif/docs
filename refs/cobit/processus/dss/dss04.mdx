@@ -1,13 +1,244 @@
 ---
 id: cobit-dss04
-title: "DSS04"
+title: "DSS04 - Gérer la continuité"
 sidebar_label: "DSS04"
 sidebar_position: 4
 tags: [cobit]
-description: "DSS04"
+description: "DSS04 - Gérer la continuité"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Etablir et maintenir un plan pour permettre aux métiers et à l'informatique de répondre aux incidents et interruptions de service afin d'assurer la continuité des opérations pour les processus métier critiques et les services informatiques nécessaires, et pour maintenir la disponibilité de l'information à un niveau acceptable pour l'entreprise.
+
+## But
+
+Assurer la continuité des opérations critiques de l'entreprise et maintenir la disponibilité de l'information à un niveau acceptable pour l'entreprise, même en cas d’interruption significative.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Gérer les risques financiers relatifs à l'informatique | <ul><li>Pourcentage de processus métiers, services informatiques et programmes métiers permis grâce à l'informatique qui sont couverts par l'évaluation des risques</li><li>Nombre d'incidents significatifs relatifs à l'informatique qui n'étaient pas identifiés dans l'évaluation des risques</li><li>Pourcentage d'évaluation de risques entreprise qui incluent les risques informatiques</li><li>Fréquence de mise à jour du recensement des risques</li><li>Nombre d'interruptions de service métiers dues à un incident informatique</li></ul> |
+| Garantir la fourniture de services informatiques répondant aux exigences économiques | <ul><li>Pourcentage de parties prenantes métiers satisfaites de la conformité des services informatiques rendus avec les niveaux de services convenus par les accords de service</li><li>Pourcentage d'utilisateurs satisfaits par la qualité des services informatiques rendus</li></ul> |
+| Garantir la disponibilité des informations utiles aux prises de décision | <ul><li>Niveau de satisfaction des utilisateurs métiers concernant la qualité et la disponibilité des informations de gestion</li><li>Nombre d'incidents sur les processus métiers causés par la non disponibilité de l'information</li><li>Ratio et étendue des mauvaises décisions métiers pour lesquelles l'information erronée ou non disponible est un facteur clé</li></ul> |
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| Les données critiques sont sauvegardées et peuvent être restaurées. | <ul><li>Pourcentage de restaurations réussies dans les temps à partir du support de sauvegarde ou d'autres copies</li><li>Pourcentage des supports de sauvegarde transférés et stockés en toute sécurité</li></ul> |
+| Une résilience suffisante est en place pour les services critiques | <ul><li>Nombre de systèmes métiers critiques non couverts par le plan</li></ul> |
+| Des tests de continuité de service ont vérifié l'efficacité du plan. | <ul><li>Nombre d'exercices et de tests qui ont atteint les objectifs de rétablissement</li><li>Fréquence des tests</li></ul> |
+| Un plan de continuité à jour reflète les exigences métiers actuelles. | <ul><li>Pourcentage d'améliorations du plan convenues qui ont été incluses dans le plan</li><li>Pourcentage de questions identifiés qui ont été ensuite abordés dans le plan</li></ul> |
+| Les intervenants internes et externes ont été formés selon le plan de continuité. | <ul><li>Pourcentage des parties prenantes internes et externes qui ont reçu une formation</li><li>Pourcentage de problèmes identifiés qui ont été ensuite abordés dans les supports de formation</li></ul> |
+
+### Pratiques
+
+#### DSS04.01 - Définir la politique de continuité métier, ses objectifs et son périmètre
+
+Définir la politique de continuité métier et son périmètre conformément aux objectifs de l'entreprise et des parties prenantes
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| SLAs | APO09.03 | Politique et objectifs de continuité de l'activité | APO01.04 |
+|  |  | Scénarios d'incidents perturbateurs | interne |
+|  |  | Évaluation des capacités et des lacunes actuelles en matière de continuité | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Identifier les processus métiers et les activités de service internes et externes qui sont essentiels aux opérations de l'entreprise ou qui sont nécessaires pour satisfaire aux obligations légales ou contractuelles. |
+| 2 | Identifier les parties prenantes clés ainsi que les rôles et les responsabilités afin de définir et d’accepter la politique et le périmètre de la continuité. |
+| 3 | Définir et documenter les objectifs et le périmètre minimum de la politique de continuité de l'activité et intégrer le besoin d’une planification de la continuité dans la culture d'entreprise. |
+| 4 | Identifier les processus de support métiers essentiels et les services informatiques connexes. |
+
+#### DSS04.02 - Maintenir une stratégie de continuité
+
+Evaluer les options de gestion de la continuité des opérations et choisir une stratégie de continuité rentable et viable qui assurera la reprise et la continuité de l'entreprise en cas de désastre ou d'autres incidents ou interruptions
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Référentiel des causes originelles et gestion des risques associés | APO12.06 | Analyse d’impact sur les métiers | APO12.02 |
+| Communications de l’impact des risques | APO12.06 | Exigences en matière de continuité | interne |
+|  |  | Options stratégiques approuvées | APO02.05 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Identifier les scénarios potentiels susceptibles de donner lieu à des événements qui pourraient causer des incidents perturbateurs importants. |
+| 2 | Effectuer une analyse d’impact sur les métiers pour évaluer l'impact d'une interruptions dans le temps des fonctions métiers critiques et l’effet que cette interruption a sur ces fonctions. |
+| 3 | Déterminer le temps minimal nécessaire à la récupération d'un processus métier et informatique de support en fonction d'une durée acceptable d’une interruption métier et d'une panne maximale tolérable. |
+| 4 | Evaluer la probabilité des menaces qui pourraient entraîner la perte de la continuité de l'activité et identifier les mesures qui permettront de réduire la probabilité et l'impact grâce à une meilleure prévention et une résilience accrue. |
+| 5 | Analyser les exigences en matière de continuité pour identifier les options stratégiques métiers et techniques possibles. |
+| 6 | Déterminer les conditions ainsi que les responsables des décisions clés qui entraineront l’activation des plans de continuité. |
+| 7 | Identifier les besoins en ressources ainsi que les coûts de chaque option technique stratégique et formuler des recommandations stratégiques. |
+| 8 | Obtenir l'approbation des dirigeants d'entreprise pour les options stratégiques choisies. |
+
+#### DSS04.03 - Élaborer et mettre en oeuvre une réponse en matière de continuité métier
+
+Elaborer un plan de continuité métier (PCA) basé sur la stratégie qui documente les procédures et l'information en prévision d'une utilisation lors d'un incident pour permettre à l'entreprise de poursuivre ses activités essentielles
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| OLAs | APO09.03 | Actions et communications sur la réponse aux incidents | DSS02.01 |
+|  |  | Plans de continuité métiers | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Définir les actions de réponse aux incidents et les communications à effectuer en cas d’interruption. Définir les rôles et les responsabilités connexes, incluant la responsabilité pour la politique et la mise en oeuvre. |
+| 2 | Développer et maintenir des PCA opérationnels contenant les procédures à suivre pour permettre l'exploitation continue des processus critiques de l'entreprise ou pour permettre l'utilisation d'arrangements temporaires, incluant des liens vers des plans de fournisseurs de services externes. |
+| 3 | Veiller à ce que les principaux fournisseurs et partenaires d'outsoursing aient mis en place des plans de continuité efficaces. Recueillir des preuves vérifiées, si besoin. |
+| 4 | Définir les conditions et les procédures de restauration qui permettraient la reprise des activités, incluant la mise à jour et la conciliation des bases de données pour préserver l'intégrité de l'information. |
+| 5 | Définir et documenter les ressources requises pour supporter les procédures de continuité et de reprise, en tenant compte des personnes, des installations et des infrastructures informatiques. |
+| 6 | Définir et documenter les exigences de sauvegarde de l'information nécessaires pour soutenir les plans, incluant les plans et les documents papier ainsi que les fichiers de données, et considérer les besoins concernant la sécurité et le stockage hors site. |
+| 7 | Déterminer les compétences nécessaires pour les personnes impliquées dans l'exécution du plan et des procédures. |
+| 8 | Distribuer les plans et les documents de support de façon sécuritaire aux parties intéressées et dûment autorisées. S'assurer qu'ils sont accessibles dans tous les scénarios de désastre. |
+
+#### DSS04.04 - Faire l'exercice du PCA, le tester et le passer en revue
+
+Tester régulièrement les dispositions prise en matière de continuité afin de valider les plans de reprise par rapport aux résultats attendus et pour permettre le développement de solutions innovantes et pour aider à vérifier que le plan fonctionne comme prévu
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Objectifs de tests | interne |
+|  |  | Exercices de tests | interne |
+|  |  | Résultats des tests et recommandations | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Définir des objectifs pour l'exercice et les tests des systèmes métiers, techniques, logistiques, administratifs, procéduraux et opérationnels du plan afin de vérifier que les PCA répondent entièrement aux risques métiers. |
+| 2 | Définir et s'entendre avec les parties prenantes sur des exercices réalistes, valider les procédures de continuité et inclure les rôles et les responsabilités ainsi que les mesures de conservation des données qui minimisent les interruptions pour les processus métiers. |
+| 3 | Attribuer des rôles et des responsabilités pour la réalisation des exercices et des tests du plan de continuité. |
+| 4 | Planifier des exercices et des activités de test, comme défini dans le plan de continuité. |
+| 5 | Mener une séance d'information et d'analyse post-exercice pour évaluer le succès de la réalisation. |
+| 6 | Élaborer des recommandations pour améliorer le plan de continuité actuel en fonction des résultats de revue. |
+
+#### DSS04.05 - Revoir, maintenir et améliorer le plan de continuité
+
+Procéder à un examen de la gestion de la capacité de continuité à intervalles réguliers pour garantir sa pertinence, son adéquation et son efficacité. Gérer les changements au plan en conformité avec le processus de contrôle des changements afin de s'assurer que le plan de continuité est à jour et reflète constamment les exigences métiers réelles
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Résultats des révisions des plans | interne |
+|  |  | Changements recommandés aux plans | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Revoir régulièrement le plan de continuité et la capacité par rapport aux hypothèses formulées et aux objectifs métiers opérationnels et stratégiques actuels. |
+| 2 | Déterminer si une évaluation révisée de l'impact sur les métiers peut être nécessaire en fonction de la nature du changement. |
+| 3 | Recommander et communiquer les changements à la politique, aux plans, aux procédures, aux infrastructures, aux rôles et aux responsabilités pour obtenir l'approbation de la direction et le traitement par le biais du processus de gestion du changement. |
+| 4 | Examiner régulièrement le plan de continuité pour évaluer l'impact des changements nouveaux ou majeurs sur : l'organisation de l'entreprise, les processus métiers, les accords d'externalisation, les technologies, l’ infrastructure, les systèmes d'exploitation et les systèmes applicatifs. |
+
+#### DSS04.06 - Dispenser une formation sur le plan de continuité
+
+Fournir à toutes les parties internes et externes concernées des sessions régulières de formation concernant les procédures à appliquer, leurs rôles et responsabilités en cas d'interruption
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Liste du personnel ayant besoin d'une formation | RH | Résultats des contrôles d'aptitudes et de compétences | APO07.03 |
+|  |  | Exigences de formation | APO07.03 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Définir et maintenir les exigences et les plans de formation pour les personnes qui réalisent la planification de la continuité, les évaluations d'impact, les évaluations des risques, la communication avec les médias et la réponse aux incidents. Veiller à ce que les plans de formation tiennent compte de la fréquence de la formation et des mécanismes de prestation de la formation. |
+| 2 | Développer les compétences par une formation pratique, incluant la participation à des exercices et des tests. |
+| 3 | Surveiller les aptitudes et les compétences en fonction des résultats des exercices et des tests. |
+
+#### DSS04.07 - Gérer les dispositions de sauvegarde
+
+Maintenir la disponibilité des informations métiers critiques
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Résultats des tests de sauvegarde des données | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Sauvegarder les systèmes, les applications, les données et la documentation selon un calendrier défini, en considérant :|n|>La fréquence (mensuelle, hebdomadaire, quotidienne, etc.)|n|>Le mode de sauvegarde (par exemple : effectuer une copie miroir de disque pour les sauvegardes en temps réel ou un DVD pour la sauvegarde à long terme)|n|>Le type de sauvegarde (par exemple : complète ou incrémentale)|n|>Le type de média|n|>Les sauvegardes en ligne automatiques|n|>Le type de données (par exemple : voix, optique)|n|>La création de journaux|n|>Les données informatiques critiques pour l'utilisateur final (par exemple : les feuilles de calcul)|n|>L'emplacement physique et logique des sources de données|n|>La sécurité et les droits d'accès|n|>Le chiffrement |
+| 2 | S'assurer que les systèmes, les applications, les données et la documentation maintenus ou traités par des tiers sont correctement sauvegardés ou sécurisés. Envisager le retour obligatoire des sauvegardes effectuées par des tiers. Considérer un dépôt fiduciaire ou des accords de dépôt. |
+| 3 | Définir les besoins de stockage des données de sauvegarde sur le site et hors site qui répondent aux exigences métiers. Évaluer l'accessibilité nécessaire pour sauvegarder les données. |
+| 4 | Réaliser la sensibilisation et la formation en matière de PCA. |
+| 5 | Tester et actualiser de façon périodique les données archivées et les données sauvegardées. |
+
+#### DSS04.08 - Procéder à l'examen post-reprise
+
+Evaluer la pertinence du PCA suivant la réussite de la reprisedes processus et des services métiers après une interruption.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Rapport de revue d'après reprise | interne |
+|  |  | Changements approuvés au plan | BAI06.01 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Evaluer le respect du PCA documenté. |
+| 2 | Déterminer l'efficacité du plan, les capacités en matière de continuité, les rôles et les responsabilités, les aptitudes et les compétences, la résilience quant à l'incident, l'infrastructure technique et les structures et relations organisationnelles. |
+| 3 | Identifier les faiblesses ou les omissions dans le plan et les capacités, et faire des recommandations d'amélioration. |
+| 4 | Obtenir l'approbation de la direction pour tous les changements à apporter au plan et les appliquer à l'aide du processus de contrôle des changements de l'entreprise. |
+
+## RACI
+
+|  | DSS04.01 | DSS04.02 | DSS04.03 | DSS04.04 | DSS04.05 | DSS04.06 | DSS04.07 | DSS04.08 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |  |  |  |
+| Président Directeur Général |  |  |  |  |  |  |  |  |
+| Directeur Financier |  |  |  |  |  |  |  |  |
+| Directeur Opérationnel | A | A |  |  | A |  |  |  |
+| Directeurs Métiers | C | C | I | I | I | I |  | C |
+| Propriétaires de Processus Métiers | R | R | R | R | R | R |  | R |
+| Comité Stratégie |  |  |  |  |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |  |  |  |
+| Coordinateur Projets (PMO) |  |  |  |  |  |  |  |  |
+| gestion de la valeur |  |  |  |  |  |  |  |  |
+| Risk Manager (RM) | C | I |  |  | I |  |  | I |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  |  |  |  |  |  |
+| Urbanisme |  |  |  |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |  |  |  |  |
+| Conformité |  |  | I | I |  |  |  |  |
+| Audit | C | C | C |  |  |  |  |  |
+| Directeur du SI (DSI) | R | R | R | R | R | R |  | R |
+| Responsable Architecture |  | R | C |  |  |  |  | C |
+| Responsable développement |  | C | C | C | C | R | C | C |
+| Responsable production informatique | R | R | R | R | R | R | A | R |
+| Responsable de l'administration informatique | C |  |  |  |  | R |  | R |
+| Gestionnaire de service | R |  |  |  |  |  |  |  |
+| Gestionnaire de la sécurité de l'information |  |  |  |  |  |  |  |  |
+| Gestionnaire de la continuité | R | R | A | A | R | A | R | A |
+| Directeur de la propriété |  |  |  |  |  |  |  |  |

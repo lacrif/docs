@@ -1,13 +1,167 @@
 ---
 id: cobit-bai10
-title: "BAI10"
+title: "BAI10 - Gérer la configuration"
 sidebar_label: "BAI10"
 sidebar_position: 10
 tags: [cobit]
-description: "BAI10"
+description: "BAI10 - Gérer la configuration"
 last_updated: 
   date: "2025-11-11"
   author: "lacrif"
 ---
 
 <p>Mise à jour : {frontMatter.last_updated.date} par {frontMatter.last_updated.author}</p>
+
+## Description
+
+Définir et maintenir les descriptions et les relations entre les ressources et capacités clés pour la délivrance des services informatiques. Ceci inclut la collecte des données de configurations, la définition de versions de référence, la vérification et l'audit des données de configuration et la mise à jour du référentiel.
+
+## But
+
+Fournir suffisamment d'information sur les actifs de service pour permettre une gestion efficace du service, pour permettre d'évaluer les impacts des changements et faire face aux incidents liés au service.
+
+## Objectifs IT principaux
+
+| Objectifs IT | Métriques associées |
+| --- | --- |
+| Garantir la conformité et le soutien de l'informatique au respect de la réglementation externe à l'entreprise | <ul><li>Coût des non-conformité informatiques, incluant les compensations amiables, pénalités et pertes en terme d'image</li><li>Nombre de cas de non-conformité informatique rapportées au conseil d'administration ou ayant occasionné des critiques ou débats publiques</li><li>Nombre de cas de non-conformité en rapport avec des accords contractuels avec des fournisseurs de services informatiques</li><li>Couverture des évaluations de conformité</li></ul> |
+| Optimiser les actifs informatiques, les ressources et les capacités | <ul><li>Fréquence des évaluations des optimisations de la capacité en terme de maturité et de coût</li><li>Tendance des résultats d'évaluation</li><li>Niveaux de satisfaction des directions métiers et informatiques en ce qui concerne les coûts et capacités informatiques</li></ul> |
+| Garantir la disponibilité des informations utiles aux prises de décision | <ul><li>Niveau de satisfaction des utilisateurs métiers concernant la qualité et la disponibilité des informations de gestion</li><li>Nombre d'incidents sur les processus métiers causés par la non disponibilité de l'information</li><li>Ratio et étendue des mauvaises décisions métiers pour lesquelles l'information erronée ou non disponible est un facteur clé</li></ul> |
+
+## Objectifs du processus
+
+| Objectifs du processus | Métriques associées |
+| --- | --- |
+| La base de configuration est exacte, complète et à jour. | <ul><li>Nombre d'écarts entre la base de configuration et la configuration réelle.</li><li>Nombre de différences relatives à une information de configuration incomplète ou manquante</li></ul> |
+
+## Pratiques
+
+### BAI10.01 - Établir et maintenir un modèle de configuration
+
+Etablir et maintenir un modèle logique des services, des actifs et des infrastructures et de la façon d'enregistrer les éléments de configuration (EC) ainsi que les relations entre eux. Inclure les EC jugés nécessaires pour gérer les services avec efficacité et fournir une description unique et fiable des actifs d'un service.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Plan de versions | BAI07.06 | Périmètre du modèle de gestion des configurations | interne |
+|  |  | Modèle de configuration logique | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Définir et s'entendre sur le périmètre et le niveau de détail de la gestion des configurations (par exemple : les services, les actifs et les éléments de configuration de l'infrastructure à inclure). |
+| 2 | Etablir et maintenir un modèle logique de gestion des configurations, incluant de l'information sur les types d'éléments de configuration, les attributs des éléments de configuration, les types de relations, les attributs de relations et les codes d'état. |
+
+### BAI10.02 - Établir et maintenir une base de configuration et des configurations de référence
+
+Établir et maintenir une base de configurations et créer des références de configurations contrôlées.
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Inventaire des licences de logiciels | BAI09.05 | Référentiel de configuration | BAI09.01 / DSS02.01 |
+|  |  | Configuration de référence | BAI03.11 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Identifier et classer les éléments de configuration et alimenter la base de stockage. |
+| 2 | Créer, réviser et s'entendre formellement sur les bases de référence des configurations d'un service, d'une application ou d'une infrastructure. |
+
+### BAI10.03 - Maintenir et contrôler les éléments de configuration
+
+Maintenir une base de configurations à jour des éléments de configuration en y inscrivant les changements
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Rapports sur le statut des demandes de changement | BAI06.03 | Référentiel mis à jour des items de configuration | DSS02.01 |
+| Référentiel des actifs | BAI09.01 | Changements approuvés à la configuration de référence | BAI03.11 |
+| Résultats de la vérification de l’inventaire physique | BAI09.01 |  |  |
+| Inventaire des actifs mis à jour | BAI09.03 |  |  |
+| Mises hors service autorisées | BAI09.03 |  |  |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Identifier régulièrement tous les changements dans les éléments de configuration. |
+| 2 | Passer en revue les modifications proposées aux éléments de configuration par rapport à la configuration de référence pour assurer l'exhaustivité et l'exactitude. |
+| 3 | Mettre à jour l'information de configuration pour refléter les changements approuvés dans les éléments de configuration. |
+| 4 | En cas de besoin, créer, réviser et s'entendre formellement sur les modifications dans les configurations de référence. |
+
+### BAI10.04 - Produire des rapports d'état et de configuration
+
+Définir et produire des rapports de configuration sur les changements d'état des éléments de configuration
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+| Résultats de la vérification de l’inventaire physique | BAI09.01 | Rapports d'état de configuration | BAI03.11 / DSS02.01 |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Identifier les changements d'état des éléments de configuration et les traduire en reporting par rapport à la configuration de référence. |
+| 2 | Faire correspondre tous les changements de configuration aux demandes de changement approuvées afin d'identifier toute modification non autorisée. Signaler les modifications non autorisées à la gestion des changements. |
+| 3 | Identifier les exigences en matière de reporting venant de toutes les parties prenantes, incluant le contenu, la fréquence et les médias. Produire des rapports conformément aux exigences identifiées. |
+
+### BAI10.05 - Vérifier et examiner l'intégrité de la base de configurations
+
+Examiner périodiquement la base de configurations et vérifier son exhaustivité et son exactitude par rapport à la cible souhaitée
+
+**Entrées/Sorties**
+
+| **Description** | **Venant de** | **Description** | **Vers** |
+| :-- | :--- | :-- | :--- |
+|  |  | Résultats de la vérification physique des éléments de configuration | interne |
+|  |  | Ecarts en terme de licences | MEA03.03 |
+|  |  | Résultats des examens d'exhaustivité de la base de stockage des configurations | interne |
+
+**Activités**
+
+| N° | Description |
+| :--- | :--- |
+| 1 | Vérifier périodiquement les éléments de configuration réels par rapport à la base de stockage des configurations en comparant les configurations physiques et logiques et en utilisant des outils de recherche appropriés si besoin. |
+| 2 | Signaler et examiner tous les écarts pour obtenir des corrections ou des actions approuvées afin d'éliminer les actifs non autorisés. |
+| 3 | Vérifier périodiquement l'existence physique de tous les éléments de configuration physique définis dans la base de stockage des configurations. Signaler tout écart à la direction. |
+| 4 | Fixer et revoir périodiquement la cible d'exhaustivité de la base de stockage des configurations en fonction des besoins de l'entreprise. |
+| 5 | Comparer périodiquement aux objectifs le degré d'exhaustivité et d'exactitude, et prendre des mesures correctives, si nécessaire, afin d'améliorer la qualité des données de la base de stockage. |
+
+## RACI
+
+|  | BAI10.01 | BAI10.02 | BAI10.03 | BAI10.04 | BAI10.05 |
+| --- | --- | --- | --- | --- | --- |
+| Conseil d'administration |  |  |  |  |  |
+| Président Directeur Général |  |  |  |  |  |
+| Directeur Financier |  |  |  |  |  |
+| Directeur Opérationnel |  |  |  |  |  |
+| Directeurs Métiers |  |  |  |  |  |
+| Propriétaires de Processus Métiers | C |  |  | I | I |
+| Comité Stratégie |  |  |  |  |  |
+| Comité de Pilotage (programmes/projets) |  |  |  |  |  |
+| Coordinateur Projets (PMO) |  |  |  |  |  |
+| gestion de la valeur |  |  |  |  |  |
+| Risk Manager (RM) |  |  |  |  |  |
+| Directeur de la Sécurité des SI (DSSI) |  |  |  |  |  |
+| Urbanisme |  |  |  |  |  |
+| Comité risque de l'entreprise |  |  |  |  |  |
+| Direction des Ressources Humaines (DRH) |  |  |  |  |  |
+| Conformité |  |  |  |  |  |
+| Audit | C |  |  | I | R |
+| Directeur du SI (DSI) | C |  | A | I |  |
+| Responsable Architecture | C | C | C | C | R |
+| Responsable développement | I | R | R | C | R |
+| Responsable production informatique | A | A | R | A | A |
+| Responsable de l'administration informatique | R | R | R | R |  |
+| Gestionnaire de service | R | R | C | I | R |
+| Gestionnaire de la sécurité de l'information |  |  |  |  |  |
+| Gestionnaire de la continuité |  |  |  |  |  |
+| Directeur de la propriété |  |  |  |  |  |
