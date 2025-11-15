@@ -3,12 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "COBIT 5 inclut un modèle de référence des processus, qui définit et décrit en détail un certain nombre de processus de gouvernance et de gestion. 
-    
-    Il représente tous les processus généralement rencontrés dans une entreprise et liés aux activités informatiques, fournissant un modèle de référence commun compréhensible par les responsables informatiques et métiers opérationnels. 
-    
-    Le modèle de processus proposé est un modèle complet et exhaustif, mais il n'est pas le seul possible. 
-    
-    Chaque entreprise doit définir son propre ensemble de processus, en tenant compte de sa situation spécifique."
+    "description": "COBIT 5 inclut un modèle de référence des processus, qui définit et décrit en détail un certain nombre de processus de gouvernance et de gestion. Il représente tous les processus généralement rencontrés dans une entreprise et liés aux activités informatiques, fournissant un modèle de référence commun compréhensible par les responsables informatiques et métiers opérationnels. Le modèle de processus proposé est un modèle complet et exhaustif, mais il n'est pas le seul possible. Chaque entreprise doit définir son propre ensemble de processus, en tenant compte de sa situation spécifique."
   }
 }
