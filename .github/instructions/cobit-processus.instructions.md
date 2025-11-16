@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*.mdx"
+applyTo: "refs/cobit/processus/**/*.mdx"
 ---
 
 Instructions Copilot — Mise en forme MDX des processus CobIT
