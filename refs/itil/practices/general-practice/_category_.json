@@ -1,0 +1,8 @@
+{
+  "label": "Gestion Générale",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "ITIL v4 : Les Pratiques de Gestion Générale"
+  }
+}
