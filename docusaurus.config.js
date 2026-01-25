@@ -152,7 +152,7 @@ const config = {
             position: 'left',
             activeBasePath: 'tutoriels',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          //{to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/lacrif/docs',
             label: 'GitHub',
