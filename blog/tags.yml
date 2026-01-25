@@ -1,6 +1,26 @@
 ---
 
+esxi:
+  label: ESXi
+  permalink: /esxi
+  description: VMware ESXi
+
 gitlab:
   label: Gitlab
   permalink: /gitlab
-  description: Gitlab tag description
+  description: Gitlab
+
+workstation:
+  label: Workstation
+  permalink: /workstation
+  description: VMMware Workstation
+
+vmware:
+  label: VMMware
+  permalink: /vmware
+  description: VMMware
+
+virtualisation:
+  label: Virtualisation
+  permalink: /virtualisation
+  description: Virtualisation

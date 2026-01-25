@@ -1,0 +1,9 @@
+{
+  "label": "Produits",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Les produits VMWare couvrent une gamme complète de solutions de virtualisation, y compris VMWare Workstation, VMWare ESXi, VMWare vSphere, et bien d'autres. Cette catégorie explore les différentes offres de VMWare, leurs fonctionnalités, et comment elles peuvent être utilisées pour optimiser les environnements informatiques.",
+    "slug": "/vmware-products"
+  }
+}

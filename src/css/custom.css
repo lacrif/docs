@@ -34,7 +34,7 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  background-image: url("/img/home.svg");
+  background-image: url("/img/logo.png");
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 6px;
@@ -46,6 +46,28 @@
   width: 16px;
   height: 16px;
   background-image: url("/img/gitlab.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 6px;
+}
+
+.vmware_sidebar_header > div > a::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/img/vmware.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 6px;
+}
+
+.vmware_workstation_sidebar_header > div > a::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/img/vmware-workstation.svg");
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 6px;

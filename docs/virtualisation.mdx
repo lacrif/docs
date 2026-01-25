@@ -1,0 +1,120 @@
+---
+title: "La Virtualisation"
+description: "Concepts, technologies et bonnes pratiques autour de la virtualisation des systèmes et des applications."
+sidebar_position: 2
+last_update:
+  date: "2026-01-26"
+  author: lacrif
+---
+
+## Définition et Principes Fondamentaux
+
+Les technologies de virtualisation constituent les fondements de l'informatique en nuage ("Cloud"). Elles s'appuient sur des briques techniques, communément appelées « hyperviseurs », qui permettent d'assurer la gestion et de fédérer des ressources matérielles telles que la puissance de calcul (« compute »), le réseau (« network ») et le stockage (« storage »). L'objectif est de consolider le matériel afin de diminuer les coûts d'exploitation.
+
+Une machine virtuelle (VM) peut être définie comme une instance d'une machine physique, donnant aux utilisateurs l'illusion de posséder entièrement le matériel. En réalité, il s'agit d'un moyen de partager de manière transparente les ressources et d'exécuter les charges de travail de différents utilisateurs de manière isolée sur le même matériel. Cette abstraction permet de faire fonctionner plusieurs systèmes d'exploitation simultanément sur une seule machine physique.
+
+Au cœur de ce processus se trouve le Moniteur de Machine Virtuelle (VMM), ou hyperviseur. Ce logiciel contrôle les ressources d'exécution des machines virtuelles et garantit la bonne exécution des instructions privilégiées.
+
+## Les Différents Types d'Hyperviseurs
+
+L'architecture x86 utilise un mécanisme de "niveaux de privilège" pour protéger les données et restreindre les opérations. Typiquement, le noyau du système d'exploitation s'exécute au niveau 0, le plus privilégié, avec un accès direct au matériel, tandis que les applications utilisateur s'exécutent au niveau 3. La position de l'hyperviseur par rapport à ces niveaux de privilège détermine son type.
+
+| Architecture sans virtualisation | Virtualisation de Type 1 (Bare-Metal) | Virtualisation de Type 2 (Hébergée) |
+|----------------------------------|--------------------------------------|------------------------------------|
+| Le noyau (Kernel) s'exécute au niveau 0 et les applications (User App) au niveau 3. | Le moniteur de machine virtuelle (VMM) s'exécute directement sur le matériel au niveau 0. | Le noyau du système d'exploitation hôte (Host Kernel) s'exécute au niveau 0, le VMM au niveau 1 et les invités au niveau 3. |
+
+### Hyperviseur de Type 1 (Bare-Metal)
+
+Dans cette configuration, l'hyperviseur est installé directement sur le matériel physique. Il est responsable de l'émulation des instructions privilégiées lancées depuis l'espace invité. Cette approche transforme un système en une plateforme de virtualisation dédiée.
+
+**Exemples :**
+
+* KVM (Kernel-based Virtual Machine)
+* Xen
+
+### Hyperviseur de Type 2 (Hébergé ou "Hosted")
+  
+L'hyperviseur de Type 2 est installé comme une application au sein d'un système d'exploitation hôte existant. Les instructions privilégiées émises par un système d'exploitation invité provoquent un changement de contexte ("world switch") vers le noyau de l'hôte, sous la supervision du VMM.
+
+**Exemples :**
+
+* VMware Workstation
+* VirtualBox
+
+## Architecture des Solutions de Virtualisation Courantes
+
+### VMware Workstation (Type 2)
+
+VMware Workstation est un hyperviseur de Type 2 fonctionnant sur les processeurs x86. Il utilise un modèle d'E/S (Entrées/Sorties) hébergé, tirant parti de la prise en charge existante dans le système d'exploitation hôte.
+
+* **Instructions non privilégiées :** Celles-ci s'exécutent nativement sur le matériel sans intervention de l'hyperviseur.
+* **Instructions privilégiées :** Lorsqu'une application invitée émet une instruction privilégiée, l'hyperviseur l'intercepte et l'émule. Le processus implique un "world switch" demandé par le pilote de la VM (VM Driver), une transmission des données à l'application de la VM (VM App) qui mappe les requêtes virtuelles en appels système de l'hôte, puis un retour du contrôle à l'hyperviseur une fois l'opération terminée.
+
+### KVM (Kernel-based Virtual Machine) (Type 1)
+
+KVM est un module de virtualisation intégré au noyau Linux (depuis la version 2.6.20) qui transforme un système Linux en un hyperviseur de Type 1. Il nécessite des processeurs dotés d'extensions de virtualisation matérielle comme Intel VT ou AMD-V.
+
+* **Combinaison avec QEMU :** KVM est associé à QEMU (Quick Emulator) pour émuler les processeurs et les périphériques d'E/S.
+* **Gestion des E/S :** La communication entre les systèmes virtuel et physique se fait via VirtIO, un standard pour les pilotes de périphériques para-virtualisés.
+* **Exécution :** Pour exécuter des applications invitées, QEMU crée des threads POSIX qui représentent les processeurs virtuels (vCPU). Cela permet aux applications virtuelles d'apparaître comme des processus dans l'environnement hôte. QEMU interagit avec le module noyau KVM via le fichier /dev/kvm pour gérer l'état des registres des vCPU.
+
+## La Virtualisation Imbriquée ("Nested Virtualization")
+
+La virtualisation imbriquée, ou nested virtualization, désigne la capacité d'exécuter un hyperviseur à l'intérieur d'une machine virtuelle (VM) qui elle-même fonctionne sur un autre hyperviseur. Autrement dit, cela consiste à exécuter une VM à l'intérieur d'une autre VM.
+
+Cette technique est principalement destinée à la création d'environnements de test et de développement, à des fins de formation, ou pour tester des scénarios de déploiement et de migration complexes sans nécessiter plusieurs machines physiques.
+
+Prise en charge et activation :
+
+* **Hyper-V :** La plateforme de virtualisation de Microsoft prend en charge la virtualisation imbriquée. Elle peut être activée pour une VM spécifique via une commande PowerShell (la VM doit être éteinte) : Set-VMProcessor -VMName "Nom-de-la-VM" -ExposeVirtualizationExtensions $true
+* **Autres plateformes :** D'autres hyperviseurs comme VMware Workstation, VirtualBox, VMware ESXi et Proxmox prennent également en charge cette fonctionnalité.
+
+## Virtualisation vs. Conteneurisation
+
+Bien que les deux technologies permettent d'exécuter plusieurs applications de manière isolée sur une seule machine, leurs approches diffèrent fondamentalement.
+
+### Le Modèle de la Machine Virtuelle (Virtualisation Matérielle)
+
+La virtualisation traditionnelle repose sur un hyperviseur qui sépare le système d'exploitation et les applications du matériel physique. Chaque machine virtuelle regroupe non seulement l'application et ses dépendances, mais aussi une copie complète du système d'exploitation invité. Cela garantit une isolation forte, mais au prix d'une consommation de ressources plus élevée.
+
+### Le Modèle du Conteneur (Virtualisation au niveau du Système d'Exploitation)
+
+La conteneurisation consiste à regrouper le code d'une application avec uniquement les bibliothèques et dépendances nécessaires pour créer un seul exécutable léger, appelé conteneur.
+
+La différence fondamentale est que les conteneurs partagent le noyau du système d'exploitation de la machine hôte et n'embarquent pas leur propre système d'exploitation. Cette approche, appelée "virtualisation au niveau du système d'exploitation", les rend beaucoup plus légers et portables. Docker est la technologie de conteneurisation la plus populaire.
+
+### Tableau Comparatif
+
+| Caractéristique | Machine Virtuelle (VM) | Conteneur |
+|-----------------|------------------------|-----------|
+| Principe | Virtualisation matérielle | Virtualisation au niveau du SE |
+| Isolation | Isolation complète du système d'exploitation | Isolation des processus |
+| Système d'Exploitation | Chaque VM a son propre SE invité | Partage du noyau du SE de l'hôte |
+| Taille | Lourde (plusieurs gigaoctets) | Légère (quelques mégaoctets) |
+| Temps de démarrage | Plusieurs minutes | Quelques secondes ou moins |
+| Efficacité | Moins efficace, plus de surcharge | Très efficace, faible surcharge |
+| Portabilité | Dépend de l'hyperviseur | Haute portabilité ("écrire une fois, exécuter partout") |
+| Composant clé | Hyperviseur | Moteur de conteneurs (ex: Docker Engine) |
+
+## Cas d'Usage et Impacts
+
+### Optimisation des Datacenters
+
+Dans le contexte des datacenters, le recours à la virtualisation du traitement et du stockage est considéré comme une bonne pratique pour tendre vers un numérique plus écoresponsable. En consolidant les serveurs, la virtualisation permet d'optimiser l'utilisation des ressources et de réduire la consommation d'énergie.
+
+### Performance
+
+Des études comparatives montrent des différences de performance notables entre les technologies :
+
+* **Conteneurs (Docker) :** Affichent des performances proches du natif. La faible surcharge leur confère un avantage clair, en particulier pour les opérations d'E/S (accès disque).
+* **Machines Virtuelles (VMware, KVM) :** Introduisent une dégradation des performances par rapport à une exécution native. Cette surcharge est particulièrement visible dans les charges de travail intensives en E/S, car l'hyperviseur doit intercepter et émuler un grand nombre d'appels système. Pour les applications intensives en calcul, la différence est moins marquée car moins d'instructions privilégiées sont émises.
+
+### Sécurité et Architecture
+
+Les infrastructures de virtualisation, en raison de la concentration de machines virtuelles qu'elles hébergent, sont une cible privilégiée pour les attaquants, notamment pour les attaques par rançongiciel. La compromission d'un hyperviseur peut donner un accès à l'ensemble des données et des traitements hébergés.
+
+L'Agence Nationale de la Sécurité des Systèmes d'Information (ANSSI) souligne l'importance de sécuriser ce socle technique en adoptant des architectures robustes. Les recommandations clés incluent :
+
+* **Séparation des plans :** Isoler le plan de contrôle (pilotage de l'infrastructure, ex: vCenter) du plan de données (où s'exécutent les VM de production). Dans la terminologie VMware, cela correspond à séparer le Management domain des Workload domains.
+* **Cloisonnement réseau :** Utiliser la segmentation (ex: VLANs) pour isoler les flux d'administration, de stockage, et de production.
+* **Micro-segmentation :** Une technique de sécurité réseau avancée, rendue possible par des solutions comme VMware NSX, qui permet de cloisonner les flux de chaque machine virtuelle via des règles de filtrage granulaires. Cela limite la capacité d'un attaquant à se déplacer latéralement au sein du réseau en cas de compromission d'une VM.

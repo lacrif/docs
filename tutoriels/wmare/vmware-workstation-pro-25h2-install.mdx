@@ -1,0 +1,171 @@
+---
+id: vmware-workstation-pro-install
+title: "Installation de VMware Workstation Pro"
+sidebar_label: "Installation de VMware Workstation Pro"
+sidebar_position: 1
+description: "Installation de VMware Workstation Pro"
+tags: [vmware, virtualisation, workstation]
+last_update:
+  date: "2026-01-26"
+  author: lacrif
+---
+
+## Introduction
+
+VMware Workstation Pro est une solution de virtualisation de bureau puissante qui permet aux utilisateurs de créer et de gérer plusieurs machines virtuelles (VM) sur un seul ordinateur physique. Cette application est idéale pour les développeurs, les testeurs et les professionnels de l'informatique qui souhaitent exécuter différents systèmes d'exploitation et applications dans des environnements isolés.
+
+![VMWare Workstation Pro](/img/vmware/vmware-workstation-pro-01.png)
+
+## Prérequis
+
+- Un ordinateur compatible avec VMware Workstation Pro.
+- Un système d'exploitation hôte pris en charge (Windows ou Linux).
+- Accès à une connexion Internet pour télécharger le logiciel.
+
+## Téléchargement de VMware Workstation Pro
+
+- Rendez-vous sur le site officiel de VMware : [VMware Workstation Pro](https://www.vmware.com/products/workstation-pro.html).
+- Cliquez sur **"Download Now"** pour aller sur le portail du support VMware.
+- Connectez-vous avec votre compte VMware. Si vous n'en avez pas, créez-en un gratuitement.
+- Aller dans la section **"My Downloads"** et cliquez sur **"Free Software Downloads available HERE"**.
+- Sélectionnez "VMware Workstation Pro" dans la liste des produits.
+- Sélectionnez la version de VMware Workstation Pro en fonction de votre système d'exploitation (Windows ou Linux) et téléchargez le fichier d'installation.
+
+Le fichier téléchargé ressemble à :
+- VMware-Workstation-Full-XX.X.X-XXXXXXX.exe pour Windows
+- VMware-Workstation-Full-XX.X.X-XXXXXXX.bundle pour Linux
+
+## Installation de VMware Workstation Pro sur Windows
+
+### Lancer l’installation
+
+- Double-cliquez sur le fichier d'installation téléchargé (fichier .exe).
+- Suivez les instructions à l'écran :
+   - Acceptez le contrat de licence.
+   - Choisissez le répertoire d'installation.
+   - Sélectionnez les options supplémentaires (création d'icônes, mises à jour automatiques, etc.).
+- Cliquez sur "Install" pour lancer l'installation.
+- Une fois l'installation terminée, cliquez sur "Finish"
+- Redémarrez votre ordinateur si nécessaire.
+
+## Installation de VMware Workstation Pro sur Linux
+
+### Préparer Ubuntu
+
+Ouvre un terminal et installe les dépendances nécessaires :
+
+```bash
+sudo apt update
+sudo apt install build-essential gcc make perl
+```
+
+Ces paquets permettent de compiler les modules du noyau utilisés par VMware.
+
+### Lancer l’installation
+
+Place-toi dans le dossier où se trouve le fichier .bundle :
+
+```bash
+chmod +x VMware-Workstation-Full-*.bundle
+sudo ./VMware-Workstation-Full-*.bundle
+```
+
+Un installateur graphique s’ouvre. Accepte les licences et valide les options par défaut.
+
+### Compiler les modules VMware
+
+Au premier lancement, VMware te demandera de compiler les modules noyau. Accepte simplement : Ubuntu s’occupe de tout.
+
+Si la compilation ne se lance pas automatiquement, tu peux forcer la compilation avec la ligne de commande :
+
+```bash
+sudo vmware-modconfig --console --install-all
+```
+
+### Secure Boot et signature des modules
+
+VMware nécessite le chargement de modules noyau (vmmon, vmnet).
+Si Secure Boot est activé, ils ne pourront pas se charger.
+
+👉 Désactive Secure Boot dans le BIOS sauf si tu veux signer manuellement les modules suit les les étapes de signature des modules ci-dessous.
+
+#### Étape 1 — Générer la paire de clés
+
+```bash
+sudo mkdir -p /root/module-signing
+cd /root/module-signing
+```
+
+Maintenant, génère la clé en PEM, puis convertis-la proprement en DER.
+
+1. Générer la clé privée + certificat PEM
+
+```bash
+sudo openssl req -new -x509 -newkey rsa:2048 \
+  -keyout MOK.priv \
+  -out MOK.pem \
+  -nodes -days 36500 \
+  -subj "/CN=VMware Module Signing/"
+```
+
+2. Convertir le certificat PEM → DER
+
+```bash
+sudo openssl x509 -in MOK.pem -outform DER -out MOK.der
+```
+
+Cette étape est cruciale : mokutil exige un certificat DER, pas PEM.
+
+#### Étape 2 — Vérifier que le certificat DER est valide
+
+```bash
+openssl x509 -in MOK.der -inform DER -text -noout
+```
+
+Si tu vois les détails du certificat → il est valide.
+
+Si tu vois une erreur → le fichier n’est pas DER.
+
+#### Étape 3 — Importer la clé dans MOK
+
+```bash
+sudo mokutil --import /root/module-signing/MOK.der
+```
+
+Tu devrais maintenant ne plus avoir l’erreur “not a valid x509 certificate in DER format”.
+
+#### Étape 4 — Redémarrer et valider la clé
+
+Au reboot → écran bleu MOK Manager → Enroll MOK → mot de passe → reboot.
+
+#### Étape 5 — Signer les modules VMware
+
+```bash
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 \
+  /root/module-signing/MOK.priv \
+  /root/module-signing/MOK.der \
+  $(modinfo -n vmmon)
+
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 \
+  /root/module-signing/MOK.priv \
+  /root/module-signing/MOK.der \
+  $(modinfo -n vmnet)
+```
+
+#### Étape 6 — Vérifier la signature
+
+```bash
+modinfo vmmon | grep signer
+modinfo vmnet | grep signer
+```
+
+Tu dois voir :
+
+```bash
+signer: VMware Module Signing
+```
+Tu devrais maintenant pouvoir lancer VMware Workstation sans l’erreur /dev/vmmon.
+
+## Conclusion
+
+L'installation de VMware Workstation Pro est un processus simple qui permet aux utilisateurs de bénéficier d'une solution de virtualisation robuste et flexible. Que vous soyez un développeur, un testeur ou un professionnel de l'informatique, VMware Workstation Pro offre les outils nécessaires pour créer et gérer des environnements virtuels efficaces.

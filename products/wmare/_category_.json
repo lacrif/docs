@@ -1,0 +1,10 @@
+{
+  "label": "VMWare",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "VMWare Workstation est une solution de virtualisation populaire qui permet aux utilisateurs d'exécuter plusieurs systèmes d'exploitation sur une seule machine physique. Cette catégorie couvre divers aspects de l'utilisation, de la configuration et du dépannage de VMWare Workstation.",
+    "slug": "/vmware"
+  },
+  "className": "vmware_sidebar_header"
+}

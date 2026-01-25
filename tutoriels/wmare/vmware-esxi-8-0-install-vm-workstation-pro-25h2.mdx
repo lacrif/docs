@@ -1,0 +1,74 @@
+---
+id: vmware-esxi-8-0-install-vm-workstation-pro-25h2
+title: "Installation de VMware ESXi 8.0 U3e sur VMware Workstation Pro 25H2"
+sidebar_label: "Installation de VMware ESXi 8.0 U3e sur VMware Workstation Pro 25H2"
+sidebar_position: 1
+description: "Installation de VMware ESXi 8.0 U3e sur VMware Workstation Pro 25H2"
+tags: [vmware, virtualisation, esxi, workstation]
+last_update:
+  date: "2026-01-26"
+  author: lacrif
+---
+
+## Introduction
+
+VMware ESXi est un hyperviseur de type 1 développé par VMware, largement utilisé pour la virtualisation des serveurs. Il permet de créer et de gérer plusieurs machines virtuelles (VM) sur un seul serveur physique, offrant ainsi une grande flexibilité et une utilisation efficace des ressources matérielles.
+
+VMware Workstation, quant à lui, est une solution de virtualisation de bureau qui permet aux utilisateurs de créer et de gérer des machines virtuelles sur leur ordinateur personnel. Bien que VMware Workstation soit principalement destiné à la virtualisation de bureau, il est également possible d'installer et d'exécuter VMware ESXi en tant que machine virtuelle à l'intérieur de VMware Workstation.
+
+Ce guide vous expliquera comment installer VMware ESXi 8.0 sur VMware Workstation 17, étape par étape.
+
+{/* truncate */}
+
+## Prérequis
+
+- VMware Workstation Pro 25H2 installé sur votre ordinateur.
+- Image ISO de VMware ESXi 8.0 U3e, téléchargeable depuis le site officiel
+- Un ordinateur avec suffisamment de ressources (CPU, RAM, espace disque) pour exécuter VMware Workstation et la machine virtuelle ESXi.
+
+## Étapes d'Installation
+
+1. **Créer une Nouvelle Machine Virtuelle** :
+   - Ouvrez VMware Workstation Pro 25H2.
+   - Cliquez sur "Create a New Virtual Machine".
+   - Sélectionnez "Typical (recommended)" et cliquez sur "Next".
+   - Choisissez "Installer disc image file (iso)" et parcourez pour sélectionner l'image ISO de VMware ESXi 8.0 U3e.
+   - Cliquez sur "Next".
+2. **Configurer la Machine Virtuelle** :
+   - Donnez un nom à la machine virtuelle (par exemple, "VMware ESXi 8.0 U3e").
+   - Choisissez l'emplacement où vous souhaitez stocker les fichiers de la machine virtuelle.
+   - Cliquez sur "Next".
+3. **Spécifier le Système d'Exploitation** :
+   - Sélectionnez "Linux" comme type de système d'exploitation.
+   - Choisissez "Other Linux 5.x or later kernel 64-bit" comme version.
+   - Cliquez sur "Next".
+4. **Allouer les Ressources** :
+   - Allouez au moins 4 Go de RAM (8 Go recommandé) pour la machine virtuelle.
+   - Cliquez sur "Next".
+5. **Configurer le Disque Dur Virtuel** :
+   - Sélectionnez "Create a new virtual disk".
+    - Spécifiez la taille du disque (20 Go minimum recommandé).
+    - Choisissez "Store virtual disk as a single file".
+    - Cliquez sur "Next", puis sur "Finish" pour créer la machine virtuelle.
+6. **Modifier les Paramètres de la Machine Virtuelle** :
+   - Sélectionnez la machine virtuelle ESXi que vous venez de créer.
+   - Cliquez sur "Edit virtual machine settings".
+   - Sous l'onglet "Hardware", ajustez les paramètres suivants :
+     - **Processors** : Allouez au moins 2 processeurs virtuels.
+     - **Network Adapter** : Assurez-vous qu'il est configuré en "Bridged" ou "NAT" selon vos besoins.
+   - Cliquez sur "OK" pour enregistrer les modifications.
+7. **Démarrer l'Installation** :
+   - Sélectionnez la machine virtuelle ESXi et cliquez sur "Power on this virtual machine".
+   - Suivez les instructions à l'écran pour installer VMware ESXi 8.0.
+   - Acceptez le contrat de licence, sélectionnez le disque virtuel que vous avez créé, et configurez les paramètres réseau selon vos besoins.
+8. **Finaliser l'Installation** :
+   - Une fois l'installation terminée, redémarrez la machine virtuelle.
+   - Configurez les paramètres initiaux d'ESXi, tels que le mot de passe root et les paramètres réseau.
+   - Vous pouvez maintenant accéder à l'interface web de VMware ESXi via un navigateur en utilisant l'adresse IP configurée.
+
+## Conclusion
+
+Vous avez maintenant installé avec succès VMware ESXi 8.0 sur VMware Workstation 17. Vous pouvez commencer à créer et gérer des machines virtuelles à l'intérieur de votre hyperviseur ESXi. N'oubliez pas de consulter la documentation officielle de VMware pour explorer les fonctionnalités avancées et les meilleures pratiques de gestion d'ESXi.
+Pour en savoir plus sur VMware Workstation et ESXi, consultez les ressources suivantes :
+- [Documentation VMware Workstation](https://www.vmware.com/support/pubs/workstation_pubs.html)
+- [Documentation VMware ESXi](https://www.vmware.com/support/pubs/esxi_pubs.html)

@@ -70,27 +70,19 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/lacrif/docs/tree/main/',
+          sidebarPath: './sidebars.js'
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   feedOptions: {
-        //     type: ['rss', 'atom'],
-        //     xslt: true,
-        //   },
-        //   // Please change this to your repo.
-        //   // Remove this to remove the "edit this page" links.
-        //   editUrl:
-        //     'https://github.com/lacrif/docs/tree/main/',
-        //   // Useful options to enforce blogging best practices
-        //   onInlineTags: 'warn',
-        //   onInlineAuthors: 'warn',
-        //   onUntruncatedBlogPosts: 'warn',
-        // },
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -104,10 +96,23 @@ const config = {
       {
         id: 'refs',
         path: 'refs',
-        routeBasePath: 'refs',
-        sidebarPath: require.resolve('./sidebars.refs.js'),
+        routeBasePath: 'refs'
       },
-    ],
+    ],[
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'products',
+        path: 'products',
+        routeBasePath: 'products'
+      },
+    ],[
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tutoriels',
+        path: 'tutoriels',
+        routeBasePath: 'tutoriels'
+      },
+    ]
   ],
 
   themeConfig:
@@ -131,14 +136,23 @@ const config = {
             sidebarId: 'docsSidebar',
             position: 'left',
             label: 'Docs',
-          },
-          {
+          },{
+            to: '/products',
+            label: 'Produits',
+            position: 'left',
+            activeBasePath: 'products',
+          },{
             to: '/refs',
             label: 'Référentiels',
             position: 'left',
             activeBasePath: 'refs',
+          },{
+            to: '/tutoriels',
+            label: 'Tutoriels',
+            position: 'left',
+            activeBasePath: 'tutoriels',
           },
-          //{to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/lacrif/docs',
             label: 'GitHub',
@@ -150,24 +164,23 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Découvrir',
             items: [
               {
                 label: 'Docs',
                 to: '/docs/',
-              },
-            ],
-          }, 
-          {
-            title: 'Reférentiels',
-            items: [
-              {
+              },{
+                label: 'Produits',
+                to: '/products/',
+              },{
                 label: 'Reférentiels',
                 to: '/refs/',
+              },{
+                label: 'Tutoriels',
+                to: '/tutoriels/',
               },
             ],
-          },
-          {
+          },{
             title: 'Community',
             items: [
               // {
@@ -183,16 +196,7 @@ const config = {
               //   href: 'https://x.com/docusaurus',
               // },
             ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/lacrif/docs',
-              },
-            ],
-          },
+          }
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Lacrif, Inc. Built with Docusaurus.`,
       },
