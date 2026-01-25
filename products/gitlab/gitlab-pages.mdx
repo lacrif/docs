@@ -10,6 +10,8 @@ last_update:
   author: lacrif
 ---
 
+import Terminal from '@site/src/components/Terminal';
+
 ## Introduction
 
 GitLab Pages est un service d'hébergement de sites web statiques intégré à GitLab. Il permet de publier des sites web directement depuis un dépôt GitLab via les pipelines CI/CD. Pages est gratuit sur GitLab.com et disponible pour toutes les offres, y compris self-hosted.
@@ -47,7 +49,8 @@ Pour publier un site avec GitLab Pages, vous devez :
 
 Créez un fichier `.gitlab-ci.yml` :
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 pages:
   stage: deploy
   script:
@@ -59,10 +62,12 @@ pages:
   only:
     - main
 ```
+</Terminal>
 
 Créez un fichier `index.html` :
 
-```html
+<Terminal>
+```html title="index.html"
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,6 +79,7 @@ Créez un fichier `index.html` :
 </body>
 </html>
 ```
+</Terminal>
 
 Poussez ces fichiers sur la branche `main`. Le site sera accessible à :
 - `https://<username>.gitlab.io/<project-name>` (GitLab.com)
@@ -87,7 +93,8 @@ GitLab Pages fonctionne avec tous les générateurs de sites statiques. Voici de
 
 #### Hugo (Go)
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 image: registry.gitlab.com/pages/hugo:latest
 
 variables:
@@ -103,10 +110,12 @@ pages:
   only:
     - main
 ```
+</Terminal>
 
 #### Jekyll (Ruby)
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 image: ruby:2.7
 
 pages:
@@ -122,10 +131,12 @@ pages:
   only:
     - main
 ```
+</Terminal>
 
 #### Gatsby (React)
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 image: node:18
 
 cache:
@@ -145,10 +156,12 @@ pages:
   only:
     - main
 ```
+</Terminal>
 
 #### Docusaurus (React)
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 image: node:18
 
 cache:
@@ -167,10 +180,12 @@ pages:
   only:
     - main
 ```
+</Terminal>
 
 #### VuePress (Vue)
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 image: node:18
 
 cache:
@@ -189,10 +204,12 @@ pages:
   only:
     - main
 ```
+</Terminal>
 
 #### MkDocs (Python)
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 image: python:3.9
 
 pages:
@@ -208,33 +225,40 @@ pages:
   only:
     - main
 ```
+</Terminal>
 
 ### Sous-dossiers et chemins personnalisés
 
 Si votre projet utilise un sous-chemin (ex: `https://user.gitlab.io/project/`), configurez le base path :
 
 #### Hugo
-```yaml
-# config.toml
+
+<Terminal>
+```yaml title="config.toml"
 baseURL = "https://user.gitlab.io/project/"
 ```
+</Terminal>
 
 #### Gatsby
-```javascript
-// gatsby-config.js
+
+<Terminal>
+```javascript title="gatsby-config.js"
 module.exports = {
   pathPrefix: "/project",
 }
 ```
+</Terminal>
 
 #### Docusaurus
-```javascript
-// docusaurus.config.js
+
+<Terminal>
+```javascript title="docusaurus.config.js"
 module.exports = {
   baseUrl: '/project/',
   url: 'https://user.gitlab.io',
 }
 ```
+</Terminal>
 
 ## Domaines personnalisés
 
@@ -251,17 +275,21 @@ module.exports = {
 
 Créez un enregistrement CNAME :
 
+<Terminal>
 ```
 www.example.com  →  CNAME  →  <username>.gitlab.io
 ```
+</Terminal>
 
 #### Pour un domaine racine (ex: example.com)
 
 Créez un enregistrement A pointant vers l'IP de GitLab Pages :
 
+<Terminal>
 ```
 example.com  →  A  →  35.185.44.232  (GitLab.com)
 ```
+</Terminal>
 
 > **Note** : L'IP peut changer. Consultez la [documentation officielle](https://docs.gitlab.com/ee/user/project/pages/custom_domains_ssl_tls_certification/) pour l'IP actuelle.
 
@@ -269,9 +297,11 @@ Pour self-hosted, utilisez l'IP de votre serveur GitLab Pages.
 
 Ajoutez aussi un enregistrement CNAME pour www :
 
+<Terminal>
 ```
 www.example.com  →  CNAME  →  example.com
 ```
+</Terminal>
 
 ### Certificat SSL personnalisé
 
@@ -298,9 +328,11 @@ Cette fonctionnalité est disponible selon votre plan GitLab (consultez la docum
 
 Pour les API ou l'automatisation, utilisez des tokens :
 
+<Terminal>
 ```bash
 curl -H "PRIVATE-TOKEN: <your_token>" https://example.gitlab.io/project/
 ```
+</Terminal>
 
 ## Déploiement multi-environnements
 
@@ -308,7 +340,8 @@ Vous pouvez déployer différentes branches sur des URLs distinctes.
 
 ### Environnements de review
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 pages:
   stage: deploy
   script:
@@ -334,6 +367,7 @@ pages:preview:
   except:
     - main
 ```
+</Terminal>
 
 ## Redirection et routage
 
@@ -341,10 +375,12 @@ pages:preview:
 
 Créez un fichier `public/_redirects` (Netlify-style) :
 
+<Terminal>
 ```
 /old-page  /new-page  301
 /blog/*    /news/:splat  301
 ```
+</Terminal>
 
 GitLab Pages supporte les redirections via ce fichier (vérifiez la version de votre instance).
 
@@ -352,26 +388,32 @@ GitLab Pages supporte les redirections via ce fichier (vérifiez la version de v
 
 Pour les applications React/Vue/Angular avec client-side routing, créez un fichier `public/_redirects` :
 
+<Terminal>
 ```
 /*  /index.html  200
 ```
+</Terminal>
 
 Ou configurez directement dans votre générateur :
 
 #### Create React App
-```yaml
+
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 pages:
   script:
     - npm run build
     - cp build/index.html build/404.html  # Fallback pour 404
     - mv build public
 ```
+</Terminal>
 
 ## Configuration GitLab Pages (Self-Hosted)
 
-Si vous gérez une instance GitLab self-hosted, configurez GitLab Pages dans `/etc/gitlab/gitlab.rb` :
+Si vous gérez une instance GitLab self-hosted, configurez GitLab Pages :
 
-```ruby
+<Terminal>
+```ruby title="/etc/gitlab/gitlab.rb"
 pages_external_url "http://pages.example.com"
 
 gitlab_pages['enable'] = true
@@ -384,13 +426,16 @@ pages_nginx['redirect_http_to_https'] = true
 # Domaines personnalisés
 gitlab_pages['access_control'] = true
 ```
+</Terminal>
 
 Puis reconfigurer :
 
+<Terminal>
 ```bash
 sudo gitlab-ctl reconfigure
 sudo gitlab-ctl restart
 ```
+</Terminal>
 
 ## Performance et optimisation
 
@@ -398,7 +443,8 @@ sudo gitlab-ctl restart
 
 Accélérez les builds en cachant les dépendances :
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
@@ -412,16 +458,19 @@ pages:
     - npm run build
     - mv build public
 ```
+</Terminal>
 
 ### Compression et optimisation
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 pages:
   script:
     - npm run build
     - npm run optimize  # Minification, compression
     - mv build public
 ```
+</Terminal>
 
 ### CDN et caching headers
 
@@ -477,8 +526,8 @@ Pour les instances self-hosted, ces limites sont configurables par l'administrat
 
 ### Portfolio personnel
 
-```yaml
-# .gitlab-ci.yml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 image: node:18
 
 pages:
@@ -493,10 +542,12 @@ pages:
   only:
     - main
 ```
+</Terminal>
 
 ### Documentation technique avec Sphinx
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 image: python:3.9
 
 pages:
@@ -511,10 +562,12 @@ pages:
   only:
     - main
 ```
+</Terminal>
 
 ### Blog avec Hugo
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 image: registry.gitlab.com/pages/hugo:latest
 
 variables:
@@ -530,6 +583,7 @@ pages:
   only:
     - main
 ```
+</Terminal>
 
 ## Bonnes pratiques
 
@@ -556,7 +610,8 @@ pages:
 
 ### Workflow recommandé
 
-```yaml
+<Terminal>
+```yaml title=".gitlab-ci.yml"
 stages:
   - test
   - deploy
@@ -582,6 +637,7 @@ pages:
   only:
     - main
 ```
+</Terminal>
 
 ## Ressources
 

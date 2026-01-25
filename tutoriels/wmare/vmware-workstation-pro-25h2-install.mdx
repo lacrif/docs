@@ -10,6 +10,8 @@ last_update:
   author: lacrif
 ---
 
+import Terminal from '@site/src/components/Terminal';
+
 ## Introduction
 
 VMware Workstation Pro est une solution de virtualisation de bureau puissante qui permet aux utilisateurs de créer et de gérer plusieurs machines virtuelles (VM) sur un seul ordinateur physique. Cette application est idéale pour les développeurs, les testeurs et les professionnels de l'informatique qui souhaitent exécuter différents systèmes d'exploitation et applications dans des environnements isolés.
@@ -54,10 +56,12 @@ Le fichier téléchargé ressemble à :
 
 Ouvre un terminal et installe les dépendances nécessaires :
 
+<Terminal>
 ```bash
 sudo apt update
 sudo apt install build-essential gcc make perl
 ```
+</Terminal>
 
 Ces paquets permettent de compiler les modules du noyau utilisés par VMware.
 
@@ -65,10 +69,12 @@ Ces paquets permettent de compiler les modules du noyau utilisés par VMware.
 
 Place-toi dans le dossier où se trouve le fichier .bundle :
 
+<Terminal>
 ```bash
 chmod +x VMware-Workstation-Full-*.bundle
 sudo ./VMware-Workstation-Full-*.bundle
 ```
+</Terminal>
 
 Un installateur graphique s’ouvre. Accepte les licences et valide les options par défaut.
 
@@ -78,9 +84,11 @@ Au premier lancement, VMware te demandera de compiler les modules noyau. Accepte
 
 Si la compilation ne se lance pas automatiquement, tu peux forcer la compilation avec la ligne de commande :
 
+<Terminal>
 ```bash
 sudo vmware-modconfig --console --install-all
 ```
+</Terminal>
 
 ### Secure Boot et signature des modules
 
@@ -91,15 +99,18 @@ Si Secure Boot est activé, ils ne pourront pas se charger.
 
 #### Étape 1 — Générer la paire de clés
 
+<Terminal>
 ```bash
 sudo mkdir -p /root/module-signing
 cd /root/module-signing
 ```
+</Terminal>
 
 Maintenant, génère la clé en PEM, puis convertis-la proprement en DER.
 
 1. Générer la clé privée + certificat PEM
 
+<Terminal>
 ```bash
 sudo openssl req -new -x509 -newkey rsa:2048 \
   -keyout MOK.priv \
@@ -107,20 +118,25 @@ sudo openssl req -new -x509 -newkey rsa:2048 \
   -nodes -days 36500 \
   -subj "/CN=VMware Module Signing/"
 ```
+</Terminal>
 
 2. Convertir le certificat PEM → DER
 
+<Terminal>
 ```bash
 sudo openssl x509 -in MOK.pem -outform DER -out MOK.der
 ```
+</Terminal>
 
 Cette étape est cruciale : mokutil exige un certificat DER, pas PEM.
 
 #### Étape 2 — Vérifier que le certificat DER est valide
 
+<Terminal>
 ```bash
 openssl x509 -in MOK.der -inform DER -text -noout
 ```
+</Terminal>
 
 Si tu vois les détails du certificat → il est valide.
 
@@ -128,9 +144,11 @@ Si tu vois une erreur → le fichier n’est pas DER.
 
 #### Étape 3 — Importer la clé dans MOK
 
+<Terminal>
 ```bash
 sudo mokutil --import /root/module-signing/MOK.der
 ```
+</Terminal>
 
 Tu devrais maintenant ne plus avoir l’erreur “not a valid x509 certificate in DER format”.
 
@@ -140,6 +158,7 @@ Au reboot → écran bleu MOK Manager → Enroll MOK → mot de passe → reboot
 
 #### Étape 5 — Signer les modules VMware
 
+<Terminal>
 ```bash
 sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 \
   /root/module-signing/MOK.priv \
@@ -151,19 +170,25 @@ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 \
   /root/module-signing/MOK.der \
   $(modinfo -n vmnet)
 ```
+</Terminal>
 
 #### Étape 6 — Vérifier la signature
 
+<Terminal>
 ```bash
 modinfo vmmon | grep signer
 modinfo vmnet | grep signer
 ```
+</Terminal>
 
 Tu dois voir :
 
+<Terminal>
 ```bash
 signer: VMware Module Signing
 ```
+</Terminal>
+
 Tu devrais maintenant pouvoir lancer VMware Workstation sans l’erreur /dev/vmmon.
 
 ## Conclusion
