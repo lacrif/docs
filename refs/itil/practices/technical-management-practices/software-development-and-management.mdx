@@ -11,3 +11,64 @@ last_update:
 ---
 
 ## Description
+
+Le Développement et la Gestion des Logiciels est l'une des trois pratiques de gestion technique d'ITIL 4. Son objectif fondamental est de s'assurer que les applications répondent aux besoins des parties prenantes internes et externes en termes de fonctionnalité, de fiabilité, de maintenabilité, de conformité et d'auditabilité.
+
+Cette pratique est d'une importance critique pour la prestation de services métier activés par la technologie, garantissant que les applications sont à la fois adaptées au but (fit for purpose) et adaptées à l'usage (fit for use).
+
+## Périmètre du terme « Logiciel »
+
+Dans le contexte d'ITIL 4, le terme « logiciel » ne se limite pas à un simple programme. Il englobe des constructions plus larges telles que :
+
+* Les systèmes d'exploitation et les environnements d'exploitation.
+* Les bases de données.
+* Les applications de bureau et les applications mobiles.
+* Les logiciels embarqués (contrôlant des machines et des appareils).
+* Les sites Web.
+
+## Activités Clés de la Pratique
+
+La pratique englobe un vaste ensemble d'activités techniques et de gestion, notamment :
+
+* `Architecture et conception de solutions` : Inclut l'interface utilisateur (UI), l'expérience client (CX) et la conception de services.
+* `Développement logiciel` : La création proprement dite du code.
+* `Tests logiciels` : Comprend les tests unitaires, d'intégration, de régression, de sécurité et les tests d'acceptation par les utilisateurs (UAT).
+* `Gestion des dépôts de code` : Maintenir l'intégrité des artefacts dans des bibliothèques de code.
+* `Création de packages` : Préparer l'application pour un déploiement efficace.
+* `Contrôle de version` : Partage et gestion continue des blocs de code.
+
+## Approches et Cycle de Vie
+
+Il existe deux approches généralement acceptées pour le développement : la méthode en cascade (Waterfall) et la méthode Agile. Si le maillon faible d'un flux de valeur est le développement de systèmes d'information, l'application des principes Agile peut améliorer considérablement la qualité et la vitesse de développement.
+
+La gestion des logiciels suit un cycle de vie complet qui suit le composant de l'idée initiale jusqu'au retrait : 
+
+
+```mermaid
+flowchart LR
+    A[Idéation] --> B[Conception]
+    B --> C[Développement]
+    C --> D[Test]
+    D --> E[Déploiement]
+    E --> F[Exploitation]
+    F --> G[Amélioration]
+    G --> H[Retrait]
+```
+
+## Contribution à la Chaîne de Valeur des Services (SVC)
+
+Cette pratique est impliquée dans presque toutes les activités de la chaîne de valeur, à l'exception de l'activité « Engager » :
+
+* `Planifier` : Fournit des informations sur les opportunités et les contraintes liées à la création ou à la modification des logiciels de l'organisation.
+* `Améliorer` : Les améliorations de services impliquant des composants logiciels, surtout ceux développés en interne, dépendent de cette pratique.
+* `Conception et transition` : Permet de concevoir et de gérer de manière holistique les changements apportés aux produits et services.
+* `Obtenir/construire` : C'est une contribution majeure ; la création de produits internes et la configuration de produits tiers dépendent de cette pratique.
+* `Délivrer et soutenir` : Fournit aux équipes de support la documentation nécessaire pour utiliser les produits.
+
+## Interactions avec d'autres Pratiques
+
+Pour maximiser sa valeur, cette pratique interagit étroitement avec d'autres domaines :
+
+* `Analyse Métier (Business Analysis)` : Fréquemment appliquée dans les projets de développement logiciel pour définir les besoins.
+* `Gestion de la Capacité et de la Performance` : Traite des performances des applications pour s'assurer qu'elles répondent aux demandes actuelles et futures.
+* `Gestion de la Configuration` : Les enregistrements de configuration peuvent parfois être utilisés pour créer le code ou l'artefact en cours de construction.

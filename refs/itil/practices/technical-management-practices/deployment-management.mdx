@@ -11,3 +11,41 @@ last_update:
 ---
 
 ## Description
+
+La gestion des déploiements est l'une des trois pratiques de gestion technique d'ITIL 4. Son objectif principal est de déplacer du matériel, des logiciels, de la documentation, des processus ou tout autre composant, qu’ils soient nouveaux ou modifiés, vers des environnements de production. Cette pratique peut également être impliquée dans le déploiement de composants vers d'autres environnements, tels que ceux dédiés aux tests ou aux simulations.
+
+## Approches de Déploiement
+
+Il existe plusieurs stratégies pour mettre en œuvre un déploiement, et les organisations utilisent souvent une combinaison de ces méthodes selon leurs besoins :
+
+* `Déploiement par étapes (Phased deployment)` : Les nouveaux composants sont déployés dans une partie seulement de l'environnement de production à la fois (par exemple, un bureau ou un pays spécifique). L'opération est répétée jusqu'à ce que le déploiement soit complet.
+* `Livraison continue (Continuous delivery)` : Les composants sont intégrés, testés et déployés dès qu'ils sont nécessaires, ce qui permet des boucles de rétroaction fréquentes avec les clients.
+* `Déploiement « Big Bang »` : Tous les composants sont déployés simultanément sur toutes les cibles. Cette approche est nécessaire lorsqu'il existe des dépendances empêchant l'utilisation simultanée de l'ancienne et de la nouvelle version (par exemple, un changement de schéma de base de données incompatible).
+* `Déploiement par « extraction » (Pull deployment)` : Le logiciel est mis à disposition dans un référentiel contrôlé et les utilisateurs le téléchargent sur leurs propres appareils lorsqu'ils le souhaitent. Cela peut être intégré à la gestion des demandes de service pour permettre aux utilisateurs de solliciter le logiciel au moment opportun.
+
+## Stockage et Sécurité des Composants
+
+Pour garantir que les composants ne sont pas modifiés avant leur déploiement, ils doivent être conservés dans des emplacements sécurisés :
+
+* `Bibliothèque définitive des médias (Definitive Media Library - DML)` : Pour les logiciels et la documentation.
+* `Magasin définitif de matériel (Definitive Hardware Store)` : Pour les composants matériels.
+
+## Relations avec les autres Pratiques
+
+Bien qu'il s'agisse d'une pratique distincte, la gestion des déploiements travaille en collaboration étroite avec d'autres domaines :
+
+* `Gestion des mises en production (Release Management)` : La communication entourant les déploiements est généralement gérée par la pratique de mise en production, car les déploiements individuels n'intéressent souvent les clients que lorsqu'ils font l'objet d'une « release » officielle.
+* `Contrôle des changements (Change Enablement)` : Les outils de déploiement fournissent souvent un support pour l'audit et la gestion des changements.
+* `Gestion de la configuration` : Les outils de déploiement sont fréquemment intégrés aux outils de gestion de la configuration pour maintenir un environnement contrôlé.
+
+## Impact des nouvelles technologies et du Cloud
+
+Dans les environnements de Cloud Computing ou à haute vélocité (DevOps), l'infrastructure est souvent traitée comme du code, permettant une automatisation complète du déploiement. Il est crucial que l'organisation reste consciente de tous les déploiements effectués, même lorsqu'ils sont sous le contrôle d'un fournisseur tiers (comme pour les mises à jour de firmware ou les correctifs de systèmes d'exploitation fournis en tant que service), afin de maintenir la maîtrise de l'environnement.
+
+## Contribution à la Chaîne de Valeur des Services (SVC)
+
+La gestion des déploiements se concentre principalement sur les activités suivantes de la chaîne de valeur :
+
+* `Conception et transition` : C'est un élément vital car elle déplace physiquement les composants vers les environnements réels.
+* `Obtenir/construire` : Les changements peuvent être déployés de manière incrémentale dans cette phase, particulièrement dans les environnements DevOps utilisant des chaînes d'outils automatisées.
+* `Améliorer` : Certaines améliorations logicielles ou matérielles nécessitent un déploiement avant de pouvoir être officiellement délivrées.
