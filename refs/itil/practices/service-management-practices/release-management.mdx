@@ -11,3 +11,60 @@ last_update:
 ---
 
 ## Description
+
+La gestion des versions est une pratique de gestion des services dont l'objectif est de mettre à disposition des utilisateurs des services et des fonctionnalités nouveaux ou modifiés pour utilisation.
+
+Une version (ou mise en production) est définie comme une variante d'un service ou d'un autre élément de configuration (CI), ou une collection d'éléments de configuration, qui est rendue disponible pour l'usage des clients.
+
+## Composants d'une Version
+
+Une version peut varier considérablement en taille, allant d'une seule fonctionnalité mineure modifiée à un service entièrement nouveau composé de nombreux éléments. Elle peut inclure :
+
+* Des composants d'infrastructure et des logiciels.
+* De la documentation technique ou utilisateur.
+* Des supports de formation pour les utilisateurs ou le personnel informatique.
+* Des processus ou outils mis à jour.
+
+Chaque composant peut être développé en interne par le fournisseur de services ou acquis auprès d'un tiers.
+
+## Planification et Calendrier des Versions
+
+Pour coordonner la mise à disposition des fonctionnalités, la pratique s'appuie sur deux documents essentiels :
+
+* `Le Plan de version` : Il spécifie la combinaison exacte de composants nouveaux ou modifiés à rendre disponibles ainsi que le moment choisi pour la version.
+* `Le Calendrier des versions` : Utilisé pour documenter le timing des versions, il doit être négocié et convenu avec les clients et les autres parties prenantes.
+
+Après chaque mise en œuvre, une revue post-implémentation est recommandée pour favoriser l'apprentissage et s'assurer de la satisfaction des clients.
+
+## Approches selon l'Environnement
+
+La gestion des versions s'adapte aux différentes méthodologies de travail :
+
+* `Environnement traditionnel` : Dans ce contexte, la majorité du travail de gestion des versions a lieu avant le déploiement. Le déploiement et la version sont souvent combinés et exécutés comme un processus unique où le déploiement rend immédiatement la fonctionnalité disponible.
+* `Environnement Agile et DevOps` : Ici, la gestion des versions peut avoir une activité significative après le déploiement. L'infrastructure et les logiciels sont déployés par petits incréments, et la gestion des versions active la fonctionnalité plus tard. Les décisions peuvent être prises directement par l'équipe de développement et la pratique est souvent intégrée aux chaînes d'outils de livraison continue (CI/CD).
+
+## Techniques de Mise en Production (Staging)
+
+Pour minimiser les risques, les versions peuvent être déployées de manière progressive ou contrôlée :
+
+* `Versions pilotes` : Rendues disponibles à un petit nombre d'utilisateurs pour vérifier le bon fonctionnement avant une diffusion plus large.
+* `Versions Bleu/Vert (Blue/Green)` : Utilisation de deux environnements de production miroirs où les utilisateurs sont basculés de l'un à l'autre via des outils réseau.
+* `Indicateurs de fonctionnalités (Feature Flags)` : Permettent d'activer ou de désactiver des fonctionnalités spécifiques pour certains utilisateurs de manière contrôlée via des paramètres de configuration, sans nécessiter de nouveau déploiement.
+
+## Distinction entre Déploiement et Version
+
+Il est crucial de différencier la gestion des versions de la gestion des déploiements :
+
+* La gestion des déploiements concerne le mouvement physique ou technique des composants vers les environnements de production.
+* La gestion des versions concerne l'activation de ces composants pour les rendre utilisables par le client. Dans les environnements DevOps, différencier ces deux pratiques est une recommandation clé pour améliorer le flux de valeur.
+
+## Contribution à la Chaîne de Valeur des Services (SVC)
+
+La gestion des versions participe à toutes les activités de la chaîne de valeur :
+
+* `Planifier` : Les politiques et les délais de version sont dictés par la stratégie organisationnelle et le portefeuille de services.
+* `Améliorer` : Planifie et gère les versions nécessaires pour livrer des améliorations.
+* `Engager` : Conçoit le contenu et la cadence des versions pour correspondre aux besoins des clients. Des campagnes de marketing et de sensibilisation accompagnent souvent les sorties.
+* `Conception et transition` : S'assure que les services nouveaux ou modifiés sont disponibles de manière contrôlée.
+* `Obtenir/construire` : Intègre les changements de composants dans une version livrée de façon structurée.
+* `Délivrer et soutenir` : Fournit la formation, la documentation, les notes de version et les erreurs connues pour faciliter la restauration du service en cas besoin.

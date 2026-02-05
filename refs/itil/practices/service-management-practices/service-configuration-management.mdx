@@ -11,3 +11,53 @@ last_update:
 ---
 
 ## Description
+
+La gestion de la configuration des services est l'une des 17 pratiques de gestion de services d'ITIL 4. Son objectif est de s'assurer que des informations précises et fiables sur la configuration des services, ainsi que sur les éléments qui les supportent, sont disponibles au moment et à l'endroit où elles sont nécessaires.
+Elle permet de comprendre comment les différents composants d'un service interagissent, se lient et dépendent les uns des autres pour créer de la valeur.
+
+## Concepts Fondamentaux
+
+La pratique repose sur plusieurs définitions clés :
+
+* `Élément de Configuration (CI - Configuration Item)` : Tout composant qui doit être géré afin de fournir un service informatique. Cela inclut le matériel, les logiciels, les réseaux, les bâtiments, les personnes, les fournisseurs et la documentation.
+* `Système de Gestion de la Configuration (CMS - Configuration Management System)` : Un ensemble d'outils, de données et d'informations utilisé pour soutenir la gestion de la configuration.
+* `Base de Données de Gestion de la Configuration (CMDB)` : Une base de données utilisée pour stocker les enregistrements de configuration tout au long de leur cycle de vie et maintenir les relations entre eux.
+* `Enregistrement de Configuration` : Un document détaillant un CI et retraçant son cycle de vie.
+
+## Modèle de Service et Cartographie
+
+La gestion de la configuration fournit une vue de haut niveau appelée modèle de service ou carte de service (service map). Ce modèle illustre comment les divers CI (composants SaaS, applications locales, serveurs, stockage, infrastructure cloud, etc.) contribuent ensemble à la fourniture d'un service informatique global.
+
+## Équilibre entre Coût et Valeur
+
+Il est crucial que l'effort consacré à la collecte et à la maintenance des informations de configuration soit équilibré par la valeur que ces informations créent. Maintenir des détails exhaustifs sur chaque composant peut être coûteux et offrir peu de valeur réelle. Le type et la quantité d'informations enregistrées doivent donc être basés sur les besoins des utilisateurs et les objectifs de l'organisation.
+
+## Processus et Responsabilités
+
+La gestion de la configuration nécessite des processus pour :
+
+* Identifier les nouveaux CI et les ajouter au CMS.
+* Mettre à jour les données de configuration lors du déploiement de changements.
+* Vérifier l'exactitude des enregistrements de configuration.
+* Auditer les applications et l'infrastructure pour identifier les éléments non documentés.
+
+Sur le plan organisationnel, la responsabilité peut être confiée à une équipe dédiée, combinée avec le contrôle des changements ou la gestion des mises en production, ou répartie entre les équipes fonctionnelles.
+
+## Interactions avec les autres Pratiques
+
+Cette pratique est une "facilitatrice" essentielle pour d'autres domaines :
+
+* `Gestion des Incidents et des Problèmes` : Elle est indispensable pour le diagnostic et la restauration des services en identifiant, par exemple, quels serveurs ou versions logicielles sont affectés.
+* `Contrôle des Changements` : Elle permet d'évaluer les risques en visualisant l'impact potentiel d'une modification sur les autres composants du système.
+* `Gestion des Actifs (ITAM)` : Le registre des actifs financiers est souvent fédéré avec le CMS pour une vue intégrée.
+
+## Contribution à la Chaîne de Valeur des Services (SVC)
+
+La gestion de la configuration intervient dans toutes les activités de la chaîne de valeur :
+
+* `Planifier` : Utile pour la planification de services nouveaux ou modifiés.
+* `Améliorer` : Les données de configuration font l'objet de mesures pour identifier des opportunités d'amélioration.
+* `Engager` : Les parties prenantes (partenaires, régulateurs) peuvent exiger ou fournir des informations de configuration.
+* `Conception et transition` : Documente comment les actifs travaillent ensemble et met à jour ces informations lors des transitions.
+* `Obtenir/construire` : Des enregistrements sont créés pour les nouveaux composants. Dans l'approche "infrastructure as code", les enregistrements de configuration sont parfois utilisés pour créer directement le code ou l'artefact construit.
+* `Délivrer et soutenir` : Fournit les informations essentielles à la restauration des services.

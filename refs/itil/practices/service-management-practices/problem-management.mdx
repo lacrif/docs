@@ -11,3 +11,45 @@ last_update:
 ---
 
 ## Description
+
+L'objectif de la gestion des problèmes est de réduire la probabilité et l'impact des incidents en identifiant leurs causes réelles et potentielles, et en gérant les solutions de contournement (workarounds) et les erreurs connues (known errors). 
+
+Contrairement à la gestion des incidents qui se concentre sur le rétablissement rapide du service, la gestion des problèmes nécessite une investigation et une analyse approfondies pour identifier les causes racines et recommander des résolutions à long terme.
+
+## Concepts Fondamentaux
+
+La pratique repose sur trois définitions clés :
+
+* `Problème` : Une cause, ou une cause potentielle, d'un ou de plusieurs incidents.
+* `Erreur connue` : Un problème qui a été analysé mais qui n'a pas encore été résolu.
+* `Solution de contournement (Workaround)` : Une solution qui réduit ou élimine l'impact d'un incident ou d'un problème pour lequel une résolution complète n'est pas encore disponible.
+
+## Les Trois Phases de la Gestion des Problèmes
+
+La gestion des problèmes comprend trois phases distinctes :
+
+* `Identification des problèmes` : Cette phase consiste à identifier et enregistrer les problèmes par l'analyse des tendances des incidents, la détection de problèmes récurrents, ou via des informations provenant de fournisseurs, de développeurs ou d'équipes de projet.
+* `Contrôle des problèmes` : Elle inclut l'analyse des problèmes et la documentation des solutions de contournement et des erreurs connues. Les problèmes sont priorisés en fonction du risque qu'ils posent (impact et probabilité). L'analyse doit être holistique et prendre en compte les quatre dimensions de la gestion des services (ex: une erreur peut venir d'une mauvaise documentation autant que d'un défaut technique).
+* `Contrôle des erreurs` : Cette phase gère les erreurs connues et cherche des solutions permanentes. Elle réévalue régulièrement le statut des erreurs non résolues pour juger si une solution définitive est justifiée en termes de coût, de risque et de bénéfice.
+
+## Interactions avec les autres Pratiques
+
+La gestion des problèmes est étroitement liée à plusieurs autres domaines :
+
+* `Gestion des Incidents` : Elles sont interdépendantes ; l'identification des causes aide à résoudre les incidents, mais l'investigation d'un problème peut parfois retarder le rétablissement immédiat du service.
+* `Gestion des Risques` : Les activités de gestion des problèmes peuvent être vues comme un cas spécifique de gestion des risques.
+* `Contrôle des Changements` : La gestion des problèmes initie souvent des résolutions via cette pratique et participe à la revue post-implémentation.
+* `Amélioration Continue` : Elle identifie des opportunités d'amélioration qui sont ensuite gérées dans le registre d'amélioration continue (CIR).
+
+## Contribution à la Chaîne de Valeur des Services (SVC)
+
+La pratique contribue principalement aux activités suivantes :
+
+* `Améliorer` : C'est son domaine d'intervention majeur, en fournissant les informations nécessaires pour réduire le nombre d'incidents.
+* `Délivrer et soutenir` : Elle apporte une contribution significative en empêchant la répétition des incidents.
+* `Conception et transition / Obtenir et construire` : Elle fournit des informations pour améliorer les tests et identifier les défauts des produits.
+* `Engager` : Elle permet de communiquer aux clients et utilisateurs l'avancement de la résolution des problèmes ayant un impact visible sur les services.
+
+## Aptitudes et Compétences
+
+La gestion des problèmes repose davantage sur les connaissances et l'expérience du personnel que sur des procédures rigides. Elle exige une capacité à comprendre des systèmes complexes et une aptitude à la fois analytique et créative pour imaginer comment différentes défaillances ont pu se produire.

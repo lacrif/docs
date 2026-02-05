@@ -11,3 +11,43 @@ last_update:
 ---
 
 ## Description
+
+Un incident est défini comme une interruption non planifiée d’un service ou une réduction de la qualité d’un service. L’objectif de cette pratique est de minimiser l’impact négatif des incidents en rétablissant le fonctionnement normal du service le plus rapidement possible.
+
+Cette pratique est cruciale car elle influence directement la perception que les clients et les utilisateurs ont du fournisseur de services.
+
+## Principes de Gestion et de Priorisation
+
+Pour assurer une résolution efficace, chaque incident doit être enregistré, classé et géré tout au long de son cycle de vie.
+
+* `Priorisation` : Les incidents doivent être priorisés selon une classification convenue afin de garantir que ceux ayant le plus fort impact sur le business soient traités en priorité.
+* `Cibles de résolution` : Des délais de résolution cibles doivent être convenus, documentés et communiqués pour que les attentes des utilisateurs soient réalistes.
+* `Outils de gestion` : L'utilisation d'outils de gestion des services (ITSM) est recommandée pour permettre l'appariement automatisé des incidents à d'autres incidents, problèmes ou erreurs connues.
+
+## Structure de Diagnostic et de Résolution
+
+Les incidents peuvent être résolus par différents groupes en fonction de leur complexité :
+
+* `Auto-assistance` : Résolution par l'utilisateur lui-même via des portails dédiés.
+* `Centre de services` : Premier point de contact qui résout les incidents simples.
+* `Équipes de support technique` : Escalade vers des équipes spécialisées selon la catégorie de l'incident.
+* `Fournisseurs et partenaires` : Support externe pour les produits et composants tiers.
+* `Gestion des incidents majeurs` : Nécessite souvent la formation d'une équipe transverse temporaire pour une résolution coordonnée.
+* `Plans de reprise après catastrophe` : Activés dans les cas extrêmes de défaillance majeure.
+
+## Techniques Modernes : Le "Swarming"
+
+Certaines organisations utilisent le swarming (ou travail en essaim). Cette technique implique que plusieurs parties prenantes travaillent ensemble initialement sur un incident jusqu'à ce qu'il soit clair qui est le mieux placé pour continuer la résolution. Cela favorise le partage des connaissances et l'efficacité, particulièrement pour les incidents complexes.
+
+## Contribution à la Chaîne de Valeur des Services (SVC)
+
+La gestion des incidents intervient de manière significative dans plusieurs activités de la chaîne de valeur :
+
+* `Améliorer` : Les enregistrements d'incidents sont des entrées clés pour identifier les tendances et les opportunités d'amélioration.
+* `Engager` : Assure une communication régulière avec les utilisateurs pour comprendre les problèmes, fixer les attentes et fournir des mises à jour.
+* `Conception et transition` / `Obtenir et construire` : Permet de résoudre les incidents survenant dans les environnements de test ou de développement de manière contrôlée.
+* `Délivrer et soutenir` : C'est l'activité où la pratique contribue le plus en résolvant les incidents opérationnels.
+
+## Liens avec les autres Pratiques
+
+La gestion des incidents ne fonctionne pas de manière isolée. Elle doit être liée à la gestion de la configuration pour accéder aux données des actifs (CIs), à la gestion des problèmes pour enquêter sur les causes sous-jacentes, et au contrôle des changements pour tracer les modifications qui auraient pu causer ou résoudre l'incident.

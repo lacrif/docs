@@ -11,3 +11,56 @@ last_update:
 ---
 
 ## Description
+
+La surveillance et la gestion des événements est l'une des 17 pratiques de gestion de services d'ITIL 4. Son objectif est d'observer systématiquement les services et les composants de service, tout en enregistrant et en signalant les changements d'état sélectionnés, identifiés comme des événements.
+
+Cette pratique permet de gérer les événements tout au long de leur cycle de vie afin de prévenir, minimiser ou éliminer leur impact négatif sur les activités de l'entreprise.
+
+## Concepts Fondamentaux : Surveillance vs Événement
+
+Il est important de distinguer les deux volets de cette pratique :
+
+* `La Surveillance (Monitoring)` : Il s'agit de l'observation répétée d'un système ou d'un service pour détecter des événements et s'assurer que son état actuel est connu. Elle peut être active (l'outil interroge les composants) ou passive (le composant génère lui-même des alertes).
+* `L'Événement (Event)` : Un événement est défini comme tout changement d'état ayant une importance pour la gestion d'un service ou d'un autre élément de configuration (CI).
+
+## Classification des Événements
+
+Tous les événements n'ont pas la même importance. Ils sont généralement classés en trois types :
+
+* `Informations (Informational)` : Ils ne nécessitent aucune action immédiate au moment de leur identification, mais l'analyse des données peut révéler des étapes proactives bénéfiques pour le service.
+* `Avertissements (Warning)` : Ils permettent d'intervenir avant que l'entreprise ne subisse un impact négatif réel.
+* `Exceptions` : Ils indiquent qu'une violation d'une norme établie a été identifiée (par exemple, un non-respect des engagements de niveau de service ou SLA). Ils nécessitent une action, même si l'impact métier n'est pas encore ressenti.
+
+## Activités Clés et Mise en Œuvre
+
+Pour être efficace, cette pratique doit établir des processus couvrant les activités suivantes :
+
+* Identifier les services et composants à surveiller et établir une stratégie de surveillance.
+* Mettre en œuvre et maintenir la surveillance en utilisant les fonctions natives des composants ou des outils dédiés.
+* Définir des seuils et des critères pour déterminer quels changements d'état seront traités comme des événements.
+* Établir des politiques pour la manipulation de chaque type d'événement détecté.
+* Mettre en œuvre l'automatisation nécessaire pour opérationnaliser ces seuils et politiques.
+
+## Rôle de l'Automatisation et Intervention Humaine
+
+L'automatisation est essentielle pour gérer le volume massif de données généré par cette pratique. Des outils automatisés sont nécessaires pour la corrélation des événements, faute de quoi les données n'auraient aucune valeur sans filtrage approprié.
+
+Toutefois, l'intervention humaine reste indispensable pour définir les stratégies, les seuils et les critères d'évaluation. Il est recommandé d'impliquer diverses perspectives (infrastructure, applications, propriétaires de services) pour établir ces règles.
+
+## Contribution à la Chaîne de Valeur des Services (SVC)
+
+La pratique intervient dans presque toutes les activités de la chaîne de valeur, à l'exception de la planification :
+
+* `Améliorer` : Essentiel pour l'observation de l'environnement afin d'améliorer proactivement sa santé et sa stabilité.
+* `Engager` : Peut être une source d'engagement interne pour déclencher une action.
+* `Conception et transition` : Les données de surveillance informent les décisions de conception et fournissent des preuves de la réussite des transitions dans tous les environnements.
+* `Obtenir/construire` : Soutient les environnements de développement en assurant leur transparence.
+* `Délivrer et soutenir` : Guide la gestion du support interne pour les événements identifiés, en initiant d'autres pratiques si nécessaire.
+
+## Interactions avec d'autres Pratiques
+
+La surveillance et la gestion des événements est fortement interactive :
+
+* Elle initie souvent la gestion des incidents lorsqu'un événement indique une anomalie.
+* Elle peut alimenter la gestion des problèmes si des événements répétés montrent des performances hors des niveaux souhaités.
+* Elle peut engager le contrôle des changements si la réponse appropriée à un événement nécessite une modification du système.

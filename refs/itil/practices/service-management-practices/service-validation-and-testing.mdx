@@ -11,3 +11,46 @@ last_update:
 ---
 
 ## Description
+
+L'objectif de la validation et des tests des services est de s'assurer que les produits et services, qu'ils soient nouveaux ou modifiés, répondent aux exigences définies. La définition de la valeur d'un service repose sur les retours des clients, les objectifs métier et les exigences réglementaires. Ces éléments permettent d'établir des indicateurs de qualité et de performance mesurables qui servent de base aux critères d'assurance et aux exigences de test.
+
+## La Validation des Services
+
+La validation se concentre sur l'établissement de critères d'acceptation (conditions de préparation à la production) pour la gestion des déploiements et des mises en production. Ces critères, vérifiés par des tests, peuvent être axés sur :
+
+* `L'utilité (Utility)` : Ce que le service fait (aptitude au but).
+* `La garantie (Warranty)` : Comment le service fonctionne (aptitude à l'usage).
+
+## Stratégie et Types de Tests
+
+Une stratégie de test définit l'approche globale, qu'elle s'applique à un environnement, une plate-forme ou un service spécifique. Les tests doivent être effectués de la même manière sur les systèmes développés en interne et sur les solutions externes.
+
+Les sources identifient deux grandes catégories de tests :
+
+A. Tests d'utilité / fonctionnels :
+* `Test unitaire` : Test d'un composant système unique.
+* `Test système` : Test global incluant logiciels et plates-formes.
+* `Test d'intégration` : Test d'un groupe de modules logiciels dépendants.
+* `Test de régression` : Vérification que les fonctions déjà opérationnelles n'ont pas été impactées par les changements.
+
+B. Tests de garantie / non fonctionnels :
+* `Performance et capacité` : Vérification de la vitesse et de la charge.
+* `Sécurité` : Tests de vulnérabilité et de conformité aux politiques.
+* `Conformité` : Vérification du respect des exigences légales et réglementaires.
+* `Opérationnels` : Tests de sauvegarde, surveillance, basculement (failover) et reporting.
+* `Exigences de garantie` : Vérification de la documentation, de la formation et du transfert de connaissances.
+* `Tests d'acceptation utilisateur (UAT)` : Tests réalisés par les utilisateurs pour approuver une mise en production.
+
+## Contribution à la Chaîne de Valeur des Services (SVC)
+
+La validation et les tests interviennent dans presque toutes les activités de la chaîne de valeur, à l'exception de la planification :
+
+* `Améliorer` : Les métriques telles que les défauts échappés, la couverture des tests et la performance par rapport aux SLA sont essentielles pour améliorer l'expérience client (CX) et réduire les risques.
+* `Engager` : L'implication de certaines parties prenantes dans les activités de test favorise l'adoption et la visibilité des services.
+* `Conception et transition` : Cette pratique est étroitement intégrée à la conception des services, à la gestion des connaissances et à la gestion des versions/déploiements.
+* `Obtenir/construire` : Les activités de test sont liées à la gestion de projet et au développement logiciel, que ce soit en mode Cascade (Waterfall) ou Agile.
+* `Délivrer et soutenir` : Les erreurs connues capturées lors des tests sont partagées avec le centre de services et la gestion des incidents pour accélérer la restauration des services.
+
+## Intégration et Collaboration
+
+Pour être efficace, cette pratique doit être fortement intégrée avec d'autres domaines techniques et de gestion. Les informations sur les interruptions de service ou les défauts constatés en production sont renvoyées vers la validation et les tests afin d'améliorer l'efficacité et la couverture des futurs critères d'acceptation.

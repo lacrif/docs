@@ -11,3 +11,47 @@ last_update:
 ---
 
 ## Description
+
+La gestion de la disponibilité est l'une des 17 pratiques de gestion de services d'ITIL 4. Son but est de s'assurer que les services fournissent les niveaux de disponibilité convenus afin de répondre aux besoins des clients et des utilisateurs. Dans ce contexte, la disponibilité est définie comme l'aptitude d'un service informatique ou d'un autre élément de configuration (CI) à remplir sa fonction convenue au moment où il est sollicité.
+
+Cette pratique est un composant essentiel de la Garantie (Warranty), qui évalue si un service est « adapté à l'utilisation ». Elle vise à optimiser le temps de fonctionnement des services tout en minimisant les interruptions.
+
+## Activités Clés de la Pratique
+
+Pour remplir sa mission, la gestion de la disponibilité englobe plusieurs activités critiques :
+
+* `Négociation et accord` : Établir des cibles de disponibilité réalisables avec les parties prenantes.
+* `Conception` : Concevoir des infrastructures et des applications capables de délivrer les niveaux de disponibilité requis.
+* `Collecte de données` : S'assurer que les services et composants sont en mesure de recueillir les données nécessaires pour mesurer la disponibilité.
+* `Surveillance et analyse` : Suivre, analyser et produire des rapports sur la disponibilité réelle par rapport aux cibles.
+* `Amélioration` : Planifier des améliorations pour accroître la disponibilité des services.
+
+## Mesures et Indicateurs de Performance
+
+La disponibilité d'un service dépend de la fréquence de ses défaillances et de la rapidité de sa restauration. Elle est souvent mesurée par deux indicateurs principaux :
+
+* `MTBF (Mean Time Between Failures)` : L'intervalle moyen entre les défaillances, qui mesure la fréquence à laquelle un service tombe en panne.
+* `MTRS (Mean Time to Restore Service)` : Le délai moyen de restauration du service, qui mesure la rapidité avec laquelle un service est rétabli après une panne.
+
+D'autres mesures peuvent être plus représentatives de l'expérience utilisateur, telles que les minutes d'indisponibilité par utilisateur, le nombre de transactions perdues, la perte de valeur métier ou encore le niveau de satisfaction des utilisateurs.
+
+## Considérations Opérationnelles et Stratégiques
+
+Une gestion efficace doit prendre en compte le contexte spécifique de chaque service :
+
+* `Fonctions vitales (VBF)` : Identifier quelles fonctions métier critiques sont affectées par différentes défaillances applicatives.
+* `Seuils de performance` : Déterminer à quel point une dégradation de la performance rend le service effectivement inutilisable.
+* `Fenêtres de maintenance` : Définir quand le service doit être disponible et quand le fournisseur peut effectuer des activités de maintenance.
+
+Sur le plan organisationnel, peu d'entreprises disposent d'un personnel dédié exclusivement à cette pratique. Les activités sont souvent réparties ou combinées avec la gestion des risques, la gestion de la continuité des services ou la gestion de la capacité. Certaines organisations font appel à des ingénieurs en fiabilité de site (SRE) pour gérer la disponibilité de produits spécifiques.
+
+## Contribution à la Chaîne de Valeur des Services (SVC)
+
+La gestion de la disponibilité contribue à toutes les activités de la chaîne de valeur :
+
+* `Planifier` : Elle intervient dans les décisions relatives au portefeuille de services et dans la définition des objectifs stratégiques.
+* `Améliorer` : Elle garantit que les initiatives d'amélioration n'entraînent pas une dégradation de la disponibilité.
+* `Engager` : Elle permet de capturer les exigences de disponibilité pour les services nouveaux ou modifiés.
+* `Conception et transition` : Elle s'assure que les services sont conçus pour répondre aux cibles et que les contrôles sont testés lors de la transition.
+* `Obtenir/construire` : Elle est prise en compte lors de la construction de composants ou de leur acquisition auprès de tiers.
+* `Délivrer et soutenir` : Elle assure la mesure continue et la réaction aux événements affectant la disponibilité.
