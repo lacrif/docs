@@ -1,0 +1,55 @@
+---
+id: vmware-vcenter
+title: "VMWare VCenter"
+sidebar_label: "VMWare VCenter"
+sidebar_position: 3
+description: "Introduction à VMWare VCenter"
+tags: [vmware, virtualisation, vcenter]
+last_update:
+  date: "2026-02-23"
+  author: lacrif
+---
+
+## Introduction
+
+VMware vCenter (souvent fourni comme Appliance `VCSA`) est la console de gestion centrale pour les environnements VMware vSphere. Il agrège la gestion des hôtes ESXi, des clusters, du stockage et du réseau, et propose des outils d'orchestration, supervision et automatisation essentiels pour les datacenters virtuels.
+
+## Qu'est-ce que vCenter ?
+
+vCenter Server centralise l'inventaire des objets vSphere (hôtes, machines virtuelles, datastores, réseaux) et expose des services indispensables : gestion des clusters, planification des ressources, supervision, gestion des permissions et API pour l'automatisation.
+
+## Composants et modes de déploiement
+
+- **vCenter Server Appliance (VCSA)** : appliance Linux pré-packagée (OVF) recommandée pour les déploiements modernes.
+- **vSphere Client (HTML5)** : interface web pour administrer vCenter.
+- **Platform Services** : services d'authentification, licensing et certificats (centralisés dans VCSA depuis les dernières versions).
+- **APIs / SDK / PowerCLI** : interfaces pour automatiser et intégrer vCenter avec d'autres outils.
+
+## Fonctionnalités clés
+
+- **Gestion centralisée de l'inventaire** : vue unifiée des hôtes, VM et ressources.
+- **Clusters + DRS/HA** : orchestration des clusters, équilibrage des ressources et tolérance aux pannes.
+- **vMotion & Storage vMotion** : orchestration des migrations live des VM et des disques.
+- **Lifecycle Manager** : gestion centralisée des correctifs et des versions d'ESXi et des firmwares.
+- **Gestion des permissions et rôles** : RBAC granulaire pour sécuriser l'accès.
+- **Alarmes, évènements & performance** : supervision, alerting et tableaux de bord.
+- **Intégration vSAN/NSX/Tanzu** : point d'intégration pour stockage hyperconvergé, réseau virtuel et conteneurs.
+
+## Cas d'utilisation
+
+- Opérer un parc d'hôtes ESXi et provisionner des VM à grande échelle.
+- Orchestrer la maintenance (mises à jour, patching) avec un impact minimal.
+- Automatiser le provisioning via APIs et PowerCLI.
+- Superviser la santé et les performances des clusters en production.
+
+## Bonnes pratiques
+
+- Déployer vCenter en appliance (`VCSA`) et planifier la redondance (appliance backup, HA selon l'architecture).
+- Séparer les réseaux de gestion, stockage et VM et restreindre l'accès au réseau de gestion.
+- Utiliser des comptes de service et appliquer le principe du moindre privilège via les rôles.
+- Mettre en place des sauvegardes régulières de la configuration VCSA et tester les restaurations.
+- Automatiser les tâches répétitives avec des scripts/Playbooks et surveiller les tâches planifiées.
+
+## Conclusion
+
+vCenter est l'élément central qui transforme un ensemble d'hôtes ESXi en une infrastructure gérable, automatisable et observable. Pour les environnements VMware à l'échelle, il est indispensable pour assurer disponibilité, conformité et efficacité opérationnelle.

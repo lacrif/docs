@@ -1,0 +1,62 @@
+---
+id: vmware-vsphere
+title: "VMWare vSphere"
+sidebar_label: "VMWare vSphere"
+sidebar_position: 2
+description: "Introduction à VMWare vSphere"
+tags: [vmware, virtualisation, vsphere]
+last_update:
+  date: "2026-02-23"
+  author: lacrif
+---
+
+## Introduction
+
+VMware vSphere est une plateforme de virtualisation d'entreprise largement utilisée pour construire et gérer des infrastructures virtuelles robustes, performantes et sécurisées. Elle permet d'exécuter plusieurs machines virtuelles sur des serveurs physiques, d'orchestrer les ressources et d'assurer haute disponibilité, mobilité des workloads et optimisation des performances.
+
+## Qu'est-ce que vSphere ?
+
+vSphere est un ensemble de composants logiciels qui fournissent une couche d'abstraction entre le matériel physique et les machines virtuelles. Conçue pour répondre aux besoins des datacenters modernes, la plateforme facilite la consolidation des serveurs, la résilience des applications, la gestion centralisée et l'automatisation des opérations.
+
+## Composants principaux
+
+- **ESXi** : hyperviseur de type 1 installé directement sur le matériel. Il exécute les machines virtuelles et gère l'accès aux ressources physiques.
+- **vCenter Server** : console de gestion centralisée pour administrer plusieurs hôtes ESXi, orchestrer les opérations, superviser la configuration et automatiser les tâches.
+- **vSAN** (optionnel) : solution de stockage définie par logiciel intégrée à vSphere qui agrège les disques des hôtes ESXi pour fournir un stockage partagé optimisé pour les VM.
+- **NSX** (solution réseau) : virtualisation du réseau qui apporte micro-segmentation, routage distribué et services réseau avancés.
+- **vSphere Client** : interface web pour administrer la plateforme (via vCenter).
+
+## Fonctionnalités clés
+
+- **vMotion** : migration en direct des VM entre hôtes physiques sans interruption de service.
+- **HA (High Availability)** : redémarrage automatique des VM sur d'autres hôtes en cas de défaillance matérielle.
+- **DRS (Distributed Resource Scheduler)** : équilibrage automatique des ressources CPU/mémoire entre les hôtes.
+- **vSphere Replication / SRM** : options pour la réplication et la reprise après sinistre.
+- **vSAN** : stockage hyperconvergé performant, optimisé pour virtualisation.
+- **vSphere with Tanzu** : intégration Kubernetes pour exécuter des clusters k8s dans vSphere.
+
+## Cas d'utilisation
+
+- Consolidation de serveurs et réduction des coûts d'infrastructure.
+- Mise en place d'environnements de production avec haute disponibilité.
+- Provisionnement rapide d'environnements de test et développement.
+- Modernisation des applications grâce à l'intégration de Kubernetes.
+
+## Avantages
+
+- Meilleure utilisation des ressources matérielles.
+- Haute disponibilité et tolérance aux pannes.
+- Fonctionnalités avancées d'orchestration et d'automatisation.
+- Écosystème mature et intégrations avec de nombreux outils d'entreprise.
+
+## Bonnes pratiques
+
+- Maintenir une version supportée d'ESXi et vCenter et appliquer les correctifs régulièrement.
+- Concevoir la redondance réseau et stockage (multi-chemins, trunking, VLAN séparés).
+- Surveiller les ressources et configurer des alertes (CPU, mémoire, I/O).
+- Tester les procédures de sauvegarde et de reprise après sinistre.
+- Documenter la topologie et les configurations critiques.
+
+## Conclusion
+
+VMware vSphere demeure une solution de référence pour la virtualisation d'entreprise, offrant robustesse, richesses fonctionnelles et un large écosystème. Que vous consolidiez des serveurs, mettiez en place une infrastructure résiliente ou modernisiez vos applications avec Kubernetes, vSphere fournit les fondations nécessaires.

@@ -1,0 +1,50 @@
+---
+id: vmware-esxi
+title: "VMWare ESXi"
+sidebar_label: "VMWare ESXi"
+sidebar_position: 1
+description: "Introduction à VMWare ESXi"
+tags: [vmware, virtualisation, esxi]
+last_update:
+  date: "2026-02-23"
+  author: lacrif
+---
+
+## Introduction
+
+VMware ESXi est un hyperviseur de type 1 (bare-metal) qui s'installe directement sur le serveur physique pour exécuter des machines virtuelles (VM). Léger, sécurisé et optimisé pour la production, ESXi constitue la brique fondamentale de nombreuses infrastructures virtualisées.
+
+## Qu'est-ce que ESXi ?
+
+ESXi (Elastic Sky X Integrated) est l'hyperviseur développé par VMware. Contrairement aux hyperviseurs de type 2, ESXi n'a pas besoin d'un système d'exploitation hôte — il tourne directement sur le matériel, offrant des performances et une isolation supérieures.
+
+## Caractéristiques principales
+
+- Installation bare-metal, faible empreinte et surface d'attaque réduite.
+- Gestion fine des ressources CPU, mémoire, stockage et réseau pour chaque VM.
+- Intégration native avec `vCenter Server` pour la gestion centralisée.
+- Support de fonctionnalités avancées : vMotion, HA, DRS (via vCenter), snapshots, et vSAN.
+- APIs et intégrations (vSphere API, PowerCLI) pour automatisation et orchestration.
+
+## Exemples d'usage
+
+- Héberger des serveurs applicatifs, bases de données et services critiques.
+- Créer des environnements de développement et de test isolés.
+- Supporter des clusters à haute disponibilité et tolérance aux pannes.
+
+## Bonnes pratiques
+
+- Utiliser du matériel certifié HCL VMware pour garantir la compatibilité.
+- Sécuriser l'interface de gestion (restreindre l'accès, utiliser VLANs séparés).
+- Mettre en place une stratégie de mises à jour régulières pour ESXi et firmwares.
+- Sauvegarder la configuration des hôtes et prévoir des tests de reprise.
+- Monitorer les métriques d'utilisation et prévoir de la capacité pour les pics.
+
+## Avantages et limites
+
+- Avantages : performances, stabilité, intégration avec l'écosystème VMware.
+- Limites : coût des licences pour les fonctionnalités avancées et dépendance à l'écosystème VMware.
+
+## Conclusion
+
+VMware ESXi reste un choix éprouvé pour exécuter des charges de travail virtualisées en production. Sa simplicité d'installation, sa performance et son intégration avec `vCenter` en font un composant central pour toute stratégie de virtualisation d'entreprise.
