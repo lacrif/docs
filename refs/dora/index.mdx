@@ -1,0 +1,97 @@
+---
+id: dora-index
+sidebar_position: 1
+sidebar_label: "Introduction"
+title: "DORA"
+description: "Introduction à DORA"
+tags: [dora]
+last_update:
+  date: "2026-01-26"
+  author: lacrif
+---
+
+## Introduction
+
+Les métriques DORA (DevOps Research and Assessment) sont un ensemble de quatre indicateurs reconnus pour évaluer la performance des équipes de développement et d'exploitation. Elles permettent de piloter l'amélioration continue en se concentrant sur la vitesse de livraison et la stabilité des services.
+
+## Les quatre métriques DORA
+
+![Infographie DORA](/img/dora/dora-infographic.png)
+
+1. **Deployment Frequency (Fréquence de déploiement)**
+   - Mesure à quelle fréquence une équipe déploie des changements en production.
+   - Objectif : augmenter la fréquence sans sacrifier la qualité.
+
+2. **Lead Time for Changes (Délai de livraison des changements)**
+   - Temps entre le premier commit d'un changement et sa mise en production.
+   - Objectif : réduire ce délai pour accélérer le feedback.
+
+3. **Change Failure Rate (Taux d'échec des changements)**
+   - Pourcentage de déploiements provoquant une dégradation ou nécessitant un correctif en production.
+   - Objectif : garder ce taux faible en améliorant la qualité et les tests.
+
+4. **Time to Restore Service (MTTR — Temps moyen de restauration)**
+   - Durée moyenne nécessaire pour restaurer le service après une interruption.
+   - Objectif : réduire le MTTR par des runbooks, automatisation et observabilité.
+
+## Pourquoi ces métriques sont importantes
+
+- Elles fournissent un cadre commun pour mesurer la performance des équipes logiciels.
+- Elles lient la vélocité de livraison à la fiabilité du service, évitant les faux compromis.
+- Elles permettent d'identifier des leviers d'amélioration concrets (tests, CI/CD, monitoring).
+
+## Comment mesurer concrètement
+
+- **Sources de données** : pipelines CI/CD (timestamps de builds et déploiements), systèmes de ticketing (dates de création/fermeture des PR), outils d'observabilité pour incidents.
+- **Calculs simples** :
+  - Deployment Frequency : nombre de déploiements en prod par période (jour/semaine/mois).
+  - Lead Time : médiane/percentile du temps commit→production.
+  - Change Failure Rate : incidents post-déploiement / total déploiements.
+  - MTTR : temps moyen entre détection et rétablissement.
+- **Granularité** : mesurer par service, par équipe, ou par produit pour détecter les écarts.
+
+## Benchmarks et objectifs (extraits DORA)
+
+- **Elite** : déploiements fréquents (quotidiens ou plus), délais très courts, taux d'échec faible, MTTR court.
+- **High/Medium/Low performers** : DORA fournit des fourchettes — l'important est d'améliorer continuellement et de comparer des périodes internes.
+
+## Niveaux de performance DORA (valeurs indicatives)
+
+Les valeurs suivantes sont des repères fréquemment cités dans les rapports DORA. Elles sont indicatives — adaptez le périmètre (service, produit, équipe) avant d'interpréter.
+
+| Niveau | Fréquence de déploiement | Lead time for changes | Change failure rate | Time to Restore Service (MTTR) |
+| --- | --- | --- | ---: | --- |
+| Elite | Plusieurs déploiements par jour (on‑demand) | < 1 jour (souvent < 1 heure) | 0–15% | < 1 heure |
+| High | Déploiements quotidiens à hebdomadaires | < 1 jour → 1 semaine | 0–15% | < 1 jour |
+| Medium | Hebdomadaires à mensuels | 1 semaine → 1 mois | 16–30% | < 1 semaine |
+| Low | Moins d'un déploiement par mois | > 1 mois | > 31% | > 1 semaine |
+
+Note : les bornes (%, durées) sont des fourchettes utiles pour le benchmarking interne. Privilégiez l'évolution dans le temps et les comparaisons internes plutôt que les comparaisons brutes entre organisations.
+
+## Bonnes pratiques pour s'améliorer
+
+- Automatiser la CI/CD et rendre les pipelines reproductibles.
+- Mettre en place des tests automatisés (unitaires, intégration, e2e) et des revues de code.
+- Améliorer l'observabilité (logs, métriques, traces) pour réduire le MTTR.
+- Utiliser des feature flags pour limiter l'impact des déploiements.
+- Instrumenter les pipelines pour collecter les données de manière fiable.
+- Favoriser des déploiements petits et fréquents plutôt que des gros lots.
+
+## Outils et intégrations utiles
+
+- CI/CD : GitHub Actions, GitLab CI, Jenkins, CircleCI
+- Observabilité : Prometheus, Grafana, Datadog, New Relic
+- Tickets/PRs : Jira, GitHub/GitLab
+- Dashboards : exporter métriques vers un tableau de bord dédié (Grafana, Looker)
+
+## Pièges à éviter
+
+- Mesurer sans contexte : les chiffres seuls peuvent être trompeurs, corrélez-les avec la satisfaction client et la qualité métier.
+- Pousser la vitesse au détriment de la sécurité et de la qualité.
+- Faire des comparaisons externes sans normaliser les définitions et le périmètre.
+
+## Conclusion
+
+Les métriques DORA offrent un cadre pragmatique pour piloter la performance des équipes logiciel. En les mesurant de façon fiable et en appliquant des actions ciblées (automatisation, tests, observabilité), les organisations améliorent à la fois leur capacité à livrer rapidement et leur résilience.
+
+Souhaitez‑vous que je crée un modèle de dashboard Grafana, un guide d'instrumentation CI/CD, ou une version anglaise de cet article ?
