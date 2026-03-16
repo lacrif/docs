@@ -1,0 +1,70 @@
+---
+id: hashicorp-nomad
+title: "HashiCorp Nomad"
+sidebar_label: "HashiCorp Nomad"
+sidebar_position: 2
+description: "Introduction à HashiCorp Nomad"
+tags: [hashicorp, nomad, orchestration, cloud]
+last_update:
+  date: "2026-03-16"
+  author: lacrif
+---
+
+## Introduction
+
+HashiCorp Nomad est un ordonnanceur simple et flexible pour déployer et exécuter des workloads conteneurisés et non conteneurisés (applications, batch, services système) sur des clusters on‑premises ou dans le cloud. Nomad est conçu pour la simplicité d'exploitation, l'évolutivité et l'interopérabilité avec l'écosystème HashiCorp (Consul, Vault, Terraform).
+
+## Qu'est-ce que Nomad ?
+
+Nomad est un planificateur (scheduler) polyvalent qui gère la planification, l'allocation et la supervision des jobs via une déclaration HCL ou JSON. Il supporte plusieurs types de jobs (service, batch, system, periodic) et de drivers (Docker, exec, raw_exec, Java, QEMU, et des drivers personnalisés) pour une large variété de workloads.
+
+## Architecture et composants
+
+- **Serveurs Nomad** : forment le plan de contrôle, maintiennent l'état cluster et élisent un leader via Raft.
+- **Clients Nomad** : exécutent les allocations (allocs) et lancent les tâches via des task drivers.
+- **Job** : unité déclarative contenant les tâches, ressources, contraintes et stratégies de placement.
+- **Allocation** : instance d'un job placée sur un client.
+- **Task Drivers** : mécanismes d'exécution (ex: `docker`, `exec`, `raw_exec`, `java`, etc.).
+
+## Types de jobs
+
+- **service** : workloads longs (microservices) supervisés et redémarrés automatiquement.
+- **batch** : tâches ponctuelles ou parallélisées (jobs non persistants).
+- **system** : tâches liées à la machine (ex: agents, monitoring) déployées sur chaque client ciblé.
+- **periodic** : jobs planifiés selon un calendrier.
+
+## Fonctionnalités clés
+
+- **Planification et placement avancés** : contraintes, affinités, priorité, préemption et stratégies de rescheduling.
+- **Intégration avec Consul** : service discovery et service mesh (optionnel) pour les services lancés par Nomad.
+- **Intégration avec Vault** : distribution sécurisée des secrets aux tâches.
+- **Sécurité** : ACLs, chiffrement TLS pour les communications cluster, et gestion des tokens.
+- **Haute disponibilité** : architecture serveur/client résiliente avec quorum Raft.
+- **Observabilité** : métriques, logs et intégrations avec Prometheus, Datadog, etc.
+- **Extensibilité** : plugins et drivers personnalisés.
+
+## Exploitation et bonnes pratiques
+
+- Déployer un ensemble impair de serveurs Nomad (min. 3) pour garantir un quorum Raft fiable.
+- Activer et configurer les **ACLs** et le chiffrement (TLS) en production.
+- Utiliser **Consul** pour la découverte et la supervision des services et **Vault** pour les secrets.
+- Automatiser les définitions d'infrastructure et jobs via **Terraform** et **Nomad Pack**.
+- Surveiller la santé des clients et la latence Raft, configurer alerting pour les pertes de quorum.
+- Éviter d'exécuter des jobs trop gourmands en ressources sur les nœuds de contrôle.
+
+## Cas d'utilisation courants
+
+- Orchestration de microservices légers et de workloads batch à grande échelle.
+- Exécution de tâches HPC, machine learning, ou traitements par lots.
+- Coexistence avec Kubernetes pour des workloads spécifiques ou des migrations progressives.
+
+## Conclusion
+
+Nomad reste une solution légère et robuste pour l'orchestration multi‑workload, particulièrement adaptée aux environnements hybrides et aux organisations recherchant simplicité d'exploitation et flexibilité.
+
+## Sources
+
+- [Documentation Nomad — HashiCorp](https://developer.hashicorp.com/nomad/docs)
+- [Nomad — site officiel](https://www.nomadproject.io/)
+
+

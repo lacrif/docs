@@ -1,0 +1,10 @@
+{
+  "label": "Hashicorp",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "HashiCorp est une entreprise spécialisée dans les solutions d'infrastructure et de gestion de cloud. Cette catégorie couvre divers aspects de l'utilisation, de la configuration et du dépannage des outils HashiCorp.",
+    "slug": "/hashicorp"
+  },
+  "className": "hashicorp_sidebar_header"
+}

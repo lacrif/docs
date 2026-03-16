@@ -1,0 +1,82 @@
+---
+id: hashicorp-consul
+title: "HashiCorp Consul"
+sidebar_label: "HashiCorp Consul"
+sidebar_position: 1
+description: "Introduction à HashiCorp Consul"
+tags: [hashicorp, consul, infrastructure, cloud]
+last_update:
+  date: "2026-03-16"
+  author: lacrif
+---
+
+## Introduction
+
+HashiCorp Consul est une solution de "service networking" qui permet de découvrir, connecter et sécuriser des services dans des environnements distribués (VMs, conteneurs, Kubernetes, cloud hybrides et multi-cloud). Consul fournit un plan de contrôle pour la découverte de services, la gestion de configuration, le maillage de services (service mesh), l'autorisation basée sur l'identité et des primitives d'automatisation réseau.
+
+## Qu'est-ce que HashiCorp Consul ?
+
+Consul est une plateforme de "service networking" proposant notamment : découverte de services, mTLS pour chiffrer le trafic entre services, gestion des intentions (intentions) pour autoriser ou refuser les communications, gestion de configuration via un magasin clé-valeur, et des API/CLI/UI complètes pour exploiter ces fonctions.
+
+## Composants principaux
+
+- **Agent Consul** : démon léger exécuté sur chaque nœud (client/serveur) qui participe au cluster.
+- **Serveurs Consul** : nœuds qui forment le plan de contrôle et stockent l'état durable via Raft.
+- **Catalog** : registre des services et nœuds connus par Consul.
+- **KV Store** : magasin clé-valeur pour configurations et coordination.
+- **Consul Connect** : composant fournissant le service mesh, souvent utilisé avec Envoy comme proxy sidecar.
+- **ACLs et Intentions** : mécanismes d'authentification/autorisation pour sécuriser l'accès aux services.
+- **API Gateway / Mesh Gateway** : points d'entrée pour exposer des services hors du maillage et interconnecter des maillages.
+- **Consul-Terraform-Sync** : outil d'automatisation pour synchroniser l'état Consul vers des infrastructures via Terraform.
+- **Consul Template** et d'autres outils externes : génération de fichiers de configuration à partir du KV (usage variable selon les architectures).
+
+## Fonctionnalités clés
+
+- **Service Discovery** : enregistrement dynamique des services et résolution via DNS/HTTP API.
+- **Service Mesh (Consul Connect)** : injection de proxies (Envoy) pour chiffrer, router et observer le trafic L7.
+- **Sécurité** : mTLS, certificats automatiques, ACLs, intentions et support des namespaces/partitions (Enterprise) pour multi-tenancy.
+- **KV & Configuration** : stockage centralisé pour configurations d'applications.
+- **Health Checks** : contrôles d'état pour maintenir la qualité du catalogue.
+- **Multi-Datacenter & Federation** : peering et réplication entre datacenters.
+- **Traffic Management** : split de trafic, canary, failover et API Gateway pour exposer/publier des services.
+- **Observabilité** : métriques, logs, traces distribuées et intégrations avec outils de monitoring.
+- **Automatisation réseau** : intégration avec Terraform, Consul-Terraform-Sync et autres outils pour orchestrer la configuration réseau.
+
+## Cas d'utilisation
+
+- Découverte et routage des services dans des environnements hétérogènes (VMs, Kubernetes).
+- Mise en place d'un service mesh pour sécuriser les communications entre microservices.
+- Automatisation du provisionnement réseau et des routes via Consul-Terraform-Sync.
+- Gestion centralisée des configurations et feature flags via le KV store.
+- Implémentation de politiques de sécurité (ACLs, intentions, namespaces) pour multi-tenant.
+
+## Avantages
+
+- Couverture des besoins de "service networking" (discovery, sécurité, traffic management) dans un seul produit.
+- Intégration native avec Kubernetes, Nomad, Terraform et de nombreux outils.
+- Fonctionnalités pour la production à grande échelle : haute disponibilité, multi-datacenter, observabilité.
+- Écosystème actif et documentation officielle riche (tutoriels pas-à-pas, sandbox).
+
+## Bonnes pratiques
+
+- Activer et configurer les **ACLs** pour protéger le catalogue et les API.
+- Utiliser les **intentions** pour contrôler finement les communications entre services.
+- Déployer un nombre impair de serveurs Consul (minimum 3 pour production) et surveiller le quorum Raft.
+- Séparer les environnements et les équipes via **namespaces** et **partitions** (Enterprise si besoin).
+- Surveiller métriques et traces, sauvegarder le state et tester les procédures de DR/restore.
+- Automatiser les changements via Terraform et **Consul-Terraform-Sync** pour réduire les erreurs manuelles.
+
+## Déploiement et intégrations
+
+Consul s'exécute sur VMs, bare-metal, et s'intègre fortement avec Kubernetes (opérateur, injection sidecar), Nomad, et les pipelines Terraform. Des guides officiels expliquent les scénarios "get started" pour VMs et Kubernetes.
+
+## Conclusion
+
+Consul reste une solution robuste pour le service networking et le service mesh. Selon l'échelle et les besoins (multi-tenancy, gouvernance, support), évaluez aussi les fonctions Enterprise (namespaces, peering avancé, performance et support).
+
+## Ressources et documentation
+
+- [Page d'accueil Consul](https://developer.hashicorp.com/consul)
+- [Documentation officielle Consul](https://developer.hashicorp.com/consul/docs)
+- [Tutoriels et guides pratiques](https://developer.hashicorp.com/consul/tutorials)
+- [Consul sandbox (laboratoire)](https://developer.hashicorp.com/consul/sandbox)

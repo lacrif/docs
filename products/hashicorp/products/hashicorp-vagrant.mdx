@@ -1,0 +1,75 @@
+---
+id: hashicorp-vagrant
+title: "HashiCorp Vagrant"
+sidebar_label: "HashiCorp Vagrant"
+sidebar_position: 5
+description: "Introduction à HashiCorp Vagrant"
+tags: [hashicorp, vagrant, infrastructure, cloud]
+last_update:
+  date: "2026-03-16"
+  author: lacrif
+---
+
+## Introduction
+
+HashiCorp Vagrant est un outil conçu pour créer et gérer des environnements de développement reproductibles en utilisant des machines virtuelles ou des fournisseurs de virtualisation. Vagrant simplifie la configuration des environnements, le partage entre les développeurs et l'intégration dans des pipelines CI.
+
+## Qu'est-ce que Vagrant ?
+
+Vagrant automatise la création et la configuration d'environnements de développement identiques à travers un fichier de configuration unique (`Vagrantfile`). Il s'appuie sur des **boxes** (images préconfigurées) et des **providers** (VirtualBox, VMware, libvirt, Hyper-V, Docker) pour lancer des environnements portables.
+
+## Composants principaux
+
+- **Vagrantfile** : fichier déclaratif (Ruby DSL) qui décrit la configuration de la VM (box, réseau, dossiers synchronisés, provisioners).
+- **Box** : image de base profilée et distribuée via Vagrant Cloud ou en local.
+- **Provider** : backend d'exécution (ex: `virtualbox`, `vmware_desktop`, `libvirt`, `docker`).
+- **Provisioners** : mécanismes pour configurer la VM après son démarrage (shell, Ansible, Puppet, Chef, Salt).
+- **Plugins** : extensions pour ajouter des fonctionnalités (ex: `vagrant-disksize`, `vagrant-libvirt`).
+
+## Fonctionnalités clés
+
+- **Dossiers synchronisés** : partage de répertoires entre hôte et invité (`synced_folder`) avec options (NFS, rsync, SMB).
+- **Réseaux** : support des `forwarded_port`, `private_network`, `public_network` pour tester différents scénarios réseau.
+- **Provisioning** : exécution de scripts ou outils de configuration pour préparer l'image à l'usage de développement.
+- **Snapshots & sauvegardes** : possibilités selon le provider pour capturer l'état d'une VM.
+- **Vagrant Cloud** : service pour publier et réutiliser des boxes publiques ou privées.
+- **Interopérabilité CI** : intégration facile dans des pipelines CI pour des tests d'intégration ou des builds reproductibles.
+
+## Cas d'utilisation
+
+- Standardiser des environnements de développement entre équipes (même OS, dépendances, configurations).
+- Tester des applications dans des environnements proches de la production sans impacter l'hôte.
+- Prototyper des architectures distribuées en local (plusieurs VMs interconnectées).
+- Exécuter des suites de tests fonctionnels/acceptance dans des environnements isolés.
+
+## Bonnes pratiques
+
+- **Pinnez la version de la box** (`config.vm.box_version`) pour garantir la reproductibilité.
+- **Rendre les provisioners idempotents** pour éviter des effets de bord lors de relances.
+- **Éviter de stocker des secrets** directement dans le `Vagrantfile` ; utilisez des variables d'environnement ou Vault.
+- **Utiliser des boxes légères** et préparer des images intermédiaires via Packer si nécessaire.
+- **Configurer le provisioning hors du Vagrantfile** (scripts séparés, rôles Ansible) pour la lisibilité.
+- **Surveiller les performances I/O** des dossiers synchronisés et préférer NFS/rsync selon le cas.
+
+## Commandes utiles
+
+- `vagrant init` : créer un `Vagrantfile` de base.
+- `vagrant up` : démarrer et provisionner la machine.
+- `vagrant ssh` : ouvrir une session SSH sur la VM.
+- `vagrant halt` : arrêter la VM.
+- `vagrant destroy` : supprimer la VM.
+- `vagrant box add|remove|list|update` : gérer les boxes locales.
+- `vagrant plugin install|uninstall|list` : gérer les plugins.
+- `vagrant global-status` : lister toutes les VMs gérées par Vagrant.
+- `vagrant package` : empaqueter une VM en box réutilisable.
+
+## Limitations et alternatives
+
+Vagrant est principalement orienté développement/local. Pour les environnements de production ou les orchestrateurs cloud (Kubernetes), préférez des solutions adaptées (Kubernetes, Terraform, Nomad). Vagrant reste néanmoins très utile pour reproduire des environnements de développement et pour le testing.
+
+## Ressources
+
+- [Site officiel Vagrant](https://www.vagrantup.com/)
+- [Documentation Vagrant](https://www.vagrantup.com/docs)
+- [Vagrant Cloud](https://app.vagrantup.com/)
+

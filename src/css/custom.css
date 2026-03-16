@@ -73,6 +73,17 @@
   margin-right: 6px;
 }
 
+.hashicorp_sidebar_header > div > a::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/img/hashicorp.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 6px;
+}
+
 .terminal-frame {
   border: 1px solid #444;
   border-radius: 8px;

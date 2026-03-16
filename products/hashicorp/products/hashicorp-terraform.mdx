@@ -1,0 +1,71 @@
+---
+id: hashicorp-terraform
+title: "HashiCorp Terraform"
+sidebar_label: "HashiCorp Terraform"
+sidebar_position: 4
+description: "Introduction à HashiCorp Terraform"
+tags: [hashicorp, terraform, infrastructure as code, cloud]
+last_update:
+  date: "2026-03-16"
+  author: lacrif
+---
+
+## Introduction
+
+HashiCorp Terraform est un outil d'infrastructure as code (IaC) permettant de définir, provisionner et gérer des ressources d'infrastructure via des fichiers de configuration déclaratifs. Terraform orchestre la création, la modification et la suppression de ressources sur de nombreux providers (clouds, services managés, solutions on‑premises) en conservant un état représentatif de l'infrastructure.
+
+## Concepts clés
+
+- **Providers** : composants qui permettent à Terraform d'interagir avec des APIs externes (AWS, Azure, GCP, VMware, etc.).
+- **Resources** : objets gérés (VMs, réseaux, bases de données) définis dans les fichiers de configuration.
+- **Modules** : ensembles réutilisables de ressources encapsulées pour structurer et partager la configuration.
+- **State** : fichier d'état (local ou distant) représentant l'inventaire des ressources gérées par Terraform.
+- **Plan / Apply** : flux en deux étapes où `terraform plan` calcule les changements et `terraform apply` les exécute.
+- **HCL (HashiCorp Configuration Language)** : langage déclaratif utilisé pour écrire les configurations Terraform (HCL2 recommandé).
+
+## Fonctionnalités principales
+
+- **Multi-provider** : gestion d'une grande variété de providers officiels et communautaires.
+- **Planification** : prévisualisation des changements via `terraform plan` pour valider les modifications avant exécution.
+- **Modules Registry** : registre public et privé pour partager et consommer des modules réutilisables.
+- **State Remote & Locking** : backends distants (S3, GCS, Azure Blob, Consul, Terraform Cloud) avec verrouillage d'état pour éviter les conflits.
+- **Workspaces** : segmentation d'états pour gérer plusieurs environnements (dev, staging, prod) — utiliser avec précaution.
+- **Expressions, Variables et Outputs** : paramètres pour rendre les configurations flexibles et communiquer des valeurs.
+- **Provisioners & Null Resources** : mécanismes limités pour exécuter des actions côté ressources (préférer les outils de configuration externes).
+
+## Bonnes pratiques
+
+- **Gérer l'état à distance** : utiliser un backend distant avec verrouillage (ex: S3 + DynamoDB, GCS, Terraform Cloud) pour la collaboration.
+- **Versionner providers et modules** : pinner les versions des providers et modules pour une reproductibilité.
+- **Séparer configuration & secrets** : ne pas stocker de secrets en clair dans les fichiers ; utiliser des variables sensibles et Vault.
+- **Modulariser** : créer des modules pour réutilisabilité, testabilité et séparation des responsabilités.
+- **CI/CD et revues de plan** : exécuter `terraform plan` dans CI et demander une revue humaine avant `apply` en production (ou utiliser Terraform Cloud/Enterprise pour policy checks).
+- **Limiter l'usage des provisioners** : préférer des images immuables (Packer) ou des outils de configuration dédiés (Ansible, Chef).
+- **Test & validation** : `terraform validate`, `terraform fmt`, tests d'intégration (Terratest, kitchen-terraform).
+
+## Sécurité et gouvernance
+
+- **Access Control** : utiliser Terraform Cloud/Enterprise ou IAM pour restreindre qui peut appliquer les changements.
+- **Policy as Code** : appliquer des politiques (Sentinel, OPA) pour valider les plans avant application.
+- **Rotation des credentials** : gérer les credentials via Vault ou secrets manager, éviter les variables persistantes non chiffrées.
+
+## Cas d'utilisation
+
+- Provisionnement d'infrastructures cloud répétables et traçables.
+- Gestion des dépendances entre ressources multi-cloud.
+- Automatisation des environnements de test et CI.
+- Orchestration d'infrastructure hybride (on‑prem + cloud).
+
+## Flux de travail typique
+
+1. Écrire les fichiers HCL et créer des modules réutilisables.
+2. Exécuter `terraform init` pour initialiser le backend et providers.
+3. Lancer `terraform plan` pour inspecter les modifications.
+4. Valider et appliquer via `terraform apply` (ou via CI / Terraform Cloud).
+5. Gérer l'état, les versions et la rotation des secrets en production.
+
+## Ressources
+
+- [Site officiel Terraform](https://developer.hashicorp.com/terraform)
+- [Guides et documentation Terraform](https://developer.hashicorp.com/terraform/docs)
+- [Terraform Registry (modules & providers)](https://registry.terraform.io/)

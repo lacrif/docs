@@ -1,0 +1,63 @@
+---
+id: hashicorp-packer
+title: "HashiCorp Packer"
+sidebar_label: "HashiCorp Packer"
+sidebar_position: 3
+description: "Introduction à HashiCorp Packer"
+tags: [hashicorp, packer, automatisation, images]
+last_update:
+  date: "2026-03-16"
+  author: lacrif
+---
+
+## Introduction
+
+HashiCorp Packer est un outil open-source permettant de créer des images de machines immuables pour plusieurs plateformes (clouds publics, hyperviseurs et formats VM) à partir d'une seule configuration. Packer automatise la construction d'images reproductibles et idempotentes pour les environnements de développement, test et production.
+
+## Qu'est-ce que Packer ?
+
+Packer construit des images en exécutant un ou plusieurs **builders** qui créent l'image de base, puis en appliquant des **provisioners** pour configurer l'image et enfin des **post-processors** pour transformer ou publier l'image (ex: compression, upload vers un registre cloud).
+
+## Composants principaux
+
+- **Builders** : plugins qui créent des images pour une plateforme cible (ex: `amazon-ebs`, `googlecompute`, `azure-arm`, `vmware-iso`, `qemu`).
+- **Provisioners** : scripts ou outils exécutés sur l'image en construction (ex: `shell`, `ansible`, `chef`, `puppet`).
+- **Post-processors** : opérations postérieures à la construction (ex: `docker-import`, `artifact` upload, `compress`).
+- **Variables et templates** : Packer supporte des variables et des templates HCL2 (recommandé) pour parametrer les builds.
+- **Plugins** : écosystème extensible via plugins builders/provisioners tiers.
+
+## Fonctionnalités clés
+
+- Support multi-plateforme : cloud providers (AWS, GCP, Azure), hyperviseurs (VMware, VirtualBox, QEMU) et formats conteneurs.
+- Templates HCL2 modernes : remplace progressivement les JSON templates, meilleure lisibilité et modularité.
+- Construction parallèle d'images pour accélérer les pipelines.
+- Intégration avec outils de configuration (Ansible, Chef, Puppet) et gestion des secrets (Vault) via provisioners.
+- Validation et formatage : `packer validate`, `packer fmt` et `packer inspect` aident à fiabiliser les templates.
+- Idempotence et immutabilité : encourager des provisioners idempotents pour des images reproductibles.
+
+## Cas d'utilisation
+
+- Génération d'images AMI pour AWS contenant les dépendances préinstallées.
+- Création d'images disque pour déploiement on‑premises (VMware, Proxmox, QEMU).
+- Construction d'images de base pour CI/CD afin d'accélérer les pipelines.
+- Publication automatisée d'images vers des catalogues cloud ou registres privés.
+
+## Bonnes pratiques
+
+- Utiliser les templates HCL2 et modulariser les configurations pour réutilisabilité.
+- Rendre les provisioners idempotents et limiter l'inclusion de secrets dans les templates (préférer Vault ou variables runtime).
+- Stocker les artéfacts d'image (AMIs, images VM) dans un registre/versioning externe.
+- Exécuter `packer validate` et `packer fmt` dans les pipelines CI avant build.
+- Automatiser la rotation et la suppression des anciennes images pour limiter les coûts.
+
+## Intégrations et outils complémentaires
+
+- `Packer` s'intègre naturellement avec `Terraform` pour provisionner l'infrastructure à partir d'images construites.
+- Utiliser `HashiCorp Vault` pour fournir des secrets aux provisioners en toute sécurité.
+- Intégrer la construction d'images dans les pipelines CI/CD (GitHub Actions, GitLab CI, Jenkins).
+
+## Ressources
+
+- [Site officiel Packer](https://www.packer.io/)
+- [Documentation Packer](https://www.packer.io/docs)
+- [Guides et exemples HCL2](https://www.packer.io/docs/templates/hcl)

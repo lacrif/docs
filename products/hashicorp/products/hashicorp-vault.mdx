@@ -1,0 +1,82 @@
+---
+id: hashicorp-vault
+title: "HashiCorp Vault"
+sidebar_label: "HashiCorp Vault"
+sidebar_position: 6
+description: "Introduction à HashiCorp Vault"
+tags: [hashicorp, vault, sécurité, gestion des secrets, cloud]
+last_update:
+  date: "2026-03-16"
+  author: lacrif
+---
+
+## Introduction
+
+HashiCorp Vault est une solution de gestion des secrets et de chiffrement qui centralise la protection, l'émission et la rotation des secrets (mots de passe, clés API, certificats, tokens) et fournit des primitives cryptographiques (chiffrement, signature) pour les applications modernes.
+
+## Qu'est-ce que Vault ?
+
+Vault sécurise l'accès aux secrets via des politiques fines, des méthodes d'authentification variées et des moteurs de secrets (« secret engines ») capables de générer des secrets dynamiques. Vault propose également des capacités de chiffrement-as-a-service via le moteur Transit.
+
+## Composants et architecture
+
+- **Vault Server** : service API qui expose les endpoints HTTP(s) pour la gestion et la consommation des secrets.
+- **Storage Backend** : backend persistant (Integrated Storage/RAFT, Consul, S3, etc.) qui stocke l'état chiffré de Vault.
+- **Seal / Unseal** : mécanisme de protection du master key; Vault doit être "unsealed" pour fonctionner. L'auto-unseal via KMS (AWS KMS, Azure KeyVault, Google KMS, etc.) est supportée.
+- **Auth Methods** : plugins d'authentification (token, AppRole, Kubernetes, LDAP, OIDC, AWS, GCP, etc.).
+- **Secret Engines** : modules qui stockent, génèrent ou chiffrent des données (KV, Transit, PKI, Database, AWS, Azure, etc.).
+- **Policies** : règles en HCL/HCL2 ou JSON définissant les permissions (RBAC fine-grained).
+- **Audit Devices** : plugins pour consigner les requêtes (file, syslog, socket) pour conformité.
+- **CLI / API / UI** : interfaces pour administrer et consommer Vault.
+
+## Moteurs de secrets importants
+
+- **KV (v1/v2)** : stockage clé-valeur, KV v2 propose versioning et rollback.
+- **Transit** : chiffrement, déchiffrement, signature et gestion de clés sans stocker les données.
+- **PKI** : génération et émission de certificats TLS/PKI dynamiques.
+- **Database** : génération de comptes et mots de passe dynamiques pour bases de données (rotation automatique).
+- **Cloud Engines** : AWS, Azure, GCP pour générer des credentials temporaires.
+
+## Authentification et autorisation
+
+- **Token** : méthode native simple, souvent utilisée pour machines ou bootstrap.
+- **AppRole** : méthode pour machines et services (ID + secret_id) adaptée aux pipelines et automatisation.
+- **Kubernetes** : intégration native pour l'authentification des workloads Kubernetes.
+- **LDAP / OIDC / SAML** : intégration avec l'annuaire d'entreprise et les fournisseurs d'identité.
+- **Policies** : appliquer le principe du moindre privilège via des policies fines.
+
+## Fonctionnalités clés
+
+- **Secrets dynamiques** : génération de credentials à la demande (bases de données, cloud providers).
+- **Rotation et révocation** : mécanismes pour renouveler ou révoquer des secrets et certificats.
+- **Encryption-as-a-Service** : chiffrement et signature via Transit sans exposer les clés.
+- **Auto-unseal** : intégration avec KMS pour lever la contrainte manuelle d'unseal.
+- **Integrated Storage (Raft)** : backend distribué natif pour HA et réplication.
+- **Replication & Namespaces (Enterprise)** : réplication à distances (primary/secondary) et isolation multi-tenant via namespaces.
+- **Audit & observabilité** : audit devices, métriques et intégration avec systèmes de monitoring.
+
+## Déploiement et haute disponibilité
+
+Vault peut être déployé en mode HA en utilisant des backends de stockage résilients (Integrated Storage/RAFT recommandé pour simplicité, ou Consul). En production, sécurisez le réseau d'administration, utilisez TLS partout et activez l'auto-unseal pour réduire les opérations manuelles.
+
+## Bonnes pratiques
+
+- **Séparer les responsabilités** : politiques strictes, comptes de service dédiés, principe du moindre privilège.
+- **Auto-unseal** : utiliser un KMS pour auto-unseal et réduire l'exposition opérationnelle.
+- **Gérer l'état** : sauvegarder régulièrement le stockage (si non intégré) et tester les procédures de restauration.
+- **Activer l'audit** : configurer des audit devices et conserver les logs de façon immuable pour la conformité.
+- **Rotation et TTL** : préférer des secrets à courte durée de vie, utiliser les capacités de rotation automatique.
+- **Ne pas stocker de secrets en clair** : utiliser des variables sensibles, Vault Agent or Template pour injection sûre.
+- **Surveiller et alerter** : métriques, erreurs d'authentification, latence d'unseal, perte de quorum.
+
+## Intégrations courantes
+
+- Kubernetes : injection de secrets via CSI driver ou Vault Agent Injector.
+- Terraform : provider `hashicorp/vault` pour gérer policies, secrets et config.
+- Consul / Nomad : intégration pour découvrir Vault et fournir secrets aux jobs.
+
+## Ressources
+
+- [Site officiel HashiCorp Vault](https://www.vaultproject.io/)
+- [Documentation Vault — HashiCorp](https://developer.hashicorp.com/vault/docs)
+- [Guides : auto-unseal, integrated storage, audit, PKI](https://developer.hashicorp.com/vault/tutorials)
