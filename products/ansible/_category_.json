@@ -1,0 +1,10 @@
+{
+  "label": "Ansible",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Ansible est un projet et un ensemble d'outils d'automatisation informatique qui permet d'automatiser la configuration des systèmes, le déploiement d'applications et la gestion d'infrastructures.",
+    "slug": "/ansible"
+  },
+  "className": "ansible_sidebar_header"
+}

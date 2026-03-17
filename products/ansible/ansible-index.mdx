@@ -1,0 +1,42 @@
+---
+id: ansible-index
+title: "Ansible"
+sidebar_label: "Introduction"
+sidebar_position: 1
+description: "Introduction à Ansible : historique, produits et ressources pour démarrer avec l'automatisation."
+tags: [ansible, automatisation]
+last_update:
+  date: "2026-03-17"
+  author: lacrif
+---
+
+## Introduction
+
+Ansible est un projet et un ensemble d'outils d'automatisation informatique créé en 2012 par Michael DeHaan. En 2015, Red Hat a acquis la société et intègre aujourd'hui Ansible principalement via le "Red Hat Ansible Automation Platform".
+
+Ansible permet d'automatiser la configuration des systèmes, le déploiement d'applications, l'orchestration de workflows et la gestion d'infrastructures déclaratives, en s'appuyant sur des playbooks rédigés en YAML et un moteur idempotent.
+
+## Produits et composants clés
+
+Voici les composants et offres principaux autour d'Ansible aujourd'hui :
+
+- **Red Hat Ansible Automation Platform** : Suite commerciale de Red Hat qui regroupe le moteur d'automatisation, l'interface de gestion et des services additionnels pour l'entreprise.
+- **Automation Controller (ex-Ansible Tower)** : Interface web/API de gestion centralisée (anciennement commercialisée sous le nom "Ansible Tower"). AWX est le projet upstream.
+- **AWX** : Projet open source fournissant l'interface de type Controller (upstream d'Automation Controller).
+- **Ansible Engine** : Le moteur d'exécution des playbooks (utilisé en interne et dans certaines distributions).
+- **Ansible Collections** : Format officiel pour regrouper modules, rôles et plugins. Remplace progressivement les anciens rôles isolés.
+- **Ansible Galaxy** : Plateforme communautaire pour publier et rechercher des rôles et collections.
+- **Ansible Automation Hub** / **Automation Hub (Red Hat)** : Répertoire certifié par Red Hat pour distribuer du contenu validé à destination des entreprises.
+
+Note : la terminologie évolue (Tower → Controller, Automation Hub vs Galaxy) ; favorisez les termes actuels selon le contexte (open source vs Red Hat). 
+
+## Conclusion
+
+Ansible reste une solution d'automatisation largement adoptée, adaptée aux besoins des équipes d'infrastructure et des développeurs. Pour un usage en entreprise, la "Red Hat Ansible Automation Platform" fournit des composants additionnels et un support commercial.
+
+## Ressources utiles
+
+- [Site officiel d'Ansible](https://www.ansible.com)
+- [Documentation Ansible](https://docs.ansible.com)
+- [AWX (projet)](https://github.com/ansible/awx)
+- [Red Hat Ansible Automation Platform](https://www.redhat.com/en/technologies/management/ansible)
