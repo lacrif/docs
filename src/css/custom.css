@@ -40,12 +40,45 @@
   margin-right: 6px;
 }
 
+.ansible_sidebar_header > div > a::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/img/ansible.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 6px;
+}
+
+.docker_sidebar_header > div > a::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/img/docker.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 6px;
+}
+
 .gitlab_sidebar_header > div > a::before {
   content: "";
   display: inline-block;
   width: 16px;
   height: 16px;
   background-image: url("/img/gitlab.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 6px;
+}
+
+.hashicorp_sidebar_header > div > a::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/img/hashicorp.png");
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 6px;
@@ -73,28 +106,16 @@
   margin-right: 6px;
 }
 
-.hashicorp_sidebar_header > div > a::before {
+.zabbix_sidebar_header > div > a::before {
   content: "";
   display: inline-block;
   width: 16px;
   height: 16px;
-  background-image: url("/img/hashicorp.png");
+  background-image: url("/img/zabbix.png");
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 6px;
 }
-
-.ansible_sidebar_header > div > a::before {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-image: url("/img/ansible.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-right: 6px;
-}
-
 
 .terminal-frame {
   border: 1px solid #444;
